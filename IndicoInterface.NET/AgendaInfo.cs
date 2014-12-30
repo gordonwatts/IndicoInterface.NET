@@ -31,7 +31,7 @@ namespace IndicoInterface.NET
         public string AgendaSubDirectory { get; set; }
 
         /// <summary>
-        /// Do not use this - useful only for sereialization.
+        /// Do not use this - useful only for serialization.
         /// </summary>
         public AgendaInfo()
         {
@@ -39,12 +39,12 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
-        /// Find the agenda information from the initial indico URL format.
+        /// Find the agenda information from the initial Indico URL format.
         /// </summary>
         static Regex _gConfIdFinderStyle1 = new Regex("(?<protocal>http|https)://(?<site>[^/]+)/(?<subdir>.+/)?.*(?i:confId)=(?<conf>\\w+)");
 
         /// <summary>
-        /// Find the agenda information from the event indico URL format
+        /// Find the agenda information from the event Indico URL format
         /// </summary>
         static Regex _gConfIdFinderStyle2 = new Regex("(?<protocal>http|https)://(?<site>[^/]+)/event/(?<conf>\\w+)");
 
@@ -148,7 +148,7 @@ namespace IndicoInterface.NET
                 {
                     LogMessageCallback("AgendaDownload", "Downloading " + ToString() + " - " + AgendaFullXML);
                 }
-                ServicePointManager.ServerCertificateValidationCallback = (s, certificate, chain, errs) => true;
+                //ServicePointManager.ServerCertificateValidationCallback = (s, certificate, chain, errs) => true;
                 WebRequest req = WebRequest.Create(AgendaFullXML);
                 if (HttpAgentString != null)
                 {
@@ -225,7 +225,7 @@ namespace IndicoInterface.NET
             int endOfXML = lines.IndexOf("</iconf");
             if (endOfXML < 0)
             {
-                throw new ArgumentException("XML returned from meeting ddn't contain ending </iconf> tag (" + AgendaFullXML + ")");
+                throw new ArgumentException("XML returned from meeting didn't contain ending </iconf> tag (" + AgendaFullXML + ")");
             }
             lines = lines.Substring(0, endOfXML + 8);
             return lines;
@@ -248,7 +248,7 @@ namespace IndicoInterface.NET
             /// Create the stuff we will be sending back.
             /// 
 
-            SimpleAgendaDataModel.Meeting m = new IndicoInterface.SimpleAgendaDataModel.Meeting();
+            SimpleAgendaDataModel.Meeting m = new IndicoInterface.NET.SimpleAgendaDataModel.Meeting();
             m.ID = data.ID;
             m.Title = data.title.Trim();
             m.Site = AgendaSite;
@@ -282,8 +282,8 @@ namespace IndicoInterface.NET
                 /// We have a single session meeting.
                 /// 
 
-                IndicoInterface.SimpleAgendaDataModel.Session s = ParseSingleMeeting(data.material, data.contribution, "0", data.title, data.startDate, data.endDate);
-                m.Sessions = new IndicoInterface.SimpleAgendaDataModel.Session[1] { s };
+                IndicoInterface.NET.SimpleAgendaDataModel.Session s = ParseSingleMeeting(data.material, data.contribution, "0", data.title, data.startDate, data.endDate);
+                m.Sessions = new IndicoInterface.NET.SimpleAgendaDataModel.Session[1] { s };
             }
 
             return m;
@@ -314,7 +314,7 @@ namespace IndicoInterface.NET
 
             var sessionMaterialTalks = from m in material
                                        where m != null
-                                       let talk = new IndicoInterface.SimpleAgendaDataModel.Talk()
+                                       let talk = new IndicoInterface.NET.SimpleAgendaDataModel.Talk()
                                        {
                                            Title = m.title,
                                            SlideURL = null,
@@ -324,7 +324,7 @@ namespace IndicoInterface.NET
                                            TalkType = SimpleAgendaDataModel.TypeOfTalk.ExtraMaterial,
                                            SubTalks = (from turl in FindAllUniqueMaterial(m)
                                                        where turl != null
-                                                       select new IndicoInterface.SimpleAgendaDataModel.Talk()
+                                                       select new IndicoInterface.NET.SimpleAgendaDataModel.Talk()
                                                        {
                                                            Title = m.title,
                                                            SlideURL = turl,
@@ -348,7 +348,7 @@ namespace IndicoInterface.NET
         private IEnumerable<string> FindAllUniqueMaterial(IndicoDataModel.material m)
         {
             ///
-            /// First, we check to see if a particular up-load has been fingered as "the one" by indico:
+            /// First, we check to see if a particular up-load has been fingered as "the one" by Indico:
             /// 
 
             if (m.pptx != null)
@@ -419,9 +419,9 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="contribution"></param>
         /// <returns></returns>
-        private IndicoInterface.SimpleAgendaDataModel.Session ParseSingleMeeting(IndicoInterface.IndicoDataModel.material[] attachedMaterial, IndicoInterface.IndicoDataModel.contribution[] contribution, string ID, string title, string startTime, string endTime)
+        private IndicoInterface.NET.SimpleAgendaDataModel.Session ParseSingleMeeting(IndicoInterface.NET.IndicoDataModel.material[] attachedMaterial, IndicoInterface.NET.IndicoDataModel.contribution[] contribution, string ID, string title, string startTime, string endTime)
         {
-            IndicoInterface.SimpleAgendaDataModel.Session result = new IndicoInterface.SimpleAgendaDataModel.Session();
+            IndicoInterface.NET.SimpleAgendaDataModel.Session result = new IndicoInterface.NET.SimpleAgendaDataModel.Session();
             result.ID = ID;
             result.Title = title;
             result.StartDate = AgendaStringToDate(startTime);
@@ -439,7 +439,7 @@ namespace IndicoInterface.NET
 
             if (contribution == null)
             {
-                result.Talks = new IndicoInterface.SimpleAgendaDataModel.Talk[0];
+                result.Talks = new IndicoInterface.NET.SimpleAgendaDataModel.Talk[0];
             }
             else
             {
@@ -466,9 +466,9 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="contrib"></param>
         /// <returns></returns>
-        private IndicoInterface.SimpleAgendaDataModel.Talk ExtractTalkInfo(IndicoInterface.IndicoDataModel.contribution contrib)
+        private IndicoInterface.NET.SimpleAgendaDataModel.Talk ExtractTalkInfo(IndicoInterface.NET.IndicoDataModel.contribution contrib)
         {
-            IndicoInterface.SimpleAgendaDataModel.Talk result = new IndicoInterface.SimpleAgendaDataModel.Talk();
+            IndicoInterface.NET.SimpleAgendaDataModel.Talk result = new IndicoInterface.NET.SimpleAgendaDataModel.Talk();
             result.ID = contrib.ID;
             result.Title = contrib.title;
             if (contrib.startDate != null)
@@ -529,7 +529,7 @@ namespace IndicoInterface.NET
         /// <param name="material"></param>
         /// <param name="p"></param>
         /// <returns></returns>
-        private string FindMaterial(IndicoInterface.IndicoDataModel.material[] materiallist, string material_type)
+        private string FindMaterial(IndicoInterface.NET.IndicoDataModel.material[] materiallist, string material_type)
         {
             ///
             /// If no one uploaded anything, then we won't be sending anything back. :(
@@ -542,7 +542,7 @@ namespace IndicoInterface.NET
 
             ///
             /// See if we can find material of the correct type. It seems there is not total database normalization
-            /// in indico here. :-)
+            /// in Indico here. :-)
             /// 
 
             var good = (from m in materiallist
@@ -566,11 +566,11 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
-        /// Scan for a particular material type the list of items in teh indigo model.
+        /// Scan for a particular material type the list of items in the indigo model.
         /// </summary>
         /// <param name="good"></param>
         /// <returns></returns>
-        private static string SearchMaterialListForType(IEnumerable<IndicoInterface.IndicoDataModel.material> good, string materialType)
+        private static string SearchMaterialListForType(IEnumerable<IndicoInterface.NET.IndicoDataModel.material> good, string materialType)
         {
             foreach (var item in good)
             {
@@ -615,7 +615,7 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
-        /// Small helper function to sort through some of the mis-labeling that goes on in indico.
+        /// Small helper function to sort through some of the miss-labeling that goes on in Indico.
         /// </summary>
         /// <param name="f"></param>
         /// <param name="materialType"></param>
@@ -653,9 +653,9 @@ namespace IndicoInterface.NET
         /// <summary>
         /// Given a list of sessions, return a list of normalized sessions.
         /// </summary>
-        /// <param name="session">The list of sessiosn -- can't be null, but could be empty.</param>
+        /// <param name="session">The list of session -- can't be null, but could be empty.</param>
         /// <returns></returns>
-        private IndicoInterface.SimpleAgendaDataModel.Session[] ParseConference(IndicoInterface.IndicoDataModel.session[] session)
+        private IndicoInterface.NET.SimpleAgendaDataModel.Session[] ParseConference(IndicoInterface.NET.IndicoDataModel.session[] session)
         {
             /// LINQ makes this transformation so simple. Much worse in C++!!!
             var allsessions = from s in session
@@ -673,7 +673,7 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
-        /// Code to seralize this guy to an xml dude.
+        /// Code to serialize this guy to an xml dude.
         /// </summary>
         /// <param name="sw"></param>
         public void Seralize(TextWriter sw)
@@ -694,7 +694,7 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
-        /// Desearlize from a string
+        /// Deserialize from a string
         /// </summary>
         /// <param name="p"></param>
         /// <returns></returns>

@@ -13,7 +13,6 @@ namespace IndicoInterface.NET
 {
     namespace IndicoDataModel
     {
-        [Serializable]
         public class iconf
         {
             public string ID; // The ID of the conference.
@@ -33,7 +32,6 @@ namespace IndicoInterface.NET
             public material[] material; // The material associated with the meeting overall!
         }
 
-        [Serializable]
         public class session
         {
             public string ID; // ID of the session
@@ -49,7 +47,6 @@ namespace IndicoInterface.NET
             public material[] material; // Material associated directly with this session
         }
 
-        [Serializable]
         public class contribution
         {
             public string ID; // ID of the guy.
@@ -64,20 +61,17 @@ namespace IndicoInterface.NET
             public contribution[] subcontributions;
         }
 
-        [Serializable]
         public class speaker
         {
             [XmlElementAttribute("user", Form = XmlSchemaForm.Unqualified)]
             public userInfo[] users;
         }
 
-        [Serializable]
         public class userInfo
         {
             public userName name;
         }
 
-        [Serializable]
         public class userName
         {
             [XmlAttributeAttribute("first")]
@@ -88,7 +82,6 @@ namespace IndicoInterface.NET
             public string last;
         }
 
-        [Serializable]
         public class material
         {
             public string ID; // What is the type
@@ -102,14 +95,12 @@ namespace IndicoInterface.NET
             public materialFileCollection files; // The file contents
         }
 
-        [Serializable]
         public class materialFileCollection
         {
             [XmlElementAttribute("file", Form = XmlSchemaForm.Unqualified)]
             public materialFile[] file; // The material associated with the stuff!            
         }
 
-        [Serializable]
         public class materialFile
         {
             public string name; // Name of the file.

@@ -5,7 +5,7 @@ using System.Text;
 /// Simple set of classes to hold onto a meeting or conference
 /// and its info. Mainly so that we can get rid of any thing that has to
 /// do with the difference between agenda servers and types of meetings
-/// (workshop vs meeting).
+/// (workshop vs. meeting).
 /// 
 
 namespace IndicoInterface.NET
@@ -15,7 +15,6 @@ namespace IndicoInterface.NET
         /// <summary>
         /// The top level meeting class
         /// </summary>
-        [Serializable]
         public class Meeting
         {
             public string ID; // Conference ID
@@ -37,7 +36,6 @@ namespace IndicoInterface.NET
             public Talk[] MeetingTalks;
         }
 
-        [Serializable]
         public class Session
         {
             public string ID;
@@ -53,7 +51,6 @@ namespace IndicoInterface.NET
             Talk, ExtraMaterial
         }
 
-        [Serializable]
         public class Talk
         {
             public string ID;
@@ -62,7 +59,7 @@ namespace IndicoInterface.NET
             public DateTime StartDate;
             public DateTime EndDate;
             public string[] Speakers;
-            public Talk[] SubTalks; // Any subtalks we have going for us
+            public Talk[] SubTalks; // Any sub-talks we have going for us
             public TypeOfTalk TalkType;
 
             public override string ToString()
@@ -106,7 +103,7 @@ namespace IndicoInterface.NET
             }
 
             /// <summary>
-            /// Equal is based on ID and slide url only.
+            /// Equal is based on ID and slide URL only.
             /// </summary>
             /// <param name="obj"></param>
             /// <returns></returns>
@@ -121,7 +118,7 @@ namespace IndicoInterface.NET
             }
 
             /// <summary>
-            /// Return a hash code based soley on the ID and URL
+            /// Return a hash code based solely on the ID and URL
             /// </summary>
             /// <returns></returns>
             public override int GetHashCode()
