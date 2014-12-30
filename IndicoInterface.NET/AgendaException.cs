@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace IndicoInterface
+namespace IndicoInterface.NET
 {
     /// <summary>
     /// For exceptions thrown by the Agenda interface

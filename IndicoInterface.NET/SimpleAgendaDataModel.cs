@@ -8,7 +8,7 @@ using System.Text;
 /// (workshop vs meeting).
 /// 
 
-namespace IndicoInterface
+namespace IndicoInterface.NET
 {
     namespace SimpleAgendaDataModel
     {

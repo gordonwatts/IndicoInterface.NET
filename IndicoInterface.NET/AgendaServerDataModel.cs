@@ -9,7 +9,7 @@ using System.Xml.Schema;
 /// Set of classes that contain the Agenda server's XML data model.
 ///
 
-namespace IndicoInterface
+namespace IndicoInterface.NET
 {
     namespace IndicoDataModel
     {

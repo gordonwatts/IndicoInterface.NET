@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
-namespace IndicoInterface
+namespace IndicoInterface.NET
 {
     /// <summary>
     /// Given a standard conference agenda URL will give and cache information about that agenda - the full
