@@ -1,0 +1,1232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iconf>
+ <ID>a042880</ID>
+ <category>Physics Generators</category>
+ <parentProtection>false</parentProtection>
+ <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+ <iCalLink>http://indico.cern.ch/conferenceDisplay.py/ical?confId=a042880</iCalLink>
+ <announcer>
+  <user>
+   <title></title>
+   <name first="Alan" middle="" last="Barr"></name>
+   <organization>University of Oxford</organization>
+   <email>alan.barr@cern.ch</email>
+   <userid>19868</userid>
+  </user>
+ </announcer>
+ <title>EvtGen miniworkshop</title>
+ <description>Monthly meeting of the lcg generator project dedicated to EvtGen.
+VRVS connection available in Plane room.
+</description>
+ <participants></participants>
+ <closed>False</closed>
+ <location>
+  <name>CERN</name>
+  <address></address>
+  <room>40-5-A01</room>
+  <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+ </location>
+ <startDate>2005-01-21T09:00:00</startDate>
+ <endDate>2005-01-21T19:00:00</endDate>
+ <creationDate>2004-06-24T00:00:00</creationDate>
+ <modificationDate>2006-12-08T08:40:18</modificationDate>
+ <timezone>Europe/Zurich</timezone>
+ <chair>
+  <user>
+   <title></title>
+   <name first="" middle="" last="Bartalini, P"></name>
+   <organization></organization>
+   <email>paolo.bartalini@cern.ch</email>
+  </user>
+ </chair>
+ <contribution>
+  <ID>s1t15</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Introduction to the EvtGen Mini Workshop</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Bartalini, P."></name>
+    <organization>University of Florida</organization>
+    <email>paolo.bartalini@cern.ch</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Bartalini, P."></name>
+    <organization>University of Florida</organization>
+    <email>paolo.bartalini@cern.ch</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T09:00:00</startDate>
+  <endDate>2005-01-21T09:15:00</endDate>
+  <duration>00:15</duration>
+  <abstract></abstract>
+  <material>
+   <ID>0</ID>
+   <title>transparencies</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t15&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>Bartalini1.pdf</name>
+     <type>pdf</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t15&amp;resId=1&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+    <file>
+     <name>Bartalini1.ppt</name>
+     <type>ppt</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t15&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <contribution>
+  <ID>s1t14</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Brief EvtGen Tutorial</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Ryd, A."></name>
+    <organization>Cornell</organization>
+    <email>ryd@mail.lns.cornell.edu</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Ryd, A."></name>
+    <organization>Cornell</organization>
+    <email>ryd@mail.lns.cornell.edu</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T09:15:00</startDate>
+  <endDate>2005-01-21T10:15:00</endDate>
+  <duration>01:00</duration>
+  <abstract></abstract>
+  <material>
+   <ID>0</ID>
+   <title>transparencies</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t14&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>evtgen_overview.ps</name>
+     <type>other</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t14&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <contribution>
+  <ID>s1t23</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Experience on Herwig++ with using databases for the particle properties</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Richardson, P."></name>
+    <organization>Durham</organization>
+    <email>peter.richardson@durham.ac.uk</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Richardson, P."></name>
+    <organization>Durham</organization>
+    <email>peter.richardson@durham.ac.uk</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T10:15:00</startDate>
+  <endDate>2005-01-21T10:30:00</endDate>
+  <duration>00:15</duration>
+  <abstract>More information available at &lt;a href="http://www.ippp.dur.ac.uk/~richardn/particles"&gt;particle database&lt;/a&gt;.</abstract>
+  <material>
+   <ID>0</ID>
+   <title>transparencies</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t23&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>EVTGEN-Workshop.pdf</name>
+     <type>pdf</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t23&amp;resId=1&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+    <file>
+     <name>EVTGEN-Workshop.ppt</name>
+     <type>ppt</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t23&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <contribution>
+  <ID>s1t16</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Status of EvtGen in Cleo</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Ryd, A."></name>
+    <organization>Cornell</organization>
+    <email>ryd@mail.lns.cornell.edu</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Ryd, A."></name>
+    <organization>Cornell</organization>
+    <email>ryd@mail.lns.cornell.edu</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T10:30:00</startDate>
+  <endDate>2005-01-21T10:45:00</endDate>
+  <duration>00:15</duration>
+  <abstract></abstract>
+ </contribution>
+ <break>
+  <name>Coffee</name>
+  <startDate>2005-01-21T10:45</startDate>
+  <endDate>2005-01-21T11:00</endDate>
+  <duration>00:15</duration>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+ </break>
+ <contribution>
+  <ID>s1t17</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Status of EvtGen in Belle</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Akimasa, I."></name>
+    <organization>KEK-IPNS</organization>
+    <email>akimasa@bmail.kek.jp</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Akimasa, I."></name>
+    <organization>KEK-IPNS</organization>
+    <email>akimasa@bmail.kek.jp</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T11:00:00</startDate>
+  <endDate>2005-01-21T11:30:00</endDate>
+  <duration>00:30</duration>
+  <abstract></abstract>
+  <material>
+   <ID>0</ID>
+   <title>transparencies</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t17&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>ishikawa.ppt</name>
+     <type>ppt</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t17&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <contribution>
+  <ID>s1t22</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Status of EvtGen in LHCb</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Robbe, P."></name>
+    <organization>Laboratoire de l'Accelerateur Lineaire (LAL)</organization>
+    <email>robbe@lal.in2p3.fr</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Robbe, P."></name>
+    <organization>Laboratoire de l'Accelerateur Lineaire (LAL)</organization>
+    <email>robbe@lal.in2p3.fr</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T11:30:00</startDate>
+  <endDate>2005-01-21T12:00:00</endDate>
+  <duration>00:30</duration>
+  <abstract></abstract>
+  <material>
+   <ID>0</ID>
+   <title>transparencies</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t22&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>LHCb_EvtGen.pdf</name>
+     <type>pdf</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t22&amp;resId=1&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+    <file>
+     <name>LHCb_EvtGen.ppt</name>
+     <type>ppt</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t22&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <contribution>
+  <ID>s1t20</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Status of EvtGen in ATLAS</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Smizanska, M."></name>
+    <organization>Lancaster U.</organization>
+    <email>maria.smizanska@cern.ch</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Smizanska, M."></name>
+    <organization>Lancaster U.</organization>
+    <email>maria.smizanska@cern.ch</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T12:00:00</startDate>
+  <endDate>2005-01-21T12:15:00</endDate>
+  <duration>00:15</duration>
+  <abstract></abstract>
+  <material>
+   <ID>0</ID>
+   <title>document</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t20&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>EvtGenLCG.ppt</name>
+     <type>ppt</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t20&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <break>
+  <name>Lunch</name>
+  <startDate>2005-01-21T12:15</startDate>
+  <endDate>2005-01-21T14:00</endDate>
+  <duration>01:45</duration>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+ </break>
+ <contribution>
+  <ID>s1t19</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>The LCG Generator Project</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Bartalini, P."></name>
+    <organization>University of Florida</organization>
+    <email>paolo.bartalini@cern.ch</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Bartalini, P."></name>
+    <organization>University of Florida</organization>
+    <email>paolo.bartalini@cern.ch</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T14:00:00</startDate>
+  <endDate>2005-01-21T14:30:00</endDate>
+  <duration>00:30</duration>
+  <abstract></abstract>
+  <material>
+   <ID>0</ID>
+   <title>transparencies</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t19&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>Bartalini2.ppt</name>
+     <type>ppt</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t19&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <contribution>
+  <ID>s1t26</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Bs-&gt;J/psi phi including weak amplitudes DeltaB=1 and DeltaB=2</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Catmore, J."></name>
+    <organization>Lancaster U., ATLAS</organization>
+    <email>James.Catmore@cern.ch</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Catmore, J."></name>
+    <organization>Lancaster U., ATLAS</organization>
+    <email>James.Catmore@cern.ch</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T14:30:00</startDate>
+  <endDate>2005-01-21T14:50:00</endDate>
+  <duration>00:20</duration>
+  <abstract></abstract>
+  <material>
+   <ID>0</ID>
+   <title>transparencies</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t26&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>EvtGen_-_LCG_generators.pdf</name>
+     <type>pdf</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t26&amp;resId=1&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+    <file>
+     <name>EvtGen_-_LCG_generators.ppt</name>
+     <type>ppt</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t26&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <contribution>
+  <ID>s1t27</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Lambda_b polarization, decay: implementation in EvtGen and tests.</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Biglietti, M."></name>
+    <organization>Michigan, ATLAS</organization>
+    <email>James.Catmore@cern.ch</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Biglietti, M."></name>
+    <organization>Michigan, ATLAS</organization>
+    <email>James.Catmore@cern.ch</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T14:50:00</startDate>
+  <endDate>2005-01-21T15:10:00</endDate>
+  <duration>00:20</duration>
+  <abstract></abstract>
+  <material>
+   <ID>0</ID>
+   <title>transparencies</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t27&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>LGC_Lambdabgen05.pdf</name>
+     <type>pdf</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t27&amp;resId=1&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+    <file>
+     <name>LGC_Lambdabgen05.ppt</name>
+     <type>ppt</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t27&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <contribution>
+  <ID>s1t28</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Status of EvtGen in CDF</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="tba"></name>
+    <organization></organization>
+    <email></email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="tba"></name>
+    <organization></organization>
+    <email></email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T15:10:00</startDate>
+  <endDate>2005-01-21T15:30:00</endDate>
+  <duration>00:20</duration>
+  <abstract></abstract>
+ </contribution>
+ <contribution>
+  <ID>s1t29</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Status of EvtGen in D0</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Sanchez, A."></name>
+    <organization>CINVESTAV (Mexico City)</organization>
+    <email>asanchez@fnal.gov</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Sanchez, A."></name>
+    <organization>CINVESTAV (Mexico City)</organization>
+    <email>asanchez@fnal.gov</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>Fermilab</name>
+   <address></address>
+   <room>40-5-A01</room>
+  </location>
+  <startDate>2005-01-21T15:30:00</startDate>
+  <endDate>2005-01-21T16:00:00</endDate>
+  <duration>00:30</duration>
+  <abstract></abstract>
+  <material>
+   <ID>0</ID>
+   <title>transparencies</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t29&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>evtgen_d0.pdf</name>
+     <type>pdf</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t29&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <break>
+  <name>Coffee</name>
+  <startDate>2005-01-21T16:00</startDate>
+  <endDate>2005-01-21T16:30</endDate>
+  <duration>00:30</duration>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+ </break>
+ <contribution>
+  <ID>s1t21</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Status of EvtGen in Babar</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Lange, D."></name>
+    <organization>LLNL</organization>
+    <email>lange@slac.stanford.edu</email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="Lange, D."></name>
+    <organization>LLNL</organization>
+    <email>lange@slac.stanford.edu</email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>LLNL</name>
+   <address></address>
+   <room>40-5-A01</room>
+  </location>
+  <startDate>2005-01-21T16:30:00</startDate>
+  <endDate>2005-01-21T17:00:00</endDate>
+  <duration>00:30</duration>
+  <abstract></abstract>
+  <material>
+   <ID>0</ID>
+   <title>transparencies</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t21&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>babar.pdf</name>
+     <type>pdf</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t21&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <contribution>
+  <ID>s1t31</ID>
+  <parentProtection>false</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Discussion</title>
+  <speakers>
+   <user>
+    <title></title>
+    <name first="" middle="" last="all"></name>
+    <organization></organization>
+    <email></email>
+   </user>
+  </speakers>
+  <primaryAuthors>
+   <user>
+    <title></title>
+    <name first="" middle="" last="all"></name>
+    <organization></organization>
+    <email></email>
+   </user>
+  </primaryAuthors>
+  <location>
+   <name>CERN</name>
+   <address></address>
+   <room>40-5-A01</room>
+   <roomMapURL>http://maps.cern.ch/mapsearch/directsearch.htm?no=40</roomMapURL>
+  </location>
+  <startDate>2005-01-21T17:00:00</startDate>
+  <endDate>2005-01-21T19:30:00</endDate>
+  <duration>02:30</duration>
+  <abstract></abstract>
+  <material>
+   <ID>0</ID>
+   <title>more information</title>
+   <description></description>
+   <type></type>
+   <displayURL>http://indico.cern.ch/materialDisplay.py?contribId=s1t31&amp;materialId=0&amp;confId=a042880</displayURL>
+   <files>
+    <file>
+     <name>EvtGen_miniworkshop_Discussion_Items.pdf</name>
+     <type>pdf</type>
+     <url>http://indico.cern.ch/getFile.py/access?contribId=s1t31&amp;resId=0&amp;materialId=0&amp;confId=a042880</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>http://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>http://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>http://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>http://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>http://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>http://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>http://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>http://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <line>
+  <fromDate>20050121</fromDate>
+  <toDate>20050121</toDate>
+ </line>
+ <plugins>
+  <collaboration>
+<!-- Needed for timezone awareness -->
+   <todayReference>2010-11-25</todayReference>
+   <tomorrowReference>2010-11-26</tomorrowReference>
+  </collaboration>
+ </plugins>
+</iconf>
