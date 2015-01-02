@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="AgendaException.cs" />
     <Compile Include="AgendaInfo.cs" />
+    <Compile Include="AgendaLoader.cs" />
     <Compile Include="AgendaServerDataModel.cs" />
+    <Compile Include="IUrlFetcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleAgendaDataModel.cs" />
   </ItemGroup>
