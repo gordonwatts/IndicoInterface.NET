@@ -51,13 +51,10 @@ namespace IndicoInterface.NET
         /// <returns>The parsed XML data. Throws an exception if it can't find what it needs</returns>
         public async Task<IndicoDataModel.iconf> GetFullConferenceData(AgendaInfo info)
         {
-            // Fetch the data
-
-            var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info));
-            
-            // Decode it
-
-            return _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
+            using (var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info)))
+            {
+                return _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
+            }
         }
 
         /// <summary>
