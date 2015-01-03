@@ -98,5 +98,101 @@ namespace t_IndicoInterface
             AgendaInfo ai_s = new AgendaInfo("https://indico.desy.de/conferenceOtherViews.py?view=standard&confId=1356");
             Assert.AreEqual("1356", ai_s.ConferenceID, "Incorrect agenda ID");
         }
+
+        [TestMethod]
+        public void TestSubDayLinks()
+        {
+            AgendaInfo ai = new AgendaInfo("http://indico.desy.de/conferenceOtherViews.py?view=standard&confId=1356#2009-01-07");
+            Assert.AreEqual("1356", ai.ConferenceID, "The conference ID is not correct!");
+        }
+
+        [TestMethod]
+        public void TestNoSubDirectory()
+        {
+            AgendaInfo ai = new AgendaInfo("http://indico.desy.de/conferenceOtherViews.py?view=standard&confId=1356#2009-01-07");
+            Assert.AreEqual("", ai.AgendaSubDirectory, "Sub directory isn't blank");
+        }
+
+        [TestMethod]
+        public void TestIndicoInSubDir()
+        {
+            AgendaInfo ai = new AgendaInfo("http://indico.ific.uv.es/indico/conferenceDisplay.py?confId=62");
+            Assert.AreEqual("62", ai.ConferenceID, "The conference ID is not correct!");
+            Assert.AreEqual("indico", ai.AgendaSubDirectory, "The subdirectory isn't right");
+            Assert.AreEqual("indico.ific.uv.es", ai.AgendaSite, "The agenda site isn't right");
+        }
+
+        [TestMethod]
+        public void TestURL()
+        {
+            AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceOtherViews.py?view=standard&confId=86819#2010041");
+            Assert.AreEqual("http://indico.cern.ch/conferenceDisplay.py?confId=86819", ai.ConferenceUrl, "URL is not correct!");
+
+            ai = new AgendaInfo("http://indico.ific.uv.es/indico/conferenceDisplay.py?confId=62");
+            Assert.AreEqual("http://indico.ific.uv.es/indico/conferenceDisplay.py?confId=62", ai.ConferenceUrl, "Subdir URL is not right");
+        }
+
+#if false
+        // We've not moved this code over yet...
+
+        /// <summary>
+        /// Make sure we can make one of these XML and back again.
+        /// </summary>
+        [TestMethod]
+        public void TestAgendaSerialization()
+        {
+            StringWriter sw = new StringWriter();
+
+            AgendaInfo ai = new AgendaInfo("http://indico.fnal.gov/conferenceTimeTable.py?confId=1829");
+
+            ai.Seralize(sw);
+
+            string xml = sw.ToString();
+
+            Assert.IsTrue(xml != null, "the xml translation shouldn't be null!");
+
+            StringReader rdr = new StringReader(xml);
+            AgendaInfo aiback = AgendaInfo.Deseralize(rdr);
+
+            Assert.IsTrue(aiback != null, "Null agenda came back!");
+            Assert.IsTrue(aiback.ConferenceID == ai.ConferenceID, "Conference ID is not correct");
+            Assert.IsTrue(ai.AgendaSite == aiback.AgendaSite, "Conference site is not correct!");
+
+            AgendaInfo aistringback = AgendaInfo.Deseralize(xml);
+            Assert.IsTrue(aistringback != null, "Null agenda came back!");
+            Assert.IsTrue(aistringback.ConferenceID == ai.ConferenceID, "Conference ID is not correct");
+            Assert.IsTrue(ai.AgendaSite == aistringback.AgendaSite, "Conference site is not correct!");
+        }
+
+        [TestMethod]
+        public void TestAgendaDeseralizationWithNoSub()
+        {
+            /// We've added the sub directory. Make sure that the XML can be delt with!
+
+            AgendaInfo ai = new AgendaInfo("http://indico.fnal.gov/conferenceTimeTable.py?confId=1829");
+
+            string xml = "<?xml version=\"1.0\" encoding=\"utf-16\"?><AgendaInfo xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><ConferenceID>1829</ConferenceID><AgendaSite>indico.fnal.gov</AgendaSite></AgendaInfo>";
+
+            StringReader rdr = new StringReader(xml);
+            AgendaInfo back = AgendaInfo.Deseralize(rdr);
+
+            Assert.AreEqual(ai.AgendaFullXML, back.AgendaFullXML, "The http requests are not the same! Ops!");
+        }
+
+        [TestMethod]
+        public void TestAgendaDeseralizationWithSub()
+        {
+            /// We've added the sub directory. Make sure that the XML can be delt with!
+
+            AgendaInfo ai = new AgendaInfo("http://indico.fnal.gov/bogus/conferenceTimeTable.py?confId=1829");
+
+            string xml = "<?xml version=\"1.0\" encoding=\"utf-16\"?><AgendaInfo xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><ConferenceID>1829</ConferenceID><AgendaSite>indico.fnal.gov</AgendaSite><AgendaSubDirectory>bogus</AgendaSubDirectory></AgendaInfo>";
+
+            StringReader rdr = new StringReader(xml);
+            AgendaInfo back = AgendaInfo.Deseralize(rdr);
+
+            Assert.AreEqual(ai.AgendaFullXML, back.AgendaFullXML, "The http requests are not the same! Ops!");
+        }
+#endif
     }
 }
