@@ -31,7 +31,7 @@ namespace IndicoInterface.NET
         {
             StringBuilder bld = new StringBuilder();
             bld.AppendFormat("http://{0}/", info.AgendaSite);
-            if (info.AgendaSubDirectory != "")
+            if (!string.IsNullOrWhiteSpace(info.AgendaSubDirectory))
             {
                 bld.AppendFormat("{0}/", info.AgendaSubDirectory);
             }

@@ -100,6 +100,13 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
+        /// Parameterless ctor to be used for serialization.
+        /// </summary>
+        private AgendaInfo()
+        {
+        }
+
+        /// <summary>
         /// Returns a printable string describing this conference.
         /// </summary>
         /// <returns></returns>

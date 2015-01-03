@@ -7,6 +7,7 @@ using IndicoInterface;
 using IndicoInterface.NET.SimpleAgendaDataModel;
 using IndicoInterface.NET;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Xml.Serialization;
 
 namespace t_IndicoInterface
 {
@@ -132,36 +133,27 @@ namespace t_IndicoInterface
             Assert.AreEqual("http://indico.ific.uv.es/indico/conferenceDisplay.py?confId=62", ai.ConferenceUrl, "Subdir URL is not right");
         }
 
-#if false
-        // We've not moved this code over yet...
-
         /// <summary>
         /// Make sure we can make one of these XML and back again.
         /// </summary>
         [TestMethod]
         public void TestAgendaSerialization()
         {
+            var ai = new AgendaInfo("http://indico.fnal.gov/conferenceTimeTable.py?confId=1829");
+
+            var ser = new XmlSerializer(typeof(AgendaInfo));
             StringWriter sw = new StringWriter();
-
-            AgendaInfo ai = new AgendaInfo("http://indico.fnal.gov/conferenceTimeTable.py?confId=1829");
-
-            ai.Seralize(sw);
+            ser.Serialize(sw, ai);
 
             string xml = sw.ToString();
-
-            Assert.IsTrue(xml != null, "the xml translation shouldn't be null!");
+            Assert.AreNotEqual(null, xml, "the xml translation shouldn't be null!");
 
             StringReader rdr = new StringReader(xml);
-            AgendaInfo aiback = AgendaInfo.Deseralize(rdr);
+            AgendaInfo aiback = ser.Deserialize(rdr) as AgendaInfo;
 
-            Assert.IsTrue(aiback != null, "Null agenda came back!");
+            Assert.IsNotNull(aiback, "Null agenda came back!");
             Assert.IsTrue(aiback.ConferenceID == ai.ConferenceID, "Conference ID is not correct");
             Assert.IsTrue(ai.AgendaSite == aiback.AgendaSite, "Conference site is not correct!");
-
-            AgendaInfo aistringback = AgendaInfo.Deseralize(xml);
-            Assert.IsTrue(aistringback != null, "Null agenda came back!");
-            Assert.IsTrue(aistringback.ConferenceID == ai.ConferenceID, "Conference ID is not correct");
-            Assert.IsTrue(ai.AgendaSite == aistringback.AgendaSite, "Conference site is not correct!");
         }
 
         [TestMethod]
@@ -174,9 +166,15 @@ namespace t_IndicoInterface
             string xml = "<?xml version=\"1.0\" encoding=\"utf-16\"?><AgendaInfo xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><ConferenceID>1829</ConferenceID><AgendaSite>indico.fnal.gov</AgendaSite></AgendaInfo>";
 
             StringReader rdr = new StringReader(xml);
-            AgendaInfo back = AgendaInfo.Deseralize(rdr);
+            var ser = new XmlSerializer(typeof(AgendaInfo));
+            AgendaInfo back = ser.Deserialize(rdr) as AgendaInfo;
 
-            Assert.AreEqual(ai.AgendaFullXML, back.AgendaFullXML, "The http requests are not the same! Ops!");
+            var al = new AgendaLoader(null);
+
+            Console.WriteLine(al.GetAgendaFullXMLURL(ai).OriginalString);
+            Console.WriteLine(al.GetAgendaFullXMLURL(back).OriginalString);
+
+            Assert.AreEqual(al.GetAgendaFullXMLURL(ai).OriginalString, al.GetAgendaFullXMLURL(back).OriginalString, "The http requests are not the same! Ops!");
         }
 
         [TestMethod]
@@ -189,10 +187,15 @@ namespace t_IndicoInterface
             string xml = "<?xml version=\"1.0\" encoding=\"utf-16\"?><AgendaInfo xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><ConferenceID>1829</ConferenceID><AgendaSite>indico.fnal.gov</AgendaSite><AgendaSubDirectory>bogus</AgendaSubDirectory></AgendaInfo>";
 
             StringReader rdr = new StringReader(xml);
-            AgendaInfo back = AgendaInfo.Deseralize(rdr);
+            var ser = new XmlSerializer(typeof(AgendaInfo));
+            AgendaInfo back = ser.Deserialize(rdr) as AgendaInfo;
 
-            Assert.AreEqual(ai.AgendaFullXML, back.AgendaFullXML, "The http requests are not the same! Ops!");
+            var al = new AgendaLoader(null);
+
+            Console.WriteLine(al.GetAgendaFullXMLURL(ai).OriginalString);
+            Console.WriteLine(al.GetAgendaFullXMLURL(back).OriginalString);
+
+            Assert.AreEqual(al.GetAgendaFullXMLURL(ai).OriginalString, al.GetAgendaFullXMLURL(back).OriginalString, "The http requests are not the same! Ops!");
         }
-#endif
     }
 }
