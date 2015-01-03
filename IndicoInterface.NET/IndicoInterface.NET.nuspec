@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.0</version>
+    <title>Indico Agenda Parser</title>
+    <authors>Gordon Watts</authors>
+    <owners>Gordon Watts</owners>
+    <licenseUrl>https://github.com/gordonwatts/IndicoInterface.NET/blob/master/LICENSE.TXT</licenseUrl>
+    <projectUrl>https://github.com/gordonwatts/IndicoInterface.NET/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Parse XML from sites using the Indico agenda server software written by CERN (see http://indico.cern.ch as well as other sites)</description>
+    <releaseNotes>Basic functionality to parse an agenda into a normalized data structure.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>Agenda Meeting CERN Indico</tags>
+  </metadata>
+</package>

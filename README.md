@@ -25,3 +25,5 @@ downloaded.
 1. Extract from github, open, and build. Make sure all tests pass.
 2. For new agenda format parsing, make sure that you add a new XML data file to the test rather than just fetching
    accross the web (the latter takes too long during testing).
+3. Create nuget package from the IndicoInterface.NET directory with the command
+   "nuget pack .\IndicoInterface.NET.csproj -Prop Configuration=Release"

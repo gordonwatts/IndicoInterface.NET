@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("IndicoInterface.NET")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Parse XML from sites using the Indico agenda server software written by CERN (see http://indico.cern.ch as well as other sites)")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Gordon Watts")]
 [assembly: AssemblyProduct("IndicoInterface.NET")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
