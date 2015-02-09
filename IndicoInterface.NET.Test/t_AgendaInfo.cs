@@ -1,12 +1,7 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
-using IndicoInterface;
-using IndicoInterface.NET.SimpleAgendaDataModel;
-using IndicoInterface.NET;
+﻿using IndicoInterface.NET;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
 using System.Xml.Serialization;
 
 namespace t_IndicoInterface
@@ -154,6 +149,8 @@ namespace t_IndicoInterface
             Assert.IsNotNull(aiback, "Null agenda came back!");
             Assert.IsTrue(aiback.ConferenceID == ai.ConferenceID, "Conference ID is not correct");
             Assert.IsTrue(ai.AgendaSite == aiback.AgendaSite, "Conference site is not correct!");
+
+            Console.WriteLine("Length of serialized agenda is {0}", xml.Length);
         }
 
         [TestMethod]
@@ -175,6 +172,8 @@ namespace t_IndicoInterface
             Console.WriteLine(al.GetAgendaFullXMLURL(back).OriginalString);
 
             Assert.AreEqual(al.GetAgendaFullXMLURL(ai).OriginalString, al.GetAgendaFullXMLURL(back).OriginalString, "The http requests are not the same! Ops!");
+
+            Console.WriteLine("Length of serialized agenda is {0}", xml.Length);
         }
 
         [TestMethod]
@@ -196,6 +195,8 @@ namespace t_IndicoInterface
             Console.WriteLine(al.GetAgendaFullXMLURL(back).OriginalString);
 
             Assert.AreEqual(al.GetAgendaFullXMLURL(ai).OriginalString, al.GetAgendaFullXMLURL(back).OriginalString, "The http requests are not the same! Ops!");
+
+            Console.WriteLine("Length of serialized agenda is {0}", xml.Length);
         }
     }
 }
