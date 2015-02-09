@@ -27,3 +27,10 @@ downloaded.
    accross the web (the latter takes too long during testing).
 3. Create nuget package from the IndicoInterface.NET directory with the command
    "nuget pack .\IndicoInterface.NET.csproj -Prop Configuration=Release"
+
+Version History
+===============
+These are versions released to nuget
+
+1.0.0	First nuget release. Basic functionality. Raw indico data as well as a "nice" form parsed out from it.
+
