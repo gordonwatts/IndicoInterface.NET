@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace IndicoInterface.NET
@@ -117,6 +118,30 @@ namespace IndicoInterface.NET
                 bld.AppendFormat("conferenceDisplay.py?confId={0}", ConferenceID);
                 return bld.ToString();
             }
+        }
+
+        /// <summary>
+        /// Convert to a short string - meant to be compact and can be written out. Unique as well.
+        /// </summary>
+        /// <returns>Short string which is unique and can be used to re-generate</returns>
+        public static AgendaInfo FromShortString(string ss)
+        {
+            var s = ss.Split(new string[] { "/^/" }, System.StringSplitOptions.None);
+            if (s.Length != 3)
+            {
+                throw new ArgumentException(string.Format("Indico Agenda short string '{0}' was in bad format.", ss));
+            }
+
+            return new AgendaInfo() { AgendaSite = s[0], AgendaSubDirectory = s[1], ConferenceID = s[2] };
+        }
+
+        /// <summary>
+        /// Return this agenda as a compact unique string. Platform independent.
+        /// </summary>
+        /// <returns></returns>
+        public string AsShortString()
+        {
+            return string.Format("{0}/^/{1}/^/{2}", AgendaSite, AgendaSubDirectory, ConferenceID);
         }
     }
 }

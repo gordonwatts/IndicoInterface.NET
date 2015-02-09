@@ -198,5 +198,20 @@ namespace t_IndicoInterface
 
             Console.WriteLine("Length of serialized agenda is {0}", xml.Length);
         }
+
+        [TestMethod]
+        public void ShortStringAsIndicator()
+        {
+            AgendaInfo ai1 = new AgendaInfo("http://indico.fnal.gov/bogus/conferenceTimeTable.py?confId=1829");
+
+            var str = ai1.AsShortString();
+            var ai2 = AgendaInfo.FromShortString(str);
+
+            Assert.AreEqual(ai1.AgendaSite, ai2.AgendaSite);
+            Assert.AreEqual(ai1.AgendaSubDirectory, ai2.AgendaSubDirectory);
+            Assert.AreEqual(ai1.ConferenceID, ai2.ConferenceID);
+
+            Console.WriteLine("Size of short string ({0}) is {1}.", str, str.Length);
+        }
     }
 }
