@@ -32,5 +32,8 @@ Version History
 ===============
 These are versions released to nuget
 
+1.1.0   Added FromShortString/ToShortString to give a compact unique representation (e.g. for a db). Size is about
+        30 or 40 characters.
+		XML serization works. Binary can't becasuse this is a PCL library.
 1.0.0	First nuget release. Basic functionality. Raw indico data as well as a "nice" form parsed out from it.
 
