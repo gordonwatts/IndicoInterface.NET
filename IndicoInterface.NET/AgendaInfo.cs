@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
+﻿using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace IndicoInterface.NET
 {
@@ -29,14 +22,6 @@ namespace IndicoInterface.NET
         /// Returns the agenda sub directory
         /// </summary>
         public string AgendaSubDirectory { get; set; }
-
-        /// <summary>
-        /// Do not use this - useful only for serialization.
-        /// </summary>
-        //public AgendaInfo()
-        //{
-        //    AgendaSubDirectory = "";
-        //}
 
         /// <summary>
         /// Find the agenda information from the initial Indico URL format.
