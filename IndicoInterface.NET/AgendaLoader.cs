@@ -35,7 +35,14 @@ namespace IndicoInterface.NET
             {
                 bld.AppendFormat("{0}/", info.AgendaSubDirectory);
             }
-            bld.AppendFormat("conferenceOtherViews.py?confId={0}&view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", info.ConferenceID);
+            if (WhileListInfo.CanUseEventFormat(info))
+            {
+                bld.AppendFormat("event/{0}/other-view?view=xml", info.ConferenceID);
+            }
+            else
+            {
+                bld.AppendFormat("conferenceOtherViews.py?confId={0}&view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", info.ConferenceID);
+            }
             return new Uri(bld.ToString());
         }
 
