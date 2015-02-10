@@ -15,7 +15,7 @@ namespace IndicoInterface.NET.Test
         [TestInitialize]
         public void TestSetup()
         {
-            WhileListInfo.Reset();
+            WhiteListInfo.Reset();
         }
 
         [TestMethod]
@@ -567,7 +567,7 @@ namespace IndicoInterface.NET.Test
             // Try a non-white listed site, when that fails with bad HTML, see if we can get it with the
             // new one. If successful the site shoudl be added to the list of white listed sites.
 
-            WhileListInfo.ClearWhiteLists(); // Make sure CERN isn't on there!
+            WhiteListInfo.ClearWhiteLists(); // Make sure CERN isn't on there!
             var fileloaders = new Dictionary<string, string> {
                 {"http://indico.cern.ch/conferenceOtherViews.py?confId=73513&view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", "73513-bad.xml"},
                 {"http://indico.cern.ch/event/73513/other-view?view=xml", "73513-good.xml"}
@@ -580,8 +580,8 @@ namespace IndicoInterface.NET.Test
 
             Assert.AreEqual("ICHEP 2010", data.Title);
 
-            Assert.AreEqual(1, WhileListInfo.GetUseEventWhitelist().Length);
-            Assert.AreEqual("indico.cern.ch", WhileListInfo.GetUseEventWhitelist()[0]);
+            Assert.AreEqual(1, WhiteListInfo.GetUseEventWhitelist().Length);
+            Assert.AreEqual("indico.cern.ch", WhiteListInfo.GetUseEventWhitelist()[0]);
         }
     }
 }

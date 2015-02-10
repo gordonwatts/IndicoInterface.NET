@@ -115,7 +115,7 @@ namespace IndicoInterface.NET
                 {
                     bld.AppendFormat("{0}/", AgendaSubDirectory);
                 }
-                if (WhileListInfo.CanUseEventFormat(this))
+                if (WhiteListInfo.CanUseEventFormat(this))
                 {
                     bld.AppendFormat("event/{0}", ConferenceID);
                 }

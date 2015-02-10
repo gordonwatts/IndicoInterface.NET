@@ -7,7 +7,7 @@ namespace IndicoInterface.NET
     /// Hold onto info about site white lists... These are sites
     /// that have a particular format for their URL.
     /// </summary>
-    public class WhileListInfo
+    public class WhiteListInfo
     {
         /// <summary>
         /// Clear out the whitelist (perhaps only for testing?).
@@ -44,7 +44,7 @@ namespace IndicoInterface.NET
         /// <summary>
         /// Static ctor to setup list properly.
         /// </summary>
-        static WhileListInfo()
+        static WhiteListInfo()
         {
             Reset();
         }

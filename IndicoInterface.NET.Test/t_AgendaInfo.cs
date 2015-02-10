@@ -15,7 +15,7 @@ namespace t_IndicoInterface
         [TestInitialize]
         public void TestSetup()
         {
-            WhileListInfo.Reset();
+            WhiteListInfo.Reset();
         }
 
         [TestMethod]
@@ -127,7 +127,7 @@ namespace t_IndicoInterface
         [TestMethod]
         public void TestURL()
         {
-            WhileListInfo.ClearWhiteLists();
+            WhiteListInfo.ClearWhiteLists();
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceOtherViews.py?view=standard&confId=86819#2010041");
             Assert.AreEqual("http://indico.cern.ch/conferenceDisplay.py?confId=86819", ai.ConferenceUrl, "URL is not correct!");
 

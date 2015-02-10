@@ -36,7 +36,7 @@ namespace IndicoInterface.NET
             {
                 bld.AppendFormat("{0}/", info.AgendaSubDirectory);
             }
-            if (WhileListInfo.CanUseEventFormat(info) || useEventFormat)
+            if (WhiteListInfo.CanUseEventFormat(info) || useEventFormat)
             {
                 bld.AppendFormat("event/{0}/other-view?view=xml", info.ConferenceID);
             }
@@ -73,14 +73,14 @@ namespace IndicoInterface.NET
             catch (InvalidOperationException)
             {
                 // This is the bad XML error...
-                if (WhileListInfo.CanUseEventFormat(info))
+                if (WhiteListInfo.CanUseEventFormat(info))
                     throw; // We already tried the new format!
             }
 
             using (var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info, useEventFormat: true)))
             {
                 var r = _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
-                WhileListInfo.AddSiteThatUsesEventFormat(info.AgendaSite);
+                WhiteListInfo.AddSiteThatUsesEventFormat(info.AgendaSite);
                 return r;
             }
         }
