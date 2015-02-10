@@ -1,7 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Net;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.IO;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace IndicoInterface.NET.Test
@@ -44,7 +44,7 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
-        public async Task GetFullMeetingInfo()
+        public async Task GetFullMeetingInfoWhiteList()
         {
             var a = new AgendaInfo("https://indico.cern.ch/event/340656/");
             var al = new AgendaLoader(new WebGetter());
@@ -52,6 +52,17 @@ namespace IndicoInterface.NET.Test
 
             Assert.AreEqual("340656", data.ID);
             Assert.AreEqual("7th SYMPOSIUM ON LARGE TPCs FOR LOW-ENERGY RARE EVENT DETECTION", data.Title);
+        }
+
+        [TestMethod]
+        public async Task GetFullMeetingInfoNonWhiteList()
+        {
+            var a = new AgendaInfo("https://indico.fnal.gov/conferenceDisplay.py?confId=9318");
+            var al = new AgendaLoader(new WebGetter());
+            var data = await al.GetNormalizedConferenceData(a);
+
+            Assert.AreEqual("9318", data.ID);
+            Assert.AreEqual("Dark Energy Survey Chicagoland Meeting", data.Title);
         }
     }
 }
