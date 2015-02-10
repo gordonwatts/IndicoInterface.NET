@@ -32,6 +32,10 @@ Version History
 ===============
 These are versions released to nuget
 
+1.2.0   Added support for new indico style event URLs. This is a more restful interface to the agenda server.
+        Old URL's should still work. There is a WhiteList, and anything on it will have its URL done in the new
+		style. As of this version only indico.cern.ch is on it. If it tries the old URL and it fails, but the new
+		style works, then the site will be added to the WhiteList. See WhiteList object for more.
 1.1.0   Added FromShortString/ToShortString to give a compact unique representation (e.g. for a db). Size is about
         30 or 40 characters.
 		XML serization works. Binary can't becasuse this is a PCL library.

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
     <title>Indico Agenda Parser</title>
     <authors>Gordon Watts</authors>
     <owners>Gordon Watts</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/gordonwatts/IndicoInterface.NET/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Parse XML from sites using the Indico agenda server software written by CERN (see http://indico.cern.ch as well as other sites)</description>
-    <releaseNotes>XML serilization now tested, AsShortString and FromShortString added to generate round-tripable short string representation</releaseNotes>
+    <releaseNotes>Use new indico REST-full URLs via site WhiteList (only indico.cern.ch so far). Fail over to it if old style URL doesn't work, but new style does.</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>Agenda Meeting CERN Indico</tags>
   </metadata>
