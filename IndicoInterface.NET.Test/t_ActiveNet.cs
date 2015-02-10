@@ -64,5 +64,39 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual("9318", data.ID);
             Assert.AreEqual("Dark Energy Survey Chicagoland Meeting", data.Title);
         }
+
+        [TestMethod]
+        public async Task GetWhitelistSiteURL()
+        {
+            var a = new AgendaInfo("https://indico.cern.ch/event/340656/");
+            var uri = a.ConferenceUrl;
+            var req = WebRequest.Create(uri);
+            var response = await req.GetResponseAsync();
+            using (var strm = response.GetResponseStream())
+            {
+                using (var txtrdr = new StreamReader(strm))
+                {
+                    var all = await txtrdr.ReadToEndAsync();
+                    Assert.IsTrue(all.Contains("7th SYMPOSIUM ON LARGE TPCs FOR LOW-ENERGY RARE EVENT DETECTION"));
+                }
+            }
+        }
+
+        [TestMethod]
+        public async Task GetNonWhitelistSiteURL()
+        {
+            var a = new AgendaInfo("https://indico.fnal.gov/conferenceDisplay.py?confId=9318");
+            var uri = a.ConferenceUrl;
+            var req = WebRequest.Create(uri);
+            var response = await req.GetResponseAsync();
+            using (var strm = response.GetResponseStream())
+            {
+                using (var txtrdr = new StreamReader(strm))
+                {
+                    var all = await txtrdr.ReadToEndAsync();
+                    Assert.IsTrue(all.Contains("Dark Energy Survey Chicagoland Meeting"));
+                }
+            }
+        }
     }
 }
