@@ -12,6 +12,12 @@ namespace t_IndicoInterface
     [TestClass]
     public class t_AgendaInfo
     {
+        [TestInitialize]
+        public void TestSetup()
+        {
+            WhileListInfo.Reset();
+        }
+
         [TestMethod]
         public void TestCtor()
         {
@@ -121,11 +127,19 @@ namespace t_IndicoInterface
         [TestMethod]
         public void TestURL()
         {
+            WhileListInfo.ClearWhiteLists();
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceOtherViews.py?view=standard&confId=86819#2010041");
             Assert.AreEqual("http://indico.cern.ch/conferenceDisplay.py?confId=86819", ai.ConferenceUrl, "URL is not correct!");
 
             ai = new AgendaInfo("http://indico.ific.uv.es/indico/conferenceDisplay.py?confId=62");
             Assert.AreEqual("http://indico.ific.uv.es/indico/conferenceDisplay.py?confId=62", ai.ConferenceUrl, "Subdir URL is not right");
+        }
+
+        [TestMethod]
+        public void WhiteListSite()
+        {
+            var ai = new AgendaInfo("http://indico.cern.ch/conferenceOtherViews.py?view=standard&confId=86819#2010041");
+            Assert.AreEqual("http://indico.cern.ch/event/86819", ai.ConferenceUrl);
         }
 
         /// <summary>

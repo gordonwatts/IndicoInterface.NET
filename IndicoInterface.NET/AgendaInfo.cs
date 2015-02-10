@@ -115,7 +115,14 @@ namespace IndicoInterface.NET
                 {
                     bld.AppendFormat("{0}/", AgendaSubDirectory);
                 }
-                bld.AppendFormat("conferenceDisplay.py?confId={0}", ConferenceID);
+                if (WhileListInfo.CanUseEventFormat(this))
+                {
+                    bld.AppendFormat("event/{0}", ConferenceID);
+                }
+                else
+                {
+                    bld.AppendFormat("conferenceDisplay.py?confId={0}", ConferenceID);
+                }
                 return bld.ToString();
             }
         }
