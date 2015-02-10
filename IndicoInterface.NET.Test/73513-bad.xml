@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+
+
+
+<html xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://opengraph.org/schema/">
+    <head>
+        <title>ICHEP 2010  (22-28 July 2010)</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="shortcut icon" type="image/x-icon" href="http://indico.cern.ch/images/indico.ico">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta content="" name="csrf-token" id="csrf-token"/>
+
+        <meta property="fb:app_id" content="269567379750914"/>
+
+        <!-- Piwik --> <script type="text/javascript">
+var _paq = _paq || [];
+(function(){ var u=(("https:" == document.location.protocol) ? "https://piwik.web.cern.ch/" : "http://piwik.web.cern.ch/");
+_paq.push(['setSiteId', 59]);
+_paq.push(['setTrackerUrl', u+'piwik.php']);
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
+s.parentNode.insertBefore(g,s); })();
+ </script>
+<!-- End Piwik Code -->
+
+
+        <script type="text/javascript">
+                var TextRoot = "http://indico.cern.ch/js/indico/i18n/";
+                var ScriptRoot = "http://indico.cern.ch/js/";
+        </script>
+
+        <!-- Indico specific -->
+        <script src="http://indico.cern.ch/vars.js" type="text/javascript"></script>
+ <!-- Indico Variables -->
+
+        <!-- Page Specific JS files-->
+            <script src="/static/assets/js/jquery_code_67c9365f.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/js/angular_c9d406c3.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/js/utils_de0c878e.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/js/presentation_ec3b0fd6.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/js/calendar_60cfea1b.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/js/indico_jquery_45937a26.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/js/moment_83e7f58e.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/js/indico_core_2e3a2e95.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/js/indico_legacy_ef0dab07.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/js/indico_common_c3e326ec.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/plugins/search/search__6480fef5.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/js/indico_display_b5786377.min.js" type="text/javascript"></script>
+
+            <script src="/static/assets/js/indico_materialeditor_aa16321f.min.js" type="text/javascript"></script>
+
+            <script src="/Collaboration/js/bookings.js" type="text/javascript"></script>
+
+            <script src="/Collaboration/js/Collaboration.js" type="text/javascript"></script>
+
+
+        <!--[if (gte IE 6)&(lte IE 8)]>
+            <script src="http://indico.cern.ch/static/assets/js/ie_compatibility_e7d8282a.min.js" type="text/javascript"></script>
+
+        <![endif]-->
+
+    <script type="text/javascript">
+      var currentLanguage = 'en_GB';
+      loadDictionary(currentLanguage);
+    </script>
+
+        <!-- Page Specific CSS files-->
+            <link rel="stylesheet" type="text/css" href="/static/assets/css/base_de1434db.min.css">
+            <link rel="stylesheet" type="text/css" href="/static/assets/sass/screen_sass_91714dd0.css">
+
+        <!-- Page Specific, directly inserted Javascript -->
+        <script type="text/javascript">
+            
+        </script>
+
+        <!-- Indico page-wide global JS variables -->
+        <script type="text/javascript">
+        
+            IndicoGlobalVars.isUserAuthenticated = false;
+        </script>
+
+        <!-- Other Page Specific -->
+        
+        <link rel="stylesheet" type="text/css" href="http://indico.cern.ch/css/Conf_Basic.css?1421772471" >
+            <link rel="stylesheet" type="text/css" href="http://indico.cern.ch/event/73513/style.css"><meta property="og:site_name" content="Indico - Indico"/>
+<meta property="og:type" content="event" />
+<meta property="fb:app_id" content="269567379750914"/>
+<meta property="og:image" content="http://indico.cern.ch/event/73513/logo"/>
+<meta property="og:description" content="
+ 
+ 
+The French particle physics community is particularly proud to have been selected to host the 35th ICHEP conference in 2010 in Paris. This conference is the focal point of all our field since more than fifty years and is the reference event where all important results in particle physics cosmology and astroparticles are presented and discussed. This al"/>
+
+    </head>
+    <body data-user-id="null">
+        
+<div class="wrapper"><div class="main">
+    
+<div class="mobile-device-header" style="display:none">
+    <div class="text">There is a Mobile version of Indico. Would you like to try it?</div>
+    <div class="toolbar">
+        <div class="group">
+            <div id="useMobile" class="i-button accept">Yes</div>
+        </div>
+        <div class="group">
+            <div id="useFullVersion" class="i-button">Not now</div>
+        </div>
+    </div>
+</div>
+
+ <script type="text/javascript">
+     $("#useMobile").click(function(){
+         var url = "https://indicomobile.cern.ch";
+             url += "/event/"+73513;
+         window.location.href=url;
+     });
+
+     $("#useFullVersion").click(function(){
+         $.jStorage.set("useIndicoDesktop", true, {TTL: 604800000}); //1 week TTL
+         $(".mobile-device-header").hide();
+     });
+
+     $(function() {
+        if($.mobileBrowser && !$.jStorage.get("useIndicoDesktop")){
+            $(".mobile-device-header").show();
+        }
+     });
+ </script>
+
+
+
+<div class="page-header page-header-dark">
+
+    
+
+
+<div id="session-bar" class=" session-bar session-bar-dark">
+    <div class="toolbar right">
+      <div class="group">
+        <a id="timezoneSelectorLink" href="#" class="i-button arrow icon-time">Europe/Paris</a>
+
+<script type="text/javascript">
+var timezoneSelectorLink = $E('timezoneSelectorLink');
+
+var tzSelector = new TimezoneSelector(
+        timezoneSelectorLink,
+        'LOCAL',
+        'Europe/Paris',
+        null,
+        null,
+        'http://indico.cern.ch/change-timezone'
+);
+
+$("#timezoneSelectorLink").qtip({
+
+    style: {
+        width: '300px',
+        classes: 'qtip-rounded qtip-shadow qtip-popup qtip-timezone',
+        tip: {
+            corner: true,
+            width: 20,
+            height: 15
+        }
+    },
+    position: {
+        my: 'top center',
+        at: 'bottom center'
+    },
+    content: function(api){
+        return $(tzSelector.getContent().dom);
+        },
+    show: {
+        event: "click",
+        effect: function() {
+            $(this).fadeIn(300);
+        }
+    },
+    hide: {
+        event: 'unfocus click',
+        fixed: true,
+        effect: function() {
+            $(this).fadeOut(300);
+        }
+    }
+});
+
+</script>
+
+        
+
+<form id="languageForm" method="post" action="http://indico.cern.ch/change-language" style="display:none;">
+    <input id="languageInputHidden" type="hidden" name="lang" value="en_gb">
+</form>
+
+<a id="languageSelectorLink" href="#" class="arrow icon-earth i-button">English</a>
+
+<script type="text/javascript">
+var languageLink = $E('languageSelectorLink');
+var languageMenu = null;
+languageLink.observeClick(function(e) {
+    // Close the menu if clicking the link when menu is open
+    if (languageMenu != null && languageMenu.isOpen()) {
+        languageMenu.close();
+        languageMenu = null;
+        return;
+    }
+
+    var menuItems = {};
+    var form = $E('languageForm');
+    var inputHidden = $E('languageInputHidden');
+
+    // build a dictionary that represents the menu
+        menuItems['English'] = {action:function() {inputHidden.dom.value = 'en_GB'; form.dom.submit()}, display:'English'};
+        menuItems['español'] = {action:function() {inputHidden.dom.value = 'es_ES'; form.dom.submit()}, display:'español'};
+        menuItems['français'] = {action:function() {inputHidden.dom.value = 'fr_FR'; form.dom.submit()}, display:'français'};
+
+    languageMenu = new PopupMenu(menuItems, [languageLink], 'darkPopupList', true, true);
+    var pos = languageLink.getAbsolutePosition();
+    languageMenu.open(pos.x + languageLink.dom.offsetWidth + 10, pos.y + languageLink.dom.offsetHeight + 3, null, null, false, true);
+
+    return false;
+});
+</script>
+
+        <a class="i-button icon-enter" href="http://indico.cern.ch/event/73513/user/login?returnURL=http%3A%2F%2Findico.cern.ch%2Fevent%2F73513%2F">Login</a>
+      </div>
+    </div>
+</div>
+
+
+    <div class="eventHeaderButtonBar" >
+
+
+
+            <a id="exportIcala73513" href="#" class="exportIcal" data-id="a73513">
+                iCal export
+                <div class="leftCorner"></div>
+            </a>
+                
+<div id="icalExportPopupa73513" style="display:none" class="icalExportPopup">
+    <div class="iCalExportSection">
+        <div class="exportIcalHeader">Download current event:</div>
+         <a href="http://indico.cern.ch/event/73513/event.ics?detail=events">
+            <img src="http://indico.cern.ch/images/ical_grey.png" border="0" style="vertical-align: middle">
+              Event calendar file
+        </a>
+    </div>
+    
+    <div class="iCalExportSection">
+         <a href='http://indico.cern.ch/event/73513/event.ics?detail=contributions'>
+            <img src="http://indico.cern.ch/images/ical_grey.png" border="0" style="vertical-align: middle">
+             Detailed timetable calendar file
+         </a>
+    </div>
+
+
+    <div id="iCalSeparatora73513" class="icalSeparator" style="display:none"></div>
+    
+<div id="exportICalDialogs" style="display:none">
+    <div id="agreementApiKeya73513">
+        <div id="agreementApiKeyText" class="agreement">
+            <div>In order to enable an iCal export link, your account needs to have a key created. This key enables other applications to access data from within Indico even when you are neither using nor logged into the Indico system yourself with the link provided. Once created, you can manage your key at any time by going to 'My Profile' and looking under the tab entitled 'HTTP API'. Further information about HTTP API keys can be found in the Indico documentation.</div>
+        </div>
+        <input type="checkbox" id="agreeCheckBoxKeya73513" data-id="a73513" class="agreeCheckBoxKey"> I have read and understood the above.<br/>
+        <input id="agreementButtonKeya73513" data-id="a73513" type="submit" value="Accept & Create" disabled="disabled" class="agreementButtonKey"/>
+        <div style="display:inline;" id="progressPersistentKeya73513" data-id="a73513"></div>
+    </div>
+    <div id="agreementPersistentSignaturesa73513">
+        <div id="agreementPersistentSignaturesText" class="agreement">
+            <div>In conjunction with a having a key associated with your account, to have the possibility of exporting private event information necessitates the creation of a persistent key.  This new key is also associated with your account and whilst it is active the data which can be obtained through using this key can be obtained by anyone in possession of the link provided. Due to this reason, it is extremely important that you keep links generated with this key private and for your use only. If you think someone else may have acquired access to a link using this key in the future, you must immediately remove it from 'My Profile' under the 'HTTP API' tab and generate a new key before regenerating iCalendar links.</div>
+        </div>
+        <input type="checkbox" id="agreeCheckBoxPersistenta73513" data-id="a73513" class="agreeCheckBoxPersistent"> I have read and understood the above.<br/>
+        <input id="agreementButtonPersistenta73513" data-id="a73513" type="submit" value="Accept & Create" disabled="disabled" class="agreementButtonPersistent"/>
+        <div style="display:inline;" id="progressPersistentSignaturesa73513" data-id="a73513"></div>
+    </div>
+    <input id="publicLinka73513" type="text" class="apiURL" readonly/>
+    <input id="authLinka73513" type="text" class="apiURL" readonly/>
+</div>
+
+<div id="publicLinkWrappera73513"  class="iCalExportSection" style="display:none">
+    <div class="exportIcalHeader">Permanent link for public information only:</div>
+</div>
+
+<div id="authLinkWrappera73513" class="iCalExportSection" style="display:none">
+    <div id="exportIcalHeadera73513" class="exportIcalHeader" style="display:none">Permanent link for all public and protected information:</div>
+</div>
+
+
+
+
+    <div style="display:none">
+        <div id="extraInformationa73513">
+            <div class="note">Please use <strong>CTRL + C</strong> to copy this URL</div>
+            
+        <input type="checkbox" id="detailExporta73513"> Detailed timetable
+
+        </div>
+    </div>
+
+</div>
+
+
+    
+<script type="text/javascript">
+var setURLs = function(urls){
+    if($('#detailExporta73513').prop("checked")){
+        $('#publicLinka73513').val(urls["publicRequestDetailedURL"]).attr('title', urls["publicRequestDetailedURL"]);
+        $('#authLinka73513').val(urls["authRequestDetailedURL"]).attr('title', urls["authRequestDetailedURL"]);
+    }else{
+        $('#publicLinka73513').val(urls["publicRequestURL"]).attr('title', urls["publicRequestURL"]);
+        $('#authLinka73513').val(urls["authRequestURL"]).attr('title', urls["authRequestURL"]);
+    }
+};
+</script>
+
+
+    <script type="text/javascript">
+    exportPopups["a73513"] = new ExportIcalInterface(2, false, true, false, false, setURLs, 'event.api.getExportURLs', {confId:"73513"}, {"authRequestURL": "", "authRequestDetailedURL": "", "publicRequestURL": "https:\/\/indico.cern.ch\/export\/event\/73513.ics", "publicRequestDetailedURL": "https:\/\/indico.cern.ch\/export\/event\/73513.ics?detail=contributions"}, "a73513", "");
+
+    $("body").delegate('#detailExporta73513', "click", function(e) {
+        setURLs(exportPopups["a73513"].getRequestURLs());
+    });
+
+    </script>
+
+
+            
+
+<a><div id="moreMenu" class="dropDownMenuGrey" href="#">More</div><div class="leftCorner"></div></a>
+
+<form id="layoutForm" action="http://indico.cern.ch/event/73513/other-view" style="margin: 0px; display: inline">
+    <input id="layoutFormInput" type="hidden" name="view" value="standard" />
+</form>
+
+<script type="text/javascript">
+
+var moreMenu = $E('moreMenu');
+
+var layoutForm = $E('layoutForm');
+var layoutFormInput = $E('layoutFormInput');
+
+var layoutMenuItems = {};
+layoutMenuItems["administrative"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'administrative');
+    layoutForm.dom.submit();
+}, display: "Administrative style"};
+layoutMenuItems["cdsagenda_inline_minutes"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'cdsagenda_inline_minutes');
+    layoutForm.dom.submit();
+}, display: "CDS Agenda inline minutes"};
+layoutMenuItems["cdsagenda_olist"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'cdsagenda_olist');
+    layoutForm.dom.submit();
+}, display: "CDS Agenda ordered list"};
+layoutMenuItems["cdsagenda"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'cdsagenda');
+    layoutForm.dom.submit();
+}, display: "CDS Agenda style"};
+layoutMenuItems["nicecompact"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'nicecompact');
+    layoutForm.dom.submit();
+}, display: "Compact style"};
+layoutMenuItems["egee_meeting"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'egee_meeting');
+    layoutForm.dom.submit();
+}, display: "EGEE meeting"};
+layoutMenuItems["indico-weeks-view"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'indico-weeks-view');
+    layoutForm.dom.submit();
+}, display: "Indico Weeks View"};
+layoutMenuItems["standard"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'standard');
+    layoutForm.dom.submit();
+}, display: "Indico style"};
+layoutMenuItems["jacow"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'jacow');
+    layoutForm.dom.submit();
+}, display: "JACoW XML"};
+layoutMenuItems["lhcb_meeting"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'lhcb_meeting');
+    layoutForm.dom.submit();
+}, display: "LHCb meeting"};
+layoutMenuItems["static"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'static');
+    layoutForm.dom.submit();
+}, display: "Parallel"};
+layoutMenuItems["text"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'text');
+    layoutForm.dom.submit();
+}, display: "Simple text"};
+layoutMenuItems["xml"] = {action: function() {
+    layoutFormInput.setAttribute('value', 'xml');
+    layoutForm.dom.submit();
+}, display: "xml"};
+
+moreMenu.observeClick(function(e) {
+    var menuItems = {}
+    var menu = new PopupMenu(menuItems, [moreMenu], 'darkPopupList');
+
+    menuItems["downloadMaterial"] = {action: 'http://indico.cern.ch/event/73513/material/download', display: "Download material"};
+    menuItems["layout"] = {action: new PopupMenu(layoutMenuItems, [moreMenu, menu], 'darkPopupList', null, null, null, ''), display: "Layout"};
+
+    var pos = moreMenu.getAbsolutePosition();
+    menu.open(pos.x - 8, pos.y + 20);
+    return false;
+});
+
+
+
+
+</script>
+
+
+        <div class="separator"></div>
+
+        <a id="manageEventButton" href="http://indico.cern.ch/event/73513/manage/"
+           style="background-image: url(http://indico.cern.ch/images/manage.png)"></a>
+    </div>
+
+
+    <!-- This div is used for inserting content under the header
+         such as the filtering optionsfor meetings -->
+    <div id="pageSubHeader"></div>
+
+
+</div>
+
+
+<script type="text/javascript">
+$(function() {
+    function createTooltip(element, tooltipText) {
+        element.qtip({
+            content: {
+                text: $("<span style='padding:3px' />").append(tooltipText)
+            }
+        });
+    }
+
+    createTooltip($('#homeButton'), 'Go to Indico Home Page');
+    createTooltip($('#firstEventButton'), 'Oldest event');
+    createTooltip($('#previousEventButton'), 'Older event');
+    createTooltip($('#upToCategoryButton'), 'Up to category');
+    createTooltip($('#nextEventButton'), 'Newer event');
+    createTooltip($('#lastEventButton'), 'Newest event');
+    createTooltip($('#printButton'), 'Printable version');
+    createTooltip($('#manageEventButton'), 'Switch to management area for this event');
+
+    $(".exportIcal").click(function(){
+        $(this).trigger('menu_select');
+    });
+
+});
+
+</script>
+
+
+
+<div class="conf clearfix" itemscope itemtype="http://schema.org/Event">
+    <div class="confheader clearfix" >
+        <div class="confTitleBox" >
+            <div class="confTitle">
+                <h1>
+                    <a href="http://indico.cern.ch/event/73513/">
+                        <span class="conferencetitlelink" >
+                                <div class="confLogoBox">
+                                   <img src="http://indico.cern.ch/event/73513/logo" alt=" ICHEP 2010" border="0" class="confLogo" >
+                                </div>
+                            <span itemprop="title"> ICHEP 2010</span>
+                        </span>
+      </a>
+                </h1>
+           </div>
+        </div>
+        <div class="confSubTitleBox" >
+            <div class="confSubTitleContent">
+                <div id="UIMiniSearchBox" class="confSearchBox">
+<form class="UIForm" method="GET" action="http://indico.cern.ch/search" id="searchBoxForm" style="margin: 0; padding: 0;">
+    <input class="searchButton" type="submit" value="Search" />
+    <input type="text" id="searchText" name="p" class="searchField" />
+    <input type="hidden" name="confId" value="73513"/>
+    
+    
+</form>
+</div>
+
+                <div class="confSubTitle" >
+                   <div class="datePlace">
+                        <div class="date">22-28 July 2010</div>
+                        <div class="place">Palais des Congrès de Paris</div>
+                        <div class="timezone">Europe/Paris timezone</div>
+                    </div>
+                        <div class="nowHappening" >
+
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="confSectionsBox" class="clearfix">
+      <!--Left menu-->
+  <div class="conf_leftMenu">
+    <ul id="outer" class="clearfix">
+
+            <li id="menuLink_Home"
+                class="menuConfTitle"
+            >
+              <a href="http://www.ichep2010.fr"
+                   target=""
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Home</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li id="menuLink_Local Organizing Committee"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/event/73513/page/5"
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Local Organizing Committee</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li id="menuLink_IAC"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/event/73513/page/4"
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">International Advisory Committee</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li id="menuLink_List of Coordinators"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/event/73513/page/3"
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Country Coordinators</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li id="menuLink_programme"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/event/73513/program"
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Tracks and Conveners</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li class="spacer"></li>
+
+            <li id="menuLink_Registration"
+                class="menuConfTitle"
+            >
+              <a href="http://www.ichep2010.fr/formulaire.html"
+                   target=""
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Registration</font></a>
+
+            <ul class="inner">
+              <li id="menuLink_Payment"
+                     class="menuConfMiddleCell"
+              >
+                <a href="http://www.ichep2010.fr/registration-Payment.html"
+               ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Payment</font></a>
+              </li>
+            </ul>
+          </li>
+
+            <li id="menuLink_CFA"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/event/73513/call-for-abstracts/"
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Submit Contributions</font></a>
+
+            <ul class="inner">
+              <li id="menuLink_ViewAbstracts"
+                     class="menuConfMiddleCell"
+              >
+                <a href="http://indico.cern.ch/event/73513/call-for-abstracts/my-abstracts"
+               ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">View my abstracts</font></a>
+              </li>
+            </ul>
+          </li>
+
+            <li id="menuLink_Specifications for posters and parallel talks"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/event/73513/page/8"
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Specifications for posters & talks</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li class="spacer"></li>
+
+            <li id="menuLink_Timetable"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/conferenceTimeTable.py?confId=73513&ttLyt=room#all.detailed"
+                   target=""
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Timetable (with slides and videos)</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li id="menuLink_Timetable (compact PDF format)"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/getFile.py/access?resId=0&materialId=minutes&confId=73513"
+                   target=""
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Timetable (compact PDF format)</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li id="menuLink_List of Participants"
+                class="menuConfTitle"
+            >
+              <a href="http://www.ichep2010.fr/Participants.pdf"
+                   target=""
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">List of Participants</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li id="menuLink_speakerIndex"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/event/73513/speakers"
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">List of Speakers</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li id="menuLink_contributionList"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/event/73513/contributions"
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">List of Contributions</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li id="menuLink_Book of Abstracts"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/getFile.py/access?resId=0&materialId=poster&confId=73513"
+                   target=""
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Book of Abstracts</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li id="menuLink_Live webcast"
+                class="menuConfTitle"
+            >
+              <a href="http://webcast.in2p3.fr/2010/ichep/"
+                   target="_blank"
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Webcast videos  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font> <img src="http://indico.cern.ch/conferenceDisplay.py/getPic?picId=20&confId=73513" alt="webcast" style="border: 0px solid ; height: 26px; width: 25px;" title="" valign="top"></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li class="spacer"></li>
+
+            <li id="menuLink_Proceedings"
+                class="menuConfTitle"
+            >
+              <a href="http://indico.cern.ch/event/73513/page/12"
+              ><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">Proceedings</font></a>
+
+            <ul class="inner">
+            </ul>
+          </li>
+
+            <li class="spacer"></li>
+    </ul>
+  </div>
+
+    
+            <div class="confBodyBox clearfix">
+
+                                    <div>
+                                        <div></div>
+                                        <div class="breadcrumps"><a href="http://indico.cern.ch/event/73513/"> Home</a></div>
+                                        <div style="float:right;"></div>
+                                    </div>
+                <!--Main body-->
+                                    <div class="mainContent">
+                                        <div class="col2">
+                                        <div class="conferenceDetails">
+  <div itemprop="description" class="description "><table style="width: 70%;"><tbody><tr><td align="justify">
+<p> </p>
+<p> </p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">The French particle physics community is particularly proud to have been selected to host the 35th ICHEP conference in 2010 in Paris. This conference is the focal point of all our field since more than fifty years and is the reference event where all important results in particle physics cosmology and astroparticles are presented and discussed. This alone sufficed to make this event very important. But in 2010, a coincidence of exceptional events made this conference even more attractive! What is then so special about ICHEP 2010 conference? It was the first ICHEP conference where physics results obtained at the LHC were presented! New results about the elusive Higgs boson, or signals of physics beyond the standard model were therefore expected at this conference! Major discoveries in other domains such as gravitational waves, neutrino telescopes, neutrino oscillations, dark matter or in the flavour sector were also possible, just to name a few.</p>
+
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">In addition , 2010 is an important date to shape up the future of our field. Several major projects presented the status of their Conceptual or Engineering Design Reports during the conference. The International Linear Collider (ILC) Global Design Effort team presented the report corresponding to the end of their Technical Design Phase 1. The Compact Linear Collider (CLIC) also reported on its Conceptual Design Report. Other major projects such as Super B factories were also presented. These reports together with LHC physics results will form the basis for key political decisions needed to be taken in the years to come.</font></p>
+
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">In summary, there can be no doubt that Paris was the place to be in summer 2010 for anyone interested in High Energy Physics and we made every effort to make your stay as interesting and enjoyable as possible.</font></p>
+
+<p>The next ICHEP conference, <a href="http://www.ichep2012.com.au/">ICHEP2012</a>, will take place in Australia.</p></td>    </tr> </tbody></table></div>
+
+  <div class="grid">
+  <div class="info_line date">
+      <span  title="Date/Time" class="icon icon-time" aria-hidden="true"></span>
+      <div class="text">
+        <div class="date_start">Starts <span class="datetime">22 Jul 2010 08:00</span></div>
+        <div class="date_end">Ends <span class="datetime">28 Jul 2010 18:00</span></div>
+        <div class="timezone">Europe/Paris</div>
+      </div>
+  </div>
+
+    <div class="info_line location">
+        <span title="Location" class="icon icon-location" aria-hidden="true"></span>
+        <div class="place text">
+          Palais des Congrès de Paris
+        </div>
+        <div class="address text nohtml">2 place de la Porte Maillot
+Paris 17</div>
+    </div>
+
+
+  <div class="info_line material">
+      <span title="Materials" class="icon icon-material-download" aria-hidden="true"></span>
+          <ul class="text" style="float: left; padding: 0">
+              <li></li>
+              <li><a href="http://indico.cern.ch/event/73513/material/minutes/">Minutes</a></li>
+              <li><a href="http://indico.cern.ch/event/73513/material/paper/">Paper</a></li>
+              <li><a href="http://indico.cern.ch/event/73513/material/poster/">Poster</a></li>
+              <li><a href="http://indico.cern.ch/event/73513/material/slides/">Slides</a></li>
+          </ul>
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+      $('.chair_list .nomail').qtip({
+             content: {
+                 text: $T("Login to see email address"),
+             },
+         });
+
+
+</script>
+
+                                        </div>
+                                  </div>
+            </div>
+    </div>
+</div>
+</div></div>
+<div id="footer" class="longFooter footer">
+
+    <div class="mobile-footer" style="display:none">
+        Classic | <a id="mobileURL" style="font-size:11px !important" href="https://indicomobile.cern.ch"><span class="icon icon-mobile"></span>Mobile</a>
+    </div>
+     <script type="text/javascript">
+             $("#mobileURL").prop("href", $("#mobileURL").prop("href") + "/event/"+73513);
+         if($.mobileBrowser) {
+                $(".mobile-footer").show();
+         }
+     </script>
+  
+<script>
+    $(document).ready(function() {
+        $('h1, .subLevelTitle, .subEventLevelTitle, .topLevelTitle').mathJax();
+    });
+</script>
+    
+<div id="fb-root"></div>
+
+<div id="social_share">
+  <h3>Share this page</h3>
+  <label for="direct_link">Direct link:</label>
+  <input id="direct_link" type="text" value="http://indico.cern.ch/e/ICHEP2010" readonly/>
+  <div class="note">Please use <strong>CTRL + C</strong> to copy this URL</div>
+  <div>
+    <h4>Social networks</h4>
+    <div class="social_site">
+      <span id="fb-loading">Loading...</span>
+      <fb:like id="fb-like" send="false" layout="standard" width="100" show-faces="false" colorscheme="light" font="verdana"></fb:like>
+    </div>
+    <div class="social_site">
+      <g:plusone size="medium"></g:plusone>
+    </div>
+    <div class="social_site">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>
+    </div>
+  </div>
+  <div>
+    <h4>Calendaring</h4>
+  </div>
+  <div class="social_site">
+    <a href="http://www.google.com/calendar/event?dates=20100722T060000Z%2F20100728T160000Z&text=+ICHEP+2010&details=%3Ctable+style%3D%22width%3A+70%25%3B%22%3E%3Ctbody%3E%3Ctr%3E%3Ctd+align%3D%22justify%22%3E%0D%0A%3Cp%3E%C2%A0%3C%2Fp%3E%0D%0A%3Cp%3E%C2%A0%3C%2Fp%3E%0D%0A%3Cp%3E%3Cfont+face%3D%22Verdana%2C+Arial%2C+Helvetica%2C+sans-serif%22+size%3D%22-2%22%3EThe+French+particle+physics+community+is+particularly+proud+to+have+been+selected+to+host+the+35th+ICHEP+conference+in+2010+in+Paris.+This+conference+is+the+focal+point+of+all+our+field+since+more+than+fifty+years+and+is+the+reference+event+where+all+important+results+in+particle+physics+cosmology+and+astroparticles+are+presented+and+discussed.+This+alone+sufficed+to+make+this+event+very+important.+But+in+2010%2C+a+coincidence+of+exceptional+events+made+this+conference+even+more+attractive%21+What+is+then+so+special+about+ICHEP+2010+conference%3F+It+was+the+first+ICHEP+conference+where+physics+results+obtained+at+the+LHC+were+presented%21+New+results+about+the+elusive+Higgs+boson%2C+or+signals+of+physics+beyond+the+standard+model+were+therefore+expected+at+this+conference%21+Major+discoveries+in+other+domains+such+as+gravitational+waves%2C+neutrino+tele...%0A%0Ahttp%3A%2F%2Findico.cern.ch%2Fe%2FICHEP2010&sprop=%5B%27http%3A%2F%2Findico.cern.ch%2Fevent%2F73513%2F%27%2C+%27name%3Aindico%27%5D&action=TEMPLATE&trp=False&location=Palais+des+Congr%C3%A8s+de+Paris" target="_blank"><img src="//www.google.com/calendar/images/ext/gc_button1.gif" alt="0" border="0"></a>
+  </div>
+</div>
+
+<div id="social" data-url="http://indico.cern.ch/e/ICHEP2010" data-theme="light" data-app-data="{&#34;active&#34;: true, &#34;facebook&#34;: {&#34;appId&#34;: &#34;269567379750914&#34;}}">
+  <img src="http://indico.cern.ch/images/social.png" alt="Social Networks"
+       title="Social Networks" id="social_button"/>
+</div>
+
+    
+    <a id="cern_link" href="http://www.cern.ch">
+      <img src="http://indico.cern.ch/images/cern_small.png" alt="Indico - Integrated Digital Conference" class="cern_logo" style="vertical-align: middle; margin-right: 12px;"/>
+    </a>
+    <div class="text" style="width: 200px">Powered by  <a href="http://indico-software.org">Indico</a></div>
+
+            
+
+        
+<script type="text/javascript">
+var _paq = _paq || [];
+(function(){
+    var u=(("https:" == document.location.protocol) ? "https://" : "http://");
+    u += 'piwik.web.cern.ch/';
+    _paq.push(['setSiteId', 56]);
+    _paq.push(['setCustomVariable', '1', 'Conference', '73513', 'page']);
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; 
+    g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
+s.parentNode.insertBefore(g,s); })();
+</script>
+
+
+
+
+</div>
+
+  <!-- worker: indico-wk1 -->
+
+    </body>
+</html>
+               

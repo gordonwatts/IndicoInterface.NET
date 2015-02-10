@@ -57,35 +57,33 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="info">The agenda we should get the data for</param>
         /// <returns>The parsed XML data. Throws an exception if it can't find what it needs</returns>
+        /// <remarks>
+        /// If bad XML is returned, it could be because only the new format URL's are being used. In which case
+        /// we will re-try with a new format URL. If that is successful, then we will mark the site as white listed.
+        /// </remarks>
         public async Task<IndicoDataModel.iconf> GetFullConferenceData(AgendaInfo info)
         {
-            using (var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info)))
+            try
             {
-                return _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
+                using (var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info)))
+                {
+                    return _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                // This is the bad XML error...
+                if (WhileListInfo.CanUseEventFormat(info))
+                    throw; // We already tried the new format!
+            }
+
+            using (var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info, useEventFormat: true)))
+            {
+                var r = _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
+                WhileListInfo.AddSiteThatUsesEventFormat(info.AgendaSite);
+                return r;
             }
         }
-
-        /// <summary>
-        /// Sometimes these agenda guys send out bad XML. Do our best to clean it up!
-        /// </summary>
-        /// <param name="lines"></param>
-        /// <returns></returns>
-        //private string CleanAgendaXML(string lines)
-        //{
-        //    int startOfXML = lines.IndexOf("<?xml");
-        //    if (startOfXML < 0)
-        //    {
-        //        throw new ArgumentException("XML returned from meeting didn't contains starting XML tag (" + this.AgendaFullXML + ")");
-        //    }
-        //    lines = lines.Substring(startOfXML);
-        //    int endOfXML = lines.IndexOf("</iconf");
-        //    if (endOfXML < 0)
-        //    {
-        //        throw new ArgumentException("XML returned from meeting didn't contain ending </iconf> tag (" + AgendaFullXML + ")");
-        //    }
-        //    lines = lines.Substring(0, endOfXML + 8);
-        //    return lines;
-        //}
 
         /// <summary>
         /// Get the conference data in a normalized format

@@ -59,6 +59,12 @@
     <Compile Include="t_ActiveNet.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="73513-bad.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="73513-good.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="boost2010.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

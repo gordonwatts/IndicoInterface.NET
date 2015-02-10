@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace IndicoInterface.NET
 {
@@ -30,6 +31,15 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <remarks>Start with CERN in here - as it is the one we know about as we write this.</remarks>
         private static HashSet<string> _useEventFormat = null;
+
+        /// <summary>
+        /// Return the list of sites on the white list. Usually only used for testing.
+        /// </summary>
+        /// <returns></returns>
+        public static string[] GetUseEventWhitelist()
+        {
+            return _useEventFormat.ToArray();
+        }
 
         /// <summary>
         /// Static ctor to setup list properly.

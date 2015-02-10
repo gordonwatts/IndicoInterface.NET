@@ -1,6 +1,7 @@
 ﻿using IndicoInterface.NET.SimpleAgendaDataModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -50,6 +51,9 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual("ICHEP 2010", (await al.GetNormalizedConferenceData(a)).Title, "Title is incorrect");
         }
 
+        /// <summary>
+        /// Single file feedback.
+        /// </summary>
         class FileReader : IUrlFetcher
         {
             private string _fname;
@@ -60,6 +64,32 @@ namespace IndicoInterface.NET.Test
             public Task<StreamReader> GetDataFromURL(Uri uri)
             {
                 var fi = new FileInfo(_fname);
+                Assert.IsTrue(fi.Exists);
+
+                return Task<StreamReader>.Factory.StartNew(() =>
+                {
+                    return fi.OpenText();
+                });
+            }
+        }
+
+        /// <summary>
+        /// Multifile feedback.
+        /// </summary>
+        class MultiFileReader : IUrlFetcher
+        {
+            private Dictionary<string, string> _fnameLookup;
+            public MultiFileReader(Dictionary<string, string> lookup)
+            {
+                _fnameLookup = lookup;
+            }
+            public Task<StreamReader> GetDataFromURL(Uri uri)
+            {
+                if (!_fnameLookup.ContainsKey(uri.OriginalString))
+                {
+                    throw new ArgumentException(string.Format("Unknown URI requested {0} in test.", uri.OriginalString));
+                }
+                var fi = new FileInfo(_fnameLookup[uri.OriginalString]);
                 Assert.IsTrue(fi.Exists);
 
                 return Task<StreamReader>.Factory.StartNew(() =>
@@ -527,6 +557,31 @@ namespace IndicoInterface.NET.Test
                             where st.SlideURL != null
                             select st.SlideURL;
             Assert.IsFalse(allSTURLs.Any(u => u.Contains("\n")), "A sub talk url contains a carrage return character!");
+        }
+
+        [TestMethod]
+        [DeploymentItem("73513-bad.xml")]
+        [DeploymentItem("73513-good.xml")]
+        public async Task FallBackToNewEventURL()
+        {
+            // Try a non-white listed site, when that fails with bad HTML, see if we can get it with the
+            // new one. If successful the site shoudl be added to the list of white listed sites.
+
+            WhileListInfo.ClearWhiteLists(); // Make sure CERN isn't on there!
+            var fileloaders = new Dictionary<string, string> {
+                {"http://indico.cern.ch/conferenceOtherViews.py?confId=73513&view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", "73513-bad.xml"},
+                {"http://indico.cern.ch/event/73513/other-view?view=xml", "73513-good.xml"}
+            };
+            var rdr = new MultiFileReader(fileloaders);
+
+            var ai = new AgendaInfo("https://indico.cern.ch/conferenceDisplay.py?confId=73513");
+            var al = new AgendaLoader(rdr);
+            var data = await al.GetNormalizedConferenceData(ai);
+
+            Assert.AreEqual("ICHEP 2010", data.Title);
+
+            Assert.AreEqual(1, WhileListInfo.GetUseEventWhitelist().Length);
+            Assert.AreEqual("indico.cern.ch", WhileListInfo.GetUseEventWhitelist()[0]);
         }
     }
 }
