@@ -26,8 +26,9 @@ namespace IndicoInterface.NET
         /// Return the URL that will get the full XML.
         /// </summary>
         /// <param name="info">Agenda the URL is desired for</param>
+        /// <param name="useEventFormat">If true it will use the new event format url, if false, it will not unless site is on whitelist.</param>
         /// <returns>A URI that should return the XML from the agenda server</returns>
-        public Uri GetAgendaFullXMLURL(AgendaInfo info)
+        public Uri GetAgendaFullXMLURL(AgendaInfo info, bool useEventFormat = false)
         {
             StringBuilder bld = new StringBuilder();
             bld.AppendFormat("http://{0}/", info.AgendaSite);
@@ -35,7 +36,7 @@ namespace IndicoInterface.NET
             {
                 bld.AppendFormat("{0}/", info.AgendaSubDirectory);
             }
-            if (WhileListInfo.CanUseEventFormat(info))
+            if (WhileListInfo.CanUseEventFormat(info) || useEventFormat)
             {
                 bld.AppendFormat("event/{0}/other-view?view=xml", info.ConferenceID);
             }

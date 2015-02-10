@@ -26,6 +26,14 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        public void NonWhiteListConferenceURLAsEventFormat()
+        {
+            AgendaInfo a = new AgendaInfo("http://indicoo.cern.ch/conferenceDisplay.py?confId=73513");
+            var al = new AgendaLoader(null);
+            Assert.AreEqual("http://indicoo.cern.ch/event/73513/other-view?view=xml", al.GetAgendaFullXMLURL(a, useEventFormat: true).OriginalString);
+        }
+
+        [TestMethod]
         public void NonWhiteListConferenceURL()
         {
             AgendaInfo a = new AgendaInfo("http://indicoo.cern.ch/conferenceDisplay.py?confId=73513");
