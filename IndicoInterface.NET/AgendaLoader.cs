@@ -38,7 +38,7 @@ namespace IndicoInterface.NET
             }
             if (WhiteListInfo.CanUseEventFormat(info) || useEventFormat)
             {
-                bld.AppendFormat("event/{0}/other-view?view=xml", info.ConferenceID);
+                bld.AppendFormat("event/{0}/other-view?view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", info.ConferenceID);
             }
             else
             {
