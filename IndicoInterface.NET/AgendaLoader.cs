@@ -31,12 +31,16 @@ namespace IndicoInterface.NET
         public Uri GetAgendaFullXMLURL(AgendaInfo info, bool useEventFormat = false)
         {
             StringBuilder bld = new StringBuilder();
-            bld.AppendFormat("http://{0}/", info.AgendaSite);
+
+            var useNewFormat = WhiteListInfo.CanUseEventFormat(info) || useEventFormat;
+            bld.AppendFormat("http{1}://{0}/", info.AgendaSite, useNewFormat ? "s" : "");
+
             if (!string.IsNullOrWhiteSpace(info.AgendaSubDirectory))
             {
                 bld.AppendFormat("{0}/", info.AgendaSubDirectory);
             }
-            if (WhiteListInfo.CanUseEventFormat(info) || useEventFormat)
+
+            if (useNewFormat)
             {
                 bld.AppendFormat("event/{0}/other-view?view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", info.ConferenceID);
             }
@@ -44,6 +48,7 @@ namespace IndicoInterface.NET
             {
                 bld.AppendFormat("conferenceOtherViews.py?confId={0}&view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", info.ConferenceID);
             }
+
             return new Uri(bld.ToString());
         }
 

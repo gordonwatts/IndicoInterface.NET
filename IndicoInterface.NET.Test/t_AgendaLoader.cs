@@ -23,7 +23,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo a = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=73513");
             var al = new AgendaLoader(null);
-            Assert.AreEqual("http://indico.cern.ch/event/73513/other-view?view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", al.GetAgendaFullXMLURL(a).OriginalString);
+            Assert.AreEqual("https://indico.cern.ch/event/73513/other-view?view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", al.GetAgendaFullXMLURL(a).OriginalString);
         }
 
         [TestMethod]
@@ -31,7 +31,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo a = new AgendaInfo("http://indicoo.cern.ch/conferenceDisplay.py?confId=73513");
             var al = new AgendaLoader(null);
-            Assert.AreEqual("http://indicoo.cern.ch/event/73513/other-view?view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", al.GetAgendaFullXMLURL(a, useEventFormat: true).OriginalString);
+            Assert.AreEqual("https://indicoo.cern.ch/event/73513/other-view?view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", al.GetAgendaFullXMLURL(a, useEventFormat: true).OriginalString);
         }
 
         [TestMethod]
@@ -570,7 +570,7 @@ namespace IndicoInterface.NET.Test
             WhiteListInfo.ClearWhiteLists(); // Make sure CERN isn't on there!
             var fileloaders = new Dictionary<string, string> {
                 {"http://indico.cern.ch/conferenceOtherViews.py?confId=73513&view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", "73513-bad.xml"},
-                {"http://indico.cern.ch/event/73513/other-view?view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", "73513-good.xml"}
+                {"https://indico.cern.ch/event/73513/other-view?view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", "73513-good.xml"}
             };
             var rdr = new MultiFileReader(fileloaders);
 
