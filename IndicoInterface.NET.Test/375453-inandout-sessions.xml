@@ -1,0 +1,1241 @@
+<?xml version="1.0"?>
+<iconf>
+ <ID>375453</ID>
+ <category>ATLAS Weekly</category>
+ <parentProtection>true</parentProtection>
+ <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"], ["0", "Video in CDS"]]</materialList>
+ <iCalLink>https://indico.cern.ch/event/375453/event.ics</iCalLink>
+ <announcer>
+  <user>
+   <title/>
+   <name first="Martine" middle="" last="Desnyder-Ivesdal"/>
+   <organization>CERN</organization>
+   <emailHash>0c23fc14ac1fcc6899a8b2a962893cb9</emailHash>
+   <userid>6558</userid>
+  </user>
+ </announcer>
+ <supportEmail caption="Support">martine.desnyder-ivesdal@cern.ch</supportEmail>
+ <title>ATLAS Weekly</title>
+ <description>&lt;font color="red"&gt;&lt;b&gt;Vidyo PIN is 240215 &lt;/b&gt; &lt;/font&gt;
+&lt;br&gt; &lt;br&gt;
+&lt;b&gt;&lt;u&gt;Meeting Sequence&lt;/u&gt;&lt;/b&gt;
+&lt;p&gt;
+Every Tuesday during NON-EB WEEKS from 14.00-16.00 starting 1 December 2009.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;u&gt;Help:&lt;/u&gt;&lt;/b&gt;
+&lt;p&gt;
+For technical questions or problems, please contact:
+&lt;a href="mailto:hn-atlas-collaborativeTools@cern.ch"&gt;hn-atlas-collaborativeTools@cern.ch&lt;/a&gt;.&lt;br /&gt;
+Documentation available at
+&lt;a href="http://cern.ch/atlas-collaborative-tools/meeting-support"&gt;http://cern.ch/atlas-collaborative-tools/meeting-support&lt;/a&gt;.
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;
+</description>
+ <participants/>
+ <closed>False</closed>
+ <location>
+  <name>CERN</name>
+  <address/>
+  <room>40-S2-C01 - Salle Curie</room>
+  <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/S2-C01']</roomMapURL>
+ </location>
+ <startDate>2015-02-24T14:00:00</startDate>
+ <endDate>2015-02-24T14:50:00</endDate>
+ <creationDate>2015-02-18T12:01:38</creationDate>
+ <modificationDate>2015-02-25T09:43:05</modificationDate>
+ <timezone>Europe/Zurich</timezone>
+ <chair>
+  <user>
+   <title/>
+   <name first="Dave" middle="" last="Charlton"/>
+   <organization>University of Birmingham (GB)</organization>
+   <emailHash>6ce9bb42c844e41e6765cd7f7000b1ff</emailHash>
+  </user>
+  <user>
+   <title/>
+   <name first="Beniamino" middle="" last="Di Girolamo"/>
+   <organization>CERN</organization>
+   <emailHash>3ca7fa361cf8e8470551fde03ca1e081</emailHash>
+  </user>
+ </chair>
+ <contribution color="" textcolor="">
+  <ID>0</ID>
+  <parentProtection>true</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"], ["0", "Video in CDS"]]</materialList>
+  <title>Items from Run Coordination</title>
+  <speakers>
+   <user>
+    <title/>
+    <name first="Alessandro" middle="" last="Polini"/>
+    <organization>U &amp; INFN Bologna</organization>
+    <emailHash>91aa6d47b3659164164bb3ad65403a20</emailHash>
+   </user>
+  </speakers>
+  <location>
+   <name>CERN</name>
+   <address/>
+   <room>40-S2-C01 - Salle Curie</room>
+   <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/S2-C01']</roomMapURL>
+  </location>
+  <startDate>2015-02-24T14:00:00</startDate>
+  <endDate>2015-02-24T14:10:00</endDate>
+  <duration>00:10</duration>
+  <abstract/>
+  <material>
+   <ID>slides</ID>
+   <title>Slides</title>
+   <description/>
+   <type/>
+   <displayURL>https://indico.cern.ch/event/375453/contribution/0/material/slides/</displayURL>
+   <files>
+    <file>
+     <name>2015-02-24-eb.pdf</name>
+     <type>pdf</type>
+     <url>https://indico.cern.ch/event/375453/contribution/0/material/slides/1.pdf</url>
+    </file>
+    <file>
+     <name>2015-02-24-eb.pptx</name>
+     <type>ppt</type>
+     <url>https://indico.cern.ch/event/375453/contribution/0/material/slides/0.pptx</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <session color="#FFEC1F" textcolor="#1F1D04">
+  <ID>0</ID>
+  <parentProtection>true</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"], ["0", "Video in CDS"]]</materialList>
+  <code>sess0-1</code>
+  <title>Paper presentations</title>
+  <description/>
+  <location>
+   <name>CERN</name>
+   <address/>
+   <room>40-S2-C01 - Salle Curie</room>
+   <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/S2-C01']</roomMapURL>
+  </location>
+  <startDate>2015-02-24T14:15:00</startDate>
+  <endDate>2015-02-24T14:50:00</endDate>
+  <duration>00:35</duration>
+  <contribution color="#FFEC1F" textcolor="#1F1D04">
+   <ID>1</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"], ["0", "Video in CDS"]]</materialList>
+   <title>Measurement of the correlation between flow harmonics of different order in lead--lead collisions at $\sqrt{s_{_{\mathrm{NN}}}}$=2.76 TeV with the ATLAS detector</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="Soumya" middle="" last="Mohapatra (via Vidyo)"/>
+     <organization>Columbia U</organization>
+     <emailHash>098f3c097bb6400e64dd2de0d2eee4aa</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-S2-C01 - Salle Curie</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/S2-C01']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T14:15:00</startDate>
+   <endDate>2015-02-24T14:19:00</endDate>
+   <duration>00:04</duration>
+   <abstract/>
+   <material>
+    <ID>0</ID>
+    <title>Paper draft</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/1/material/0/</displayURL>
+    <files>
+     <file>
+      <name>https://cds.cern.ch/record/1992683?</name>
+      <type>link</type>
+      <url>https://cds.cern.ch/record/1992683?</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/1/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>2015_02_24_ATLAS_Weekly.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/375453/session/0/contribution/1/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+  <contribution color="#FFEC1F" textcolor="#1F1D04">
+   <ID>2</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"], ["0", "Video in CDS"]]</materialList>
+   <title>Search for new phenomena in dijet angular distributions in proton-proton collisions at $\sqrt{s} = 8$~TeV measured with the ATLAS Detector</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="Meghan" middle="" last="Frate (via Vidyo)"/>
+     <organization>UC Irvine</organization>
+     <emailHash>6a34f869b391c91626a0699d1fc50b89</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-S2-C01 - Salle Curie</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/S2-C01']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T14:20:00</startDate>
+   <endDate>2015-02-24T14:24:00</endDate>
+   <duration>00:04</duration>
+   <abstract/>
+   <material>
+    <ID>0</ID>
+    <title>Paper draft</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/2/material/0/</displayURL>
+    <files>
+     <file>
+      <name>https://cds.cern.ch/record/1992684</name>
+      <type>link</type>
+      <url>https://cds.cern.ch/record/1992684</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/2/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>ATLASWeekly_angularDijets_022415.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/375453/session/0/contribution/2/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+  <contribution color="#FFEC1F" textcolor="#1F1D04">
+   <ID>3</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"], ["0", "Video in CDS"]]</materialList>
+   <title>Search for Type III Seesaw heavy leptons in $pp$ collisions at $\sqrt{s}$ = 8 TeV with the ATLAS Detector</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="Francesco" middle="" last="De Lorenzi"/>
+     <organization>Iowa SU</organization>
+     <emailHash>f1722027229f2a8fe4143491fdfdaec3</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-S2-C01 - Salle Curie</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/S2-C01']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T14:25:00</startDate>
+   <endDate>2015-02-24T14:29:00</endDate>
+   <duration>00:04</duration>
+   <abstract/>
+   <material>
+    <ID>0</ID>
+    <title>Paper draft</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/3/material/0/</displayURL>
+    <files>
+     <file>
+      <name>https://cds.cern.ch/record/1992908?</name>
+      <type>link</type>
+      <url>https://cds.cern.ch/record/1992908?</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/3/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>delorenzi_heavylepton_weekly.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/375453/session/0/contribution/3/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+  <contribution color="#FFEC1F" textcolor="#1F1D04">
+   <ID>4</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"], ["0", "Video in CDS"]]</materialList>
+   <title>Search for long-lived, weakly-interacting particles that decay to displaced hadronic jets in proton-proton collisions at sqrt(s) = 8 TeV with the ATLAS detector</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="Heather" middle="" last="Russell"/>
+     <organization>U of Washington</organization>
+     <emailHash>b84019853b55e3fa600742cd93cfc647</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-S2-C01 - Salle Curie</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/S2-C01']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T14:30:00</startDate>
+   <endDate>2015-02-24T14:34:00</endDate>
+   <duration>00:04</duration>
+   <abstract/>
+   <material>
+    <ID>0</ID>
+    <title>Paper draft</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/4/material/0/</displayURL>
+    <files>
+     <file>
+      <name>https://cds.cern.ch/record/1993516?</name>
+      <type>link</type>
+      <url>https://cds.cern.ch/record/1993516?</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/4/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>LLP_MSID_PaperPresentation.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/375453/session/0/contribution/4/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+  <contribution color="#FFEC1F" textcolor="#1F1D04">
+   <ID>5</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"], ["0", "Video in CDS"]]</materialList>
+   <title>Search for new light gauge bosons in Higgs boson decays to four-lepton events in $pp$ collisions at $\sqrt{s}=8~$TeV with the ATLAS detector at the LHC</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="Daniela Katherinne" middle="" last="Paredes Hernandez"/>
+     <organization>U of Thessaloniki</organization>
+     <emailHash>19ece272bd873cf8c0e5b0f3a76dc16d</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-S2-C01 - Salle Curie</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/S2-C01']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T14:35:00</startDate>
+   <endDate>2015-02-24T14:39:00</endDate>
+   <duration>00:04</duration>
+   <abstract/>
+   <material>
+    <ID>0</ID>
+    <title>Paper draft</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/5/material/0/</displayURL>
+    <files>
+     <file>
+      <name>https://cds.cern.ch/record/1993690?</name>
+      <type>link</type>
+      <url>https://cds.cern.ch/record/1993690?</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/5/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>HiggsDM.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/375453/session/0/contribution/5/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+  <contribution color="#FFEC1F" textcolor="#1F1D04">
+   <ID>6</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"], ["0", "Video in CDS"]]</materialList>
+   <title>Performance of b-Jet Identification in the ATLAS Experiment</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="James Alfred" middle="" last="Mueller (via Vidyo)"/>
+     <organization>U of Pittsburgh</organization>
+     <emailHash>e8ed952d019c97d0b55b683e61f7d34a</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-S2-C01 - Salle Curie</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/S2-C01']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T14:40:00</startDate>
+   <endDate>2015-02-24T14:44:00</endDate>
+   <duration>00:04</duration>
+   <abstract/>
+   <material>
+    <ID>0</ID>
+    <title>Paper draft</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/6/material/0/</displayURL>
+    <files>
+     <file>
+      <name>https://cds.cern.ch/record/1993756?</name>
+      <type>link</type>
+      <url>https://cds.cern.ch/record/1993756?</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/6/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>bjets-AtlasWeekly24Feb15.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/375453/session/0/contribution/6/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+  <contribution color="#FFEC1F" textcolor="#1F1D04">
+   <ID>7</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"], ["0", "Video in CDS"]]</materialList>
+   <title>A search for ttbar resonances using lepton plus jets events in proton-proton collisions at sqrt(s) = 8 TeV with the ATLAS detector</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="Thijs" middle="" last="Cornelissen"/>
+     <organization>BU Wuppertal</organization>
+     <emailHash>490983f012dc8e51294e89fda24133c7</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-S2-C01 - Salle Curie</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/S2-C01']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T14:45:00</startDate>
+   <endDate>2015-02-24T14:49:00</endDate>
+   <duration>00:04</duration>
+   <abstract/>
+   <material>
+    <ID>0</ID>
+    <title>Paper draft</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/7/material/0/</displayURL>
+    <files>
+     <file>
+      <name>https://cds.cern.ch/record/1993818</name>
+      <type>link</type>
+      <url>https://cds.cern.ch/record/1993818</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/375453/session/0/contribution/7/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>thijsttres.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/375453/session/0/contribution/7/material/slides/1.pdf</url>
+     </file>
+     <file>
+      <name>thijsttres.ppt</name>
+      <type>ppt</type>
+      <url>https://indico.cern.ch/event/375453/session/0/contribution/7/material/slides/0.ppt</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+ </session>
+ <line>
+  <fromDate>20150224</fromDate>
+  <toDate>20150224</toDate>
+ </line>
+ <material>
+  <ID>0</ID>
+  <title>Video in CDS</title>
+  <description/>
+  <type/>
+  <displayURL>https://indico.cern.ch/event/375453/material/0/</displayURL>
+  <files>
+   <file>
+    <name>http://cds.cern.ch/record/1994264</name>
+    <type>link</type>
+    <url>http://cds.cern.ch/record/1994264</url>
+   </file>
+  </files>
+  <types>
+   <type>
+    <name>doc</name>
+    <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+    <imgAlt>word file</imgAlt>
+   </type>
+   <type>
+    <name>ppt</name>
+    <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+    <imgAlt>powerpoint file</imgAlt>
+   </type>
+   <type>
+    <name>pdf</name>
+    <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+    <imgAlt>pdf file</imgAlt>
+   </type>
+   <type>
+    <name>odt</name>
+    <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+    <imgAlt>writer file</imgAlt>
+   </type>
+   <type>
+    <name>odp</name>
+    <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+    <imgAlt>presentation file</imgAlt>
+   </type>
+   <type>
+    <name>ods</name>
+    <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+    <imgAlt>spreadsheet file</imgAlt>
+   </type>
+   <type>
+    <name>other</name>
+    <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+    <imgAlt>unknown type file</imgAlt>
+   </type>
+   <type>
+    <name>link</name>
+    <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+    <imgAlt>link</imgAlt>
+   </type>
+  </types>
+ </material>
+ <material>
+  <ID>forthcoming webcast</ID>
+  <title>forthcoming webcast</title>
+  <description/>
+  <type/>
+  <displayURL>http://webcast.cern.ch</displayURL>
+ </material>
+ <plugins>
+  <collaboration>
+<!-- Needed for timezone awareness -->
+   <todayReference>2015-02-26</todayReference>
+   <tomorrowReference>2015-02-27</tomorrowReference>
+   <booking>
+    <id>4</id>
+    <kind>ongoing</kind>
+    <type>Vidyo</type>
+    <typeDisplayName>Vidyo public room</typeDisplayName>
+    <launchInfo>
+     <launchText>Join Now!</launchText>
+     <launchLink>http://vidyoportal.cern.ch/flex.html?roomdirect.html&amp;key=4af8VKwg24RY</launchLink>
+     <launchTooltip>Click here to join the Vidyo room!</launchTooltip>
+    </launchInfo>
+    <firstLineInfo>ATLAS_Weekly</firstLineInfo>
+    <information>
+     <section>
+      <title>Room name:</title>
+      <line>ATLAS_Weekly</line>
+     </section>
+     <section>
+      <title>Extension:</title>
+      <line>109286450</line>
+     </section>
+     <section>
+      <title>Meeting PIN:</title>
+      <line>This Vidyo room is protected by a PIN</line>
+     </section>
+     <section>
+      <title>Owner:</title>
+      <line>DESNYDER-IVESDAL, Martine</line>
+     </section>
+     <section>
+      <title>Auto-join URL:</title>
+      <linkLine>
+       <href>http://vidyoportal.cern.ch/flex.html?roomdirect.html&amp;key=4af8VKwg24RY</href>
+       <caption>http://vidyoportal.cern.ch/flex.html?roomdirect.html&amp;key=4af8VKwg24RY</caption>
+      </linkLine>
+     </section>
+     <section>
+      <title>Phone access:</title>
+      <line>&lt;a href="http://information-technology.web.cern.ch/services/fe/howto/users-join-vidyo-meeting-phone" target="_blank"&gt;Full List&lt;/a&gt;</line>
+     </section>
+     <section>
+      <title>Description:</title>
+      <line>Vidyo PIN is 240215</line>
+     </section>
+    </information>
+   </booking>
+  </collaboration>
+ </plugins>
+</iconf>

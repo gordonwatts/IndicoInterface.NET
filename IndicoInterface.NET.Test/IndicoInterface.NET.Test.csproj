@@ -59,6 +59,9 @@
     <Compile Include="t_ActiveNet.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="375453-inandout-sessions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="73513-bad.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

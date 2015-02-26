@@ -247,6 +247,46 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("375453-inandout-sessions.xml")]
+        public async Task TalksOutOfSession()
+        {
+            // In real life seems to be talks and not-talks that are in and out of sessions
+            AgendaInfo a = new AgendaInfo("http://indico.cern.ch/event/375453");
+            var al = new AgendaLoader(new FileReader("375453-inandout-sessions.xml"));
+            var data = await al.GetNormalizedConferenceData(a);
+
+            var title = data.Title;
+
+            var s1 = data.Sessions.Where(s => s.Title == "Paper presentations").FirstOrDefault();
+            Assert.IsNotNull(s1);
+            Assert.AreEqual(7, s1.Talks.Length);
+
+            var s2 = data.Sessions.Where(s => s.Title != "Paper presentations").FirstOrDefault();
+            Assert.IsNotNull(s2);
+            Assert.AreEqual(1, s2.Talks.Length);
+
+            Assert.AreEqual(s2.Talks[0].StartDate, s2.StartDate);
+            Assert.AreEqual(s2.Talks[0].EndDate, s2.EndDate);
+        }
+
+        [TestMethod]
+        [DeploymentItem("375453-inandout-sessions.xml")]
+        public async Task TalksOutOfSessionRawData()
+        {
+            // In real life seems to be talks and not-talks that are in and out of sessions
+            AgendaInfo a = new AgendaInfo("http://indico.cern.ch/event/375453");
+            var al = new AgendaLoader(new FileReader("375453-inandout-sessions.xml"));
+            var data = await al.GetFullConferenceData(a);
+
+            // Make sure there is a raw contribution associated with this guy
+            Assert.AreEqual(1, data.contribution.Length);
+
+            // And a separate session.
+            Assert.AreEqual(1, data.session.Length);
+            Assert.AreEqual(7, data.session[0].contribution.Length);
+        }
+
+        [TestMethod]
         [DeploymentItem("HCP2008.xml")]
         public async Task GetPPTOverPDF()
         {

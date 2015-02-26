@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IndicoInterface.NET.SimpleAgendaDataModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -129,10 +130,19 @@ namespace IndicoInterface.NET
             if (data.session != null)
             {
                 ///
-                /// We have a conference.
+                /// We have a conference or a meeting that has been split into sessions.
+                /// There can still be extra talks that are put in as if there were no sessions,
+                /// so we generate an extra session to handle that.
                 /// 
 
                 m.Sessions = ParseConference(data.session);
+                var extraSession = ParseTalksAsSession(data.contribution);
+                if (extraSession != null)
+                {
+                    m.Sessions = m.Sessions
+                        .Concat(new Session[] { extraSession })
+                        .ToArray();
+                }
             }
             else
             {
@@ -307,6 +317,29 @@ namespace IndicoInterface.NET
                                select ExtractTalkInfo(t);
                 result.Talks = alltalks.ToArray();
             }
+            return result;
+        }
+
+        /// <summary>
+        /// Given a list of contributions, turn them into an ad-hoc session.
+        /// </summary>
+        /// <param name="contribution"></param>
+        /// <returns></returns>
+        private Session ParseTalksAsSession(IndicoDataModel.contribution[] contribution)
+        {
+            if (contribution == null || contribution.Length == 0)
+                return null;
+
+            var result = new Session()
+            {
+                ID = "-1",
+                Title = "<ad-hoc session>",
+                Talks = (from t in contribution select ExtractTalkInfo(t)).ToArray()
+            };
+
+            result.StartDate = result.Talks.Select(t => t.StartDate).Min();
+            result.EndDate = result.Talks.Select(t => t.EndDate).Max();
+
             return result;
         }
 
