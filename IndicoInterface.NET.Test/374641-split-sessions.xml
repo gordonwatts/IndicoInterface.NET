@@ -1,0 +1,829 @@
+<?xml version="1.0"?>
+<iconf>
+ <ID>374641</ID>
+ <category>B-tagging</category>
+ <parentProtection>true</parentProtection>
+ <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+ <iCalLink>https://indico.cern.ch/event/374641/event.ics</iCalLink>
+ <announcer>
+  <user>
+   <title/>
+   <name first="Timothy Paul" middle="" last="Scanlon"/>
+   <organization>University of London (GB)</organization>
+   <emailHash>d924aa6baed2e84f2d9746c4f7606f7b</emailHash>
+   <userid>49529</userid>
+  </user>
+ </announcer>
+ <title>Flavour Tagging Weekly</title>
+ <description/>
+ <participants/>
+ <closed>False</closed>
+ <location>
+  <name>CERN</name>
+  <address/>
+  <room>40-R-C10</room>
+  <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+ </location>
+ <startDate>2015-02-24T16:30:00</startDate>
+ <endDate>2015-02-24T19:35:00</endDate>
+ <creationDate>2015-02-15T20:18:24</creationDate>
+ <modificationDate>2015-02-24T16:39:05</modificationDate>
+ <timezone>Europe/Zurich</timezone>
+ <chair>
+  <user>
+   <title/>
+   <name first="Timothy Paul" middle="" last="Scanlon"/>
+   <organization>CERN</organization>
+   <emailHash>d924aa6baed2e84f2d9746c4f7606f7b</emailHash>
+  </user>
+  <user>
+   <title/>
+   <name first="Giacinto" middle="" last="Piacquadio"/>
+   <organization>SLAC National Accelerator  Laboratory (US)</organization>
+   <emailHash>ef2b454d20989fd7b409b036df0d91cd</emailHash>
+  </user>
+ </chair>
+ <contribution color="" textcolor="">
+  <ID>7</ID>
+  <parentProtection>true</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Introduction</title>
+  <speakers>
+   <user>
+    <title/>
+    <name first="Timothy Paul" middle="" last="Scanlon"/>
+    <organization>University of London (GB)</organization>
+    <emailHash>d924aa6baed2e84f2d9746c4f7606f7b</emailHash>
+   </user>
+   <user>
+    <title/>
+    <name first="Giacinto" middle="" last="Piacquadio"/>
+    <organization>SLAC National Accelerator  Laboratory (US)</organization>
+    <emailHash>ef2b454d20989fd7b409b036df0d91cd</emailHash>
+   </user>
+  </speakers>
+  <location>
+   <name>CERN</name>
+   <address/>
+   <room>40-R-C10</room>
+   <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+  </location>
+  <startDate>2015-02-24T16:30:00</startDate>
+  <endDate>2015-02-24T16:40:00</endDate>
+  <duration>00:10</duration>
+  <abstract/>
+  <material>
+   <ID>slides</ID>
+   <title>Slides</title>
+   <description/>
+   <type/>
+   <displayURL>https://indico.cern.ch/event/374641/contribution/7/material/slides/</displayURL>
+   <files>
+    <file>
+     <name>intro_flavtag_240215.pdf</name>
+     <type>pdf</type>
+     <url>https://indico.cern.ch/event/374641/contribution/7/material/slides/1.pdf</url>
+    </file>
+    <file>
+     <name>intro_flavtag_240215.pptx</name>
+     <type>ppt</type>
+     <url>https://indico.cern.ch/event/374641/contribution/7/material/slides/0.pptx</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <session color="#4F144E" textcolor="#FFEFFF">
+  <ID>0</ID>
+  <parentProtection>true</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <code>sess0-1</code>
+  <title>Calibration Framework for Run 2</title>
+  <description/>
+  <location>
+   <name>CERN</name>
+   <address/>
+   <room>40-R-C10</room>
+   <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+  </location>
+  <startDate>2015-02-24T16:40:00</startDate>
+  <endDate>2015-02-24T17:25:00</endDate>
+  <duration>00:45</duration>
+  <contribution color="#4F144E" textcolor="#FFEFFF">
+   <ID>1</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+   <title>Flavour Tagging DxAODs</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="Abraham" middle="" last="DeBenedetti"/>
+     <organization>U. Minnesota</organization>
+     <emailHash>8d62784099baca2f1cd26436ace75af1</emailHash>
+    </user>
+    <user>
+     <title/>
+     <name first="Abraham" middle="" last="De Benedetti"/>
+     <organization>University of Oklahoma (US)</organization>
+     <emailHash>7e0a0f0b887fcb6f1d751a6dff2a40d0</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-R-C10</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T16:45:00</startDate>
+   <endDate>2015-02-24T16:50:00</endDate>
+   <duration>00:05</duration>
+   <abstract/>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/374641/session/0/contribution/1/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>Derivation_Status_2-24-15.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/374641/session/0/contribution/1/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+  <contribution color="#4F144E" textcolor="#FFEFFF">
+   <ID>3</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+   <title>Top Framework</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="Martin" middle="" last="Zur Nedden"/>
+     <organization>Humboldt-Universitaet zu Berlin (DE)</organization>
+     <emailHash>4c80b3cc2120bb6799657126237d6c0c</emailHash>
+    </user>
+    <user>
+     <title/>
+     <name first="Liza" middle="" last="Mijovic"/>
+     <organization>Universitaet Bonn (DE)</organization>
+     <emailHash>4fe40566d6fca776d663db55640a34f9</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-R-C10</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T16:55:00</startDate>
+   <endDate>2015-02-24T17:00:00</endDate>
+   <duration>00:05</duration>
+   <abstract/>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/374641/session/0/contribution/3/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>Mijovic_ZurNedden_24Feb2015.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/374641/session/0/contribution/3/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+  <contribution color="#4F144E" textcolor="#FFEFFF">
+   <ID>2</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+   <title>Hbb Framework</title>
+   <speakers>
+    <user>
+     <title>Dr.</title>
+     <name first="Kristian Anders" middle="" last="Gregersen"/>
+     <organization>University College London (UK)</organization>
+     <emailHash>19cc6a15bb716b4daadbb359e9dbe33b</emailHash>
+    </user>
+    <user>
+     <title/>
+     <name first="Ines" middle="" last="Ochoa"/>
+     <organization>University College London</organization>
+     <emailHash>948daafc22fa90099de1fe6fd6489705</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-R-C10</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T17:05:00</startDate>
+   <endDate>2015-02-24T17:10:00</endDate>
+   <duration>00:05</duration>
+   <abstract/>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/374641/session/0/contribution/2/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>HbbFramework_FTagWeekly_240215.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/374641/session/0/contribution/2/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+  <contribution color="#4F144E" textcolor="#FFEFFF">
+   <ID>6</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+   <title>Discussion</title>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-R-C10</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T17:15:00</startDate>
+   <endDate>2015-02-24T17:25:00</endDate>
+   <duration>00:10</duration>
+   <abstract/>
+  </contribution>
+ </session>
+ <session color="#4F144E" textcolor="#FFEFFF">
+  <ID>1</ID>
+  <parentProtection>true</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <code>sess1-1</code>
+  <title>Optimisation for Run 2</title>
+  <description/>
+  <convener>
+   <user>
+    <title/>
+    <name first="Valerio" middle="" last="Dao"/>
+    <organization>Albert-Ludwigs-Universitaet Freiburg (DE)</organization>
+    <emailHash>54c1d6509c47c63ea96df223f705b0d3</emailHash>
+   </user>
+  </convener>
+  <location>
+   <name>CERN</name>
+   <address/>
+   <room>40-R-C10</room>
+   <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+  </location>
+  <startDate>2015-02-24T17:25:00</startDate>
+  <endDate>2015-02-24T18:25:00</endDate>
+  <duration>01:00</duration>
+  <contribution color="#4F144E" textcolor="#FFEFFF">
+   <ID>9</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+   <title>tracking studies</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="Remi" middle="" last="Zaidan"/>
+     <organization>University of Iowa (US)</organization>
+     <emailHash>f6243e1aab47f372c9d7d51920774cef</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-R-C10</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T17:25:00</startDate>
+   <endDate>2015-02-24T17:45:00</endDate>
+   <duration>00:20</duration>
+   <abstract/>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/374641/session/1/contribution/9/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>Zaidan_Btagging_2015_02_24.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/374641/session/1/contribution/9/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+  <contribution color="#4F144E" textcolor="#FFEFFF">
+   <ID>10</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+   <title>IP studies</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="Yulia" middle="" last="Rodina"/>
+     <organization>CPPM Aix-Marseille Université; IFAE Universitat Autònoma de Barcelona</organization>
+     <emailHash>5d5af309abc0092aa4cacf477bff893b</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-R-C10</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T17:45:00</startDate>
+   <endDate>2015-02-24T18:05:00</endDate>
+   <duration>00:20</duration>
+   <abstract/>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/374641/session/1/contribution/10/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>Rodina_IPxD_Optimisation_Studies_24_02_2015.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/374641/session/1/contribution/10/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+  <contribution color="#4F144E" textcolor="#FFEFFF">
+   <ID>11</ID>
+   <parentProtection>true</parentProtection>
+   <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+   <title>SV1 studies and first grading plots (TBC)</title>
+   <speakers>
+    <user>
+     <title/>
+     <name first="Marilyn" middle="" last="Marx"/>
+     <organization>University of Washington (US)</organization>
+     <emailHash>6702ed1105fec02531e2f7e4e7eb9344</emailHash>
+    </user>
+   </speakers>
+   <location>
+    <name>CERN</name>
+    <address/>
+    <room>40-R-C10</room>
+    <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+   </location>
+   <startDate>2015-02-24T18:05:00</startDate>
+   <endDate>2015-02-24T18:25:00</endDate>
+   <duration>00:20</duration>
+   <abstract/>
+   <material>
+    <ID>slides</ID>
+    <title>Slides</title>
+    <description/>
+    <type/>
+    <displayURL>https://indico.cern.ch/event/374641/session/1/contribution/11/material/slides/</displayURL>
+    <files>
+     <file>
+      <name>btag_Run2_150224.pdf</name>
+      <type>pdf</type>
+      <url>https://indico.cern.ch/event/374641/session/1/contribution/11/material/slides/0.pdf</url>
+     </file>
+    </files>
+    <types>
+     <type>
+      <name>doc</name>
+      <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+      <imgAlt>word file</imgAlt>
+     </type>
+     <type>
+      <name>ppt</name>
+      <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+      <imgAlt>powerpoint file</imgAlt>
+     </type>
+     <type>
+      <name>pdf</name>
+      <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+      <imgAlt>pdf file</imgAlt>
+     </type>
+     <type>
+      <name>odt</name>
+      <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+      <imgAlt>writer file</imgAlt>
+     </type>
+     <type>
+      <name>odp</name>
+      <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+      <imgAlt>presentation file</imgAlt>
+     </type>
+     <type>
+      <name>ods</name>
+      <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+      <imgAlt>spreadsheet file</imgAlt>
+     </type>
+     <type>
+      <name>other</name>
+      <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+      <imgAlt>unknown type file</imgAlt>
+     </type>
+     <type>
+      <name>link</name>
+      <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+      <imgAlt>link</imgAlt>
+     </type>
+    </types>
+   </material>
+  </contribution>
+ </session>
+ <contribution color="" textcolor="">
+  <ID>8</ID>
+  <parentProtection>true</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["notes", "Notes"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["summary", "Summary"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>Flavour Labelling Studies</title>
+  <speakers>
+   <user>
+    <title/>
+    <name first="Thomas Philippe" middle="" last="Calvet"/>
+    <organization>CPPM, Aix-Marseille Université, CNRS/IN2P3 (FR)</organization>
+    <emailHash>f68ccff08b5048e5320b47a42711defb</emailHash>
+   </user>
+  </speakers>
+  <location>
+   <name>CERN</name>
+   <address/>
+   <room>40-R-C10</room>
+   <roomMapURL>https://maps.cern.ch/mapsearch/mapsearch.htm?loc=['40/R-C10']</roomMapURL>
+  </location>
+  <startDate>2015-02-24T18:25:00</startDate>
+  <endDate>2015-02-24T18:45:00</endDate>
+  <duration>00:20</duration>
+  <abstract/>
+  <material>
+   <ID>slides</ID>
+   <title>Slides</title>
+   <description/>
+   <type/>
+   <displayURL>https://indico.cern.ch/event/374641/contribution/8/material/slides/</displayURL>
+   <files>
+    <file>
+     <name>Calvet_BtaggingWeekly_Labelling_150224.pdf</name>
+     <type>pdf</type>
+     <url>https://indico.cern.ch/event/374641/contribution/8/material/slides/0.pdf</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>https://indico.cern.ch/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>https://indico.cern.ch/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>https://indico.cern.ch/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>https://indico.cern.ch/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>https://indico.cern.ch/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>https://indico.cern.ch/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>https://indico.cern.ch/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>https://indico.cern.ch/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <line>
+  <fromDate>20150224</fromDate>
+  <toDate>20150224</toDate>
+ </line>
+ <plugins>
+  <collaboration>
+<!-- Needed for timezone awareness -->
+   <todayReference>2015-02-26</todayReference>
+   <tomorrowReference>2015-02-27</tomorrowReference>
+   <booking>
+    <id>1</id>
+    <kind>ongoing</kind>
+    <type>Vidyo</type>
+    <typeDisplayName>Vidyo public room</typeDisplayName>
+    <launchInfo>
+     <launchText>Join Now!</launchText>
+     <launchLink>http://vidyoportal.cern.ch/flex.html?roomdirect.html&amp;key=6bD1QLfYEe2F</launchLink>
+     <launchTooltip>Click here to join the Vidyo room!</launchTooltip>
+    </launchInfo>
+    <firstLineInfo>B-Tagging-Meeting_indico_223798</firstLineInfo>
+    <information>
+     <section>
+      <title>Room name:</title>
+      <line>B-Tagging-Meeting_indico_223798</line>
+     </section>
+     <section>
+      <title>Extension:</title>
+      <line>109223798</line>
+     </section>
+     <section>
+      <title>Meeting PIN:</title>
+      <line>2013</line>
+     </section>
+     <section>
+      <title>Owner:</title>
+      <line>SCANLON, Timothy Paul</line>
+     </section>
+     <section>
+      <title>Auto-join URL:</title>
+      <linkLine>
+       <href>http://vidyoportal.cern.ch/flex.html?roomdirect.html&amp;key=6bD1QLfYEe2F</href>
+       <caption>http://vidyoportal.cern.ch/flex.html?roomdirect.html&amp;key=6bD1QLfYEe2F</caption>
+      </linkLine>
+     </section>
+     <section>
+      <title>Phone access:</title>
+      <line>&lt;a href="http://information-technology.web.cern.ch/services/fe/howto/users-join-vidyo-meeting-phone" target="_blank"&gt;Full List&lt;/a&gt;</line>
+     </section>
+     <section>
+      <title>Description:</title>
+      <line>informal meeting</line>
+     </section>
+    </information>
+   </booking>
+  </collaboration>
+ </plugins>
+</iconf>
