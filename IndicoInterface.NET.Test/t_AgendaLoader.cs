@@ -270,6 +270,18 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("374641-split-sessions.xml")]
+        public async Task TalksOutOfSessionSplitInTwo()
+        {
+            // In real life seems to be talks and not-talks that are in and out of sessions
+            AgendaInfo a = new AgendaInfo("http://indico.cern.ch/event/375453");
+            var al = new AgendaLoader(new FileReader("374641-split-sessions.xml"));
+            var data = await al.GetNormalizedConferenceData(a);
+
+            Assert.AreEqual(4, data.Sessions.Length);
+        }
+
+        [TestMethod]
         [DeploymentItem("375453-inandout-sessions.xml")]
         public async Task TalksOutOfSessionRawData()
         {

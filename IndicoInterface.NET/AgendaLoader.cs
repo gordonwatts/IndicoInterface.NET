@@ -136,11 +136,11 @@ namespace IndicoInterface.NET
                 /// 
 
                 m.Sessions = ParseConference(data.session);
-                var extraSession = ParseTalksAsSession(data.contribution);
-                if (extraSession != null)
+                var extraSessions = ParseTalksAsSession(data.contribution, m.Sessions);
+                if (extraSessions != null)
                 {
                     m.Sessions = m.Sessions
-                        .Concat(new Session[] { extraSession })
+                        .Concat(extraSessions)
                         .ToArray();
                 }
             }
@@ -323,22 +323,76 @@ namespace IndicoInterface.NET
         /// <summary>
         /// Given a list of contributions, turn them into an ad-hoc session.
         /// </summary>
-        /// <param name="contribution"></param>
+        /// <param name="contributions"></param>
         /// <returns></returns>
-        private Session ParseTalksAsSession(IndicoDataModel.contribution[] contribution)
+        private Session[] ParseTalksAsSession(IndicoDataModel.contribution[] contributions, Session[] sessions)
         {
-            if (contribution == null || contribution.Length == 0)
+            if (contributions == null || contributions.Length == 0)
                 return null;
 
-            var result = new Session()
-            {
-                ID = "-1",
-                Title = "<ad-hoc session>",
-                Talks = (from t in contribution select ExtractTalkInfo(t)).ToArray()
-            };
+            var talks = (from t in contributions select ExtractTalkInfo(t)).ToArray();
+            Session[] result = null;
 
-            result.StartDate = result.Talks.Select(t => t.StartDate).Min();
-            result.EndDate = result.Talks.Select(t => t.EndDate).Max();
+            // The easy case is there are no sessions, so this becomes just one session.
+            if (sessions == null || sessions.Length == 0)
+            {
+                var s1 = new Session()
+                {
+                    ID = "-1",
+                    Title = "<ad-hoc session>",
+                    Talks = (from t in contributions select ExtractTalkInfo(t)).ToArray()
+                };
+                result = new Session[] { s1 };
+            }
+            else
+            {
+                // We have to split the contributions up around each session. The algorithm is as follows:
+                // 1. Find the time before a session that each talk occurs
+                // 2. Find the smallest amount of time, and associate that talk with that session.
+                // 3. Each group should be made into a new session.
+                // 4. All other talks (which presumably occur after the last session) are made into their own session.
+
+                var deltaTime = from c in talks
+                                select new
+                                {
+                                    contrib = c,
+                                    closestSession = sessions.Where(s => s.StartDate > c.StartDate).OrderBy(s => s.StartDate - c.StartDate).FirstOrDefault()
+                                };
+
+                var sessionGroups = deltaTime.Where(c => c.closestSession != null).GroupBy(x => x.closestSession);
+                var contribSessions = from sg in sessionGroups
+                                      select new Session()
+                                      {
+                                          ID = "-1",
+                                          Title = "<ad-hoc session>",
+                                          Talks = sg.Select(c => c.contrib).ToArray()
+                                      };
+
+                // And the sessions that are left over.
+                var lastSessionTalks = deltaTime.Where(c => c.closestSession == null).Select(c => c.contrib);
+                var lastSession = new Session()
+                {
+                    ID = "-1",
+                    Title = "<ad-hoc session>",
+                    Talks = lastSessionTalks.ToArray()
+                };
+
+                if (lastSession.Talks.Length > 0)
+                {
+                    result = contribSessions.Concat(new Session[] { lastSession }).ToArray();
+                }
+                else
+                {
+                    result = contribSessions.ToArray();
+                }
+            }
+
+            // Get the start and end dates right for each session
+            foreach (var s in result)
+            {
+                s.StartDate = s.Talks.Select(t => t.StartDate).Min();
+                s.EndDate = s.Talks.Select(t => t.EndDate).Max();
+            }
 
             return result;
         }
