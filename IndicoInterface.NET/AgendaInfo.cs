@@ -65,6 +65,20 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
+        /// Check to see if the URI is in the proper format.
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public static bool IsValid(string uri)
+        {
+            var m = _gConfIdFinderStyle1.Match(uri);
+            if (m.Success)
+                return true;
+            m = _gConfIdFinderStyle2.Match(uri);
+            return m.Success;
+        }
+
+        /// <summary>
         /// Use if you already know the conference ID. Defaults to CERN agenda site.
         /// </summary>
         /// <param name="confID"></param>

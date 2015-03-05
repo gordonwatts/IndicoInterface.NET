@@ -234,5 +234,14 @@ namespace t_IndicoInterface
         {
             var ai = new AgendaInfo("https://indico.cern.ch/export/categ/2636.ics?from=-14d");
         }
+
+        [TestMethod]
+        public void AgendaIsValid()
+        {
+            Assert.IsTrue(AgendaInfo.IsValid("http://indico.fnal.gov/bogus/conferenceTimeTable.py?confId=1829"));
+            Assert.IsTrue(AgendaInfo.IsValid("http://indico.cern.ch/conferenceDisplay.py?confId=14475"));
+            Assert.IsFalse(AgendaInfo.IsValid("https://indico.cern.ch/export/categ/2636.ics?from=-14d"));
+            Assert.IsTrue(AgendaInfo.IsValid("http://indico.cern.ch/event/297657/"));
+        }
     }
 }
