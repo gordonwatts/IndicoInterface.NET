@@ -1,0 +1,1111 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CERN//INDICO//EN
+BEGIN:VEVENT
+SUMMARY:LHCP2015 Steering Group Meeting
+DTSTART;VALUE=DATE-TIME:20150203T160000Z
+DTEND;VALUE=DATE-TIME:20150203T170000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-371544@cern.ch
+DESCRIPTION:9th LHCP2015 Steering Group Meeting\nPin 0125\n\nhttps://indic
+ o.cern.ch/event/371544/
+LOCATION:Other Institutes
+URL:https://indico.cern.ch/event/371544/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:LHCP2015 Steering Group Meeting
+DTSTART;VALUE=DATE-TIME:20150204T173000Z
+DTEND;VALUE=DATE-TIME:20150204T190000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-372000@cern.ch
+DESCRIPTION:https://indico.cern.ch/event/372000/
+LOCATION:Other Institutes
+URL:https://indico.cern.ch/event/372000/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:LHCP 2015 Steering Group Meeting
+DTSTART;VALUE=DATE-TIME:20150204T173000Z
+DTEND;VALUE=DATE-TIME:20150204T190000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-372002@cern.ch
+DESCRIPTION:LHCP 2015 Steering Group Meeting\n\nhttps://indico.cern.ch/eve
+ nt/372002/
+LOCATION:Other Institutes
+URL:https://indico.cern.ch/event/372002/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:LHCP2015 Steering Group Meeting
+DTSTART;VALUE=DATE-TIME:20150211T173000Z
+DTEND;VALUE=DATE-TIME:20150211T190000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-373778@cern.ch
+DESCRIPTION:https://indico.cern.ch/event/373778/
+LOCATION:Other Institutes
+URL:https://indico.cern.ch/event/373778/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:LHCP 2015 Steering Group Meeting
+DTSTART;VALUE=DATE-TIME:20150211T173000Z
+DTEND;VALUE=DATE-TIME:20150211T190000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-373779@cern.ch
+DESCRIPTION:LHCP 2015 Steering Group Meeting\n\nhttps://indico.cern.ch/eve
+ nt/373779/
+LOCATION:Other Institutes
+URL:https://indico.cern.ch/event/373779/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:LHCP 2015 Steering Group Meeting
+DTSTART;VALUE=DATE-TIME:20150218T173000Z
+DTEND;VALUE=DATE-TIME:20150218T190000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-375422@cern.ch
+DESCRIPTION:LHCP 2015 Steering Group Meeting\n\nhttps://indico.cern.ch/eve
+ nt/375422/
+LOCATION:Other Institutes
+URL:https://indico.cern.ch/event/375422/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Managing Italian research stations at the Poles" by Roberto Sparap
+ ani
+DTSTART;VALUE=DATE-TIME:20150219T153000Z
+DTEND;VALUE=DATE-TIME:20150219T163000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-375518@cern.ch
+DESCRIPTION:Polar areas are an ideal place to study climate change and oth
+ er research fields. However\, living and working at the Poles is a challen
+ ge for all the researchers involved. This presentation by Roberto Sparapan
+ i\, who led the Italian research station Dirigibile Italia at Ny-Ålesund 
+ from 1997 to 2014\, will take a short trip through the research and histor
+ y of polar science - with a focus on the human factor\, which makes a diff
+ erence in a natural environment that leaves no room for improvisation.\n\n
+  \n\nThe seminar will be held on 19 February at 4.30 p.m. in the Main Audi
+ torium. It will be followed by a screening of Paola Catapano’s documenta
+ ry for RAIWORLD “A Nord di Capo nord” (North of Cape North)\, in Itali
+ an with English subtitles. The documentary was given the "Artistic Directi
+ on Special Award" at the Rome Scientific Documentary Festival in December 
+ 2014.\n\nhttps://indico.cern.ch/event/375518/
+LOCATION:CERN 500-1-001 - Main Auditorium
+URL:https://indico.cern.ch/event/375518/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:New Physics at Belle II
+DTSTART;VALUE=DATE-TIME:20150223T120000Z
+DTEND;VALUE=DATE-TIME:20150225T135000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-357770@cern.ch
+DESCRIPTION:The workshop is organised by the new-physics working group\nof
+  the "Belle II Theory Interface Platform" and has a sharp\nfocus on\n   a)
+   identifying strategies to constrain models of\n     new physics with fut
+ ure Belle II data\,\nand\n   b) discussing how to use existing computer co
+ des\n     to fit data to new-physics parameters and to specify \n     whic
+ h further codes need to be developed.\n\nBy participating in the workshop 
+ you have the opportunity to\ninfluence the new-physics search at Belle II 
+ at an early stage\nand to contribute to this endeavour.\n\nhttps://indico.
+ cern.ch/event/357770/
+LOCATION:Other Institutes
+URL:https://indico.cern.ch/event/357770/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:LHCP 2015 Steering Group Meeting
+DTSTART;VALUE=DATE-TIME:20150225T173000Z
+DTEND;VALUE=DATE-TIME:20150225T190000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-377083@cern.ch
+DESCRIPTION:LHCP 2015 Steering Group Meeting\n\nhttps://indico.cern.ch/eve
+ nt/377083/
+LOCATION:Other Institutes
+URL:https://indico.cern.ch/event/377083/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:QCD@LHC Organising Committee & Advisory Board Meeting
+DTSTART;VALUE=DATE-TIME:20150226T093000Z
+DTEND;VALUE=DATE-TIME:20150226T110000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-377091@cern.ch
+DESCRIPTION:https://indico.cern.ch/event/377091/
+LOCATION:CERN
+URL:https://indico.cern.ch/event/377091/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Hyper-Kamiokande EU meeting
+DTSTART;VALUE=DATE-TIME:20150303T070000Z
+DTEND;VALUE=DATE-TIME:20150303T170000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-378506@cern.ch
+DESCRIPTION:https://indico.cern.ch/event/378506/
+LOCATION:CERN
+URL:https://indico.cern.ch/event/378506/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Radiation from Relativistic Electrons in Periodic Structures "RREP
+ S-15"
+DTSTART;VALUE=DATE-TIME:20150304T033000Z
+DTEND;VALUE=DATE-TIME:20150308T145000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-378549@cern.ch
+DESCRIPTION:Welcome to the «RREPS-15» Symposium!\n\n  The XI Internati
+ onal Symposium «Radiation from Relativistic Electrons in Periodic Structu
+ res» will be held in Saint Petersburg\, Russian Federation\, September 6-
+ 11\, 2015\, and is organized by Saint-Petersburg State University and Toms
+ k Polytechnic University\n\nThe Symposium will focus on the following topi
+ cs:\n\nGeneral Aspects of Physical Phenomena and Processes Associated with
+  Electromagnetic Radiation\n	Transition Radiation\n	Parametric X-Radiation
+ \n	Diffraction Radiation\, Smith-Purcell Effect\n	Coherent Bremsstrahlung 
+ and Channeling Radiation\n	Monochromatic X- and Gamma Beams Produced at El
+ ectron Accelerators\n	Processes with Crystalline Targets\n \n\n  We hop
+ e the Symposium “RREPS-15” that will be held in Saint Petersburg will 
+ be as fruitful as the previous symposiums.\n\n  Co-chairmen of\n			 \n	
+ 		A.P. Potylitsyn\n		  the Organizing Committee\n			 \n			A.V. Tyukhtin
+ \n		\n\nhttps://indico.cern.ch/event/378549/
+LOCATION:
+URL:https://indico.cern.ch/event/378549/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Ecal Laser Monitoring Tuturial
+DTSTART;VALUE=DATE-TIME:20150304T080000Z
+DTEND;VALUE=DATE-TIME:20150304T100000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-378559@cern.ch
+DESCRIPTION:https://indico.cern.ch/event/378559/
+LOCATION:CERN
+URL:https://indico.cern.ch/event/378559/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:LHCP 2015 Steering Group Meeting
+DTSTART;VALUE=DATE-TIME:20150304T173000Z
+DTEND;VALUE=DATE-TIME:20150304T190000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-378651@cern.ch
+DESCRIPTION:LHCP 2015 Steering Group Meeting\n\nhttps://indico.cern.ch/eve
+ nt/378651/
+LOCATION:Other Institutes
+URL:https://indico.cern.ch/event/378651/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Excited QCD 2015
+DTSTART;VALUE=DATE-TIME:20150308T070000Z
+DTEND;VALUE=DATE-TIME:20150314T200000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-336427@cern.ch
+DESCRIPTION:WELCOME!\n\nThe 2015 edition of Excited QCD will take place fr
+ om 8 to 14 March 2015\, 2nd week of March\, in the beautiful High Tatras m
+ ountain in Slovakia. From the Slovak side\, the peaks stand out from the 
+ plain in a unique scenery\, one of the most beautiful in the world. The 
+  hotel Penzión Teniscentrum in Tatranska Lomnica\, Slovakia will host t
+ he meeting. \nExcited QCD 2015 especially occurs right after the Schladmi
+ ng Winter School and before the St Goar Workshop.\n\n \n\n\n\n \n\nABOUT
+  THE WORKSHOP\n\nThis edition is the seventh in a series of workshops tha
+ t had been previously organised in Poland\, Slovakia\, France \, Portugal 
+ and Bosnia and Herzegovina. Following the succesful meeting in 2014\, the 
+ Workshop returns to the beautiful High Tatras mountain range in 2015.\n\nT
+ he workshop covers diverse aspects of QCD:\n\n(i) QCD at low energies: ex
+ cited hadrons\, new resonances\, glueballs\, multiquarks.\n\n(ii) QCD at 
+ high temperatures and large densities: heavy-ion collisions\, jets\, diffr
+ action\, hadronisation\, quark-gluon plasma\, holography\, colour-glass co
+ ndensate\, compact stars\, applications to astrophysics.\n\nEmphasis is p
+ laced on new developments in theory as well as the current experimental st
+ atus. Scientific atmosphere\, various discussions about different topics i
+ n QCD\, active participation of many young researchers and a nice environm
+ ent have been the main characteristics of the previous editions and also 
+ represented the goals for the new edition. The talks are all plenary\, 25
+ ' long separated by 5' for discussions and with a coffee break of 30' ever
+ y two or three talks for more discussions. An extended lunch break allowed
+  for longer discussions and for inspiring open-air activities.\n\n \n\nV
+ ENUE\n\nThe meeting will take place in the HIgh Tatras mounatins ate Tatra
+ nska Lomnica\, 888m.  The price per night at the hotel Penzión Tenisc
+ entrum\, with full board (breakfast\, lunch and dinner)\, is  53 € pe
+ r person in a double room and 57 €  in a single room.\n\nThe hotel has
+  an ice skating ring. Nearby you can find hot springs and outdoor pools i
+ n Vrbov. \n\nThe ski lift (Tatranska Lomnica) is at a distance of about 5
+ 00 m\, and we will arrange free transport to the slopes. The slopes star
+ t at Lomnicke sedlo\, 2196 m\, and the longest slope runs 6 km downd to 
+ Tatranska Lomnica\, 888 m. The same ski pass is valid on other routes nea
+ rby\, for example in  Strbske Pleso.\n\n\n\n \n\nPAYMENT FOR THE HOTEL:\
+ n\nWe were asked to\, if possible\, to pay for the hotel until mid-Februar
+ y by bank transfer. Doing it please be sure to include your name and the n
+ ame of the workshop.\n\nThose who can not pay by bank transfer can pay Bea
+ ta Kusmíreková during the conference. We\, however\, really strongly enc
+ ourage you to pay by bank transfer:\n\nBANK: VUB Slovensko:SWIFT code: SUB
+ ASKBXaccount number: SK8902000000002450864753\n\naccount holder:\n CEVRA\
+ , spol. s r.o. Druzstevná 66\, 059 01 Spisská Belá\, Slovensko\n Beát
+ a Kusmireková\n\naddress of the bank:                  
+                                      
+                                      
+                                      
+      Vseobcná úverová banka\, Mlynské nivy 1\, 829 90 Bratislava 2
+ 5\n\n_____________________________________________________________________
+ _\n\n \n\nOrganizing Committee\n\nBicudo\, Pedro\n	Dubnicka\, Stanislav
+  \n	Giacosa\, Francesco\n	Kamiski\, Robert\n	Marinkovic\, Marina\nInstitu
+ te of Physics Slovak Academy of Sciences\, Bratislava\n \n\n \n\n\n\n \
+ n\n \n\nhttps://indico.cern.ch/event/336427/
+LOCATION:Tatranska Lomnica\, Slovakia
+URL:https://indico.cern.ch/event/336427/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:A Luz na Física
+DTSTART;VALUE=DATE-TIME:20150313T090000Z
+DTEND;VALUE=DATE-TIME:20150313T193000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-377302@cern.ch
+DESCRIPTION:A 23 de Dezembro de 2013 as Nações Unidas proclamaram o ano 
+ de 2015 como o Ano Internacional da Luz e das Tecnologias baseadas na Luz 
+ (http://www.light2015.org).\n\nNaturalmente\, a comunidade científica por
+ tuguesa não pode deixar de se associar a esta importante iniciativa\, que
+ r através de eventos científicos sobre a luz\, quer ainda através de ev
+ entos de divulgação para o grande público\, realçando o papel central 
+ que a luz tem na Tecnologia\, na Ciência\, na Cultura e na Sociedade (htt
+ p://ail2015.org). Nesse sentido a Universidade de Lisboa vai promover no p
+ róximo dia 13 de Março a conferência “A Luz na Física” (marcando e
+ m Portugal o início das actividades do AIL2015 na Universidade de Lisboa)
+ \, a primeira de uma série de mini-conferências a organizar ao longo do 
+ ano. Com o patrocínio do Reitor da Universidade de Lisboa e da Sociedade 
+ Portuguesa de Física\, esta conferência cobrirá grandes temas da Físic
+ a e da Tecnologia associados à luz.\n\nPelo relevante papel que o agora d
+ enominado Instituto de Investigação Interdisciplinar da ULisboa teve no 
+ desenvolvimento e construção da Ciência na cidade e no país nos últim
+ os 40 anos\, nomeadamente em muito dos assuntos científicos da efeméride
+ \, a Conferência realizar-se-á no Anfiteatro desse Instituto.\n\nhttps:/
+ /indico.cern.ch/event/377302/
+LOCATION:Instituto para a Investigação Interdisciplinar da Universidade 
+ de Lisboa
+URL:https://indico.cern.ch/event/377302/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:2nd Academy-Industry Matching Event on Neutron Detection and 15th 
+ RD51 Collaboration Meeting
+DTSTART;VALUE=DATE-TIME:20150316T120000Z
+DTEND;VALUE=DATE-TIME:20150320T170000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-365380@cern.ch
+DESCRIPTION:In the framework of the future RD51 activities\, we agreed to 
+ organize series of specialised topical workshops helping to disseminate MP
+ GD applications beyond fundamental physics\, where potential users and ind
+ ustry could meet together. We would like to bring to your attention that t
+ he next RD51 Collaboration Meeting at CERN in March 2015 will take place i
+ n conjunction with the Special workshop "Detecting Neutrons with MPGDs".\n
+ \nhttps://indico.cern.ch/event/365380/
+LOCATION:CERN
+URL:https://indico.cern.ch/event/365380/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Connecting Worlds: Science Meets Buddhism\, Great Minds\, Great Ma
+ tters - Conference in the Globe
+DTSTART;VALUE=DATE-TIME:20150323T083000Z
+DTEND;VALUE=DATE-TIME:20150323T114500Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-375463@cern.ch
+DESCRIPTION:This panel discussion is a dialogue between Science and Buddhi
+ sm. Through the presence of H.H. Gyalwang Drukpa along with scientists fro
+ m CERN\, it will explore areas of commonality between Buddhist philosophy 
+ and modern science.\n \n\n\nPanel Discussion Participants:\nHis Holiness\
+ , the XIIth Gyalwang Drukpa\nProfessor Rolf Heuer\, Director-General\, C
+ ERN\nDr. Gian Giudice\, Theoretical Physics Unit\, CERN\nDr. Michelangelo 
+ Mangano\, Theoretical Physics Unit\, CERNModerator:\nMr. Richard BurgeThem
+ es:\n* Why is it important to understand nature?\n* How does the mind perc
+ eive reality? In particular\, does greater knowledge lead to greater under
+ standing and where are the limits?\n* How do you understand the origins of
+  the universe? How do you see its future?\n* How can we improve life on th
+ is planet for the future generations?\n\nhttps://indico.cern.ch/event/3754
+ 63/
+LOCATION:CERN 80-1-001
+URL:https://indico.cern.ch/event/375463/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Warsztaty Masterclass z Fizyki Cząstek
+DTSTART;VALUE=DATE-TIME:20150328T080000Z
+DTEND;VALUE=DATE-TIME:20150328T161500Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-358553@cern.ch
+DESCRIPTION:Warsztaty Masterclass z Fizyki Cząstek\nPolitechnika Warszaws
+ ka28 Marca 2015\n\nZostań fizykiem na jeden dzień!\nOdkryj świat kwark
+ ów i leptonów pracując na rzeczywistych danych pomiarowych prosto z CE
+ RN.\n\nW dniu 28 marca 2015 r. (sobota) Wydział Fizyki organizuje wars
+ ztaty z fizyki cząstek dla uczniów szkół średnich w ramach projektu 
+ International Masterclasses.  Uczniowie z warszawskich liceów będą mi
+ eli niepowtarzalną okazję zapoznania się z eksperymentami prowadzonymi
+  na Wielkim Zderzaczu Hadronów w ośrodku CERN pod Genewą\, wysłucha w
+ ykładów wprowadzających do trudnej tematyki jaką jest fizyka wysokich
+  energii oraz będzie miała okazję przeprowadzić prawdziwą analizę n
+ a rzeczywistych danych zebranych przez eksperyment ALICE w ubiegłych lat
+ ach. Zwieńczeniem dnia będzie wideokonferencja\, dzięki której ucznio
+ wie połączą się z naukowcami z laboratorium CERN oraz innymi instytuc
+ jami\, które tego dnia będą wykonywać to samo ćwiczenie (m. in. w C
+ ape Town). W trakcie wideokonferencji uczniowie zaprezentują wyniki swoi
+ ch analiz oraz będą mogli porozmawiać z naukowcami przebywającymi w C
+ ERN oraz swoimi rówieśnikami z innych krajów.W tym roku jest to już 11
+  edycja programu International Masterclasses\, który zarządzany jest p
+ rzez Uniwersytet Techniczny w Dreźnie w ramach International Particle Ph
+ ysics Outreach Group. Każdego roku około 10 tysięcy uczniów w 40 kraj
+ ach przychodzi na 1 dzień do około 200 instytucji naukowych uniwersytet
+ ów lub centrów badawczych) biorących udział w eksperymentach na Wielk
+ im Zderzaczu Hadronów\, aby zbadać tajemnice fizyki cząstek.\n\n \n\n
+  \n\nStrona główna International Masterclasses: http://www.physicsmast
+ erclasses.org/ Strona International Particle Physics Otreach Group (IPPO
+ G): http://ippog.web.cern.ch/Strona eksperymentu ALICE na LHC w CERN:  
+ http://aliceinfo.cern.ch/Public/Welcome.html\n\nhttps://indico.cern.ch/eve
+ nt/358553/
+LOCATION:Wydział Fizyki Politechniki Warszawskiej
+URL:https://indico.cern.ch/event/358553/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:2nd RDA Europe Science Workshop
+DTSTART;VALUE=DATE-TIME:20150408T093000Z
+DTEND;VALUE=DATE-TIME:20150409T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-370271@cern.ch
+DESCRIPTION:The purpose of the RDA science workshops is to listen to ideas
+  and feedback on the issues around the utilization and interoperability of
+  research data from a selected group of leading scientists as one group of
+  stakeholders as an input to the RDA Europe in general and the RDA global 
+ activities in particular. RDA is also interacting with other stakeholders 
+ such as data professionals of different favors\, policy makers and researc
+ h organizations to get input on urgent needs and priorities. \n\nAs for th
+ e first workshop of this sort the organizers will produce a summary docume
+ nt after the workshop with the main outcome to be taken further in Europe 
+ or on the global scale.\n\nhttps://indico.cern.ch/event/370271/
+LOCATION:CERN 31-3-004 - IT Amphitheatre
+URL:https://indico.cern.ch/event/370271/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:21st International Conference on Computing in High Energy and Nucl
+ ear Physics (CHEP2015)
+DTSTART;VALUE=DATE-TIME:20150413T000000Z
+DTEND;VALUE=DATE-TIME:20150416T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-304944@cern.ch
+DESCRIPTION:"Evolution of Software and Computing for Experiments"\n\nIn 20
+ 15\, the LHC will restart. Experimental groups at the LHC have reviewed th
+ eir Run 1 experiences in detail\, acquired the latest computing and softwa
+ re technologies\, and constructed new computing models to prepare for Run 
+ 2. On the side of the intensity frontier\, Super-KEKB will start commissio
+ ning in 2015\, and fixed-target experiments at CERN\, Fermilab and J-PARC 
+ are growing bigger in size. In nuclear physics field\, FAIR is under const
+ ruction and RHIC well engaged into its Phase-II research program facing in
+ creased datasets and new challenges with precision Physics. For the future
+ \, developments are progressing towards the construction of ILC. In all th
+ ese projects\, computing and software will be even more important than bef
+ ore. Beyond those examples\, non-accelerator experiments are also seeking 
+ novel computing models as their apparatus and operation become larger and 
+ distributed. With much progress\, thoughts and new directions made in rece
+ nt years\, we strongly feel we have reached the perfect time where meeting
+  together and sharing our experiences will be highly beneficial.\n\nhttps:
+ //indico.cern.ch/event/304944/
+LOCATION:OIST
+URL:https://indico.cern.ch/event/304944/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:First Annual Meeting of ITN HiggsTools
+DTSTART;VALUE=DATE-TIME:20150415T060000Z
+DTEND;VALUE=DATE-TIME:20150417T180000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-373699@cern.ch
+DESCRIPTION:First Annual Meeting of ITN HiggsTools in Freiburg\nApril 15-1
+ 7\, 2015\n\nhttps://indico.cern.ch/event/373699/
+LOCATION:University of Freiburg
+URL:https://indico.cern.ch/event/373699/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Particle Physics: from the bubble chamber to the LHC\, and beyond
+DTSTART;VALUE=DATE-TIME:20150416T093000Z
+DTEND;VALUE=DATE-TIME:20150416T200000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-371467@cern.ch
+DESCRIPTION:In celebration of the 80th birthday of Professor George Kalmus
+ \, FRS\, this meeting will pick out some highlights from the last half-cen
+ tury of experimental particle physics and consider future prospects.\n\nht
+ tps://indico.cern.ch/event/371467/
+LOCATION:STFC Rutherford Appleton Laboratory
+URL:https://indico.cern.ch/event/371467/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Matey Mateev Symposium
+DTSTART;VALUE=DATE-TIME:20150417T050000Z
+DTEND;VALUE=DATE-TIME:20150417T150000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-359644@cern.ch
+DESCRIPTION:https://indico.cern.ch/event/359644/
+LOCATION:Sofia\, Bulgaria
+URL:https://indico.cern.ch/event/359644/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Standard Model at LHC 2015 (SM@LHC)
+DTSTART;VALUE=DATE-TIME:20150421T060000Z
+DTEND;VALUE=DATE-TIME:20150424T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-351610@cern.ch
+DESCRIPTION:Welcome to the SM@LHC Conference 2015\n\nThe meeting aims to b
+ ring together both experimentalists and theorists to discuss Standard Mode
+ l phenomenology and the very latest results from the LHC experiments.\n\nI
+ t will take place at GGI (Galileo Galilei Institute) in Florence (Italy). 
+ Previous workshops of the SM@LHC series took place in Madrid (2014)\, Frei
+ burg (2013)\, Copenhagen (2012)\, Durham (2011) and London (2009).\n\nConf
+ erence fee is 180 EUR (see details in registration form). Please register
+  before April 10th.\n\nConference site: http://smlhc2015.fi.infn.it\n\n \
+ n\nhttps://indico.cern.ch/event/351610/
+LOCATION:Galileo Galilei Institute
+URL:https://indico.cern.ch/event/351610/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Third Hyper-Kamiokande EU meeting
+DTSTART;VALUE=DATE-TIME:20150427T090000Z
+DTEND;VALUE=DATE-TIME:20150428T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-378508@cern.ch
+DESCRIPTION:Meeting to discuss the European effort in the Hyper-Kamiokande
+  experiment.\n	Open to anyone who has interests in Hyper-K\, or is plannin
+ g to join Hyper-K\, or is contributing.\n	Detailed information about your
+  Country in Hyper-K can be discussed with your representatives in the Hype
+ r-Kamiokande International Board Representatives\, its chair if no repres
+ entatives are available yet or the international Steering Committee chair.
+ \n\n\nhttps://indico.cern.ch/event/378508/
+LOCATION:CERN 31-3-004 - IT Amphitheatre
+URL:https://indico.cern.ch/event/378508/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Phenomenology 2015 Symposium
+DTSTART;VALUE=DATE-TIME:20150504T110000Z
+DTEND;VALUE=DATE-TIME:20150506T173000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-364031@cern.ch
+DESCRIPTION:The 2015 Phenomenology Symposium will be held May 4-6\, 2015
+  at the University of Pittsburgh.  It will cover the latest topics in p
+ article phenomenology and theory plus related issues in astrophysics and c
+ osmology.\n\n \n\nEarly registration ends April 12\, 2015.\n\nTalk submis
+ sion ends April 19\, 2015.\n\nConference banquet May 5\, 2015.\n\n \n\nTe
+ ntative plenary topics and speakers:\n\nWolfgang Altmannshofer (Perimeter 
+ Institute):  Flavor Physics in the New Era \n	Tom Browder (Hawaii): B-Ph
+ ysics: The Next Generation\n	Christoph Englert (Glasgow):  Higgs Phenomen
+ ology\n	Ian Hinchliffe (LBNL\, ATLAS):  Standard Model Physics at the LHC
+ \n	Xiangdong Ji (Maryland/SJTU):  Dark Matter Direct Detection\n	Greg La
+ ndsberg (Brown\, CMS):  New Physics Searches at CMS and ATLAS\n	Aneesh Ma
+ nohar (UCSD):  EFT: Theory and Practice\n	Shigeki Matsumoto (IPMU):  Phy
+ sics and Perspectives of the ILC\n	Mayly Sanchez (Iowa State):  Neutrino 
+ Physics in the New Era\n	Tracy Slatyer (MIT):  Dark Matter: Theory and Se
+ arches\n	James Wells (Michigan):  HEP: Future perspectives\n	Cosmology: T
+ heory\n	Astro-physics: Theory and Observation\n	Results from PLANCK\n\nPar
+ allel session mini-reviews:\n\nSekhar Chivukula (MSU):  New Resonances: T
+ heory and Searches\n	Stefania Gori (Perimeter Institute):  Physics with E
+ lectroweakinos\n	Ian Lewis (SLAC):  Physics Under the Higgs Lamppost\n	Ko
+ nstantin Matchev (Florida):  Matrix Element Techniques\n \n\nPITT PACC T
+ ravel Awards: With support from the NSF and DOE\, there are a number of aw
+ ards (up to $300 each) available to domestic graduate students for travel 
+ and accommodation to Pheno 15. A student applicant should send an updated 
+ CV and a statement of financial need\, and arrange for a short recommendat
+ ion letter sent from their thesis advisor\, by email to pittpacc+award@pit
+ t.edu. The decision will be based on the academic qualification\, the talk
+  submission to Pheno 15\, and the financial need. The deadline for the app
+ lication is April 5\, and the winners will be notified by April 13.  (Eac
+ h research group may be limited to one awardee. Winners in the previous y
+ ears may have lower priority for consideration. Winner institutes and name
+ s will be announced at the Symposium banquet.)\n\nPHENO 2015 ORGANIZERS:
+  Cindy Cercone\, Ayres Freitas\, Tao Han (chair)\, Adam Leibovich\, Josh
+  Sayre\, Brock Tweedie\, and Susanne Westhoff.PHENO 2015 PROGRAM ADVISORS
+ : Vernon Barger\, Lisa Everett\, Kaoru Hagiwara\, JoAnne Hewett\, Arthur 
+ Kosowsky\, Tilman Plehn\, Xerxes Tata\, and Andrew Zentner.\n\n \n\n \n
+ \nOTHER ANNOUNCEMENTS\n\nBaseball game (informal):  Pittsburgh Pirates vs
+  Cincinnati Reds\, Weds May 6\, 7:05 pm.  E-mail us if you are intereste
+ d in going\, and would like to coordinate.\n\nDIS2015 will be held on SMU 
+ campus in Dallas during 27 April - 1 May\, 2015\n\nhttps://indico.cern.
+ ch/event/364031/
+LOCATION:University of Pittsburgh
+URL:https://indico.cern.ch/event/364031/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:University of Maryland LHCb UT Workshop
+DTSTART;VALUE=DATE-TIME:20150507T130000Z
+DTEND;VALUE=DATE-TIME:20150509T220000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-371917@cern.ch
+DESCRIPTION:Workshop to discuss issues related to the LHCb Upstream Tracke
+ r\n\nhttps://indico.cern.ch/event/371917/
+LOCATION:University of Maryland\, College Park
+URL:https://indico.cern.ch/event/371917/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Siam Physics Congress 2015
+DTSTART;VALUE=DATE-TIME:20150520T010000Z
+DTEND;VALUE=DATE-TIME:20150522T110000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-336199@cern.ch
+DESCRIPTION:\n\n\n\nSiam Physics Congress 2015\, Centennial of General Rel
+ ativity\, 80th year of Thai Physics graduate.\n\nhttps://indico.cern.ch/ev
+ ent/336199/
+LOCATION:Sofitel Krabi Phokeethra Golf and Spa Resort
+URL:https://indico.cern.ch/event/336199/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Jagiellonian Symposium on Fundamental and Applied Subatomic Physic
+ s
+DTSTART;VALUE=DATE-TIME:20150607T140000Z
+DTEND;VALUE=DATE-TIME:20150613T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-360164@cern.ch
+DESCRIPTION:Following the success of two meetings "II Symposium on applied
+  nuclear physics and innovative technologies" and "II Symposium on Positro
+ n Emission Tomography" organized in 2014\, this event will start a new ser
+ ies of conferences which will bring together scientists from the physics\,
+  nuclear medicine and healthcare. One of the main purposes of the symposiu
+ m is to exchange experience and and expertise gained by various institutio
+ ns in the field of applied and fundamental nuclear as well as particle phy
+ sics\, medical imaging\, radiotherapy and healthcare.\n\nhttps://indico.ce
+ rn.ch/event/360164/
+LOCATION:Krakow\, Poland
+URL:https://indico.cern.ch/event/360164/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Forum on Tracking Detector Mechanics 2015
+DTSTART;VALUE=DATE-TIME:20150615T060000Z
+DTEND;VALUE=DATE-TIME:20150617T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-363327@cern.ch
+DESCRIPTION:A meeting to discuss issues of engineering and integration for
+  present and future tracking systems.\nTopics include\n		Detector cooling\
+ n	\n		Deflection\, stability and precision of the structures\, achieved an
+ d revisited requirements for the next generation\n	\n		Thermal expansion d
+ ifferences inside the detector\n	\n		Mass and therefore radiation length o
+ f mechanics\, cables and pipes\n	\n		Humidity control\, including gas flus
+ hing inside detector volume and along services\n	\n		Structural issues con
+ cerning humidity or outgassing\n	\n		Choices of construction materials\n	\
+ n		Rails for support and guidance\n	\n		Alignment systems\, requirements a
+ nd "weak modes" of the system\, in-situ adjustments\, sensors including lo
+ ad sensors\n	\n		Pipe materials\, pipe connection techniques and fittings\
+ n	\n		Shock and vibration issues such as bond wire vibration during transp
+ ort and in operation\n	\n		Effects on mechanics during fast discharge of m
+ agnet coils\n	\n		Tracker to beam-pipe interfaces and bakeout scenarios\n	
+ \n		Failure management: What do we do to achieve a tracker with maximum du
+ ty cycle\n	\n		Service management: What strategies do we have to deal with
+  services? How can we minimise installation and testing times?\n	\n		Radia
+ tion and mechanics: A discussion about the impacts of radiation on the des
+ ign\, materials and also issues like access constraints\n	\n		Maintenance 
+ scenarios and the required special tooling\n	\n		FEA and its comparison to
+  real objects\n\n\nhttps://indico.cern.ch/event/363327/
+LOCATION:NIKHEF\, Amsterdam
+URL:https://indico.cern.ch/event/363327/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:CERN Workshop on Innovations in Scholarly Communication (OAI9)
+DTSTART;VALUE=DATE-TIME:20150617T060000Z
+DTEND;VALUE=DATE-TIME:20150619T123000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-332370@cern.ch
+DESCRIPTION:The CERN Workshop on Innovations in Scholarly Communication (O
+ AI9) will be  held at Geneva in June 17th-19th 2015\n\n \n\n\n\nhttps://
+ indico.cern.ch/event/332370/
+LOCATION:Graduate Institute & Campus Biotech (University of Geneva)
+URL:https://indico.cern.ch/event/332370/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: CEC-ICMC 2015 Abstract Submission
+DTSTART;VALUE=DATE-TIME:20150628T080000Z
+DTEND;VALUE=DATE-TIME:20150702T060000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-344330@cern.ch
+DESCRIPTION:The joint 2015CEC\,  the Cryogenic Engineering Conferenceand
+ ICMC\,  the International Cryogenics Materials Conference.\n \n\nAbstrac
+ t Submission is now closed.  Any late submission requests must be sent to
+  cecicmc@centennialconferences.com and must include the abstract title\, l
+ ist of authors including affiliations\, the abstract body and the submissi
+ on category. Abstracts will be sent to the Program Committee for possible 
+ consideration at the committee’s discretion.\n\n \n\n \n\n \n\nhttps:
+ //indico.cern.ch/event/344330/
+LOCATION:JW Marriott Starr Pass Resort
+URL:https://indico.cern.ch/event/344330/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:EDS Blois 2015: The 16th conference on Elastic and Diffractive sca
+ ttering
+DTSTART;VALUE=DATE-TIME:20150629T060000Z
+DTEND;VALUE=DATE-TIME:20150704T100000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-362991@cern.ch
+DESCRIPTION:The 16th conference on Elastic and Diffractive scattering\, ED
+ S Blois 2015 will be held in Borgo\, Corsica/France between the 29th of Ju
+ ne and the 4th of July\, 2015. The conference will feature sessions about 
+ elastic and total cross sections\, soft diffraction\, hard diffraction\, c
+ entral exclusive production & new physics with rapidity gaps\, heavy ions\
+ , ultraperipheral physics\, low-x QCD and cosmic rays\, exclusive processe
+ s and hadron structure.\n\nhttps://indico.cern.ch/event/362991/
+LOCATION:Borgo\, Corsica
+URL:https://indico.cern.ch/event/362991/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Lyon JetMET workshop at Run2 restart
+DTSTART;VALUE=DATE-TIME:20150708T060000Z
+DTEND;VALUE=DATE-TIME:20150710T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-376727@cern.ch
+DESCRIPTION:The LHC Run2 will be a major milestone in the progress of part
+ icle physics\, and the last chance for several years to probe unexplored e
+ nergies and hopefully answer some of the pending questions on the Standard
+  Model and beyond.\nThe success of the CMS and ATLAS experiments physics p
+ rogramme strongly depends on the understanding of physics objects\, and th
+ e quick commissioning of their reconstruction at 13 TeV. \nThis three day 
+ workshop is dedicated to the performances of jets and missing transverse e
+ nergy reconstruction in CMS with the early Run2 data. The workshop will be
+  the occasion for the CMS community to review the needs and asses the read
+ iness and performances for the reconstruction and calibration of jets and 
+ missing transverse energy.\n\nhttps://indico.cern.ch/event/376727/
+LOCATION:IPNLyon
+URL:https://indico.cern.ch/event/376727/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:EPS HEP 2015
+DTSTART;VALUE=DATE-TIME:20150722T060000Z
+DTEND;VALUE=DATE-TIME:20150729T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-356420@cern.ch
+DESCRIPTION:Welcome to the EPS-HEP 2015 conference!\n\nThe European Physic
+ al Society Conference on High Energy Physics (EPS-HEP) is one of the major
+  international conferences that review every second year since 1971 organi
+ zed by the High Energy and Particle Physics Divison of the European Physic
+ al Society. The latest conferences in this series were held in Stockholm\,
+  Grenoble\, Krakow\, Manchester\, Lisabon and Aachen.\n\nIn 2015 the EPS-H
+ EP will take place in Vienna\, Austria between 22 to 29 July. The conferen
+ ce 2015 is organized by the Institute of High Energy Physics (HEPHY) of th
+ e Austrian Academy of Sciences\, the University of Vienna\, Vienna Univers
+ ity of Technology and the Stefan-Meyer Institute (SMI) of the Austrian Aca
+ demy of Sciences.\n\nhttps://indico.cern.ch/event/356420/
+LOCATION:University of Vienna
+URL:https://indico.cern.ch/event/356420/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Second Conference on heavy ion collisions in the LHC era and beyon
+ d
+DTSTART;VALUE=DATE-TIME:20150726T100000Z
+DTEND;VALUE=DATE-TIME:20150731T110000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-327279@cern.ch
+DESCRIPTION:The Second Conference on Heavy Ion Collisions in the LHC era a
+ nd beyond\, taking place in Quy Nhon on 26-31 July 2015\, will focus on th
+ e physics of proton-nucleus and nucleus-nucleus collisions at RHIC and LHC
+ \, and will explore future capabilities. Results accumulated by the RHIC/L
+ HC experiments and recent theoretical developments will be presented on th
+ e following topics:\n\nA: Global and Collective Dynamics\n	B: Jet quenchin
+ g\n	C: Heavy Flavor and Quarkonia Production\n	D: Electroweak Probes\n	E: 
+ QCD at High Temperature and Density & Phase Diagram\n	F: Pre-equilibrium a
+ nd Initial State Physics\nWe will aim to achieve a balance between review 
+ talks given by recognised specialists\, and shorter contributions\, specia
+ l emphasis being placed on active participation by younger researchers and
+  post-docs. Parallel sessions are foreseen\, and are being organised as th
+ e need arises. The inaugural opening talk will be given by Prof. Jerome I.
+  Friedman\, Nobel Prize of Physics in 1990.\n\nThis conference is part of 
+ a series of international meetings held regularly in Vietnam\, created by 
+ Jean Tran Thân Van in 1993. Their purpose is to stimulate the development
+  of advanced research in Vietnam and more generally in South East Asia\, a
+ nd to establish collaborative research networks with Western scientific co
+ mmunities.\n\nThe conference will take place in Quy Nhon\,Vietnam\, from S
+ unday\, July 26th to Friday\, July 31st\, 2015 in the new International Ce
+ nter of Interdisciplinary Science Education ICISE (see leaflet and video).
+  The Center has been inaugurated on August 12\, 2013 during the Inaugural 
+ Conference Windows on the Universe. The center is located in an exceptiona
+ l location near the sea\, close to a small town situated on the east coast
+  of Vietnam\, one hour north by air from Ho-Chi-Minh City (Saigon).\n\n\n\
+ n\nhttps://indico.cern.ch/event/327279/
+LOCATION:Quy Nhon\, Vietnam
+URL:https://indico.cern.ch/event/327279/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:LISHEP 2015 - SESSION A - "A IMPORTÂNCIA DA LUZ NA FÍSICA: DOS F
+ ÓTONS AOS HIGGS"
+DTSTART;VALUE=DATE-TIME:20150727T120000Z
+DTEND;VALUE=DATE-TIME:20150730T210000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-338358@cern.ch
+DESCRIPTION:Como parte das atividades do ano Internacional da Luz\, a ses
+ são A da Lishep 2015 terá como tema: A IMPORTÂNCIA DA LUZ NA FÍSICA: 
+ DOS FÓTONS AOS HIGGS.\n\nEsta sessão será dedicada a licenciandos\, pr
+ ofessores do ensino médio e jornalistas.\n\n \n\nhttps://indico.cern.ch/
+ event/338358/
+LOCATION:Brazil - MANAUS - AMAZONAS
+URL:https://indico.cern.ch/event/338358/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:ICRC2015
+DTSTART;VALUE=DATE-TIME:20150729T140000Z
+DTEND;VALUE=DATE-TIME:20150806T163000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-344485@cern.ch
+DESCRIPTION:https://indico.cern.ch/event/344485/
+LOCATION:World Forum
+URL:https://indico.cern.ch/event/344485/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Exploring the Shores of Fundamental Matter: Advances around the No
+ rthern Seas (ESFM-2015)
+DTSTART;VALUE=DATE-TIME:20150729T040000Z
+DTEND;VALUE=DATE-TIME:20150804T194000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-372494@cern.ch
+DESCRIPTION:Exploring the Shores of Fundamental Matter: Advances around th
+ e Northern Seas\n\n\n			The International Workshop on Exploring the Shores
+  of Fundamental Matter: Advances around the Northern Seas (ESFM-2015) aim
+ s to collect theoreticians and experimentalists working in the field of nu
+ clear  physics and related fields.\n\n			The conference will be hosted at
+  the University of Bergen.\n			\n			 \n		 \n\n \n\n \n\n \n\nhttps://
+ indico.cern.ch/event/372494/
+LOCATION:Bergen\, Norway
+URL:https://indico.cern.ch/event/372494/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:LISHEP 2015 - SESSION C - Conference Page
+DTSTART;VALUE=DATE-TIME:20150802T100000Z
+DTEND;VALUE=DATE-TIME:20150809T230000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-338357@cern.ch
+DESCRIPTION:LISHEP 2015 will have as the main focus "ON A RIVER OF DISCOVE
+ RY "\n\nhttps://indico.cern.ch/event/338357/
+LOCATION:Brasil - Manaus - Amazonas
+URL:https://indico.cern.ch/event/338357/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:3rd International Conference on New Frontiers in Physics
+DTSTART;VALUE=DATE-TIME:20150803T040000Z
+DTEND;VALUE=DATE-TIME:20150812T194000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-344172@cern.ch
+DESCRIPTION:3rd International Conference on New Frontiers in Physics  fro
+ m 28 to 29 July FAIR Workshopfrom 29 to 30 July Lecturesfrom 31 July to 6 
+ August Main Conference\n\nThe International Conference on new Frontiers in
+  Physics aims to promote scientific exchange and development of novel idea
+ s in science with a particular accent on interdisciplinarity.\n\nThe confe
+ rence will bring together worldwide experts and promising young scientists
+  working on experimental and theoretical aspects of particle\, nuclear\, h
+ eavy ion and astro-particle physics and cosmology\, with colleagues from o
+ ther disciplines\, for example solid state physics\, mathematics\, mathema
+ tical physics\, quantum optics\, quantum entanglement and other.\nThe conf
+ erence will also host a workshop on "Opportunities from FAIR to other low 
+ energy facilities". \n\n\n\nThe conference will be hosted in the Conferenc
+ e Center of the Orthodox Academy of Creta (OAC)\, an exceptionally beautif
+ ul location only a few meters from the mediteranean sea.\n\n \n\nhttps://
+ indico.cern.ch/event/344172/
+LOCATION:
+URL:https://indico.cern.ch/event/344172/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: DPF2015
+DTSTART;VALUE=DATE-TIME:20150804T130000Z
+DTEND;VALUE=DATE-TIME:20150808T210000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-361123@cern.ch
+DESCRIPTION:\n\n\nHosted by the University of Michigan Department of Physi
+ cs\n\n\n\n\n\nWe are planning five morning of plenary sessions and four af
+ ternoons of parallel sessions.  Topics include:\nLHC Run 2 Startup\nPhysic
+ s Beyond the Standard Model\nAccelerators\, Detectors\, Computing\nCosmic 
+ Ray Particle Astrophysics\nCosmology & Dark Matter\nElectroweak & Top Quar
+ k\nField & String Theory\nOutreach & Education\nFlavor Physics\nCP Violati
+ on\nHiggs Sector\nHeavy Ions\nNeutrinos\nQCD\n\n\nAll of the plenary and p
+ arallel sessions will be convened in the Michigan League\, in the heart of
+  the University of Michigan Central Campus. \nWelcome reception\, breakfas
+ ts and coffee breaks are provided in the Michigan League Ballroom in order
+  to foster extended discussions during the week. \n\n\nAccommodations are 
+ provided in either university dormitory and hotels right on campus\, or in
+  off-campus hotels connected by shuttles or public transportation. Limited
+  financial aid covering the cost of accommodations for students and post-d
+ oc is available on a first-come first-serve basis.\n\n\n\nhttps://indico.c
+ ern.ch/event/361123/
+LOCATION:University of Michigan
+URL:https://indico.cern.ch/event/361123/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:XXVII International Symposium on Lepton Photon Interactions at Hig
+ h Energies
+DTSTART;VALUE=DATE-TIME:20150817T060000Z
+DTEND;VALUE=DATE-TIME:20150822T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-325831@cern.ch
+DESCRIPTION:The 27th International Symposium on Lepton Photon Interactions
+  at High Energies will take place in Ljubljana\, Slovenia between August 1
+ 7-22\, 2015. The Conference follows the tradition of a long series of high
+  energy physics conferences\, the International Symposia on Lepton and Pho
+ ton Interactions at High Energies. The program features plenary sessions c
+ overing topics of major interest to the particle physics community. A post
+ er session will be organized where students and young postdocs may present
+  their work. The conference is hosted by the Jozef Stefan Institute and Un
+ iversity of Ljubljana\, and will take place at the Ljubljana Exhibition an
+ d Convention Centre.\n\nhttps://indico.cern.ch/event/325831/
+LOCATION:Ljubljana Exhibition and Convention Centre
+URL:https://indico.cern.ch/event/325831/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Science Applications for Exascale Computing – Exploring New Aven
+ ues towards Scalability and Fault-Tolerance
+DTSTART;VALUE=DATE-TIME:20150907T060000Z
+DTEND;VALUE=DATE-TIME:20150909T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-379099@cern.ch
+DESCRIPTION:596. WE-Heraeus-Seminar\n\nScope\n\nMost scientific applicatio
+ ns require considerable computer resources\, but use applications and soft
+ ware libraries that have been developed during the last decades. Consequen
+ tly\, these programs are not suitable for modern and future HPC systems th
+ at contain millions of cores\, many-core architectures\, or GPGPUs. This s
+ eminar focuses on applications and solutions that have high demands on HPC
+  systems. Scientific problems and their algorithmic formulation and effici
+ ent implementation on high performance computers will be addressed. The ex
+ pected developments in the coming years will also be considered.\n\nThe se
+ minar will cover a representative cross-section of scientific applications
+  in physics and quantum chemistry\, attempting to identify common problems
+  and solutions. The selected applications range from on-line analysis usin
+ g “capabilty computing” on hundreds of thousands of processor cores to
+  data-driven “high throughput computing”.\n\nhttps://indico.cern.ch/ev
+ ent/379099/
+LOCATION:Physikzentrum Bad Honnef\, Germany
+URL:https://indico.cern.ch/event/379099/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:III Russian-Spanish Congress
+DTSTART;VALUE=DATE-TIME:20150908T060000Z
+DTEND;VALUE=DATE-TIME:20150911T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-363317@cern.ch
+DESCRIPTION:A joint meeting among leading Russian and Spanish Scientists w
+ ill take place in Santiago de Compostela\, September 8th-11th.\n\nThe purp
+ ose of the meeting is to strengthen the already existing collaborations an
+ d initiate new ones. The organization expects to cover living expenses of 
+ around 10-15 russian scientists.\n\nThe deadline for applications is 15 Ma
+ y-2015.\n\nThe conference fee is 130 euros. Russian scientists are exempt.
+  The organization will cover the hotel and living expenses of a limited nu
+ mber of russian participants.\n\nhttps://indico.cern.ch/event/363317/
+LOCATION:Santiago de Compostela
+URL:https://indico.cern.ch/event/363317/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:The 2015 International Workshop on Polarized Sources\, Targets & P
+ olarimetry
+DTSTART;VALUE=DATE-TIME:20150914T070000Z
+DTEND;VALUE=DATE-TIME:20150918T140000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-344011@cern.ch
+DESCRIPTION:The Workshop on Polarized Sources\, Targets and Polarimetry ha
+ s been a tradition for more than 20 years\, moving between the Europe\, US
+ A and Japan. The XVIth International Workshop on Polarized Sources\, Targe
+ ts and Polarimetry (PTSP 2015) will take place at the Ruhr-University of B
+ ochum\, Germany. The workshop addresses the physics and technological chal
+ lenges related to polarized gas/solid targets\, polarized electron/positro
+ n/ion/neutron sources\, polarimetry and their applications.\n\nhttps://ind
+ ico.cern.ch/event/344011/
+LOCATION:Ruhr-University Bochum
+URL:https://indico.cern.ch/event/344011/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:XXXV Physics in Collision
+DTSTART;VALUE=DATE-TIME:20150915T170000Z
+DTEND;VALUE=DATE-TIME:20150919T130000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-374792@cern.ch
+DESCRIPTION:The international symposium on Physics in Collision (PIC) is a
+  conference whose focus is to update key topics in elementary particle phy
+ sics in which new results have been published within the last year or are 
+ reasonably expected to be so before the symposium. The aim of the presenta
+ tions is to encourage informal discussions of new experimental results and
+  their implications. The topics at the symposium cover a wide range of phy
+ sics subjects from experimental and theoretical accelerator-based particle
+  physics to astroparticle physics. Specifically\, the meeting topics inclu
+ de Electroweak phenomena\, neutrino physics\, QCD\, heavy flavor physics\,
+  heavy ion physics\, Higgs physics\, Searches for BSM physics\, and astrop
+ article physics.\n\nhttps://indico.cern.ch/event/374792/
+LOCATION:University of Warwick
+URL:https://indico.cern.ch/event/374792/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:10th International "Hiroshima" Symposium on the Development and Ap
+ plication of Semiconductor Tracking Detectors\, Xi'an\, China
+DTSTART;VALUE=DATE-TIME:20150924T080000Z
+DTEND;VALUE=DATE-TIME:20150929T073000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-340417@cern.ch
+DESCRIPTION:Submission of abstract by July 31.\nThe primary goal of this 
+ symposium is to bring together experts in the design\, processing and appl
+ ications of semiconductor tracking detectors for discussions of past exper
+ iences\, lessons learned and new ideas which are still in the early stage 
+ of development.\nKey dates:\nJune 10   Registration open\nJuly 31   Su
+ bmission of Abstracts\nJuly 31   Early Registration ends\nSep 3   Symp
+ osium Registration ends\nSeptember 25 - 29   Symposium sessions\nNovembe
+ r 6 - Submission of NIMA article\n\nLocal organizers\n\nX. C. Lou (Chair)
+ \, IHEP Beijing\nQ. Ouyang\, IHEP Beijing\nL. Han\, USTC Hefei\nC. H. He\,
+  Xi'an Jiaotong U\nZheng Li\, Xiangtan U \nY. P. Lu\, IHEP Beijing \nZ. Wa
+ ng\, IHEP Beijing \nQ. M. Zhang\, Xi'an Jiaotong U\nH. B Zhu\, IHEP Beijin
+ g \n\n\n\n\nInternational organizers\n\nT. Ohsugi\, Hiroshima University\n
+ H. Suen\, Academia Sinica\, Taipei\nH.F-W. Sadrozinski\, University of Cal
+ ifornia\, Santa Cruz\nY. Unno (Chair)\, KEK\n\nSponsors and Supports\n\n 
+ \n\n\nhttps://indico.cern.ch/event/340417/
+LOCATION:Xi'an\, China
+URL:https://indico.cern.ch/event/340417/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quark Matter 2015 - XXV International Conference on Ultrarelativis
+ tic Nucleus-Nucleus Collisions
+DTSTART;VALUE=DATE-TIME:20150926T230000Z
+DTEND;VALUE=DATE-TIME:20151003T090000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-355454@cern.ch
+DESCRIPTION:The Quark Matter 2015 conference is the twenty-fifth edition o
+ f the most prestigious series of international meetings in the field of ul
+ trarelativistic heavy-ion collisions. The meetings bring together theorist
+ s and experimentalists committed to understanding the fundamental properti
+ es of strongly interacting matter at extreme energy densities. The conditi
+ ons reached in head-on nuclear collisions at the highest currently availab
+ le energies correspond to those in primordial matter a few tens of microse
+ conds after the Big Bang. Thus\, this type of laboratory research improves
+  our understanding of the early phase of the Universe.\n\nThe first Quark 
+ Matter conference took place in 1980 in Darmstadt. Since then\, the meetin
+ gs of this series have been organized approximately every 1.5 years. The r
+ ecent instances were in Jaipur\, India (2008)\, Knoxville\, USA (2009)\, A
+ nnecy\, France (2011)\, Washington DC\, USA (2012)\, and Darmstadt (2014).
+ \n\nhttps://indico.cern.ch/event/355454/
+LOCATION:Kobe\, Fashion Mart\, Japan
+URL:https://indico.cern.ch/event/355454/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:          TWEPP 2015 - Topical Workshop on Electronics for Particl
+ e Physics
+DTSTART;VALUE=DATE-TIME:20150928T080000Z
+DTEND;VALUE=DATE-TIME:20151002T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-357738@cern.ch
+DESCRIPTION:The workshop will cover all aspects of electronics for particl
+ e physics experiments\, and accelerator instrumentation of general interes
+ t to users.\nLHC experiments (and their operational experience) will remai
+ n a focus of the meeting but a strong emphasis on R&D for future experimen
+ tation will be maintained\, such as SLHC\, CLIC\, ILC\, neutrino facilitie
+ s as well as other particle and astroparticle physics experiments.\nThe pu
+ rpose of the workshop is :\n- to present results and original concepts for
+  electronic research and development relevant to experiments as well as ac
+ celerator and beam instrumentation at future facilities\n- to review the s
+ tatus of electronics for the LHC experiments\n- to identify and encourage 
+ common efforts for the development of electronics\n- to promote informatio
+ n exchange and collaboration in the relevant engineering and physics commu
+ nities.\n\n \n\n \n\nhttps://indico.cern.ch/event/357738/
+LOCATION:Lisbon
+URL:https://indico.cern.ch/event/357738/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: International Conference on Precision Physics and Fundamental Phy
+ sical Constants (FFK-2015) 
+DTSTART;VALUE=DATE-TIME:20151012T100000Z
+DTEND;VALUE=DATE-TIME:20151016T120000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-346913@cern.ch
+DESCRIPTION:The International Conference on Precision Physics and Fundamen
+ tal Constants is organized by the Wigner Research Centre for Physics\, Bud
+ apest\, Hungary in cooperation with the Bogolyubov Laboratory of Theoretic
+ al Physics\, Joint Institute for Nuclear Research (JINR)\, Dubna\, Russia 
+ and Pulkovo Observatory\, Saint Petersburg\, Russia.\n\nThe Conference fol
+ lows the series of workshops on Precision Physics and Fundamental Physical
+  Constants (2008-2014) which took place in St. Petersburg (Russia)\, Star
+ á Lesná (Slovakia) and Dubna (Russia) (for the meeting of 2014 look at h
+ ttp://theor.jinr.ru/~ffk14/2014/index.html).\n\n\n\nThere will be a satell
+ ite workshop before our conference in Bratislava\, Slovakia on Dispersion 
+ Methods for Hadronic Contributions to QED Effects: http://www.saske.sk/Ue
+ f/Conferences/FFK/Satelite_2015.htm\n\nThe workshop is devoted to precisio
+ n measurements of hadronic effects like proton form factors\, proton polar
+ izability and hadronic contributions to the muon g-2. All participants of 
+ FFK-2015\, Budapest are invited to attend Bratislava as well.\n\nhttps://i
+ ndico.cern.ch/event/346913/
+LOCATION:Hungarian Academy of Sciences
+URL:https://indico.cern.ch/event/346913/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:The Standard Theory  and Beyond in the LHC Era - 2015
+DTSTART;VALUE=DATE-TIME:20151024T060000Z
+DTEND;VALUE=DATE-TIME:20151031T170000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-353278@cern.ch
+DESCRIPTION:\n\nThis is the first announcement of a conference focusing on
+  \n\nFlavor Physics\n	Neutrino Physics\n	QCD\n	Higgs Particle\n	Extension
+ s of the Standard Theory\n	String Theory\n	Particles and Cosmology\nPartic
+ ipation is by invitation only.\n\nThe conference will take place in the be
+ autiful Hapimag resort west of Albufeira at the Algarve coast.\n\nhttps://
+ indico.cern.ch/event/353278/
+LOCATION:Albufeira\, Portugal
+URL:https://indico.cern.ch/event/353278/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:2015 Conference "Grid\, Cloud & High Performance Computing in Scie
+ nce"
+DTSTART;VALUE=DATE-TIME:20151028T050000Z
+DTEND;VALUE=DATE-TIME:20151030T200000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-357471@cern.ch
+DESCRIPTION:The Romanian Tier-2 Federation RO-LCG was established in 2006 
+ following the conclusion of the Worldwide LHC Computing Grid (WLCG) collab
+ oration’s Memorandum of Understanding between CERN and ANCS.\n\n\nSince 
+ 2007\, an annual RO-LCG workshop or conferences in alternatively held on t
+ opics related to the Grid and High Performance computing support for Parti
+ cles Physics and scientific research in general.\n\n\nThe RO-LCG 2015 conf
+ erence is dedicated to the exchange of information between various scienti
+ fic communities working in Grid\, Cloud computing and HPC. The event gathe
+ rs representatives of national\, and international grid infrastructures\, 
+ WLCG members and high-energy physicists\, computer scientist\, site admini
+ strator\, grid\, cloud and HPC users.\n\nhttps://indico.cern.ch/event/3574
+ 71/
+LOCATION:Nat'l Inst. for Research and Development for Isotopic and Molecul
+ ar Technology
+URL:https://indico.cern.ch/event/357471/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Beauty 2016\, Marseille\, France
+DTSTART;VALUE=DATE-TIME:20160502T060000Z
+DTEND;VALUE=DATE-TIME:20160506T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-352928@cern.ch
+DESCRIPTION:The 16th International Conference on B-Physics at Frontier Mac
+ hines\n\nhttps://indico.cern.ch/event/352928/
+LOCATION:Marseille\, France
+URL:https://indico.cern.ch/event/352928/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:String-Math 2016\, Collège de France\, Paris
+DTSTART;VALUE=DATE-TIME:20160627T070000Z
+DTEND;VALUE=DATE-TIME:20160702T160000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-375104@cern.ch
+DESCRIPTION:The goal of the String-Math 2016 conference is to bring togeth
+ er mathematicians and physicists who work on ideas related to string theor
+ y\, a broad framework which aims to unify all fundamental interactions in 
+ Nature. Concepts and structures encountered and studied in string theory h
+ ave given rise to entirely new mathematical fields\, and revitalized older
+  ones. By now there is a large and rapidly growing number of both mathemat
+ icians and physicists working at the string-theoretic interface between th
+ e two academic fields. The influence flows in both directions\, with mathe
+ matical techniques and ideas contributing crucially to major advances in s
+ tring theory.\n\nThe String-Math 2016 conference will take place at Collè
+ ge de France in Paris. It will be the culmination of an extended 3-month p
+ rogram at Institut Henri Poincaré\, Paris\, on the mathematics of string 
+ theory\, and will include a public session intended for a general audience
+ .\n\nThe String-Math 2016 conference is organized in partnership with the 
+ Clay Mathematics Institute.\n\nSteering Committee of String-Math Conferenc
+ es:\n\nRon Donagi\, Dan Freed\, Nigel Hitchin\, Sheldon Katz\, Maxim Konts
+ evich\, David Morrison\, Edward Witten\, Shing-Tung Yau\n\nScientific Comm
+ ittee:\n\nMina Aganagic\, Niklas Beisert\, Tom Bridgeland\, Kathrin Bringm
+ ann\, Alessandro Chiodo\, Simon Donaldson\, Edward Frenkel\, Bertrand Eyna
+ rd\, Matthias Gaberdiel\, Rajesh Gopakumar\, Antonella Grassi\, Mark Gross
+ \, Chris Hull\, Albrecht Klemm\,  Wolfgang Lerche\, Juan Maldacena\, Mati
+ lde Marcolli\, Gregory Moore\, Hirosi Ooguri\, Rahul Pandharipande\, Tony 
+ Pantev\, Vassily Pestun\, Yongbin Ruan\, Sakura Schafer-Nameki\, Volker Sc
+ homerus\, Savdeep Sethi\, Eric Sharpe\, Samson Shatashvili\, Jorg Teschner
+ \, Johannes Walcher\, Katrin Wendland\, Maxim Zabzine\, Eric Zaslow\n\nOrg
+ anizing Committee:\n\nPhilip Boalch\, Miranda Cheng\, Amir Kashani-Poor\,
+   Maxim Kontsevich\, Ruben Minasian\, Nikita Nekrasov\, Boris Pioline\, D
+ on Zagier\n\nPrevious String-Math conferences:\n\nSM2011:Philadelphia | SM
+ 2012:Bonn | SM2013:Stony Brook | SM2014:Alberta | SM2015:Sanya\n\nhttps://
+ indico.cern.ch/event/375104/
+LOCATION:Collège de France
+URL:https://indico.cern.ch/event/375104/
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:XII Quark Confinement and the Hadron Spectrum
+DTSTART;VALUE=DATE-TIME:20160926T040000Z
+DTEND;VALUE=DATE-TIME:20160930T194000Z
+DTSTAMP;VALUE=DATE-TIME:20150305T220309Z
+UID:indico-event-353906@cern.ch
+DESCRIPTION:XIIth Quark Confinement and the Hadron Spectrum\n\nThis confer
+ ence is the twelfth in a series whose aim it is to bring together people w
+ orking in QCD and strong-interaction dynamics.  \n\nIt will take place in
+  Thessaloniki (Greece) from 26 to 30 September 2016.  \n\n\n\nContact ema
+ il:  \n\nInformation about Conference Proceedings is available here  \n\
+ nhttps://indico.cern.ch/event/353906/
+LOCATION:Ioannis Vellidis conference centre
+URL:https://indico.cern.ch/event/353906/
+END:VEVENT
+END:VCALENDAR

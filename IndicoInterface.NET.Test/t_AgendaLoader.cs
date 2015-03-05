@@ -635,5 +635,23 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual(1, WhiteListInfo.GetUseEventWhitelist().Length);
             Assert.AreEqual("indico.cern.ch", WhiteListInfo.GetUseEventWhitelist()[0]);
         }
+
+        [TestMethod]
+        [DeploymentItem("1l12.ics")]
+        public async Task LoadCategory()
+        {
+            var c = new AgendaCategory("https://indico.cern.ch/export/categ/1l12.ics?from=-60d");
+            var rdr = new FileReader("1l12.ics");
+            var ai = new AgendaLoader(rdr);
+
+            var agendas = await ai.GetCategory(c, 60);
+            Assert.AreEqual(57, agendas.Count());
+
+            var a1 = agendas.First();
+            Assert.AreEqual("371544", a1.ConferenceID);
+            Assert.AreEqual("LHCP2015 Steering Group Meeting", a1.Title);
+            Assert.AreEqual("2/3/2015 4:00:00 PM", a1.StartTime.ToString());
+            Assert.AreEqual("2/3/2015 5:00:00 PM", a1.EndTime.ToString());
+        }
     }
 }

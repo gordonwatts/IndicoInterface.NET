@@ -1,4 +1,5 @@
-﻿using IndicoInterface.NET.SimpleAgendaDataModel;
+﻿using DDay.iCal;
+using IndicoInterface.NET.SimpleAgendaDataModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -633,6 +634,19 @@ namespace IndicoInterface.NET
             using (StringReader rdr = new StringReader(p))
             {
                 return Deseralize(rdr);
+            }
+        }
+
+        /// <summary>
+        /// Fetch category information from the website.
+        /// </summary>
+        /// <param name="cat"></param>
+        public async Task<IEnumerable<AgendaInfoExtended>> GetCategory(AgendaCategory cat, int daysBefore)
+        {
+            using (var data = await _fetcher.GetDataFromURL(cat.GetCagetoryUri(daysBefore)))
+            {
+                var cal = iCalendar.LoadFromStream(data);
+                return cal.SelectMany(c => c.Events).Select(evt => new AgendaInfoExtended(evt.Url.OriginalString, evt.Summary, evt.Start.UTC, evt.End.UTC));
             }
         }
 

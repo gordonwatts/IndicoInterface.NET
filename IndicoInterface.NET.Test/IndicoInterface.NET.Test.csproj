@@ -60,6 +60,9 @@
     <Compile Include="t_AgendaCategory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1l12.ics">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="374641-split-sessions.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
