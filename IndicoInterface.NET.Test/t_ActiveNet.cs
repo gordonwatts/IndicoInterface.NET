@@ -83,6 +83,24 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        public async Task GetIndicoCategoryWhiteList()
+        {
+            var a = new AgendaCategory("https://indico.cern.ch/export/categ/1l12.ics?from=-60d");
+            var uri = a.GetCagetoryUri(120);
+            var req = WebRequest.Create(uri);
+            var response = await req.GetResponseAsync();
+            using (var strm = response.GetResponseStream())
+            {
+                using (var txtrdr = new StreamReader(strm))
+                {
+                    var all = await txtrdr.ReadToEndAsync();
+                    Console.Write(all);
+                    Assert.IsTrue(all.Contains("7th SYMPOSIUM ON LARGE TPCs FOR LOW-ENERGY RARE EVENT DETECTION"));
+                }
+            }
+        }
+
+        [TestMethod]
         public async Task GetNonWhitelistSiteURL()
         {
             var a = new AgendaInfo("https://indico.fnal.gov/conferenceDisplay.py?confId=9318");

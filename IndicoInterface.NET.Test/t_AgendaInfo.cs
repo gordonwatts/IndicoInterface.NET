@@ -227,5 +227,12 @@ namespace t_IndicoInterface
 
             Console.WriteLine("Size of short string ({0}) is {1}.", str, str.Length);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(AgendaException))]
+        public void CatagoryURLFails()
+        {
+            var ai = new AgendaInfo("https://indico.cern.ch/export/categ/2636.ics?from=-14d");
+        }
     }
 }

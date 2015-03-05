@@ -38,6 +38,7 @@
     <None Include="IndicoInterface.NET.nuspec" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgendaCategory.cs" />
     <Compile Include="AgendaException.cs" />
     <Compile Include="AgendaInfo.cs" />
     <Compile Include="AgendaLoader.cs" />

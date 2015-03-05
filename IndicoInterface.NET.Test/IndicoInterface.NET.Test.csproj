@@ -57,6 +57,7 @@
     <Compile Include="t_AgendaLoader.cs" />
     <Compile Include="t_SimpleAgendaDataModel.cs" />
     <Compile Include="t_ActiveNet.cs" />
+    <Compile Include="t_AgendaCategory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="374641-split-sessions.xml">
