@@ -72,5 +72,14 @@ namespace IndicoInterface.NET.Test
             var uri = c.GetCagetoryUri(120);
             Assert.IsTrue(uri.OriginalString.Contains("from=-120d"));
         }
+
+        [TestMethod]
+        public void ParseSecretUri()
+        {
+            var c = new AgendaCategory("https://indico.cern.ch/export/categ/2636.ics?apikey=00000000-0000-0000-0000-000000000000&from=-7d&signature=000a000aa0a0a0a000a000a0a00aaa00a0a0000a");
+            Assert.AreEqual("indico.cern.ch", c.AgendaSite);
+            Assert.AreEqual("", c.AgendaSubDirectory);
+            Assert.AreEqual("2636", c.CategoryID);
+        }
     }
 }
