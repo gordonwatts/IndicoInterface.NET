@@ -34,12 +34,23 @@ namespace IndicoInterface.NET
             var m = _gConfIdFinderStyle1.Match(categoryUri);
             if (!m.Success)
             {
-                throw new ArgumentException(string.Format("Unable to interpret '{0}' as an Indico Category Uri", categoryUri));
+                throw new AgendaException(string.Format("Unable to interpret '{0}' as an Indico Category Uri", categoryUri));
             }
 
             CategoryID = m.Groups["catID"].Value;
             AgendaSite = m.Groups["site"].Value;
             AgendaSubDirectory = m.Groups["subdir"].Value.Replace("/", "");
+        }
+
+        /// <summary>
+        /// Is the URI a valid category URI? It doesn't test to make sure the category actually exists on the remote machine!
+        /// </summary>
+        /// <param name="categoryUri">URI to test</param>
+        /// <returns>True if this is a valid category URI</returns>
+        public static bool IsValid(string categoryUri)
+        {
+            var m = _gConfIdFinderStyle1.Match(categoryUri);
+            return m.Success;
         }
 
         /// <summary>

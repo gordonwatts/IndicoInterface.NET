@@ -81,5 +81,23 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual("", c.AgendaSubDirectory);
             Assert.AreEqual("2636", c.CategoryID);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(AgendaException))]
+        public void ThrowWithAgendaInfo()
+        {
+            var c = new AgendaCategory("http://indico.fnal.gov/bogus/conferenceTimeTable.py?confId=1829");
+        }
+
+        [TestMethod]
+        public void IsValidTest()
+        {
+            Assert.IsTrue(AgendaCategory.IsValid("https://indico.cern.ch/export/categ/2636.ics?from=-14d"));
+            Assert.IsTrue(AgendaCategory.IsValid("https://indico.cern.ch/export/categ/2636.ics?apikey=00000000-0000-0000-0000-000000000000&from=-7d&signature=000a000aa0a0a0a000a000a0a00aaa00a0a0000a"));
+            Assert.IsTrue(AgendaCategory.IsValid("https://indico.cern.ch/special/export/categ/2636.ics"));
+            Assert.IsTrue(AgendaCategory.IsValid("https://indico.cern.ch/export/categ/2636.ics"));
+            Assert.IsFalse(AgendaCategory.IsValid("http://indico.fnal.gov/bogus/conferenceTimeTable.py?confId=1829"));
+        }
+
     }
 }
