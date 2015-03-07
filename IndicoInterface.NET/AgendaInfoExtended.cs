@@ -23,6 +23,12 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
+        /// Parameterless ctor to be used for serilization.
+        /// </summary>
+        private AgendaInfoExtended()
+        { }
+
+        /// <summary>
         /// Get/Set the title of this meeting
         /// </summary>
         public string Title { get; set; }

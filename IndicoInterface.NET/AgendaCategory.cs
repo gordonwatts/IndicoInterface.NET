@@ -43,6 +43,12 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
+        /// Parameterless ctor to be used for serilization.
+        /// </summary>
+        private AgendaCategory()
+        { }
+
+        /// <summary>
         /// Is the URI a valid category URI? It doesn't test to make sure the category actually exists on the remote machine!
         /// </summary>
         /// <param name="categoryUri">URI to test</param>

@@ -102,7 +102,7 @@ namespace IndicoInterface.NET
         /// <summary>
         /// Parameterless ctor to be used for serialization.
         /// </summary>
-        private AgendaInfo()
+        protected AgendaInfo()
         {
         }
 
