@@ -1,5 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using System;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace IndicoInterface.NET.Test
 {
@@ -99,5 +102,44 @@ namespace IndicoInterface.NET.Test
             Assert.IsFalse(AgendaCategory.IsValid("http://indico.fnal.gov/bogus/conferenceTimeTable.py?confId=1829"));
         }
 
+        [TestMethod]
+        public void SerializeXML()
+        {
+            // Serialize and de-serilize agenda info
+
+            var ai = new AgendaCategory("http://indico.cern.ch/export/categ/1234.ics");
+
+            var x = new XmlSerializer(typeof(AgendaCategory));
+            using (var m = new MemoryStream())
+            {
+                x.Serialize(m, ai);
+
+                m.Seek(0, SeekOrigin.Begin);
+                var o = x.Deserialize(m) as AgendaCategory;
+
+                Assert.IsNotNull(o);
+                Assert.AreEqual(ai.AgendaSite, o.AgendaSite);
+                Assert.AreEqual(ai.AgendaSubDirectory, o.AgendaSubDirectory);
+                Assert.AreEqual(ai.CategoryID, o.CategoryID);
+            }
+        }
+
+        [TestMethod]
+        public void SerializeJSON()
+        {
+            // Serialize and de-serilize agenda info
+
+            var ai = new AgendaCategory("http://indico.cern.ch/export/categ/1234.ics");
+
+            var json = JsonConvert.SerializeObject(ai);
+            var o1 = JsonConvert.DeserializeObject<AgendaCategory>(json);
+            Assert.IsNotNull(o1);
+            var o = o1 as AgendaCategory;
+
+            Assert.IsNotNull(o);
+            Assert.AreEqual(ai.AgendaSite, o.AgendaSite);
+            Assert.AreEqual(ai.AgendaSubDirectory, o.AgendaSubDirectory);
+            Assert.AreEqual(ai.CategoryID, o.CategoryID);
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace IndicoInterface.NET
         /// <summary>
         /// Parameterless ctor to be used for serilization.
         /// </summary>
-        private AgendaCategory()
+        public AgendaCategory()
         { }
 
         /// <summary>
