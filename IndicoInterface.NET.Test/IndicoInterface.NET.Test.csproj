@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Serialization" />
@@ -54,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="t_AgendaInfo.cs" />
+    <Compile Include="t_AgendaInfoExtended.cs" />
     <Compile Include="t_AgendaLoader.cs" />
     <Compile Include="t_SimpleAgendaDataModel.cs" />
     <Compile Include="t_ActiveNet.cs" />
@@ -114,6 +119,9 @@
       <Project>{38dbff65-d623-48b2-8dee-b9bb07177051}</Project>
       <Name>IndicoInterface.NET</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
