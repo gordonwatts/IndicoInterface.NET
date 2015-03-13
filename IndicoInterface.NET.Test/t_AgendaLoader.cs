@@ -650,8 +650,8 @@ namespace IndicoInterface.NET.Test
             var a1 = agendas.First();
             Assert.AreEqual("371544", a1.ConferenceID);
             Assert.AreEqual("LHCP2015 Steering Group Meeting", a1.Title);
-            Assert.AreEqual("2/3/2015 4:00:00 PM", a1.StartTime.ToString());
-            Assert.AreEqual("2/3/2015 5:00:00 PM", a1.EndTime.ToString());
+            Assert.AreEqual("2/3/2015 4:00:00 PM", a1.StartTime.ToUtc().ToString());
+            Assert.AreEqual("2/3/2015 5:00:00 PM", a1.EndTime.ToUtc().ToString());
         }
     }
 }

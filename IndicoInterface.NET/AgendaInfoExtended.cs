@@ -34,12 +34,12 @@ namespace IndicoInterface.NET
         public string Title { get; set; }
 
         /// <summary>
-        /// Get/Set the start time of this meeting
+        /// Get/Set the start time of this meeting (in the local time)
         /// </summary>
         public DateTime StartTime { get; set; }
 
         /// <summary>
-        /// Get/Set the end time of this meeting
+        /// Get/Set the end time of this meeting (in the local time)
         /// </summary>
         public DateTime EndTime { get; set; }
     }

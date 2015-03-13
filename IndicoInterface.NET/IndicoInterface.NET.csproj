@@ -45,14 +45,18 @@
     <Compile Include="AgendaLoader.cs" />
     <Compile Include="AgendaInfoExtended.cs" />
     <Compile Include="AgendaServerDataModel.cs" />
+    <Compile Include="iCalUtils.cs" />
     <Compile Include="IUrlFetcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleAgendaDataModel.cs" />
     <Compile Include="WhiteListInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DDay.iCal">
-      <HintPath>..\packages\DDay.iCal.1.0.2.575\lib\DDay.iCal.dll</HintPath>
+    <Reference Include="CGenT.Sprache">
+      <HintPath>..\packages\CGenT.Sprache.1.0\lib\portable-net40+sl50+win+wpa81+wp80\CGenT.Sprache.dll</HintPath>
+    </Reference>
+    <Reference Include="iCal.PCL">
+      <HintPath>..\packages\iCal.PCL.1.0.2\lib\portable-net40+win+wpa81\iCal.PCL.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

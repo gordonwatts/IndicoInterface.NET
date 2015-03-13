@@ -1,5 +1,4 @@
-﻿using DDay.iCal;
-using IndicoInterface.NET.SimpleAgendaDataModel;
+﻿using IndicoInterface.NET.SimpleAgendaDataModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -645,8 +644,8 @@ namespace IndicoInterface.NET
         {
             using (var data = await _fetcher.GetDataFromURL(cat.GetCagetoryUri(daysBefore)))
             {
-                var cal = iCalendar.LoadFromStream(data);
-                return cal.SelectMany(c => c.Events).Select(evt => new AgendaInfoExtended(evt.Url.OriginalString, evt.Summary, evt.Start.UTC, evt.End.UTC));
+                var cals = await data.iCalFromStream();
+                return cals.Select(evt => new AgendaInfoExtended(evt.URL.OriginalString, evt.Summary, evt.DTStart, evt.DTEnd));
             }
         }
 
