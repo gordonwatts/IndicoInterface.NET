@@ -64,6 +64,8 @@
     <Compile Include="t_SimpleAgendaDataModel.cs" />
     <Compile Include="t_ActiveNet.cs" />
     <Compile Include="t_AgendaCategory.cs" />
+    <Compile Include="t_ApiKeyHandler.cs" />
+    <Compile Include="utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="1l12.ics">
