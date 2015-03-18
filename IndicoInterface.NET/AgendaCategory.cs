@@ -76,9 +76,12 @@ namespace IndicoInterface.NET
                 b.AppendFormat("{0}/", AgendaSubDirectory);
             }
             b.AppendFormat("export/categ/{0}.ics", CategoryID);
+
+            b.Append("?cookieauth=yes");
+
             if (daysBeforeToday > 0)
             {
-                b.AppendFormat("?from=-{0}d", daysBeforeToday);
+                b.AppendFormat("&from=-{0}d", daysBeforeToday);
             }
 
             return new Uri(b.ToString());
