@@ -28,6 +28,24 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        public void LegalCategoryFromDefaultURL()
+        {
+            var c = new AgendaCategory("https://indico.cern.ch/category/3286/");
+            Assert.AreEqual("indico.cern.ch", c.AgendaSite);
+            Assert.AreEqual("", c.AgendaSubDirectory);
+            Assert.AreEqual("3286", c.CategoryID);
+        }
+
+        [TestMethod]
+        public void LegalCategoryFromDefaultURLWithSubDir()
+        {
+            var c = new AgendaCategory("https://indico.cern.ch/bogus/category/3286/");
+            Assert.AreEqual("indico.cern.ch", c.AgendaSite);
+            Assert.AreEqual("bogus", c.AgendaSubDirectory);
+            Assert.AreEqual("3286", c.CategoryID);
+        }
+
+        [TestMethod]
         public void LegalCategoryURISubDir()
         {
             var c = new AgendaCategory("https://indico.cern.ch/special/export/categ/2636.ics");

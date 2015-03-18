@@ -25,6 +25,8 @@ namespace IndicoInterface.NET
         public string AgendaSubDirectory { get; set; }
 
         static Regex _gConfIdFinderStyle1 = new Regex(@"(?<protocal>http|https)://(?<site>[^/]+)/(?<subdir>.+/)?export/categ/(?<catID>.+)\.ics.*");
+        static Regex _gCOnfIdFinderStyle2 = new Regex(@"(?<protocal>http|https)://(?<site>[^/]+)/(?<subdir>.+/)?category/(?<catID>[^/]+)/*");
+
         /// <summary>
         /// Create a category token.
         /// </summary>
@@ -32,6 +34,10 @@ namespace IndicoInterface.NET
         public AgendaCategory(string categoryUri)
         {
             var m = _gConfIdFinderStyle1.Match(categoryUri);
+            if (!m.Success)
+            {
+                m = _gCOnfIdFinderStyle2.Match(categoryUri);
+            }
             if (!m.Success)
             {
                 throw new AgendaException(string.Format("Unable to interpret '{0}' as an Indico Category Uri", categoryUri));
