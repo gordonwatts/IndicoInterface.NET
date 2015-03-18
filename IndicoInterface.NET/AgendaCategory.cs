@@ -62,6 +62,8 @@ namespace IndicoInterface.NET
         public static bool IsValid(string categoryUri)
         {
             var m = _gConfIdFinderStyle1.Match(categoryUri);
+            if (!m.Success)
+                m = _gCOnfIdFinderStyle2.Match(categoryUri);
             return m.Success;
         }
 

@@ -118,6 +118,7 @@ namespace IndicoInterface.NET.Test
             Assert.IsTrue(AgendaCategory.IsValid("https://indico.cern.ch/special/export/categ/2636.ics"));
             Assert.IsTrue(AgendaCategory.IsValid("https://indico.cern.ch/export/categ/2636.ics"));
             Assert.IsFalse(AgendaCategory.IsValid("http://indico.fnal.gov/bogus/conferenceTimeTable.py?confId=1829"));
+            Assert.IsTrue(AgendaCategory.IsValid("https://indico.cern.ch/export/categ/2636.ics"));
         }
 
         [TestMethod]
