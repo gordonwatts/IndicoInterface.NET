@@ -46,6 +46,7 @@
     <Compile Include="AgendaInfoExtended.cs" />
     <Compile Include="AgendaServerDataModel.cs" />
     <Compile Include="ApiKeyHandler.cs" />
+    <Compile Include="DateTimeUtils.cs" />
     <Compile Include="iCalUtils.cs" />
     <Compile Include="IUrlFetcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +54,9 @@
     <Compile Include="WhiteListInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="bouncy_castle_hmac_sha_pcl">
+      <HintPath>..\packages\BouncyCastle-PCL.1.0.0.6\lib\bouncy_castle_hmac_sha_pcl.dll</HintPath>
+    </Reference>
     <Reference Include="CGenT.Sprache">
       <HintPath>..\packages\CGenT.Sprache.1.0\lib\portable-net40+sl50+win+wpa81+wp80\CGenT.Sprache.dll</HintPath>
     </Reference>
@@ -61,6 +65,11 @@
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
