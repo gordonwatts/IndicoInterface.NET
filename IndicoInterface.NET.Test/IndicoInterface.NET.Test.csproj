@@ -124,6 +124,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="indicoapi.key">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>
