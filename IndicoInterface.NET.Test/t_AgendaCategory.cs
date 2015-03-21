@@ -67,7 +67,15 @@ namespace IndicoInterface.NET.Test
         {
             var c = new AgendaCategory("https://indico.cern.ch/export/categ/2636.ics?from=-14d");
             var uri = c.GetCagetoryUri(0);
-            Assert.AreEqual("https://indico.cern.ch/export/categ/2636.ics?cookieauth=yes", uri.OriginalString);
+            Assert.AreEqual("https://indico.cern.ch/export/categ/2636.ics", uri.OriginalString);
+        }
+
+        [TestMethod]
+        public void LookForPlaneUriWithApiKey()
+        {
+            var c = new AgendaCategory("https://indico.cern.ch/export/categ/2636.ics?from=-14d");
+            var uri = c.GetCagetoryUri(0, "00000000-0000-0000-0000-000000000000");
+            Assert.AreEqual("https://indico.cern.ch/export/categ/2636.ics?apikey=00000000-0000-0000-0000-000000000000", uri.OriginalString);
         }
 
         [TestMethod]
@@ -75,7 +83,7 @@ namespace IndicoInterface.NET.Test
         {
             var c = new AgendaCategory("https://indico.cern.ch/special/export/categ/2636.ics?from=-14d");
             var uri = c.GetCagetoryUri(0);
-            Assert.AreEqual("https://indico.cern.ch/special/export/categ/2636.ics?cookieauth=yes", uri.OriginalString);
+            Assert.AreEqual("https://indico.cern.ch/special/export/categ/2636.ics", uri.OriginalString);
         }
 
         [TestMethod]

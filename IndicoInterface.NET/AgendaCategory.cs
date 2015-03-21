@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 namespace IndicoInterface.NET
@@ -71,26 +72,34 @@ namespace IndicoInterface.NET
         /// Return the URI for a given number of days back in time
         /// </summary>
         /// <param name="daysBeforeToday">We shoudl get the meetings going back how many days in time?</param>
+        /// <param name="apiKey">The API key to use (or null if it doesn't exist)</param>
+        /// <param name="secret">The api key's secret to use (or null if it doesn't exist)</param>
         /// <returns>The URI at which you can load the meeting list iCal</returns>
-        public Uri GetCagetoryUri(int daysBeforeToday)
+        public Uri GetCagetoryUri(int daysBeforeToday, string apiKey = null, string secret = null)
         {
             if (daysBeforeToday < 0)
                 throw new ArgumentException("daysBeforeToday must be positive.");
 
-            var b = new StringBuilder();
-            b.AppendFormat("https://{0}/", AgendaSite);
-            if (!string.IsNullOrWhiteSpace(AgendaSubDirectory))
-            {
-                b.AppendFormat("{0}/", AgendaSubDirectory);
-            }
-            b.AppendFormat("export/categ/{0}.ics", CategoryID);
-
-            b.Append("?cookieauth=yes");
+            // Build the path portion of the argument, including any encoding needed.
+            var urlParams = new Dictionary<string, string>();
 
             if (daysBeforeToday > 0)
             {
-                b.AppendFormat("&from=-{0}d", daysBeforeToday);
+                urlParams.Add("from", string.Format("-{0}d", daysBeforeToday));
             }
+
+            var pathStub = ApiKeyHandler.IndicoEncode(string.Format("/export/categ/{0}.ics", CategoryID), urlParams, apiKey, secret);
+
+            // Put everything together
+            var b = new StringBuilder();
+            b.AppendFormat("https://{0}", AgendaSite);
+            if (!string.IsNullOrWhiteSpace(AgendaSubDirectory))
+            {
+                b.AppendFormat("/{0}", AgendaSubDirectory);
+            }
+            b.Append(pathStub);
+
+            // And return as a URI.
 
             return new Uri(b.ToString());
         }
