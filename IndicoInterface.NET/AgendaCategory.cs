@@ -75,7 +75,7 @@ namespace IndicoInterface.NET
         /// <param name="apiKey">The API key to use (or null if it doesn't exist)</param>
         /// <param name="secret">The api key's secret to use (or null if it doesn't exist)</param>
         /// <returns>The URI at which you can load the meeting list iCal</returns>
-        public Uri GetCagetoryUri(int daysBeforeToday, string apiKey = null, string secret = null)
+        public Uri GetCagetoryUri(int daysBeforeToday, string apiKey = null, string secret = null, bool useTimestamp = true)
         {
             if (daysBeforeToday < 0)
                 throw new ArgumentException("daysBeforeToday must be positive.");
@@ -88,7 +88,7 @@ namespace IndicoInterface.NET
                 urlParams.Add("from", string.Format("-{0}d", daysBeforeToday));
             }
 
-            var pathStub = ApiKeyHandler.IndicoEncode(string.Format("/export/categ/{0}.ics", CategoryID), urlParams, apiKey, secret);
+            var pathStub = ApiKeyHandler.IndicoEncode(string.Format("/export/categ/{0}.ics", CategoryID), urlParams, apiKey, secret, useTimeStamp: useTimestamp);
 
             // Put everything together
             var b = new StringBuilder();

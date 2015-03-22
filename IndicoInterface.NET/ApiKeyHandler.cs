@@ -26,7 +26,7 @@ namespace IndicoInterface.NET
         /// <param name="apiKey">The ApiKey from the website</param>
         /// <param name="secretKey">The secret ApiKey from the website</param>
         /// <returns>The request part of the URI for this resource</returns>
-        public static string IndicoEncode(string requestedPath, IEnumerable<KeyValuePair<string, string>> parameters, string apiKey, string secretKey, DateTime? when = null)
+        public static string IndicoEncode(string requestedPath, IEnumerable<KeyValuePair<string, string>> parameters, string apiKey, string secretKey, DateTime? when = null, bool useTimeStamp = true)
         {
             // Add all parameters
             var allParameters = new Dictionary<string, string>();
@@ -45,7 +45,7 @@ namespace IndicoInterface.NET
             }
 
             // We only need to add date/time if we are also going to sign this.
-            if (!string.IsNullOrWhiteSpace(apiKey) && !string.IsNullOrWhiteSpace(secretKey))
+            if (!string.IsNullOrWhiteSpace(apiKey) && !string.IsNullOrWhiteSpace(secretKey) && useTimeStamp)
             {
                 // Use "Now" if we don't have a specific time.
                 var t = when.HasValue ? when.Value : DateTime.Now;

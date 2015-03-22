@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
 
 namespace IndicoInterface.NET.Test
 {
@@ -14,6 +16,23 @@ namespace IndicoInterface.NET.Test
         {
             var ts = new TimeSpan(0, 0, secondsSinceEpoch);
             return _startOfEpoch + ts;
+        }
+
+        /// <summary>
+        /// Do a file...
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public static Tuple<string, string> GetApiAndSecret(string p)
+        {
+            var f = new FileInfo(p);
+            Assert.IsTrue(f.Exists);
+            using (var fs = f.OpenText())
+            {
+                var l1 = fs.ReadLine();
+                var l2 = fs.ReadLine();
+                return Tuple.Create(l1, l2);
+            }
         }
     }
 }

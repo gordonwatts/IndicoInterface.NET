@@ -124,6 +124,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="indico3285answers.key">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="indicoapi.key">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

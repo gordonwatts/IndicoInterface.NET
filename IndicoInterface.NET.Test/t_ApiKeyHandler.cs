@@ -83,9 +83,18 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("indicoapi.key")]
+        [DeploymentItem("indico3285answers.key")]
         public void EncodeMySecret()
         {
-            // This test will only work with my secret key and api... So don't uncomment it unless you plan on stealing my stuff! :-)
+            // Fill the indicoapi.key file with your api key in first line, and secret in second line.
+            // Fill the indico2385answers.key by getting the url from indico for private look-ahead, and extractin the api key into the first line, and the
+            // signature into the second line.
+            var a = new AgendaCategory("https://indico.cern.ch/category/3286/");
+            var info = utils.GetApiAndSecret("indicoapi.key");
+            var uri = a.GetCagetoryUri(7, info.Item1, info.Item2, false);
+            var answers = utils.GetApiAndSecret("indico3285answers.key");
+            Assert.AreEqual(string.Format("https://indico.cern.ch/export/categ/3286.ics?apikey={0}&from=-7d&signature={1}", answers.Item1, answers.Item2), uri.OriginalString);
         }
     }
 }

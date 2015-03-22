@@ -87,7 +87,7 @@ namespace IndicoInterface.NET.Test
         public async Task GetCategoryWithSecret()
         {
             var a = new AgendaCategory("https://indico.cern.ch/category/2636/");
-            var info = GetApiAndSecret("indicoapi.key");
+            var info = utils.GetApiAndSecret("indicoapi.key");
             var uri = a.GetCagetoryUri(7, info.Item1, info.Item2);
 
             var req = WebRequest.Create(uri);
@@ -101,23 +101,6 @@ namespace IndicoInterface.NET.Test
                 }
             }
             Assert.Inconclusive();
-        }
-
-        /// <summary>
-        /// Do a file...
-        /// </summary>
-        /// <param name="p"></param>
-        /// <returns></returns>
-        private Tuple<string, string> GetApiAndSecret(string p)
-        {
-            var f = new FileInfo(p);
-            Assert.IsTrue(f.Exists);
-            using (var fs = f.OpenText())
-            {
-                var l1 = fs.ReadLine();
-                var l2 = fs.ReadLine();
-                return Tuple.Create(l1, l2);
-            }
         }
 
         [TestMethod]
