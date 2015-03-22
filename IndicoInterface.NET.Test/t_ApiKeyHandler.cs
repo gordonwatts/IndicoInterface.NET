@@ -70,7 +70,7 @@ namespace IndicoInterface.NET.Test
             // Test case generated with tool found at http://indico.readthedocs.org/en/latest/http_api/tools/
             var dt = 1426720253.FromUnixTime();
             var s = ApiKeyHandler.IndicoEncode("/export/categ/2636.ics", null, "00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000010", dt);
-            Assert.AreEqual("/export/categ/2636.ics?timestamp=1426720253&apikey=00000000-0000-0000-0000-000000000000&signature=d2d4defc041097be9a29df7f7101cd356621e910", s);
+            Assert.AreEqual("/export/categ/2636.ics?apikey=00000000-0000-0000-0000-000000000000&timestamp=1426720253&signature=25295f72e8f7659634eabaa6a2f64d711f20cb1e", s);
         }
 
         [TestMethod]
@@ -79,7 +79,7 @@ namespace IndicoInterface.NET.Test
             // Test case generated with tool found at http://indico.readthedocs.org/en/latest/http_api/tools/
             var dt = 1426720253.FromUnixTime();
             var s = ApiKeyHandler.IndicoEncode("/export/categ/2636.ics", new Dictionary<string, string> { { "limit", "10" }, { "fork", "dude" } }, "00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000010", dt);
-            Assert.AreEqual("/export/categ/2636.ics?timestamp=1426720253&apikey=00000000-0000-0000-0000-000000000000&signature=d2d4defc041097be9a29df7f7101cd356621e910", s);
+            Assert.AreEqual("/export/categ/2636.ics?apikey=00000000-0000-0000-0000-000000000000&fork=dude&limit=10&timestamp=1426720253&signature=95ec880ee6256fbd213a09ec39b4fbaa940f5ea4", s);
         }
 
         [TestMethod]

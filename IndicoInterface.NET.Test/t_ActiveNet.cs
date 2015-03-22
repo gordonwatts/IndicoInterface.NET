@@ -98,9 +98,30 @@ namespace IndicoInterface.NET.Test
                 {
                     var all = await txtrdr.ReadToEndAsync();
                     Console.WriteLine(all);
+                    Assert.IsTrue(all.StartsWith("BEGIN:VCALENDAR"));
                 }
             }
-            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        [DeploymentItem("indicoapi.key")]
+        public async Task GetCategoryWithSecretNoTimestamp()
+        {
+            var a = new AgendaCategory("https://indico.cern.ch/category/3286/");
+            var info = utils.GetApiAndSecret("indicoapi.key");
+            var uri = a.GetCagetoryUri(7, info.Item1, info.Item2, false);
+
+            var req = WebRequest.Create(uri);
+            var response = await req.GetResponseAsync();
+            using (var strm = response.GetResponseStream())
+            {
+                using (var txtrdr = new StreamReader(strm))
+                {
+                    var all = await txtrdr.ReadToEndAsync();
+                    Console.WriteLine(all);
+                    Assert.IsTrue(all.StartsWith("BEGIN:VCALENDAR"));
+                }
+            }
         }
 
         [TestMethod]

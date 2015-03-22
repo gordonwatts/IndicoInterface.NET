@@ -11,11 +11,15 @@ namespace IndicoInterface.NET.Test
         /// Convert the # of seconds into a date/time struct for .NET
         /// </summary>
         /// <param name="secondsSinceEpoch"></param>
-        /// <returns></returns>
+        /// <returns>The date represented from the seconds since since Jan 1, 1970 GMT in local time</returns>
         public static DateTime FromUnixTime(this int secondsSinceEpoch)
         {
             var ts = new TimeSpan(0, 0, secondsSinceEpoch);
-            return _startOfEpoch + ts;
+            var resultUTC = _startOfEpoch + ts;
+
+            // Convert to local time
+            var resultLocal = new DateTime(resultUTC.Ticks, DateTimeKind.Local) + TimeZoneInfo.Local.BaseUtcOffset;
+            return resultLocal;
         }
 
         /// <summary>

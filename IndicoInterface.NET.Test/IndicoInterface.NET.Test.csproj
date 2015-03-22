@@ -65,6 +65,7 @@
     <Compile Include="t_ActiveNet.cs" />
     <Compile Include="t_AgendaCategory.cs" />
     <Compile Include="t_ApiKeyHandler.cs" />
+    <Compile Include="t_DateTimeUtils.cs" />
     <Compile Include="utils.cs" />
   </ItemGroup>
   <ItemGroup>
