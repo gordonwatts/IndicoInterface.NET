@@ -640,9 +640,9 @@ namespace IndicoInterface.NET
         /// Fetch category information from the website.
         /// </summary>
         /// <param name="cat"></param>
-        public async Task<IEnumerable<AgendaInfoExtended>> GetCategory(AgendaCategory cat, int daysBefore)
+        public async Task<IEnumerable<AgendaInfoExtended>> GetCategory(AgendaCategory cat, int daysBefore, string apiKey = null, string secretKey = null)
         {
-            using (var data = await _fetcher.GetDataFromURL(cat.GetCagetoryUri(daysBefore)))
+            using (var data = await _fetcher.GetDataFromURL(cat.GetCagetoryUri(daysBefore, apiKey, secretKey)))
             {
                 var cals = await data.iCalFromStream();
                 return cals.Select(evt => new AgendaInfoExtended(evt.URL.OriginalString, evt.Summary, evt.DTStart, evt.DTEnd));
