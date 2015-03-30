@@ -28,6 +28,42 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        public void LegacyCategoryURIPlain()
+        {
+            var c = new AgendaCategory("https://indico.fnal.gov/categoryDisplay.py?categId=22");
+            Assert.AreEqual("indico.fnal.gov", c.AgendaSite);
+            Assert.AreEqual("", c.AgendaSubDirectory);
+            Assert.AreEqual("22", c.CategoryID);
+        }
+
+        [TestMethod]
+        public void LegacyCategoryURISubSite()
+        {
+            var c = new AgendaCategory("https://indico.fnal.gov/bogus/categoryDisplay.py?categId=22");
+            Assert.AreEqual("indico.fnal.gov", c.AgendaSite);
+            Assert.AreEqual("bogus", c.AgendaSubDirectory);
+            Assert.AreEqual("22", c.CategoryID);
+        }
+
+        [TestMethod]
+        public void LegacyCategoryURIArgsAfter()
+        {
+            var c = new AgendaCategory("https://indico.fnal.gov/bogus/categoryDisplay.py?categId=22&from=-7d");
+            Assert.AreEqual("indico.fnal.gov", c.AgendaSite);
+            Assert.AreEqual("bogus", c.AgendaSubDirectory);
+            Assert.AreEqual("22", c.CategoryID);
+        }
+
+        [TestMethod]
+        public void LegacyCategoryURIArgsBefore()
+        {
+            var c = new AgendaCategory("https://indico.fnal.gov/bogus/categoryDisplay.py?from=-7d&categId=22");
+            Assert.AreEqual("indico.fnal.gov", c.AgendaSite);
+            Assert.AreEqual("bogus", c.AgendaSubDirectory);
+            Assert.AreEqual("22", c.CategoryID);
+        }
+
+        [TestMethod]
         public void LegalCategoryFromDefaultURL()
         {
             var c = new AgendaCategory("https://indico.cern.ch/category/3286/");

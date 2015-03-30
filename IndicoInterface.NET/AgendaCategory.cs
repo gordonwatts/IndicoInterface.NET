@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 namespace IndicoInterface.NET
@@ -25,8 +26,11 @@ namespace IndicoInterface.NET
         /// </summary>
         public string AgendaSubDirectory { get; set; }
 
-        static Regex _gConfIdFinderStyle1 = new Regex(@"(?<protocal>http|https)://(?<site>[^/]+)/(?<subdir>.+/)?export/categ/(?<catID>.+)\.ics.*");
-        static Regex _gCOnfIdFinderStyle2 = new Regex(@"(?<protocal>http|https)://(?<site>[^/]+)/(?<subdir>.+/)?category/(?<catID>[^/]+)/*");
+        static Regex[] _gConfIdFinder = new Regex[] {
+            new Regex(@"(?<protocal>http|https)://(?<site>[^/]+)/(?<subdir>.+/)?export/categ/(?<catID>.+)\.ics.*"),
+            new Regex(@"(?<protocal>http|https)://(?<site>[^/]+)/(?<subdir>.+/)?category/(?<catID>[^/]+)/*"),
+            new Regex(@"(?<protocal>http|https)://(?<site>[^/]+)/(?<subdir>.+/)?.*categId=(?<catID>[^&/]+).*"),
+        };
 
         /// <summary>
         /// Create a category token.
@@ -34,12 +38,8 @@ namespace IndicoInterface.NET
         /// <param name="categoryUri"></param>
         public AgendaCategory(string categoryUri)
         {
-            var m = _gConfIdFinderStyle1.Match(categoryUri);
-            if (!m.Success)
-            {
-                m = _gCOnfIdFinderStyle2.Match(categoryUri);
-            }
-            if (!m.Success)
+            var m = FindConfMatch(categoryUri);
+            if (m == null)
             {
                 throw new AgendaException(string.Format("Unable to interpret '{0}' as an Indico Category Uri", categoryUri));
             }
@@ -47,6 +47,19 @@ namespace IndicoInterface.NET
             CategoryID = m.Groups["catID"].Value;
             AgendaSite = m.Groups["site"].Value;
             AgendaSubDirectory = m.Groups["subdir"].Value.Replace("/", "");
+        }
+
+        /// <summary>
+        /// Look through all the styles and see if anything matches what we need
+        /// </summary>
+        /// <param name="categoryUri"></param>
+        /// <returns></returns>
+        private static Match FindConfMatch(string categoryUri)
+        {
+            return _gConfIdFinder
+                .Select(x => x.Match(categoryUri))
+                .Where(m => m.Success)
+                .FirstOrDefault();
         }
 
         /// <summary>
@@ -62,10 +75,8 @@ namespace IndicoInterface.NET
         /// <returns>True if this is a valid category URI</returns>
         public static bool IsValid(string categoryUri)
         {
-            var m = _gConfIdFinderStyle1.Match(categoryUri);
-            if (!m.Success)
-                m = _gCOnfIdFinderStyle2.Match(categoryUri);
-            return m.Success;
+            var m = FindConfMatch(categoryUri);
+            return m != null;
         }
 
         /// <summary>
