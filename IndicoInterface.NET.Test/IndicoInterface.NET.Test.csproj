@@ -128,7 +128,8 @@
     <None Include="indico3285answers.key">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="indicoapi.key">
+    <None Include="indicoapi.key" />
+    <None Include="indicofermiapikey.key">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

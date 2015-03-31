@@ -125,6 +125,28 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("indicofermiapikey.key")]
+        public async Task GetCategoryWithNoScret()
+        {
+            var a = new AgendaCategory("https://indico.fnal.gov/categoryDisplay.py?categId=334");
+            var info = utils.GetApiAndSecret("indicofermiapikey.key");
+            var uri = a.GetCagetoryUri(7, info.Item1, info.Item2, false);
+
+            var req = WebRequest.Create(uri);
+            var response = await req.GetResponseAsync();
+            using (var strm = response.GetResponseStream())
+            {
+                using (var txtrdr = new StreamReader(strm))
+                {
+                    var all = await txtrdr.ReadToEndAsync();
+                    Console.WriteLine(all);
+                    Assert.IsTrue(all.StartsWith("BEGIN:VCALENDAR"));
+                }
+            }
+
+        }
+
+        [TestMethod]
         public async Task GetIndicoCategoryWhiteList()
         {
             var a = new AgendaCategory("https://indico.cern.ch/export/categ/1l12.ics?from=-60d");
