@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+<iconf>
+ <ID>9227</ID>
+ <category>W Mass</category>
+ <parentProtection>true</parentProtection>
+ <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+ <iCalLink>https://indico.fnal.gov/conferenceDisplay.py/ical?confId=9227</iCalLink>
+ <announcer>
+  <user>
+   <title>Dr.</title>
+   <name first="Hengne" middle="" last="LI"/>
+   <organization>University of Virginia</organization>
+   <email>hengne.li@cern.ch</email>
+   <userid>3143</userid>
+  </user>
+ </announcer>
+ <title>W Mass Meeting</title>
+ <description>Description W_mass
+Extension 10379437
+Moderator LI, Hengne
+Vidyo ID 49570
+Auto-join URL http://vidyoportal.cern.ch/flex.html?roomdirect.html&amp;key=7LQBktk3DgYigtZzSEDuI6ii8Y</description>
+ <participants/>
+ <closed>False</closed>
+ <startDate>2015-03-30T09:00:00</startDate>
+ <endDate>2015-03-30T11:00:00</endDate>
+ <creationDate>2015-01-04T08:17:47</creationDate>
+ <modificationDate>2015-03-30T15:05:38</modificationDate>
+ <timezone>US/Central</timezone>
+ <chair>
+  <user>
+   <title>Dr.</title>
+   <name first="Hengne" middle="" last="LI"/>
+   <organization>University of Virginia</organization>
+   <email>hengne.li@cern.ch</email>
+  </user>
+  <user>
+   <title/>
+   <name first="Rafael" middle="" last="Lopes de Sa"/>
+   <organization>Fermilab</organization>
+   <email>rclsa@fnal.gov</email>
+  </user>
+  <user>
+   <title/>
+   <name first="Jan" middle="" last="Stark"/>
+   <organization>LPSC Grenoble - IN2P3</organization>
+   <email>stark@in2p3.fr</email>
+  </user>
+ </chair>
+ <contribution color="" textcolor="">
+  <ID>0</ID>
+  <parentProtection>true</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>news/updates</title>
+  <speakers>
+   <user>
+    <title>Dr.</title>
+    <name first="Hengne" middle="" last="LI"/>
+    <organization>University of Virginia</organization>
+    <email>hengne.li@cern.ch</email>
+   </user>
+   <user>
+    <title/>
+    <name first="Rafael" middle="" last="Lopes de Sa"/>
+    <organization>Fermilab</organization>
+    <email>rclsa@fnal.gov</email>
+   </user>
+   <user>
+    <title/>
+    <name first="Jan" middle="" last="Stark"/>
+    <organization>LPSC Grenoble - IN2P3</organization>
+    <email>stark@in2p3.fr</email>
+   </user>
+  </speakers>
+  <startDate>2015-03-30T09:00:00</startDate>
+  <endDate>2015-03-30T09:20:00</endDate>
+  <duration>00:20</duration>
+  <abstract/>
+ </contribution>
+ <contribution color="" textcolor="">
+  <ID>1</ID>
+  <parentProtection>true</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>updates on theoretical uncertainties</title>
+  <speakers>
+   <user>
+    <title>Mr.</title>
+    <name first="Jakub" middle="" last="Cuth"/>
+    <organization>Johanes Guttenberg Universitat, Mainz</organization>
+    <email>jcuth@fnal.gov</email>
+   </user>
+  </speakers>
+  <startDate>2015-03-30T09:20:00</startDate>
+  <endDate>2015-03-30T09:40:00</endDate>
+  <duration>00:20</duration>
+  <abstract/>
+  <material>
+   <ID>slides</ID>
+   <title>Slides</title>
+   <description/>
+   <type/>
+   <displayURL>https://indico.fnal.gov/materialDisplay.py?contribId=1&amp;materialId=slides&amp;confId=9227</displayURL>
+   <files>
+    <file>
+     <name>theo_unc.pdf</name>
+     <type>pdf</type>
+     <url>https://indico.fnal.gov/getFile.py/access?contribId=1&amp;resId=0&amp;materialId=slides&amp;confId=9227</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>https://indico.fnal.gov/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>https://indico.fnal.gov/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>https://indico.fnal.gov/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>https://indico.fnal.gov/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>https://indico.fnal.gov/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>https://indico.fnal.gov/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>https://indico.fnal.gov/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>https://indico.fnal.gov/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <contribution color="" textcolor="">
+  <ID>2</ID>
+  <parentProtection>true</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>recoil fits and uncertainties</title>
+  <speakers>
+   <user>
+    <title/>
+    <name first="Jenny" middle="" last="Holzbauer"/>
+    <organization>University of Mississippi</organization>
+    <email>jholzbau@fnal.gov</email>
+   </user>
+  </speakers>
+  <startDate>2015-03-30T09:40:00</startDate>
+  <endDate>2015-03-30T10:00:00</endDate>
+  <duration>00:20</duration>
+  <abstract/>
+  <material>
+   <ID>slides</ID>
+   <title>Slides</title>
+   <description/>
+   <type/>
+   <displayURL>https://indico.fnal.gov/materialDisplay.py?contribId=2&amp;materialId=slides&amp;confId=9227</displayURL>
+   <files>
+    <file>
+     <name>recoil_fits_again_part3.pdf</name>
+     <type>pdf</type>
+     <url>https://indico.fnal.gov/getFile.py/access?contribId=2&amp;resId=0&amp;materialId=slides&amp;confId=9227</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>https://indico.fnal.gov/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>https://indico.fnal.gov/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>https://indico.fnal.gov/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>https://indico.fnal.gov/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>https://indico.fnal.gov/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>https://indico.fnal.gov/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>https://indico.fnal.gov/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>https://indico.fnal.gov/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <contribution color="" textcolor="">
+  <ID>3</ID>
+  <parentProtection>true</parentProtection>
+  <materialList>[["agenda", "Agenda"], ["document", "Document"], ["drawings", "Drawings"], ["list of actions", "List Of Actions"], ["live broadcast", "Live Broadcast"], ["minutes", "Minutes"], ["more information", "More Information"], ["paper", "Paper"], ["pictures", "Pictures"], ["poster", "Poster"], ["proceedings", "Proceedings"], ["slides", "Slides"], ["text", "Text"], ["video", "Video"]]</materialList>
+  <title>dUPara materials for MC note</title>
+  <speakers>
+   <user>
+    <title>Dr.</title>
+    <name first="Hengne" middle="" last="LI"/>
+    <organization>University of Virginia</organization>
+    <email>hengne.li@cern.ch</email>
+   </user>
+  </speakers>
+  <startDate>2015-03-30T10:00:00</startDate>
+  <endDate>2015-03-30T10:20:00</endDate>
+  <duration>00:20</duration>
+  <abstract/>
+  <material>
+   <ID>0</ID>
+   <title>document</title>
+   <description/>
+   <type/>
+   <displayURL>https://indico.fnal.gov/materialDisplay.py?contribId=3&amp;materialId=0&amp;confId=9227</displayURL>
+   <files>
+    <file>
+     <name>KeynotesFordUParaStudies.zip</name>
+     <type>other</type>
+     <url>https://indico.fnal.gov/getFile.py/access?contribId=3&amp;resId=0&amp;materialId=0&amp;confId=9227</url>
+    </file>
+   </files>
+   <types>
+    <type>
+     <name>doc</name>
+     <imgURL>https://indico.fnal.gov/images/word.png</imgURL>
+     <imgAlt>word file</imgAlt>
+    </type>
+    <type>
+     <name>ppt</name>
+     <imgURL>https://indico.fnal.gov/images/powerpoint.png</imgURL>
+     <imgAlt>powerpoint file</imgAlt>
+    </type>
+    <type>
+     <name>pdf</name>
+     <imgURL>https://indico.fnal.gov/images/pdf_small.png</imgURL>
+     <imgAlt>pdf file</imgAlt>
+    </type>
+    <type>
+     <name>odt</name>
+     <imgURL>https://indico.fnal.gov/images/writer.png</imgURL>
+     <imgAlt>writer file</imgAlt>
+    </type>
+    <type>
+     <name>odp</name>
+     <imgURL>https://indico.fnal.gov/images/impress.png</imgURL>
+     <imgAlt>presentation file</imgAlt>
+    </type>
+    <type>
+     <name>ods</name>
+     <imgURL>https://indico.fnal.gov/images/calc.png</imgURL>
+     <imgAlt>spreadsheet file</imgAlt>
+    </type>
+    <type>
+     <name>other</name>
+     <imgURL>https://indico.fnal.gov/images/file_small.png</imgURL>
+     <imgAlt>unknown type file</imgAlt>
+    </type>
+    <type>
+     <name>link</name>
+     <imgURL>https://indico.fnal.gov/images/link.png</imgURL>
+     <imgAlt>link</imgAlt>
+    </type>
+   </types>
+  </material>
+ </contribution>
+ <line>
+  <fromDate>20150330</fromDate>
+  <toDate>20150330</toDate>
+ </line>
+ <plugins>
+  <collaboration>
+<!-- Needed for timezone awareness -->
+   <todayReference>2015-03-31</todayReference>
+   <tomorrowReference>2015-04-01</tomorrowReference>
+  </collaboration>
+ </plugins>
+</iconf>

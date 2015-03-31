@@ -203,6 +203,20 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("9227.xml")]
+        public async Task GetFermiAgenda()
+        {
+            AgendaInfo a = new AgendaInfo("https://indico.fnal.gov/conferenceDisplay.py?confId=9227#");
+            Assert.AreEqual("9227", a.ConferenceID, "Conference ID is incorrect!");
+            Assert.IsTrue(a.AgendaSite == "indico.fnal.gov", "Agenda website is not right!");
+
+            var al = new AgendaLoader(new FileReader("9227.xml"));
+            var data = await al.GetNormalizedConferenceData(a);
+
+            Assert.IsTrue(data.Title == "W Mass Meeting", "Agenda title is not right");
+        }
+
+        [TestMethod]
         [DeploymentItem("pheno2008.xml")]
         public async Task TestPDFLink()
         {
