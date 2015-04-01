@@ -38,6 +38,10 @@ namespace IndicoInterface.NET.Test
 
             var offset = TimeZoneInfo.Local.BaseUtcOffset;
             seconds += (int)offset.TotalSeconds;
+            if (TimeZoneInfo.Local.IsDaylightSavingTime(dt))
+            {
+                seconds += 60 * 60;
+            }
 
             Assert.AreEqual(120009600, seconds);
         }
@@ -60,10 +64,36 @@ namespace IndicoInterface.NET.Test
             // According to http://www.epochconverter.com/ (!!!). when everything is in UTC time
             // we should be getting: 120009600
             var dt = new DateTime(1973, 10, 21, 0, 0, 0);
-            var seconds = 120006000;
+            var seconds = 120006000 - 60 * 60; // Account for DST
             var dtf = seconds.FromUnixTime();
             Assert.AreEqual(DateTimeKind.Local, dtf.Kind);
             Assert.AreEqual(dt, dtf);
+        }
+
+        [TestMethod]
+        public void CompareWithLinuxDateCommandWithDST()
+        {
+            // Make sure we are doing the calculation correctly when we do the
+            // conversion with a day light savings time involved.
+
+            // According to http://www.epochconverter.com/
+            var dt = new DateTime(2015, 4, 1, 13, 0, 0, DateTimeKind.Utc);
+            var seconds = 1427893200 - 60 * 60; // Account for DST
+
+            // Convert from unix time, and add in the timezone delta to compare above to UTC.
+            var dtf = seconds.FromUnixTime();
+            Assert.AreEqual(DateTimeKind.Local, dtf.Kind);
+            dtf -= TimeZoneInfo.Local.BaseUtcOffset;
+
+            Assert.AreEqual(dt, dtf);
+        }
+
+        [TestMethod]
+        public void ConvertDateWithDaylightSavings()
+        {
+            var dt = new DateTime(2015, 4, 1, 13, 0, 0, DateTimeKind.Local);
+            var seconds = dt.AsSecondsFromUnixEpoch();
+            Assert.AreEqual(1427886000, seconds);
         }
     }
 }

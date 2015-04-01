@@ -18,8 +18,8 @@ namespace IndicoInterface.NET
             var dtUtc = dt;
             if (dt.Kind == DateTimeKind.Local)
             {
-                var offset = TimeZoneInfo.Local.BaseUtcOffset;
-                dtUtc = new DateTime(dt.Ticks, DateTimeKind.Local) - offset;
+                var offset = TimeZoneInfo.Local.GetUtcOffset(dt);
+                dtUtc = new DateTime(dt.Ticks, DateTimeKind.Utc) - offset;
             }
 
             var ts = dtUtc - new DateTime(1970, 1, 1, 0, 0, 0);
@@ -27,3 +27,11 @@ namespace IndicoInterface.NET
         }
     }
 }
+#if false
+var dt = DateTime.UtcNow;
+Console.WriteLine(dt.ToLocalTime());
+
+var tz = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+var utcOffset = new DateTimeOffset(dt, TimeSpan.Zero);
+Console.WriteLine(utcOffset.ToOffset(tz.GetUtcOffset(utcOffset)));
+#endif

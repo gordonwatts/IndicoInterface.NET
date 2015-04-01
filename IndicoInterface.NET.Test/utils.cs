@@ -19,6 +19,10 @@ namespace IndicoInterface.NET.Test
 
             // Convert to local time
             var resultLocal = new DateTime(resultUTC.Ticks, DateTimeKind.Local) + TimeZoneInfo.Local.BaseUtcOffset;
+            if (TimeZoneInfo.Local.IsDaylightSavingTime(resultLocal))
+            {
+                resultLocal += new TimeSpan(1, 0, 0);
+            }
             return resultLocal;
         }
 
