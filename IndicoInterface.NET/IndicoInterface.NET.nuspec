@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.3.8</version>
+    <version>1.3.9</version>
     <title>Indico Agenda Parser</title>
     <authors>Gordon Watts</authors>
     <owners>Gordon Watts</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/gordonwatts/IndicoInterface.NET/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Parse XML from sites using the Indico agenda server software written by CERN (see http://indico.cern.ch as well as other sites)</description>
-    <releaseNotes>Contains basic support for parsing Categories (using secret api). See AgendaCategory, and GetCategory on AgendaLoader. Added parameterless ctor for serilization.</releaseNotes>
+    <releaseNotes>Contains basic support for parsing Categories (using secret api). See AgendaCategory, and GetCategory on AgendaLoader. Added parameterless ctor for serilization. Handle DST correctly.</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>Agenda Meeting CERN Indico</tags>
   </metadata>
