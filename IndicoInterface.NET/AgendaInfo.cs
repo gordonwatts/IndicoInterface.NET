@@ -117,7 +117,7 @@ namespace IndicoInterface.NET
 
         /// <summary>
         /// Gets the Agenda URL - where to go to get the opening page of the
-        /// conference.
+        /// conference. This is appropriate for opening in a web browser.
         /// </summary>
         public string ConferenceUrl
         {

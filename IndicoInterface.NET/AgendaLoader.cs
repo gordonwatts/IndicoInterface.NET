@@ -28,27 +28,41 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="info">Agenda the URL is desired for</param>
         /// <param name="useEventFormat">If true it will use the new event format url, if false, it will not unless site is on whitelist.</param>
+        /// <param name="apiKey">Api key to use to access the event</param>
+        /// <param name="secretKey">The secret key to also use to access event. Will be time encoded if this is present.</param>
         /// <returns>A URI that should return the XML from the agenda server</returns>
-        public Uri GetAgendaFullXMLURL(AgendaInfo info, bool useEventFormat = false)
+        public Uri GetAgendaFullXMLURL(AgendaInfo info, bool useEventFormat = false, string apiKey = null, string secretKey = null, bool useTimestamp = true)
         {
-            StringBuilder bld = new StringBuilder();
-
+            var path = new StringBuilder();
+            var requestParams = new Dictionary<string, string>();
             var useNewFormat = WhiteListInfo.CanUseEventFormat(info) || useEventFormat;
-            bld.AppendFormat("http{1}://{0}/", info.AgendaSite, useNewFormat ? "s" : "");
-
-            if (!string.IsNullOrWhiteSpace(info.AgendaSubDirectory))
-            {
-                bld.AppendFormat("{0}/", info.AgendaSubDirectory);
-            }
-
             if (useNewFormat)
             {
-                bld.AppendFormat("event/{0}/other-view?view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", info.ConferenceID);
+                path.AppendFormat("/event/{0}/other-view", info.ConferenceID);
             }
             else
             {
-                bld.AppendFormat("conferenceOtherViews.py?confId={0}&view=xml&showDate=all&showSession=all&detailLevel=contribution&fr=no", info.ConferenceID);
+                path.AppendFormat("/conferenceOtherViews.py");
+                requestParams["confId"] = info.ConferenceID;
             }
+            requestParams["view"] = "xml";
+            requestParams["showDate"] = "all";
+            requestParams["showSession"] = "all";
+            requestParams["detailLevel"] = "contribution";
+            requestParams["fr"] = "no";
+
+            var stem = ApiKeyHandler.IndicoEncode(path.ToString(), requestParams, apiKey, secretKey, useTimeStamp: useTimestamp);
+
+            // Build the first part of the URL request now
+            StringBuilder bld = new StringBuilder();
+
+            bld.AppendFormat("http{1}://{0}", info.AgendaSite, useNewFormat ? "s" : "");
+
+            if (!string.IsNullOrWhiteSpace(info.AgendaSubDirectory))
+            {
+                bld.AppendFormat("/{0}", info.AgendaSubDirectory);
+            }
+            bld.Append(stem);
 
             return new Uri(bld.ToString());
         }
