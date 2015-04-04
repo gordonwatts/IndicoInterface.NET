@@ -190,12 +190,14 @@ namespace IndicoInterface.NET
                                            EndDate = DateTime.Now,
                                            ID = m.ID,
                                            TalkType = SimpleAgendaDataModel.TypeOfTalk.ExtraMaterial,
-                                           SubTalks = (from turl in FindAllUniqueMaterial(m)
-                                                       where turl != null
+                                           SubTalks = (from tFiles in FindAllUniqueMaterial(m)
+                                                       where tFiles != null
                                                        select new IndicoInterface.NET.SimpleAgendaDataModel.Talk()
                                                        {
                                                            Title = m.title,
-                                                           SlideURL = turl,
+                                                           SlideURL = tFiles.url,
+                                                           DisplayFilename = Path.GetFileNameWithoutExtension(tFiles.name),
+                                                           FilenameExtension = Path.GetExtension(tFiles.name),
                                                            StartDate = DateTime.Now,
                                                            EndDate = DateTime.Now,
                                                            ID = m.ID,
@@ -213,49 +215,21 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="m"></param>
         /// <returns></returns>
-        private IEnumerable<string> FindAllUniqueMaterial(IndicoDataModel.material m)
+        private IEnumerable<IndicoDataModel.materialFile> FindAllUniqueMaterial(IndicoDataModel.material m)
         {
-            ///
-            /// First, we check to see if a particular up-load has been fingered as "the one" by Indico:
-            /// 
+            // Look at the files grouped by name (there can be a pptx and a pdf of the same file, for example).
+            if (m.files != null && m.files.file != null)
+            {
+                var groupedFiles = from f in m.files.file
+                                   group f by Path.GetFileNameWithoutExtension(f.name);
+                var goodFiles = from g in groupedFiles
+                                let bestFile = (from f in g let ord = CalcTypeIndex(f.type) where ord >= 0 orderby ord descending select f).FirstOrDefault()
+                                where bestFile != null
+                                select bestFile;
 
-            if (m.pptx != null)
-            {
-                yield return m.pptx;
-            }
-            else if (m.ppt != null)
-            {
-                yield return m.ppt;
-            }
-            else if (m.pdf != null)
-            {
-                yield return m.pdf;
-            }
-            else if (m.ps != null)
-            {
-                yield return m.ps;
-            }
-            else
-            {
-                if (m.files != null && m.files.file != null)
+                foreach (var f in goodFiles)
                 {
-
-                    ///
-                    /// If we are here, then we need to look through the list of files for everything attached. There is one
-                    /// problem: two files with the same name. So we need to group everything up by the stub name.
-                    /// 
-
-                    var groupedFiles = from f in m.files.file
-                                       group f by Path.GetFileNameWithoutExtension(f.name);
-                    var goodFiles = from g in groupedFiles
-                                    let bestFile = (from f in g let ord = CalcTypeIndex(f.type) where ord >= 0 orderby ord descending select f.url).FirstOrDefault()
-                                    where bestFile != null
-                                    select bestFile;
-
-                    foreach (var f in goodFiles)
-                    {
-                        yield return f;
-                    }
+                    yield return f;
                 }
             }
         }
@@ -440,7 +414,13 @@ namespace IndicoInterface.NET
 
             foreach (var materialType in new string[] { "slides", "transparencies", "poster", "0", null })
             {
-                result.SlideURL = FindMaterial(contrib.material, materialType);
+                var mainFile = FindMaterial(contrib.material, materialType);
+                if (mainFile != null)
+                {
+                    result.SlideURL = mainFile.url;
+                    result.DisplayFilename = Path.GetFileNameWithoutExtension(mainFile.name);
+                    result.FilenameExtension = Path.GetExtension(mainFile.name);
+                }
                 if (result.SlideURL != null)
                 {
                     break;
@@ -468,7 +448,7 @@ namespace IndicoInterface.NET
         /// <param name="material"></param>
         /// <param name="p"></param>
         /// <returns></returns>
-        private string FindMaterial(IndicoInterface.NET.IndicoDataModel.material[] materiallist, string material_type)
+        private IndicoDataModel.materialFile FindMaterial(IndicoInterface.NET.IndicoDataModel.material[] materiallist, string material_type)
         {
             ///
             /// If no one uploaded anything, then we won't be sending anything back. :(
@@ -495,7 +475,7 @@ namespace IndicoInterface.NET
             /// First good is returned!
             foreach (var materialType in new string[] { "pptx", "ppt", "ps", "pdf" })
             {
-                string result = SearchMaterialListForType(good, materialType);
+                var result = SearchMaterialListForType(good, materialType);
                 if (result != null)
                 {
                     return result;
@@ -509,7 +489,7 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="good"></param>
         /// <returns></returns>
-        private static string SearchMaterialListForType(IEnumerable<IndicoInterface.NET.IndicoDataModel.material> good, string materialType)
+        private static IndicoDataModel.materialFile SearchMaterialListForType(IEnumerable<IndicoDataModel.material> good, string materialType)
         {
             foreach (var item in good)
             {
@@ -520,33 +500,17 @@ namespace IndicoInterface.NET
                     if (filename != null
                         && filename.url != null)
                     {
-                        return filename.url;
+                        return filename;
                     }
                 }
 
+#if false
                 /// An external link?
                 if (item.link != null && item.link.ToLower().EndsWith(materialType))
                 {
                     return item.link;
                 }
-
-                /// An explicit link - ugly!!?
-                if (materialType == "pdf" && item.pdf != null)
-                {
-                    return item.pdf;
-                }
-                if (materialType == "pptx" && item.pptx != null)
-                {
-                    return item.pptx;
-                }
-                if (materialType == "ps" && item.ps != null)
-                {
-                    return item.ps;
-                }
-                if (materialType == "ppt" && item.ppt != null)
-                {
-                    return item.ppt;
-                }
+#endif
             }
 
             /// Found nothing!

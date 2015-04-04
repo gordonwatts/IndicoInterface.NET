@@ -55,12 +55,26 @@ namespace IndicoInterface.NET
         {
             public string ID;
             public string Title;
-            public string SlideURL;
             public DateTime StartDate;
             public DateTime EndDate;
             public string[] Speakers;
             public Talk[] SubTalks; // Any sub-talks we have going for us
             public TypeOfTalk TalkType;
+
+            /// <summary>
+            /// The slide URL for the default material for the talk
+            /// </summary>
+            public string SlideURL;
+
+            /// <summary>
+            /// The filename one can use to display the default material to the user.
+            /// </summary>
+            public string DisplayFilename; // A filename that looks good to the user
+
+            /// <summary>
+            /// THe extension of the filename for the default file. Includes the period (.pdf).
+            /// </summary>
+            public string FilenameExtension;
 
             public override string ToString()
             {
@@ -76,7 +90,7 @@ namespace IndicoInterface.NET
             /// <param name="t1"></param>
             /// <param name="t2"></param>
             /// <returns></returns>
-            public static bool operator== (Talk t1, Talk t2)
+            public static bool operator ==(Talk t1, Talk t2)
             {
                 object ot1 = t1;
                 object ot2 = t2;

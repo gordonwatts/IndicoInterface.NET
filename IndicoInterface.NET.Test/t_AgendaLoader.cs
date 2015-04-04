@@ -217,6 +217,36 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("9227.xml")]
+        public async Task DisplayNameFermiIndico()
+        {
+            AgendaInfo a = new AgendaInfo("https://indico.fnal.gov/conferenceDisplay.py?confId=9227#");
+            var al = new AgendaLoader(new FileReader("9227.xml"));
+            var data = await al.GetNormalizedConferenceData(a);
+
+            // Find the first talk in there
+            var talk = data.Sessions.SelectMany(s => s.Talks).Where(t => t.ID == "1").FirstOrDefault();
+            Assert.IsNotNull(talk);
+            Assert.AreEqual("theo_unc", talk.DisplayFilename);
+            Assert.AreEqual(".pdf", talk.FilenameExtension);
+        }
+
+        [TestMethod]
+        [DeploymentItem("73513-good.xml")]
+        public async Task DisplayNameCERNIndico()
+        {
+            AgendaInfo a = new AgendaInfo("https://indico.fnal.gov/conferenceDisplay.py?confId=9227#");
+            var al = new AgendaLoader(new FileReader("73513-good.xml"));
+            var data = await al.GetNormalizedConferenceData(a);
+
+            // Find the first talk in there
+            var talk = data.Sessions.SelectMany(s => s.Talks).Where(t => t.ID == "342").FirstOrDefault();
+            Assert.IsNotNull(talk);
+            Assert.AreEqual("ICHEP_LHC_Opt_22-07-2010", talk.DisplayFilename);
+            Assert.AreEqual(".pdf", talk.FilenameExtension);
+        }
+
+        [TestMethod]
         [DeploymentItem("pheno2008.xml")]
         public async Task TestPDFLink()
         {
