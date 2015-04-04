@@ -143,7 +143,48 @@ namespace IndicoInterface.NET.Test
                     Assert.IsTrue(all.StartsWith("BEGIN:VCALENDAR"));
                 }
             }
+        }
 
+        [TestMethod]
+        [DeploymentItem("indicofermiapikey.key")]
+        public async Task GetFermiProtectedMeeting()
+        {
+            var a = new AgendaInfo("https://indico.fnal.gov/conferenceDisplay.py?confId=9227");
+            var al = new AgendaLoader(null);
+            var info = utils.GetApiAndSecret("indicofermiapikey.key");
+            var uri = al.GetAgendaFullXMLURL(a, true, apiKey: info.Item1, secretKey: info.Item2);
+            Console.WriteLine(uri.OriginalString);
+            var req = WebRequest.Create(uri);
+            (req as HttpWebRequest).UserAgent = "DeepTalk AgentaInfo Test";
+            using (var res = await req.GetResponseAsync())
+            {
+                var r = new StreamReader(res.GetResponseStream());
+                var data = await r.ReadToEndAsync();
+                Console.Write(data);
+                Assert.IsTrue(data.IndexOf("<?xml") >= 0, "The return URL does not have XML in it!");
+                res.Close();
+            }
+        }
+
+        [TestMethod]
+        [DeploymentItem("indicoapi.key")]
+        public async Task GetCERNProtectedMeeting()
+        {
+            var a = new AgendaInfo("https://indico.cern.ch/event/384406/");
+            var al = new AgendaLoader(null);
+            var info = utils.GetApiAndSecret("indicoapi.key");
+            var uri = al.GetAgendaFullXMLURL(a, true, apiKey: info.Item1, secretKey: info.Item2);
+            Console.WriteLine(uri.OriginalString);
+            var req = WebRequest.Create(uri);
+            (req as HttpWebRequest).UserAgent = "DeepTalk AgentaInfo Test";
+            using (var res = await req.GetResponseAsync())
+            {
+                var r = new StreamReader(res.GetResponseStream());
+                var data = await r.ReadToEndAsync();
+                Console.Write(data);
+                Assert.IsTrue(data.IndexOf("<?xml") >= 0, "The return URL does not have XML in it!");
+                res.Close();
+            }
         }
 
         [TestMethod]
