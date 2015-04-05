@@ -145,6 +145,7 @@ namespace IndicoInterface.NET.Test
             }
         }
 
+#if false
         [TestMethod]
         [DeploymentItem("indicofermiapikey.key")]
         public async Task GetFermiProtectedMeeting()
@@ -186,7 +187,7 @@ namespace IndicoInterface.NET.Test
                 res.Close();
             }
         }
-
+#endif
         [TestMethod]
         public async Task GetIndicoCategoryWhiteList()
         {
