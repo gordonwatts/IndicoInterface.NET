@@ -200,6 +200,7 @@ namespace IndicoInterface.NET
                                        {
                                            Title = m.title,
                                            SlideURL = null,
+                                           AllMaterial = new TalkMaterial[0],
                                            StartDate = DateTime.Now,
                                            EndDate = DateTime.Now,
                                            ID = m.ID,
@@ -402,9 +403,10 @@ namespace IndicoInterface.NET
         /// <returns></returns>
         private IndicoInterface.NET.SimpleAgendaDataModel.Talk ExtractTalkInfo(IndicoInterface.NET.IndicoDataModel.contribution contrib)
         {
-            IndicoInterface.NET.SimpleAgendaDataModel.Talk result = new IndicoInterface.NET.SimpleAgendaDataModel.Talk();
+            var result = new Talk();
             result.ID = contrib.ID;
             result.Title = contrib.title;
+
             if (contrib.startDate != null)
             {
                 result.StartDate = AgendaStringToDate(contrib.startDate);
@@ -432,13 +434,31 @@ namespace IndicoInterface.NET
                 if (mainFile != null)
                 {
                     result.SlideURL = mainFile.url;
-                    result.DisplayFilename = Path.GetFileNameWithoutExtension(mainFile.name);
-                    result.FilenameExtension = Path.GetExtension(mainFile.name);
+                    result.DisplayFilename = Path.GetFileNameWithoutExtension(SantizeURL(mainFile.name));
+                    result.FilenameExtension = Path.GetExtension(SantizeURL(mainFile.name));
                 }
                 if (result.SlideURL != null)
                 {
                     break;
                 }
+            }
+
+            if (contrib.material != null)
+            {
+                result.AllMaterial = (from m in contrib.material
+                                      where m.files != null && m.files.file != null
+                                      from f in m.files.file
+                                      select new TalkMaterial()
+                                      {
+                                          URL = f.url,
+                                          FilenameExtension = Path.GetExtension(SantizeURL(f.name)),
+                                          DisplayFilename = Path.GetFileNameWithoutExtension(SantizeURL(f.name)),
+                                          MaterialType = m.title
+                                      }).ToArray();
+            }
+            else
+            {
+                result.AllMaterial = new TalkMaterial[0];
             }
 
             if (contrib.subcontributions != null)
@@ -561,10 +581,9 @@ namespace IndicoInterface.NET
         /// <returns></returns>
         private static string SantizeURL(string url)
         {
-            var r = url.Replace("\\", "/");
-            r = r.Replace("\n", ""); // Seriously!
-
-            return r;
+            return url
+                .Replace("\\", "/")
+                .Replace("\n", ""); // Seriously!
         }
 
         /// <summary>

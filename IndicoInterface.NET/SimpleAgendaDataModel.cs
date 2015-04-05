@@ -51,6 +51,32 @@ namespace IndicoInterface.NET
             Talk, ExtraMaterial
         }
 
+        /// <summary>
+        /// Information about the material that a talk contains.
+        /// </summary>
+        public class TalkMaterial
+        {
+            /// <summary>
+            /// The URL to download the material
+            /// </summary>
+            public string URL;
+
+            /// <summary>
+            /// The filename associated with the material
+            /// </summary>
+            public string DisplayFilename;
+
+            /// <summary>
+            /// The extension associated with the file that was uploaded.
+            /// </summary>
+            public string FilenameExtension;
+
+            /// <summary>
+            /// The material type (slides, etc.)
+            /// </summary>
+            public string MaterialType;
+        }
+
         public class Talk
         {
             public string ID;
@@ -76,6 +102,16 @@ namespace IndicoInterface.NET
             /// </summary>
             public string FilenameExtension;
 
+            /// <summary>
+            /// All material directly attached to this talk.
+            /// </summary>
+            /// <remarks>This will include multiple versions of the Slides (pdf, pptx), etc.</remarks>
+            public TalkMaterial[] AllMaterial;
+
+            /// <summary>
+            /// Custom string method to help with debugging and the like.
+            /// </summary>
+            /// <returns></returns>
             public override string ToString()
             {
                 StringBuilder bld = new StringBuilder();

@@ -172,6 +172,26 @@ namespace IndicoInterface.NET.Test
 
         [TestMethod]
         [DeploymentItem("EvtGen-miniworkshop.xml")]
+        public async Task MultiMaterialOnNormalizedAgenda()
+        {
+            string url = "http://indico.cern.ch/conferenceDisplay.py?confId=a042880";
+            AgendaInfo info = new AgendaInfo(url);
+            var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
+
+            var data = await al.GetNormalizedConferenceData(info);
+
+            var talk = data.Sessions.SelectMany(s => s.Talks).Where(t => t.ID == "s1t15").FirstOrDefault();
+            Assert.IsNotNull(talk);
+
+            Assert.IsNotNull(talk.AllMaterial);
+            Assert.AreEqual(2, talk.AllMaterial.Length);
+            Assert.AreEqual(1, talk.AllMaterial.Where(m => m.FilenameExtension == ".pdf").Count());
+            Assert.AreEqual(1, talk.AllMaterial.Where(m => m.FilenameExtension == ".ppt").Count());
+            Assert.IsTrue(talk.AllMaterial.All(t => t.MaterialType == "transparencies"));
+        }
+
+        [TestMethod]
+        [DeploymentItem("EvtGen-miniworkshop.xml")]
         public async Task GetFullSimpleMeeting()
         {
             string url = "http://indico.cern.ch/conferenceDisplay.py?confId=a042880";
