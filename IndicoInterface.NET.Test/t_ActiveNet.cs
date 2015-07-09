@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace IndicoInterface.NET.Test
 {
@@ -52,6 +53,26 @@ namespace IndicoInterface.NET.Test
 
             Assert.AreEqual("340656", data.ID);
             Assert.AreEqual("7th SYMPOSIUM ON LARGE TPCs FOR LOW-ENERGY RARE EVENT DETECTION", data.Title);
+        }
+
+        /// <summary>
+        /// Make sure that older conferences, etc., still give us info in a form we can deal with (e.g. a good talk URL).
+        /// CERN keeps updating, and they are usually the first thing to cause trouble...
+        /// </summary>
+        /// <returns></returns>
+        [TestMethod]
+        public async Task CheckForMaterialOnTalks()
+        {
+            var a = new AgendaInfo("https://indico.cern.ch/event/340656/");
+            var al = new AgendaLoader(new WebGetter());
+            var data = await al.GetNormalizedConferenceData(a);
+
+            var ses1 = data.Sessions[0];
+
+            var talk = ses1.Talks.Where(t => t.Title.Contains("Dark Matter-Baryogenesis connection: status after LHC run 1 and future tests")).FirstOrDefault();
+            Assert.IsNotNull(talk);
+
+            Assert.IsNotNull(talk.SlideURL);
         }
 
         [TestMethod]
