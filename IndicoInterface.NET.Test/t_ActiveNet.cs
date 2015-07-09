@@ -191,8 +191,8 @@ namespace IndicoInterface.NET.Test
         [TestMethod]
         public async Task GetIndicoCategoryWhiteList()
         {
-            var a = new AgendaCategory("https://indico.cern.ch/export/categ/1l12.ics?from=-60d");
-            var uri = a.GetCagetoryUri(120);
+            var a = new AgendaCategory("https://indico.cern.ch/export/categ/1l12.ics?from=-120d");
+            var uri = a.GetCagetoryUri(240);
             var req = WebRequest.Create(uri);
             var response = await req.GetResponseAsync();
             using (var strm = response.GetResponseStream())
