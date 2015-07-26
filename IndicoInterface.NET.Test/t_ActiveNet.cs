@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace IndicoInterface.NET.Test
 {
@@ -60,6 +60,9 @@ namespace IndicoInterface.NET.Test
         /// CERN keeps updating, and they are usually the first thing to cause trouble...
         /// </summary>
         /// <returns></returns>
+        /// <remarks>
+        /// This test is to indico, and so requires the new format of request (json rather than xml).
+        /// </remarks>
         [TestMethod]
         public async Task CheckForMaterialOnTalks()
         {
