@@ -129,6 +129,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="cern-304944.json" />
+    <None Include="cern-340656.json" />
+    <None Include="cern-355973.json" />
+    <None Include="cern-nopermission-response.json" />
     <None Include="indico3285answers.key">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
