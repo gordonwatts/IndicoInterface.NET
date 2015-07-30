@@ -188,7 +188,7 @@ namespace IndicoInterface.NET.JSON
         public string url { get; set; }
     }
 
-    public class Example
+    public class IndicoGetMeetingInfoReturn
     {
         public int count { get; set; }
         public AdditionalInfo additionalInfo { get; set; }

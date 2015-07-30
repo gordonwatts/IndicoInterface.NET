@@ -1,4 +1,5 @@
 ﻿using IndicoInterface.NET.SimpleAgendaDataModel;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -137,6 +138,24 @@ namespace IndicoInterface.NET
                 var r = _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
                 WhiteListInfo.AddSiteThatUsesEventFormat(info.AgendaSite);
                 return r;
+            }
+        }
+
+        /// <summary>
+        /// Return the full conference JSON deserialized into a data model that matches the raw JSON.
+        /// </summary>
+        /// <param name="info">The agenda we would like to get the data for</param>
+        /// <returns>The parsed XML data. Throws an exception if the data is not returned</returns>
+        public async Task<JSON.Result> GetFullConferenceDataJSON(AgendaInfo info)
+        {
+            using (var data = await _fetcher.GetDataFromURL(GetAgendaFullJSONURL(info)))
+            {
+                var r = JsonConvert.DeserializeObject<JSON.IndicoGetMeetingInfoReturn>(await data.ReadToEndAsync());
+                if (r.results.Count != 1)
+                {
+                    throw new InvalidOperationException("Don't know how to deal with an odd number of items back");
+                }
+                return r.results[0];
             }
         }
 

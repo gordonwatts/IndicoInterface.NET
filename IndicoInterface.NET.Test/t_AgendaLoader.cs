@@ -211,7 +211,7 @@ namespace IndicoInterface.NET.Test
 
         [TestMethod]
         [DeploymentItem("EvtGen-miniworkshop.xml")]
-        public async Task GetFullSimpleMeeting()
+        public async Task GetFullSimpleMeetingXML()
         {
             string url = "http://indico.cern.ch/conferenceDisplay.py?confId=a042880";
             AgendaInfo info = new AgendaInfo(url);
@@ -233,6 +233,27 @@ namespace IndicoInterface.NET.Test
             Assert.IsTrue(talk1.material[0].files.file != null, "The file of files is null");
             Assert.IsTrue(talk1.material[0].files.file.Length > 0, "Expected at least one file!");
             Assert.IsTrue(talk1.material[0].files.file[0].url.StartsWith("http://indico.cern.ch"), "The pdf link does not start correctly");
+        }
+
+        [TestMethod]
+        [DeploymentItem("cern-434972.json")]
+        public async Task GetFullSimpleMeetingJSON()
+        {
+            var info = new AgendaInfo("https://indico.cern.ch/event/434972/");
+            var al = new AgendaLoader(new FileReader("cern-434972.json"));
+
+            var data = await al.GetFullConferenceDataJSON(info);
+            Assert.IsNotNull(data);
+            Assert.AreEqual("Trigger Core Software", data.title);
+            Assert.AreEqual(4, data.contributions.Count);
+            var c1 = data.contributions[0];
+            Assert.AreEqual("Monitoring for L1Topo", c1.title);
+            Assert.AreEqual(1, c1.folders.Count);
+            var f1 = c1.folders[0];
+            Assert.AreEqual(1, f1.attachments.Count);
+            var a1 = f1.attachments[0];
+            Assert.AreEqual("L1TopoHistogramming.pdf", a1.title);
+            Assert.IsTrue(a1.download_url.StartsWith("https://indico.cern.ch"));
         }
 
         [TestMethod]
