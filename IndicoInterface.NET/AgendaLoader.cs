@@ -53,18 +53,53 @@ namespace IndicoInterface.NET
 
             var stem = ApiKeyHandler.IndicoEncode(path.ToString(), requestParams, apiKey, secretKey, useTimeStamp: useTimestamp);
 
+            var bld = BuildUriFromPath(info, useNewFormat, stem);
+
+            return new Uri(bld);
+        }
+
+        /// <summary>
+        /// Build the final URI from the path
+        /// </summary>
+        /// <param name="info">The agenda we are building against</param>
+        /// <param name="useHttps">What http protocal shoudl be used?</param>
+        /// <param name="stem">The stem that goes after the absolute base</param>
+        /// <returns></returns>
+        private static string BuildUriFromPath(AgendaInfo info, bool useHttps, string stem)
+        {
             // Build the first part of the URL request now
             StringBuilder bld = new StringBuilder();
 
-            bld.AppendFormat("http{1}://{0}", info.AgendaSite, useNewFormat ? "s" : "");
+            bld.AppendFormat("http{1}://{0}", info.AgendaSite, useHttps ? "s" : "");
 
             if (!string.IsNullOrWhiteSpace(info.AgendaSubDirectory))
             {
                 bld.AppendFormat("/{0}", info.AgendaSubDirectory);
             }
             bld.Append(stem);
+            return bld.ToString();
+        }
 
-            return new Uri(bld.ToString());
+        /// <summary>
+        /// Return the URL for a REST query.
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns>Uri pointing to the resource</returns>
+        /// <remarks>
+        /// Only "modern" versions of indico can handle this, and in this codebase, AgendaLoader is
+        /// the one that tries to sort out what version of indico it is dealing with.
+        /// </remarks>
+        public Uri GetAgendaFullJSONURL(AgendaInfo info, string apiKey = null, string secretKey = null, bool useTimeStamp = true)
+        {
+            var path = new StringBuilder();
+            path.AppendFormat("/export/event/{0}.json", info.ConferenceID);
+            var requestParams = new Dictionary<string, string>();
+            requestParams["nc"] = "yes";
+            requestParams["detail"] = "subcontributions";
+
+            var stem = ApiKeyHandler.IndicoEncode(path.ToString(), requestParams, apiKey, secretKey, useTimeStamp: useTimeStamp);
+
+            return new Uri(BuildUriFromPath(info, true, stem));
         }
 
         /// <summary>

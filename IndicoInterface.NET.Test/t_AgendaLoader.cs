@@ -51,6 +51,25 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        public void RESTJSONUriForPublicMeeting()
+        {
+            var ai = new AgendaInfo("https://indico.cern.ch/event/434972/");
+            var al = new AgendaLoader(null);
+            var uri = al.GetAgendaFullJSONURL(ai);
+            Assert.AreEqual("https://indico.cern.ch/export/event/434972.json?detail=subcontributions&nc=yes", uri.OriginalString);
+        }
+
+        [TestMethod]
+        public void RESTJSONUriForPrivateMeeting()
+        {
+            var ai = new AgendaInfo("https://indico.cern.ch/event/434972/");
+            var al = new AgendaLoader(null);
+            var uri = al.GetAgendaFullJSONURL(ai, apiKey: "00000000-0000-0000-0000-000000000000", secretKey: "00000000-0000-0000-0000-000000000000", useTimeStamp: false);
+            Console.WriteLine(uri.OriginalString);
+            Assert.AreEqual("https://indico.cern.ch/export/event/434972.json?apikey=00000000-0000-0000-0000-000000000000&detail=subcontributions&nc=yes&signature=c6b5f784d13d234c142a72b94c1b9a0ea4a3736a", uri.OriginalString);
+        }
+
+        [TestMethod]
         [DeploymentItem("ichep2010.xml")]
         public async Task TestMeetingTitle()
         {
