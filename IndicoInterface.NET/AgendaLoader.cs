@@ -116,7 +116,7 @@ namespace IndicoInterface.NET
         /// If bad XML is returned, it could be because only the new format URL's are being used. In which case
         /// we will re-try with a new format URL. If that is successful, then we will mark the site as white listed.
         /// </remarks>
-        public async Task<IndicoDataModel.iconf> GetFullConferenceData(AgendaInfo info)
+        public async Task<IndicoDataModel.iconf> GetFullConferenceDataXML(AgendaInfo info)
         {
             try
             {
@@ -150,7 +150,7 @@ namespace IndicoInterface.NET
             /// Grab all the details
             ///
 
-            var data = await GetFullConferenceData(meeting);
+            var data = await GetFullConferenceDataXML(meeting);
 
             ///
             /// Create the stuff we will be sending back.

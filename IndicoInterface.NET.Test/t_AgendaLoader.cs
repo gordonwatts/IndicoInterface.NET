@@ -217,7 +217,7 @@ namespace IndicoInterface.NET.Test
             AgendaInfo info = new AgendaInfo(url);
             var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
 
-            var data = await al.GetFullConferenceData(info);
+            var data = await al.GetFullConferenceDataXML(info);
 
             /// Just some simple tests to help pin things down.
 
@@ -379,7 +379,7 @@ namespace IndicoInterface.NET.Test
             // In real life seems to be talks and not-talks that are in and out of sessions
             AgendaInfo a = new AgendaInfo("http://indico.cern.ch/event/375453");
             var al = new AgendaLoader(new FileReader("375453-inandout-sessions.xml"));
-            var data = await al.GetFullConferenceData(a);
+            var data = await al.GetFullConferenceDataXML(a);
 
             // Make sure there is a raw contribution associated with this guy
             Assert.AreEqual(1, data.contribution.Length);
@@ -438,7 +438,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://ilcagenda.linearcollider.org/conferenceOtherViews.py?view=standard&confId=3154");
             var al = new AgendaLoader(new FileReader("ilc.xml"));
-            var agenda = await al.GetFullConferenceData(ai);
+            var agenda = await al.GetFullConferenceDataXML(ai);
 
             var ses = (from s in agenda.session where s.title.StartsWith("AAP Review: Exec/SCRF") select s).FirstOrDefault();
             Assert.IsNotNull(ses, "Could not find the right session!");
@@ -478,7 +478,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
             var al = new AgendaLoader(new FileReader("DarkMatterDirect.xml"));
-            var agenda = await al.GetFullConferenceData(ai);
+            var agenda = await al.GetFullConferenceDataXML(ai);
 
             var sesWMat = (from s in agenda.session
                            where s != null && s.material != null && s.material.Length > 0
@@ -515,7 +515,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
             var al = new AgendaLoader(new FileReader("DarkMatterDirect.xml"));
-            var agenda = await al.GetFullConferenceData(ai);
+            var agenda = await al.GetFullConferenceDataXML(ai);
 
             Assert.IsNotNull(agenda.material, "Expected non-null material associated with the session!");
             Assert.AreEqual(3, agenda.material.Length, "Incorrect number of files associated with the agenda");
@@ -562,7 +562,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceOtherViews.py?view=standard&confId=86819#2010041");
             var al = new AgendaLoader(new FileReader("lhcxsections.xml"));
-            var agenda = await al.GetFullConferenceData(ai);
+            var agenda = await al.GetFullConferenceDataXML(ai);
 
             ///
             /// Get the first session with some talks we can't seem to parse
