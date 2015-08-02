@@ -156,7 +156,7 @@ namespace IndicoInterface.NET.Test
         [DeploymentItem("EvtGen-miniworkshop.xml")]
         public async Task GetNormalSimpleMeeting()
         {
-            string url = "http://indico.cern.ch/conferenceDisplay.py?confId=a042880";
+            string url = "http://indico.cern.ch/event/a042880";
             AgendaInfo info = new AgendaInfo(url);
             var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
 
@@ -193,21 +193,23 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
-        [DeploymentItem("cern-42880.json")]
+        [DeploymentItem("cern-a042880.json")]
         public async Task GetNormalSimpleMeetingJSON()
         {
             string url = "http://indico.cern.ch/conferenceDisplay.py?confId=a042880";
             AgendaInfo info = new AgendaInfo(url);
-            var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
+            var al = new AgendaLoader(new FileReader("cern-a042880.json"));
 
-            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(info);
 
-            Assert.IsTrue(data.ID == "a042880", "Conference ID is incorrect.");
-            Assert.IsTrue(data.Site == "indico.cern.ch", "Conference site is incorrect");
+            // The Event ID has been replaced with a regular number in the JSON conversion.
+            // Very interesting! :-)
+            Assert.AreEqual("418259", data.ID, "Conference ID is incorrect.");
+
+            Assert.AreEqual("indico.cern.ch", data.Site, "Conference site is incorrect");
             Assert.AreEqual("EvtGen miniworkshop", data.Title, "Title is not right");
-            Assert.IsTrue(data.StartDate == new DateTime(2005, 01, 21, 9, 0, 0), "Start date is not right");
-            Assert.IsTrue(data.EndDate == new DateTime(2005, 01, 21, 19, 0, 0), "End date is not right");
+            Assert.AreEqual(new DateTime(2005, 01, 21, 9, 0, 0), data.StartDate, "Start date is not right");
+            Assert.AreEqual(new DateTime(2005, 01, 21, 19, 0, 0), data.EndDate, "End date is not right");
 
             Assert.IsTrue(data.Sessions.Length == 1, "Should have only a single session");
             Assert.IsTrue(data.Sessions[0].ID == "0", "Default session ID is not set correctly");

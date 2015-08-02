@@ -147,6 +147,9 @@
     <Content Include="cern-73513.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="cern-a042880.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="indico3285answers.key">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
