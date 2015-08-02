@@ -190,6 +190,28 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("cern-73513.json")]
+        public async Task GetNormalComplexMeetingJSON()
+        {
+            var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=73513");
+            var al = new AgendaLoader(new FileReader("cern-73513.json"));
+            var data = await al.GetNormalizedConferenceData(ai);
+            Assert.AreEqual("ICHEP 2010", data.Title, "Title wasn't found!");
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        [DeploymentItem("cern-434972.json")]
+        public async Task GetNormalSimpleMeetingJSON()
+        {
+            var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=434972");
+            var al = new AgendaLoader(new FileReader("cern-434972.json"));
+            var data = await al.GetNormalizedConferenceData(ai);
+            Assert.AreEqual("Trigger Core Software", data.Title, "Title wasn't found!");
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
         [DeploymentItem("EvtGen-miniworkshop.xml")]
         public async Task MultiMaterialOnNormalizedAgenda()
         {
