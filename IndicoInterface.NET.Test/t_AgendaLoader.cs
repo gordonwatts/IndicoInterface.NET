@@ -102,7 +102,7 @@ namespace IndicoInterface.NET.Test
         }
 
         /// <summary>
-        /// Multifile feedback.
+        /// Multi-file feedback.
         /// </summary>
         class MultiFileReader : IUrlFetcher
         {
@@ -558,11 +558,11 @@ namespace IndicoInterface.NET.Test
             Assert.IsNotNull(talk2.SlideURL, "Slides were not found for the second talk!");
             Trace.WriteLine("Talk 2 title is " + talk2.Title);
 
-            Assert.IsNotNull(talk2.SubTalks, "Expected some subtalks here...");
+            Assert.IsNotNull(talk2.SubTalks, "Expected some sub-talks here...");
             Assert.AreEqual(3, talk2.SubTalks.Length, "Inproper number of sub talks!");
             Talk subT0 = talk2.SubTalks[0];
             Assert.AreEqual("9:30 - Introduction - A. Yamamoto", subT0.Title, "Incorrect title for first sub-talk");
-            Assert.IsNotNull(subT0.SlideURL, "slide url should not be zero for the first sub-talk!");
+            Assert.IsNotNull(subT0.SlideURL, "slide URL should not be zero for the first sub-talk!");
         }
 
         [TestMethod]
@@ -743,7 +743,7 @@ namespace IndicoInterface.NET.Test
                            select t;
             foreach (var item in allTalks)
             {
-                Console.WriteLine("Talk url is " + item.SlideURL + " for ID=" + item.ID + " - " + item.Title);
+                Console.WriteLine("Talk URL is " + item.SlideURL + " for ID=" + item.ID + " - " + item.Title);
             }
             Assert.AreEqual(5, allTalks.Count(), "Expected two talks!");
 
@@ -771,19 +771,19 @@ namespace IndicoInterface.NET.Test
         [DeploymentItem("data2009.xml")]
         public async Task TestAgendaWithBadLink()
         {
-            // THis url has a bad link in it
+            // THis URL has a bad link in it
             var ai = new AgendaInfo("https://indico.cern.ch/conferenceDisplay.py?confId=55584");
             var al = new AgendaLoader(new FileReader("data2009.xml"));
             WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(ai);
 
-            /// Make sure the url is sanitized...
+            /// Make sure the URL is sanitized...
 
             var talks = from s in data.Sessions
                         from t in s.Talks
                         where t.Title.Contains("Fermi")
                         select t;
-            Assert.AreEqual(1, talks.Count(), "# of fermi talks not right");
+            Assert.AreEqual(1, talks.Count(), "# of Fermi talks not right");
             Assert.IsNull(talks.First().SubTalks, "# of sub talks");
 
             var allSlideUrls = from s in data.Sessions
@@ -791,7 +791,7 @@ namespace IndicoInterface.NET.Test
                                where t.SlideURL != null
                                select t.SlideURL;
 
-            Assert.IsFalse(allSlideUrls.Any(u => u.Contains("\n")), "A slide url contains a carrage return character!");
+            Assert.IsFalse(allSlideUrls.Any(u => u.Contains("\n")), "A slide URL contains a carriage return character!");
 
             var allSTURLs = from s in data.Sessions
                             from t in s.Talks
@@ -799,7 +799,7 @@ namespace IndicoInterface.NET.Test
                             from st in t.SubTalks
                             where st.SlideURL != null
                             select st.SlideURL;
-            Assert.IsFalse(allSTURLs.Any(u => u.Contains("\n")), "A sub talk url contains a carrage return character!");
+            Assert.IsFalse(allSTURLs.Any(u => u.Contains("\n")), "A sub talk URLssssssssss contains a carriage return character!");
         }
 
         [TestMethod]
@@ -808,7 +808,7 @@ namespace IndicoInterface.NET.Test
         public async Task FallBackToNewEventURL()
         {
             // Try a non-white listed site, when that fails with bad HTML, see if we can get it with the
-            // new one. If successful the site shoudl be added to the list of white listed sites.
+            // new one. If successful the site should be added to the list of white listed sites.
 
             WhiteListInfo.ClearWhiteLists(); // Make sure CERN isn't on there!
             var fileloaders = new Dictionary<string, string> {
