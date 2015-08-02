@@ -7,14 +7,7 @@ namespace IndicoInterface.NET.JSON
     {
     }
 
-    public class StartDate
-    {
-        public string date { get; set; }
-        public string tz { get; set; }
-        public string time { get; set; }
-    }
-
-    public class EndDate
+    public class JDate
     {
         public string date { get; set; }
         public string tz { get; set; }
@@ -109,8 +102,8 @@ namespace IndicoInterface.NET.JSON
 
     public class Contribution
     {
-        public StartDate startDate { get; set; }
-        public EndDate endDate { get; set; }
+        public JDate startDate { get; set; }
+        public JDate endDate { get; set; }
         public int duration { get; set; }
         public object session { get; set; }
         public IList<object> keywords { get; set; }
@@ -159,8 +152,8 @@ namespace IndicoInterface.NET.JSON
 
     public class Result
     {
-        public StartDate startDate { get; set; }
-        public EndDate endDate { get; set; }
+        public JDate startDate { get; set; }
+        public JDate endDate { get; set; }
         public Creator creator { get; set; }
         public bool hasAnyProtection { get; set; }
         public string roomFullname { get; set; }

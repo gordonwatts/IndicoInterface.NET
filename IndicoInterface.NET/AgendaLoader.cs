@@ -162,8 +162,48 @@ namespace IndicoInterface.NET
         /// <summary>
         /// Get the conference data in a normalized format
         /// </summary>
+        /// <param name="meeting"></param>
         /// <returns></returns>
-        public async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceData(AgendaInfo meeting)
+        /// <remarks>
+        /// Attempts to be smart about what format to grab the data in - JSON or XML.
+        /// </remarks>
+        public Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceData(AgendaInfo meeting)
+        {
+            if (WhiteListInfo.UseJSONAgendaLoaderRequests(meeting))
+            {
+                return GetNormalizedConferenceDataFromJSON(meeting);
+            }
+            else
+            {
+                return GetNormalizedConferenceDataFromXML(meeting);
+            }
+        }
+
+        /// <summary>
+        /// Get the conference data in a normalized format assuming an xml source.
+        /// </summary>
+        /// <returns></returns>
+        private async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceDataFromJSON(AgendaInfo meeting)
+        {
+            // Get the data from the agenda and load it into our internal data model.
+            var data = await GetFullConferenceDataJSON(meeting);
+
+            // Do the basic meeting header
+            var m = new IndicoInterface.NET.SimpleAgendaDataModel.Meeting();
+            m.ID = data.id;
+            m.Title = data.title.Trim();
+            m.Site = meeting.AgendaSite;
+            m.StartDate = AgendaStringToDate(data.startDate);
+            m.EndDate = AgendaStringToDate(data.endDate);
+
+            return m;
+        }
+
+        /// <summary>
+        /// Get the conference data in a normalized format assuming an xml source.
+        /// </summary>
+        /// <returns></returns>
+        private async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceDataFromXML(AgendaInfo meeting)
         {
             ///
             /// Grab all the details
@@ -448,6 +488,16 @@ namespace IndicoInterface.NET
         private DateTime AgendaStringToDate(string datetime)
         {
             return DateTime.Parse(datetime);
+        }
+
+        /// <summary>
+        /// Convert a JSON agenda format from the server into a real date.
+        /// </summary>
+        /// <param name="jDate"></param>
+        /// <returns></returns>
+        private DateTime AgendaStringToDate(JSON.JDate jDate)
+        {
+            return DateTime.Now;
         }
 
         /// <summary>

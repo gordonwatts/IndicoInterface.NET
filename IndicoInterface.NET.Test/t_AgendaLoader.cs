@@ -75,6 +75,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo a = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=73513");
             var al = new AgendaLoader(new FileReader("ichep2010.xml"));
+            WhiteListInfo.ClearWhiteLists();
             Assert.AreEqual("ICHEP 2010", (await al.GetNormalizedConferenceData(a)).Title, "Title is incorrect");
         }
 
@@ -137,6 +138,7 @@ namespace IndicoInterface.NET.Test
             AgendaInfo info = new AgendaInfo(url);
             var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
 
+            WhiteListInfo.ClearWhiteLists();
             var meeting = await al.GetNormalizedConferenceData(info);
 
             Assert.IsNotNull(meeting.Sessions, "Should be some sessions!");
@@ -158,6 +160,7 @@ namespace IndicoInterface.NET.Test
             AgendaInfo info = new AgendaInfo(url);
             var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
 
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(info);
 
             Assert.IsTrue(data.ID == "a042880", "Conference ID is incorrect.");
@@ -209,6 +212,7 @@ namespace IndicoInterface.NET.Test
             var data = await al.GetNormalizedConferenceData(ai);
             Assert.AreEqual("Trigger Core Software", data.Title, "Title wasn't found!");
             Assert.Inconclusive();
+            // Test start time and end time
         }
 
         [TestMethod]
@@ -219,6 +223,7 @@ namespace IndicoInterface.NET.Test
             AgendaInfo info = new AgendaInfo(url);
             var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
 
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(info);
 
             var talk = data.Sessions.SelectMany(s => s.Talks).Where(t => t.ID == "s1t15").FirstOrDefault();
@@ -387,6 +392,7 @@ namespace IndicoInterface.NET.Test
             // In real life seems to be talks and not-talks that are in and out of sessions
             AgendaInfo a = new AgendaInfo("http://indico.cern.ch/event/375453");
             var al = new AgendaLoader(new FileReader("375453-inandout-sessions.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(a);
 
             var title = data.Title;
@@ -410,6 +416,7 @@ namespace IndicoInterface.NET.Test
             // In real life seems to be talks and not-talks that are in and out of sessions
             AgendaInfo a = new AgendaInfo("http://indico.cern.ch/event/375453");
             var al = new AgendaLoader(new FileReader("374641-split-sessions.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(a);
 
             Assert.AreEqual(4, data.Sessions.Length);
@@ -466,6 +473,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceOtherViews.py?view=standard&confId=83609");
             var al = new AgendaLoader(new FileReader("MinBias.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var agenda = await al.GetNormalizedConferenceData(ai);
 
             Assert.AreEqual(6, agenda.Sessions.Length, "Wrong number of sessions");
@@ -539,6 +547,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
             var al = new AgendaLoader(new FileReader("DarkMatterDirect.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var agenda = await al.GetNormalizedConferenceData(ai);
 
             var sesWMat = (from s in agenda.Sessions
@@ -574,6 +583,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
             var al = new AgendaLoader(new FileReader("DarkMatterDirect.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var agenda = await al.GetNormalizedConferenceData(ai);
 
             Assert.IsNotNull(agenda.MeetingTalks, "Expected non-null list of talks for this meeting at top level!");
@@ -634,6 +644,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceOtherViews.py?view=standard&confId=86819#2010041");
             var al = new AgendaLoader(new FileReader("lhcxsections.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var agenda = await al.GetNormalizedConferenceData(ai);
 
             var ses1 = (from s in agenda.Sessions
@@ -656,6 +667,7 @@ namespace IndicoInterface.NET.Test
         {
             var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=73513");
             var al = new AgendaLoader(new FileReader("earlyICHEPAgenda.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(ai);
             Assert.AreEqual("ICHEP 2010", data.Title, "Title wasn't found!");
         }
@@ -666,6 +678,7 @@ namespace IndicoInterface.NET.Test
         {
             var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=73513");
             var al = new AgendaLoader(new FileReader("earlyICHEPAgenda.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(ai);
             var bsm = (from s in data.Sessions
                        where s.Title.Contains("Beyond the Standard Model")
@@ -708,6 +721,7 @@ namespace IndicoInterface.NET.Test
             // An exception was seen in the field
             var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=74604#20100622");
             var al = new AgendaLoader(new FileReader("boost2010.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(ai);
         }
 
@@ -718,6 +732,7 @@ namespace IndicoInterface.NET.Test
             // THis url has a bad link in it
             var ai = new AgendaInfo("https://indico.cern.ch/conferenceDisplay.py?confId=55584");
             var al = new AgendaLoader(new FileReader("data2009.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(ai);
 
             /// Make sure the url is sanitized...
