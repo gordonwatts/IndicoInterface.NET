@@ -193,6 +193,46 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("cern-42880.json")]
+        public async Task GetNormalSimpleMeetingJSON()
+        {
+            string url = "http://indico.cern.ch/conferenceDisplay.py?confId=a042880";
+            AgendaInfo info = new AgendaInfo(url);
+            var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
+
+            WhiteListInfo.ClearWhiteLists();
+            var data = await al.GetNormalizedConferenceData(info);
+
+            Assert.IsTrue(data.ID == "a042880", "Conference ID is incorrect.");
+            Assert.IsTrue(data.Site == "indico.cern.ch", "Conference site is incorrect");
+            Assert.AreEqual("EvtGen miniworkshop", data.Title, "Title is not right");
+            Assert.IsTrue(data.StartDate == new DateTime(2005, 01, 21, 9, 0, 0), "Start date is not right");
+            Assert.IsTrue(data.EndDate == new DateTime(2005, 01, 21, 19, 0, 0), "End date is not right");
+
+            Assert.IsTrue(data.Sessions.Length == 1, "Should have only a single session");
+            Assert.IsTrue(data.Sessions[0].ID == "0", "Default session ID is not set correctly");
+
+            var ses = data.Sessions[0];
+            Assert.IsTrue(ses.Title == data.Title, "Session title should be the same as meeting title");
+            Assert.IsTrue(ses.StartDate == data.StartDate, "Session start date should match meeting start date");
+            Assert.IsTrue(ses.EndDate == data.EndDate, "Session end date should match meeting end date");
+
+            Assert.IsTrue(ses.Talks.Length == 14, "Incorrect number of talks in session!");
+
+            var talk1 = ses.Talks[0];
+            Assert.IsTrue(talk1.ID == "s1t15", "ID of talk is not correct");
+            Assert.AreEqual(TypeOfTalk.Talk, talk1.TalkType, "Talk type isn't right");
+            Assert.IsTrue(talk1.Title == "Introduction to the EvtGen Mini Workshop", "Talk title is not right");
+            Assert.IsTrue(talk1.StartDate == new DateTime(2005, 01, 21, 9, 0, 0), "Start time of talk is not correct");
+            Assert.IsTrue(talk1.EndDate == new DateTime(2005, 01, 21, 9, 15, 0), "End time of talk is not right");
+            Assert.IsNotNull(talk1.SlideURL, "The URL for the slides should not be null!");
+            Assert.IsTrue(talk1.SlideURL.StartsWith("http://indico.cern.ch"), "Slide URL is not correct");
+            Assert.IsTrue(talk1.Speakers != null, "Speaker list should not be null!");
+            Assert.IsTrue(talk1.Speakers.Length == 1, "Should be only one speaker");
+            Assert.IsTrue(talk1.Speakers[0] == "Bartalini, P.", "Speakers name is not correct");
+        }
+
+        [TestMethod]
         [DeploymentItem("cern-73513.json")]
         public async Task GetNormalComplexMeetingJSON()
         {
@@ -205,7 +245,7 @@ namespace IndicoInterface.NET.Test
 
         [TestMethod]
         [DeploymentItem("cern-434972.json")]
-        public async Task GetNormalSimpleMeetingJSON()
+        public async Task GetNormalSimpleMeetingEvtGenJSON()
         {
             var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=434972");
             var al = new AgendaLoader(new FileReader("cern-434972.json"));
