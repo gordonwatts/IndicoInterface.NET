@@ -62,8 +62,9 @@
     <Reference Include="CGenT.Sprache">
       <HintPath>..\packages\CGenT.Sprache.1.0\lib\portable-net40+sl50+win+wpa81+wp80\CGenT.Sprache.dll</HintPath>
     </Reference>
-    <Reference Include="iCal.PCL">
-      <HintPath>..\packages\iCal.PCL.1.0.2\lib\portable-net40+win+wpa81\iCal.PCL.dll</HintPath>
+    <Reference Include="iCal.PCL, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\iCal.PCL.1.0.4\lib\portable-net40+win+wpa81\iCal.PCL.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
