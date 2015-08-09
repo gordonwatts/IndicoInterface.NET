@@ -207,7 +207,9 @@ namespace IndicoInterface.NET
             }
             
             // Put them into our meeting
-            m.Sessions = sessions.ToArray();
+            m.Sessions = sessions
+                .OrderBy(s => s.StartDate)
+                .ToArray();
 
             return m;
         }
@@ -236,7 +238,11 @@ namespace IndicoInterface.NET
         /// <returns></returns>
         private Session CreateSessionFromContribs(string sessionName, IEnumerable<JSON.Contribution> contribs)
         {
-            var talks = contribs.Select(t => CreateTalk(t)).Where(t => t != null).ToArray();
+            var talks = contribs
+                .Select(t => CreateTalk(t))
+                .Where(t => t != null)
+                .OrderBy(t => t.StartDate)
+                .ToArray();
 
             var r = new Session()
             {
@@ -284,6 +290,7 @@ namespace IndicoInterface.NET
             var rt = new Talk()
             {
                 Title = t.title,
+                ID = t.id,
                 StartDate = AgendaStringToDate(t.startDate),
                 EndDate = AgendaStringToDate(t.endDate)
             };
@@ -610,6 +617,11 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
+        /// Generic list of material types we should search for in order to get the "best" thing to present.
+        /// </summary>
+        private static string[] gGenericMaterialList = new string[] { "slides", "transparencies", "poster", "0", null };
+
+        /// <summary>
         /// Given a contribution, return a talk.
         /// </summary>
         /// <param name="contrib"></param>
@@ -641,7 +653,7 @@ namespace IndicoInterface.NET
                 result.Speakers = new string[0];
             }
 
-            foreach (var materialType in new string[] { "slides", "transparencies", "poster", "0", null })
+            foreach (var materialType in gGenericMaterialList)
             {
                 var mainFile = FindMaterial(contrib.material, materialType);
                 if (mainFile != null)

@@ -222,16 +222,16 @@ namespace IndicoInterface.NET.Test
             Assert.IsTrue(ses.Talks.Length == 14, "Incorrect number of talks in session!");
 
             var talk1 = ses.Talks[0];
-            Assert.IsTrue(talk1.ID == "s1t15", "ID of talk is not correct");
+            Assert.AreEqual("s1t15", talk1.ID, "ID of talk is not correct");
             Assert.AreEqual(TypeOfTalk.Talk, talk1.TalkType, "Talk type isn't right");
             Assert.IsTrue(talk1.Title == "Introduction to the EvtGen Mini Workshop", "Talk title is not right");
             Assert.IsTrue(talk1.StartDate == new DateTime(2005, 01, 21, 9, 0, 0), "Start time of talk is not correct");
             Assert.IsTrue(talk1.EndDate == new DateTime(2005, 01, 21, 9, 15, 0), "End time of talk is not right");
             Assert.IsNotNull(talk1.SlideURL, "The URL for the slides should not be null!");
             Assert.IsTrue(talk1.SlideURL.StartsWith("http://indico.cern.ch"), "Slide URL is not correct");
-            Assert.IsTrue(talk1.Speakers != null, "Speaker list should not be null!");
-            Assert.IsTrue(talk1.Speakers.Length == 1, "Should be only one speaker");
-            Assert.IsTrue(talk1.Speakers[0] == "Bartalini, P.", "Speakers name is not correct");
+            Assert.IsNotNull(talk1.Speakers, "Speaker list should not be null!");
+            Assert.AreEqual(1, talk1.Speakers.Length, "Should be only one speaker");
+            Assert.AreEqual("Bartalini, P.", talk1.Speakers[0], "Speakers name is not correct");
         }
 
         [TestMethod]
