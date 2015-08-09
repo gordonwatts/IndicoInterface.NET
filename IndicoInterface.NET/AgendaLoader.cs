@@ -236,16 +236,42 @@ namespace IndicoInterface.NET
         /// <returns></returns>
         private Session CreateSessionFromContribs(string sessionName, IEnumerable<JSON.Contribution> contribs)
         {
-            var talks = contribs.Select(t => CreateTalk(t)).Where(t => t != null);
+            var talks = contribs.Select(t => CreateTalk(t)).Where(t => t != null).ToArray();
 
             var r = new Session()
             {
                 Title = sessionName,
-                Talks = talks.ToArray(),
-                ID = "0"
+                Talks = talks,
+                ID = "0",
+                StartDate = FindEarliestTime(talks),
+                EndDate = FindLastTime(talks)
             };
 
             return r;
+        }
+
+        /// <summary>
+        /// Return the first start time.
+        /// </summary>
+        /// <param name="talks">List of talks, expected to have at least on talk</param>
+        /// <returns></returns>
+        private DateTime FindEarliestTime(IEnumerable<Talk> talks)
+        {
+            return talks
+                .Select(t => t.StartDate)
+                .Min();
+        }
+
+        /// <summary>
+        /// Return the last end time.
+        /// </summary>
+        /// <param name="talks">List of talks, expected to have at least one talk</param>
+        /// <returns></returns>
+        private DateTime FindLastTime(Talk[] talks)
+        {
+            return talks
+                .Select(t => t.EndDate)
+                .Max();
         }
 
         /// <summary>
@@ -255,7 +281,13 @@ namespace IndicoInterface.NET
         /// <returns></returns>
         private Talk CreateTalk(JSON.Contribution t)
         {
-            return null;
+            var rt = new Talk()
+            {
+                Title = t.title,
+                StartDate = AgendaStringToDate(t.startDate),
+                EndDate = AgendaStringToDate(t.endDate)
+            };
+            return rt;
         }
 
         /// <summary>

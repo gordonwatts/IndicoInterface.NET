@@ -167,7 +167,7 @@ namespace IndicoInterface.NET.Test
             Assert.IsTrue(data.Site == "indico.cern.ch", "Conference site is incorrect");
             Assert.AreEqual("EvtGen miniworkshop", data.Title, "Title is not right");
             Assert.IsTrue(data.StartDate == new DateTime(2005, 01, 21, 9, 0, 0), "Start date is not right");
-            Assert.IsTrue(data.EndDate == new DateTime(2005, 01, 21, 19, 0, 0), "End date is not right");
+            Assert.IsTrue(data.EndDate == new DateTime(2005, 01, 21, 19, 00, 0), "End date is not right");
 
             Assert.IsTrue(data.Sessions.Length == 1, "Should have only a single session");
             Assert.IsTrue(data.Sessions[0].ID == "0", "Default session ID is not set correctly");
@@ -175,7 +175,7 @@ namespace IndicoInterface.NET.Test
             var ses = data.Sessions[0];
             Assert.IsTrue(ses.Title == data.Title, "Session title should be the same as meeting title");
             Assert.IsTrue(ses.StartDate == data.StartDate, "Session start date should match meeting start date");
-            Assert.IsTrue(ses.EndDate == data.EndDate, "Session end date should match meeting end date");
+            Assert.AreEqual(new DateTime(2005, 01, 21, 19, 30, 0), ses.EndDate, "Session end date should match meeting end date");
 
             Assert.IsTrue(ses.Talks.Length == 14, "Incorrect number of talks in session!");
 
@@ -209,7 +209,7 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual("indico.cern.ch", data.Site, "Conference site is incorrect");
             Assert.AreEqual("EvtGen miniworkshop", data.Title, "Title is not right");
             Assert.AreEqual(new DateTime(2005, 01, 21, 9, 0, 0), data.StartDate, "Start date is not right");
-            Assert.AreEqual(new DateTime(2005, 01, 21, 19, 0, 0), data.EndDate, "End date is not right");
+            Assert.AreEqual(new DateTime(2005, 01, 21, 19, 00, 0), data.EndDate, "End date is not right");
 
             Assert.AreEqual(1, data.Sessions.Length, "Should have only a single session");
             Assert.AreEqual("0", data.Sessions[0].ID, "Default session ID is not set correctly");
@@ -217,7 +217,7 @@ namespace IndicoInterface.NET.Test
             var ses = data.Sessions[0];
             Assert.AreEqual(data.Title, ses.Title, "Session title should be the same as meeting title");
             Assert.AreEqual(data.StartDate, ses.StartDate, "Session start date should match meeting start date");
-            Assert.AreEqual(data.EndDate, ses.EndDate, "Session end date should match meeting end date");
+            Assert.AreEqual(new DateTime(2005, 01, 21, 19, 30, 0), ses.EndDate, "Session end date should match meeting end date");
 
             Assert.IsTrue(ses.Talks.Length == 14, "Incorrect number of talks in session!");
 
