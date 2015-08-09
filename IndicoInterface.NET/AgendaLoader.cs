@@ -197,7 +197,78 @@ namespace IndicoInterface.NET
             m.StartDate = AgendaStringToDate(data.startDate);
             m.EndDate = AgendaStringToDate(data.endDate);
 
+            // Everything is done by contributions in this version of the data.
+            // So grab everything by name. The blank session will be the top level session.
+            var sessions = ExtractContributionsBySession(data.contributions);
+
+            foreach (var s in sessions.Where(ms => ms.Title == ""))
+            {
+                s.Title = m.Title;
+            }
+            
+            // Put them into our meeting
+            m.Sessions = sessions.ToArray();
+
             return m;
+        }
+
+        /// <summary>
+        /// Extract session data by contribution
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        private IList<Session> ExtractContributionsBySession(IList<JSON.Contribution> list)
+        {
+            var contribBySession = from s in list
+                                   group s by NormalizedSessionName(s.session);
+
+            var allSessions = contribBySession
+                .Select(contribs => CreateSessionFromContribs(contribs.Key, contribs));
+
+            return allSessions.ToList();
+        }
+
+        /// <summary>
+        /// Given a list of contributions, create a session object
+        /// </summary>
+        /// <param name="sessionName"></param>
+        /// <param name="contribs"></param>
+        /// <returns></returns>
+        private Session CreateSessionFromContribs(string sessionName, IEnumerable<JSON.Contribution> contribs)
+        {
+            var talks = contribs.Select(t => CreateTalk(t)).Where(t => t != null);
+
+            var r = new Session()
+            {
+                Title = sessionName,
+                Talks = talks.ToArray(),
+                ID = "0"
+            };
+
+            return r;
+        }
+
+        /// <summary>
+        /// Creates a talk from a contribution.
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        private Talk CreateTalk(JSON.Contribution t)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// Normalize session names for consumption by everyone else.
+        /// </summary>
+        /// <param name="sname"></param>
+        /// <returns></returns>
+        /// <remarks>A null is converted to an empty string</remarks>
+        private string NormalizedSessionName(string sname)
+        {
+            if (sname != null)
+                return sname;
+            return "";
         }
 
         /// <summary>

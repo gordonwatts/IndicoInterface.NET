@@ -211,13 +211,13 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual(new DateTime(2005, 01, 21, 9, 0, 0), data.StartDate, "Start date is not right");
             Assert.AreEqual(new DateTime(2005, 01, 21, 19, 0, 0), data.EndDate, "End date is not right");
 
-            Assert.IsTrue(data.Sessions.Length == 1, "Should have only a single session");
-            Assert.IsTrue(data.Sessions[0].ID == "0", "Default session ID is not set correctly");
+            Assert.AreEqual(1, data.Sessions.Length, "Should have only a single session");
+            Assert.AreEqual("0", data.Sessions[0].ID, "Default session ID is not set correctly");
 
             var ses = data.Sessions[0];
-            Assert.IsTrue(ses.Title == data.Title, "Session title should be the same as meeting title");
-            Assert.IsTrue(ses.StartDate == data.StartDate, "Session start date should match meeting start date");
-            Assert.IsTrue(ses.EndDate == data.EndDate, "Session end date should match meeting end date");
+            Assert.AreEqual(data.Title, ses.Title, "Session title should be the same as meeting title");
+            Assert.AreEqual(data.StartDate, ses.StartDate, "Session start date should match meeting start date");
+            Assert.AreEqual(data.EndDate, ses.EndDate, "Session end date should match meeting end date");
 
             Assert.IsTrue(ses.Talks.Length == 14, "Incorrect number of talks in session!");
 
@@ -232,6 +232,42 @@ namespace IndicoInterface.NET.Test
             Assert.IsTrue(talk1.Speakers != null, "Speaker list should not be null!");
             Assert.IsTrue(talk1.Speakers.Length == 1, "Should be only one speaker");
             Assert.IsTrue(talk1.Speakers[0] == "Bartalini, P.", "Speakers name is not correct");
+        }
+
+        [TestMethod]
+        public async Task GetMultiSessionMeetingJSON()
+        {
+            // A meeting with many sessions, just talks
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public async Task GetSingleSessionMeetingNamedJSON()
+        {
+            // A meeting with a single session, that was created as a single session
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public async Task GetSessionID()
+        {
+            Assert.Inconclusive();
+            // What happens to a session ID?
+        }
+
+        [TestMethod]
+        public async Task GetMeetingWithSplitNonSessionBySessonJSON()
+        {
+            // A meetign that has talks, then session, then talks
+            // I think one of our weeklies did this to us.
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public async Task GetMeetingTalksJSON()
+        {
+            // A meeting that has material in the meeting header
+            Assert.Inconclusive();
         }
 
         [TestMethod]

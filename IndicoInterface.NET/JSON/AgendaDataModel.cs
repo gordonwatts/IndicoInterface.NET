@@ -104,7 +104,7 @@ namespace IndicoInterface.NET.JSON
     {
         public JDate startDate { get; set; }
         public JDate endDate { get; set; }
-        public object session { get; set; }
+        public string session { get; set; }
         public IList<object> keywords { get; set; }
         public string id { get; set; }
         public IList<Speaker> speakers { get; set; }
