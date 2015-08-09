@@ -1,5 +1,6 @@
 ﻿using IndicoInterface.NET.SimpleAgendaDataModel;
 using Newtonsoft.Json;
+using NodaTime;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -497,7 +498,12 @@ namespace IndicoInterface.NET
         /// <returns></returns>
         private DateTime AgendaStringToDate(JSON.JDate jDate)
         {
-            return DateTime.Now;
+            var dt = DateTime.Parse(jDate.date) + TimeSpan.Parse(jDate.time);
+            var lt = new LocalDateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute);
+            var tz = DateTimeZoneProviders.Tzdb[jDate.tz];
+            var x = tz.AtStrictly(lt);
+
+            return x.ToDateTimeUnspecified();
         }
 
         /// <summary>
