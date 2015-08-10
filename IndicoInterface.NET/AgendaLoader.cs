@@ -287,14 +287,70 @@ namespace IndicoInterface.NET
         /// <returns></returns>
         private Talk CreateTalk(JSON.Contribution t)
         {
+            // Grab the attached slides.
+            var allMaterial = t.folders
+                .SelectMany(f => ConvertToTalkMaterial(f)).ToArray();
+            var bestMaterial = FindBestMaterial(allMaterial);
+
             var rt = new Talk()
             {
                 Title = t.title,
                 ID = t.id,
                 StartDate = AgendaStringToDate(t.startDate),
-                EndDate = AgendaStringToDate(t.endDate)
+                EndDate = AgendaStringToDate(t.endDate),
+                AllMaterial = allMaterial,
+                DisplayFilename = bestMaterial != null ? bestMaterial.DisplayFilename : "",
+                FilenameExtension = bestMaterial != null ? bestMaterial.FilenameExtension : "",
+                SlideURL = bestMaterial != null ? bestMaterial.URL : "",
             };
             return rt;
+        }
+
+        /// <summary>
+        /// Given a list of all the material associated with a talk, pull out the
+        /// "most" interesting.
+        /// </summary>
+        /// <param name="allMaterial"></param>
+        /// <returns></returns>
+        private TalkMaterial FindBestMaterial(TalkMaterial[] allMaterial)
+        {
+            var orderedMaterial = from tm in allMaterial
+                                  let ord = Array.FindIndex(gGenericMaterialList, s => s == tm.MaterialType)
+                                  where ord >= 0
+                                  group tm by ord;
+            var sorted = orderedMaterial.OrderBy(k => k.Key).FirstOrDefault();
+            if (sorted == null)
+            {
+                return null;
+            }
+            return sorted.First();
+        }
+
+        /// <summary>
+        /// Convert a talk's folder list to TalkMaterial.
+        /// </summary>
+        /// <param name="f"></param>
+        /// <returns></returns>
+        private IEnumerable<TalkMaterial> ConvertToTalkMaterial(JSON.Folder f)
+        {
+            return f.attachments
+                .Select(a => ConvertToTalkMaterial(a, f.title));
+        }
+
+        /// <summary>
+        /// Convert an attachment to a talk material
+        /// </summary>
+        /// <param name="a"></param>
+        /// <returns></returns>
+        private TalkMaterial ConvertToTalkMaterial(JSON.Attachment a, string mtype)
+        {
+            return new TalkMaterial()
+            {
+                DisplayFilename = a.title,
+                URL = a.download_url,
+                FilenameExtension = Path.GetExtension(a.download_url),
+                MaterialType = mtype
+            };
         }
 
         /// <summary>

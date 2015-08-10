@@ -228,7 +228,7 @@ namespace IndicoInterface.NET.Test
             Assert.IsTrue(talk1.StartDate == new DateTime(2005, 01, 21, 9, 0, 0), "Start time of talk is not correct");
             Assert.IsTrue(talk1.EndDate == new DateTime(2005, 01, 21, 9, 15, 0), "End time of talk is not right");
             Assert.IsNotNull(talk1.SlideURL, "The URL for the slides should not be null!");
-            Assert.IsTrue(talk1.SlideURL.StartsWith("http://indico.cern.ch"), "Slide URL is not correct");
+            Assert.IsTrue(talk1.SlideURL.StartsWith("https://indico.cern.ch"), string.Format("Slide URL is not correct {0}", talk1.SlideURL));
             Assert.IsNotNull(talk1.Speakers, "Speaker list should not be null!");
             Assert.AreEqual(1, talk1.Speakers.Length, "Should be only one speaker");
             Assert.AreEqual("Bartalini, P.", talk1.Speakers[0], "Speakers name is not correct");
