@@ -302,8 +302,19 @@ namespace IndicoInterface.NET
                 DisplayFilename = bestMaterial != null ? bestMaterial.DisplayFilename : "",
                 FilenameExtension = bestMaterial != null ? bestMaterial.FilenameExtension : "",
                 SlideURL = bestMaterial != null ? bestMaterial.URL : "",
+                Speakers = t.speakers.Select(s => ConvertToSpeaker(s)).ToArray()
             };
             return rt;
+        }
+
+        /// <summary>
+        /// Extract a speaker from a speaker.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        private string ConvertToSpeaker(JSON.Speaker s)
+        {
+            return s.fullName;
         }
 
         /// <summary>

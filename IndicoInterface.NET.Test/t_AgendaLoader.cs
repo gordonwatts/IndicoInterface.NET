@@ -231,7 +231,7 @@ namespace IndicoInterface.NET.Test
             Assert.IsTrue(talk1.SlideURL.StartsWith("https://indico.cern.ch"), string.Format("Slide URL is not correct {0}", talk1.SlideURL));
             Assert.IsNotNull(talk1.Speakers, "Speaker list should not be null!");
             Assert.AreEqual(1, talk1.Speakers.Length, "Should be only one speaker");
-            Assert.AreEqual("Bartalini, P.", talk1.Speakers[0], "Speakers name is not correct");
+            Assert.AreEqual("BARTALINI, P.", talk1.Speakers[0], "Speakers name is not correct");
         }
 
         [TestMethod]
