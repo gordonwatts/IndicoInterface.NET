@@ -175,7 +175,7 @@ namespace IndicoInterface.NET.Test
             var ses = data.Sessions[0];
             Assert.IsTrue(ses.Title == data.Title, "Session title should be the same as meeting title");
             Assert.IsTrue(ses.StartDate == data.StartDate, "Session start date should match meeting start date");
-            Assert.AreEqual(new DateTime(2005, 01, 21, 19, 30, 0), ses.EndDate, "Session end date should match meeting end date");
+            Assert.AreEqual(new DateTime(2005, 01, 21, 19, 00, 0), ses.EndDate, "Session end date should match meeting end date");
 
             Assert.IsTrue(ses.Talks.Length == 14, "Incorrect number of talks in session!");
 
