@@ -258,7 +258,7 @@ namespace IndicoInterface.NET.Test
         [TestMethod]
         public async Task GetMeetingWithSplitNonSessionBySessonJSON()
         {
-            // A meetign that has talks, then session, then talks
+            // A meeting that has talks, then session, then talks
             // I think one of our weeklies did this to us.
             Assert.Inconclusive();
         }
@@ -271,14 +271,58 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        public async Task MeetingWithExtraMaterialJSON()
+        {
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public async Task MeetingWithExtraSessionMaterialJSON()
+        {
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
         [DeploymentItem("cern-73513.json")]
         public async Task GetNormalComplexMeetingJSON()
         {
             var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=73513");
             var al = new AgendaLoader(new FileReader("cern-73513.json"));
             var data = await al.GetNormalizedConferenceData(ai);
+
             Assert.AreEqual("ICHEP 2010", data.Title, "Title wasn't found!");
-            Assert.Inconclusive();
+            var bsm = (from s in data.Sessions
+                       where s.Title.Contains("Beyond the Standard Model")
+                       select s).ToArray();
+            Assert.IsNotNull(bsm, "Expected to find the session!");
+            Assert.AreEqual(8, bsm.Length, "Unexpected number of sessions");
+
+            var allSessionMaterial = (from s in bsm
+                                      from m in s.SessionMaterial
+                                      select m).ToArray();
+
+            Assert.AreEqual(0, allSessionMaterial.Length, "Expected no section material");
+
+            var allSessionTalks = from s in bsm
+                                  from t in s.Talks
+                                  select t;
+
+            var allTalks = from t in allSessionTalks
+                           where t.SlideURL != null && t.SlideURL != ""
+                           select t;
+            foreach (var item in allTalks)
+            {
+                Console.WriteLine("Talk URL is " + item.SlideURL + " for ID=" + item.ID + " - " + item.Title);
+            }
+            Assert.AreEqual(5, allTalks.Count(), "Expected two talks!");
+
+            var allExtraMaterial = from t in allSessionTalks
+                                   where t.SubTalks != null
+                                   from m in t.SubTalks
+                                   where m != null
+                                   where m.SlideURL != null && m.SlideURL != ""
+                                   select m;
+            Assert.IsFalse(allExtraMaterial.Any(), "Expected no extra material");
         }
 
         [TestMethod]
@@ -575,7 +619,7 @@ namespace IndicoInterface.NET.Test
 
             var talk2 = ses.contribution[1];
             Assert.AreEqual(3, talk2.subcontributions.Length, "Incorrect number of sub-contributions!");
-            Assert.AreEqual("9:30 - Introduction - A. Yamamoto", talk2.subcontributions[0].title, "Inproper first title!");
+            Assert.AreEqual("9:30 - Introduction - A. Yamamoto", talk2.subcontributions[0].title, "Improper first title!");
         }
 
         [TestMethod]
@@ -595,7 +639,7 @@ namespace IndicoInterface.NET.Test
             Trace.WriteLine("Talk 2 title is " + talk2.Title);
 
             Assert.IsNotNull(talk2.SubTalks, "Expected some sub-talks here...");
-            Assert.AreEqual(3, talk2.SubTalks.Length, "Inproper number of sub talks!");
+            Assert.AreEqual(3, talk2.SubTalks.Length, "Improper number of sub talks!");
             Talk subT0 = talk2.SubTalks[0];
             Assert.AreEqual("9:30 - Introduction - A. Yamamoto", subT0.Title, "Incorrect title for first sub-talk");
             Assert.IsNotNull(subT0.SlideURL, "slide URL should not be zero for the first sub-talk!");

@@ -29,8 +29,8 @@ namespace IndicoInterface.NET
         /// Return the URL that will get the full XML.
         /// </summary>
         /// <param name="info">Agenda the URL is desired for</param>
-        /// <param name="useEventFormat">If true it will use the new event format url, if false, it will not unless site is on whitelist.</param>
-        /// <param name="apiKey">Api key to use to access the event</param>
+        /// <param name="useEventFormat">If true it will use the new event format URL, if false, it will not unless site is on white list.</param>
+        /// <param name="apiKey">API key to use to access the event</param>
         /// <param name="secretKey">The secret key to also use to access event. Will be time encoded if this is present.</param>
         /// <returns>A URI that should return the XML from the agenda server</returns>
         public Uri GetAgendaFullXMLURL(AgendaInfo info, bool useEventFormat = false, string apiKey = null, string secretKey = null, bool useTimestamp = true)
@@ -64,7 +64,7 @@ namespace IndicoInterface.NET
         /// Build the final URI from the path
         /// </summary>
         /// <param name="info">The agenda we are building against</param>
-        /// <param name="useHttps">What http protocal shoudl be used?</param>
+        /// <param name="useHttps">What http protocal should be used?</param>
         /// <param name="stem">The stem that goes after the absolute base</param>
         /// <returns></returns>
         private static string BuildUriFromPath(AgendaInfo info, bool useHttps, string stem)
@@ -88,7 +88,7 @@ namespace IndicoInterface.NET
         /// <param name="info"></param>
         /// <returns>Uri pointing to the resource</returns>
         /// <remarks>
-        /// Only "modern" versions of indico can handle this, and in this codebase, AgendaLoader is
+        /// Only "modern" versions of indico can handle this, and in this code base, AgendaLoader is
         /// the one that tries to sort out what version of indico it is dealing with.
         /// </remarks>
         public Uri GetAgendaFullJSONURL(AgendaInfo info, string apiKey = null, string secretKey = null, bool useTimeStamp = true)
@@ -97,7 +97,7 @@ namespace IndicoInterface.NET
             path.AppendFormat("/export/event/{0}.json", info.ConferenceID);
             var requestParams = new Dictionary<string, string>();
             requestParams["nc"] = "yes";
-            requestParams["detail"] = "subcontributions";
+            requestParams["detail"] = "sub contributions";
 
             var stem = ApiKeyHandler.IndicoEncode(path.ToString(), requestParams, apiKey, secretKey, useTimeStamp: useTimeStamp);
 
@@ -211,6 +211,9 @@ namespace IndicoInterface.NET
                 .OrderBy(s => s.StartDate)
                 .ToArray();
 
+            // Extra material in the meeting
+            m.MeetingTalks = ParseConferenceExtraMaterialJSON(data.material);
+
             return m;
         }
 
@@ -250,7 +253,8 @@ namespace IndicoInterface.NET
                 Talks = talks,
                 ID = "0",
                 StartDate = FindEarliestTime(talks),
-                EndDate = FindLastTime(talks)
+                EndDate = FindLastTime(talks),
+                SessionMaterial = new Talk[0]
             };
 
             return r;
@@ -326,7 +330,8 @@ namespace IndicoInterface.NET
         private TalkMaterial FindBestMaterial(TalkMaterial[] allMaterial)
         {
             var orderedMaterial = from tm in allMaterial
-                                  let ord = Array.FindIndex(gGenericMaterialList, s => s == tm.MaterialType)
+                                  let mtlow = tm.MaterialType.ToLower()
+                                  let ord = Array.FindIndex(gGenericMaterialList, s => s == mtlow)
                                   where ord >= 0
                                   group tm by ord;
             var sorted = orderedMaterial.OrderBy(k => k.Key).FirstOrDefault();
@@ -495,6 +500,63 @@ namespace IndicoInterface.NET
                                        select talk;
 
             return sessionMaterialTalks.ToArray();
+        }
+
+        /// <summary>
+        /// Given the material attached with this session, turn it into talks for later processing. These are
+        /// funny talks (no time, etc.).
+        /// </summary>
+        /// <param name="material"></param>
+        /// <returns></returns>
+        private SimpleAgendaDataModel.Talk[] ParseConferenceExtraMaterialJSON(IList<JSON.Material> material)
+        {
+            return null;
+#if false
+            ///
+            /// Simple cases
+            /// 
+
+            if (material == null || material.Length == 0)
+            {
+                return new SimpleAgendaDataModel.Talk[0];
+            }
+
+            ///
+            /// Build talks from each of the guys. Since this is extra material, we need to package everything up
+            /// into sub-talks. Nothing exists at the upper level - hence the nested structure of the below LINQ
+            /// query!
+            /// 
+
+            var sessionMaterialTalks = from m in material
+                                       where m != null
+                                       let talk = new IndicoInterface.NET.SimpleAgendaDataModel.Talk()
+                                       {
+                                           Title = m.title,
+                                           SlideURL = null,
+                                           AllMaterial = new TalkMaterial[0],
+                                           StartDate = DateTime.Now,
+                                           EndDate = DateTime.Now,
+                                           ID = m.ID,
+                                           TalkType = SimpleAgendaDataModel.TypeOfTalk.ExtraMaterial,
+                                           SubTalks = (from tFiles in FindAllUniqueMaterial(m)
+                                                       where tFiles != null
+                                                       select new IndicoInterface.NET.SimpleAgendaDataModel.Talk()
+                                                       {
+                                                           Title = m.title,
+                                                           SlideURL = tFiles.url,
+                                                           DisplayFilename = Path.GetFileNameWithoutExtension(tFiles.name),
+                                                           FilenameExtension = Path.GetExtension(tFiles.name),
+                                                           StartDate = DateTime.Now,
+                                                           EndDate = DateTime.Now,
+                                                           ID = m.ID,
+                                                           TalkType = SimpleAgendaDataModel.TypeOfTalk.ExtraMaterial
+                                                       }).ToArray()
+                                       }
+                                       where talk.SubTalks != null && talk.SubTalks.Length != 0
+                                       select talk;
+
+            return sessionMaterialTalks.ToArray();
+#endif
         }
 
         /// <summary>
@@ -675,6 +737,14 @@ namespace IndicoInterface.NET
         /// <returns></returns>
         private DateTime AgendaStringToDate(JSON.JDate jDate)
         {
+            // If a meeting has a null date or time, we should
+            // pass back something that is so obviously bogus...
+            if (jDate == null)
+            {
+                return new DateTime();
+            }
+
+            // Next, extract the time, taking into account the time zone info.
             var dt = DateTime.Parse(jDate.date) + TimeSpan.Parse(jDate.time);
             var lt = new LocalDateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute);
             var tz = DateTimeZoneProviders.Tzdb[jDate.tz];
