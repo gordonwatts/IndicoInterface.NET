@@ -357,7 +357,7 @@ namespace IndicoInterface.NET
         private TalkMaterial FindBestMaterial(TalkMaterial[] allMaterial)
         {
             var orderedMaterial = from tm in allMaterial
-                                  let mtlow = tm.MaterialType.ToLower()
+                                  let mtlow = ExtractMaterialType(tm)
                                   let ord = Array.FindIndex(gGenericMaterialList, s => s == mtlow)
                                   where ord >= 0
                                   group tm by ord;
@@ -367,6 +367,16 @@ namespace IndicoInterface.NET
                 return null;
             }
             return sorted.First();
+        }
+
+        /// <summary>
+        /// Protected material type return
+        /// </summary>
+        /// <param name="tm"></param>
+        /// <returns></returns>
+        private static string ExtractMaterialType(TalkMaterial tm)
+        {
+            return tm.MaterialType != null ? tm.MaterialType.ToLower() : "slides";
         }
 
         /// <summary>
