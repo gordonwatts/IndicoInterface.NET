@@ -197,9 +197,12 @@ namespace IndicoInterface.NET
             m.StartDate = AgendaStringToDate(data.startDate);
             m.EndDate = AgendaStringToDate(data.endDate);
 
-            // Everything is done by contributions in this version of the data.
-            // So grab everything by name. The blank session will be the top level session.
-            var sessions = ExtractContributionsBySession(data.sessions);
+            // Sessions can either be at the top level, not associated,
+            // or they can be in sessions. We have to pick up talks from both
+            // sources.
+            IEnumerable<Session> sessions = ExtractContributionsBySession(data.sessions);
+            var sessionsNotAssociated = ExtractContributionsBySession(data.contributions);
+            sessions = sessions.Concat(sessionsNotAssociated);
 
             foreach (var s in sessions.Where(ms => ms.Title == ""))
             {
@@ -215,6 +218,16 @@ namespace IndicoInterface.NET
             m.MeetingTalks = ParseConferenceExtraMaterialJSON(data.material);
 
             return m;
+        }
+
+        private IList<Session> ExtractContributionsBySession(IList<JSON.Contribution> list)
+        {
+            var contribBySession = from s in list
+                                   group s by NormalizedSessionName(s.session);
+
+            return contribBySession
+                .Select(talks => CreateSessionFromContribs("", talks))
+                .ToList();
         }
 
         /// <summary>
