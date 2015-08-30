@@ -14,7 +14,7 @@ namespace IndicoInterface.NET.JSON
         public string time { get; set; }
     }
 
-    public class Creator
+    public class Person
     {
         public string _type { get; set; }
         public string emailHash { get; set; }
@@ -29,26 +29,6 @@ namespace IndicoInterface.NET.JSON
         public string date { get; set; }
         public string tz { get; set; }
         public string time { get; set; }
-    }
-
-    public class Speaker
-    {
-        public string _type { get; set; }
-        public string emailHash { get; set; }
-        public string affiliation { get; set; }
-        public string _fossil { get; set; }
-        public string fullName { get; set; }
-        public string id { get; set; }
-    }
-
-    public class Primaryauthor
-    {
-        public string _type { get; set; }
-        public string emailHash { get; set; }
-        public string affiliation { get; set; }
-        public string _fossil { get; set; }
-        public string fullName { get; set; }
-        public string id { get; set; }
     }
 
     public class Note
@@ -107,8 +87,8 @@ namespace IndicoInterface.NET.JSON
         public string session { get; set; }
         public IList<object> keywords { get; set; }
         public string id { get; set; }
-        public IList<Speaker> speakers { get; set; }
-        public IList<Primaryauthor> primaryauthors { get; set; }
+        public IList<Person> speakers { get; set; }
+        public IList<Person> primaryauthors { get; set; }
         public string title { get; set; }
         public Note note { get; set; }
         public object location { get; set; }
@@ -139,21 +119,87 @@ namespace IndicoInterface.NET.JSON
         public string time { get; set; }
     }
 
-    public class Chair
+    public class BookedRooms
     {
+
+    }
+
+    public class SupportInfo
+    {
+        public string _fossil { get; set; }
+        public string caption { get; set; }
         public string _type { get; set; }
-        public string emailHash { get; set; }
+        public string email { get; set; }
+        public string telephone { get; set; }
+    }
+    
+
+    public class Convener
+    {
+        public string fax { get; set; }
+        public string name { get; set; }
+        public string firstName { get; set; }
+        public string title { get; set; }
         public string affiliation { get; set; }
+        public string familyName { get; set; }
+        public string _type { get; set; }
+        public int id { get; set; }
+        public string phone { get; set; }
+        public string address { get; set; }
         public string _fossil { get; set; }
         public string fullName { get; set; }
-        public int id { get; set; }
+        public string email { get; set; }
+    }
+    
+    public class Conference
+    {
+        public JDate startDate { get; set; }
+        public string _type { get; set; }
+        public JDate endDate { get; set; }
+        public string description { get; set; }
+        public string title { get; set; }
+        public string id { get; set; }
+        public BookedRooms bookedRooms { get; set; }
+        public string location { get; set; }
+        public string address { get; set; }
+        public string _fossil { get; set; }
+        public string timezone { get; set; }
+        public JDate adjustedEndDate { get; set; }
+        public JDate adjustedStartDate { get; set; }
+        public string type { get; set; }
+        public SupportInfo supportInfo { get; set; }
+        public object room { get; set; }
+    }
+
+    public class Session
+    {
+        public Conference conference { get; set; }
+        public JDate startDate { get; set; }
+        public string _type { get; set; }
+        public JDate endDate { get; set; }
+        public string description { get; set; }
+        public Session session { get; set; }
+        public string title { get; set; }
+        public string url { get; set; }
+        public IList<Convener> conveners { get; set; }
+        public string slotTitle { get; set; }
+        public Note note { get; set; }
+        public object roomFullname { get; set; }
+        public string location { get; set; }
+        public bool inheritLoc { get; set; }
+        public string _fossil { get; set; }
+        public bool inheritRoom { get; set; }
+        public IList<Contribution> contributions { get; set; }
+        public string id { get; set; }
+        public object address { get; set; }
+        public string room { get; set; }
     }
 
     public class Result
     {
         public JDate startDate { get; set; }
         public JDate endDate { get; set; }
-        public Creator creator { get; set; }
+        public Person creator { get; set; }
         public bool hasAnyProtection { get; set; }
         public string roomFullname { get; set; }
         public ModificationDate modificationDate { get; set; }
@@ -171,12 +217,13 @@ namespace IndicoInterface.NET.JSON
         public string _type { get; set; }
         public string description { get; set; }
         public string roomMapURL { get; set; }
+        public IList<Session> sessions { get; set; }
         public IList<Material> material { get; set; }
         public Visibility visibility { get; set; }
         public object address { get; set; }
         public CreationDate creationDate { get; set; }
         public object room { get; set; }
-        public IList<Chair> chairs { get; set; }
+        public IList<Person> chairs { get; set; }
         public string url { get; set; }
     }
 

@@ -56,7 +56,7 @@ namespace IndicoInterface.NET.Test
             var ai = new AgendaInfo("https://indico.cern.ch/event/434972/");
             var al = new AgendaLoader(null);
             var uri = al.GetAgendaFullJSONURL(ai);
-            Assert.AreEqual("https://indico.cern.ch/export/event/434972.json?detail=subcontributions&nc=yes", uri.OriginalString);
+            Assert.AreEqual("https://indico.cern.ch/export/event/434972.json?detail=sessions&nc=yes", uri.OriginalString);
         }
 
         [TestMethod]
@@ -66,7 +66,7 @@ namespace IndicoInterface.NET.Test
             var al = new AgendaLoader(null);
             var uri = al.GetAgendaFullJSONURL(ai, apiKey: "00000000-0000-0000-0000-000000000000", secretKey: "00000000-0000-0000-0000-000000000000", useTimeStamp: false);
             Console.WriteLine(uri.OriginalString);
-            Assert.AreEqual("https://indico.cern.ch/export/event/434972.json?apikey=00000000-0000-0000-0000-000000000000&detail=subcontributions&nc=yes&signature=c6b5f784d13d234c142a72b94c1b9a0ea4a3736a", uri.OriginalString);
+            Assert.AreEqual("https://indico.cern.ch/export/event/434972.json?apikey=00000000-0000-0000-0000-000000000000&detail=sessions&nc=yes&signature=3283f66163165705b3ee7d095cec180c3f9519ed", uri.OriginalString);
         }
 
         [TestMethod]
@@ -314,7 +314,7 @@ namespace IndicoInterface.NET.Test
             {
                 Console.WriteLine("Talk URL is " + item.SlideURL + " for ID=" + item.ID + " - " + item.Title);
             }
-            Assert.AreEqual(5, allTalks.Count(), "Expected two talks!");
+            Assert.AreEqual(37, allTalks.Count(), "Expected 37 talks!");
 
             var allExtraMaterial = from t in allSessionTalks
                                    where t.SubTalks != null

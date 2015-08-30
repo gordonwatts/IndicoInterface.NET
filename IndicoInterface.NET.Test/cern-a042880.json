@@ -1,1 +1,1255 @@
-{"count": 1, "additionalInfo": {}, "_type": "HTTPAPIResult", "url": "https:\/\/indico.cern.ch\/export\/event\/a042880.json?detail=subcontributions&nc=yes", "results": [{"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "09:00:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "19:00:00"}, "creator": {"_type": "Avatar", "emailHash": "370e6d03943518c87109e6e03efc5e1e", "affiliation": "University of Oxford (GB)", "_fossil": "conferenceChairMetadata", "fullName": "BARR, Alan", "id": "19868"}, "hasAnyProtection": false, "roomFullname": "40-5-A01", "modificationDate": {"date": "2011-09-13", "tz": "UTC", "time": "21:36:08.415548"}, "timezone": "Europe\/Zurich", "contributions": [{"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "14:00:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "14:30:00"}, "duration": 30, "session": null, "keywords": [], "id": "s1t19", "speakers": [{"_type": "ContributionParticipation", "emailHash": "79cd8d8579235c35d3bebe237a108c7c", "affiliation": "University of Florida", "_fossil": "contributionParticipationMetadata", "fullName": "BARTALINI, P.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "79cd8d8579235c35d3bebe237a108c7c", "affiliation": "University of Florida", "_fossil": "contributionParticipationMetadata", "fullName": "BARTALINI, P.", "id": "0"}], "title": "The LCG Generator Project", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t19\/attachments\/866945\/1213513\/Bartalini2.ppt", "filename": "Bartalini2.ppt", "content_type": "application\/vnd.ms-powerpoint", "type": "file", "id": 1213513, "size": 386048}], "title": "transparencies", "default_folder": false, "id": 866945, "description": ""}], "_type": "Contribution", "description": "", "track": null, "material": [{"_type": "Material", "title": "transparencies", "_fossil": "materialMetadata", "id": "866945", "resources": [{"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t19\/attachments\/866945\/1213513\/Bartalini2.ppt", "fileName": "Bartalini2.ppt", "_fossil": "localFileMetadata", "id": "1213513", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t19", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "17:00:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "19:30:00"}, "duration": 150, "session": null, "keywords": [], "id": "s1t31", "speakers": [{"_type": "ContributionParticipation", "emailHash": "d41d8cd98f00b204e9800998ecf8427e", "affiliation": "", "_fossil": "contributionParticipationMetadata", "fullName": "ALL", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "d41d8cd98f00b204e9800998ecf8427e", "affiliation": "", "_fossil": "contributionParticipationMetadata", "fullName": "ALL", "id": "0"}], "title": "Discussion", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "more information", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t31\/attachments\/866946\/1213514\/EvtGen_miniworkshop_Discussion_Items.pdf", "filename": "EvtGen_miniworkshop_Discussion_Items.pdf", "content_type": "application\/pdf", "type": "file", "id": 1213514, "size": 29490}], "title": "more information", "default_folder": false, "id": 866946, "description": ""}], "_type": "Contribution", "description": "", "track": null, "material": [{"_type": "Material", "title": "more information", "_fossil": "materialMetadata", "id": "866946", "resources": [{"_type": "LocalFile", "name": "more information", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t31\/attachments\/866946\/1213514\/EvtGen_miniworkshop_Discussion_Items.pdf", "fileName": "EvtGen_miniworkshop_Discussion_Items.pdf", "_fossil": "localFileMetadata", "id": "1213514", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t31", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "10:30:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "10:45:00"}, "duration": 15, "session": null, "keywords": [], "id": "s1t16", "speakers": [{"_type": "ContributionParticipation", "emailHash": "9ed3cf035c79d1472db9b7a0e28b3a88", "affiliation": "Cornell", "_fossil": "contributionParticipationMetadata", "fullName": "RYD, A.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "9ed3cf035c79d1472db9b7a0e28b3a88", "affiliation": "Cornell", "_fossil": "contributionParticipationMetadata", "fullName": "RYD, A.", "id": "0"}], "title": "Status of EvtGen in Cleo", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [], "_type": "Contribution", "description": "", "track": null, "material": [], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t16", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "11:00:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "11:30:00"}, "duration": 30, "session": null, "keywords": [], "id": "s1t17", "speakers": [{"_type": "ContributionParticipation", "emailHash": "f36950038d66e1455f4a3da30fd6a4b0", "affiliation": "KEK-IPNS", "_fossil": "contributionParticipationMetadata", "fullName": "AKIMASA, I.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "f36950038d66e1455f4a3da30fd6a4b0", "affiliation": "KEK-IPNS", "_fossil": "contributionParticipationMetadata", "fullName": "AKIMASA, I.", "id": "0"}], "title": "Status of EvtGen in Belle", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t17\/attachments\/866947\/1213515\/ishikawa.ppt", "filename": "ishikawa.ppt", "content_type": "application\/vnd.ms-powerpoint", "type": "file", "id": 1213515, "size": 1064448}], "title": "transparencies", "default_folder": false, "id": 866947, "description": ""}], "_type": "Contribution", "description": "", "track": null, "material": [{"_type": "Material", "title": "transparencies", "_fossil": "materialMetadata", "id": "866947", "resources": [{"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t17\/attachments\/866947\/1213515\/ishikawa.ppt", "fileName": "ishikawa.ppt", "_fossil": "localFileMetadata", "id": "1213515", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t17", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "09:15:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "10:15:00"}, "duration": 60, "session": null, "keywords": [], "id": "s1t14", "speakers": [{"_type": "ContributionParticipation", "emailHash": "9ed3cf035c79d1472db9b7a0e28b3a88", "affiliation": "Cornell", "_fossil": "contributionParticipationMetadata", "fullName": "RYD, A.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "9ed3cf035c79d1472db9b7a0e28b3a88", "affiliation": "Cornell", "_fossil": "contributionParticipationMetadata", "fullName": "RYD, A.", "id": "0"}], "title": "Brief EvtGen Tutorial", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t14\/attachments\/866948\/1213516\/evtgen_overview.ps", "filename": "evtgen_overview.ps", "content_type": "application\/postscript", "type": "file", "id": 1213516, "size": 12923377}], "title": "transparencies", "default_folder": false, "id": 866948, "description": ""}], "_type": "Contribution", "description": "", "track": null, "material": [{"_type": "Material", "title": "transparencies", "_fossil": "materialMetadata", "id": "866948", "resources": [{"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t14\/attachments\/866948\/1213516\/evtgen_overview.ps", "fileName": "evtgen_overview.ps", "_fossil": "localFileMetadata", "id": "1213516", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t14", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "09:00:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "09:15:00"}, "duration": 15, "session": null, "keywords": [], "id": "s1t15", "speakers": [{"_type": "ContributionParticipation", "emailHash": "79cd8d8579235c35d3bebe237a108c7c", "affiliation": "University of Florida", "_fossil": "contributionParticipationMetadata", "fullName": "BARTALINI, P.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "79cd8d8579235c35d3bebe237a108c7c", "affiliation": "University of Florida", "_fossil": "contributionParticipationMetadata", "fullName": "BARTALINI, P.", "id": "0"}], "title": "Introduction to the EvtGen Mini Workshop", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t15\/attachments\/866949\/1213518\/Bartalini1.ppt", "filename": "Bartalini1.ppt", "content_type": "application\/vnd.ms-powerpoint", "type": "file", "id": 1213518, "size": 89088}, {"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t15\/attachments\/866949\/1213517\/Bartalini1.pdf", "filename": "Bartalini1.pdf", "content_type": "application\/pdf", "type": "file", "id": 1213517, "size": 113695}], "title": "transparencies", "default_folder": false, "id": 866949, "description": ""}], "_type": "Contribution", "description": "", "track": null, "material": [{"_type": "Material", "title": "transparencies", "_fossil": "materialMetadata", "id": "866949", "resources": [{"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t15\/attachments\/866949\/1213518\/Bartalini1.ppt", "fileName": "Bartalini1.ppt", "_fossil": "localFileMetadata", "id": "1213518", "_deprecated": true}, {"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t15\/attachments\/866949\/1213517\/Bartalini1.pdf", "fileName": "Bartalini1.pdf", "_fossil": "localFileMetadata", "id": "1213517", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t15", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "14:50:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "15:10:00"}, "duration": 20, "session": null, "keywords": [], "id": "s1t27", "speakers": [{"_type": "ContributionParticipation", "emailHash": "1bc7d6c989e97408037752ed9358c889", "affiliation": "Michigan, ATLAS", "_fossil": "contributionParticipationMetadata", "fullName": "BIGLIETTI, M.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "1bc7d6c989e97408037752ed9358c889", "affiliation": "Michigan, ATLAS", "_fossil": "contributionParticipationMetadata", "fullName": "BIGLIETTI, M.", "id": "0"}], "title": "Lambda_b polarization, decay: implementation in EvtGen and tests.", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t27\/attachments\/866950\/1213520\/LGC_Lambdabgen05.ppt", "filename": "LGC_Lambdabgen05.ppt", "content_type": "application\/vnd.ms-powerpoint", "type": "file", "id": 1213520, "size": 1433088}, {"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t27\/attachments\/866950\/1213519\/LGC_Lambdabgen05.pdf", "filename": "LGC_Lambdabgen05.pdf", "content_type": "application\/pdf", "type": "file", "id": 1213519, "size": 288044}], "title": "transparencies", "default_folder": false, "id": 866950, "description": ""}], "_type": "Contribution", "description": "", "track": null, "material": [{"_type": "Material", "title": "transparencies", "_fossil": "materialMetadata", "id": "866950", "resources": [{"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t27\/attachments\/866950\/1213520\/LGC_Lambdabgen05.ppt", "fileName": "LGC_Lambdabgen05.ppt", "_fossil": "localFileMetadata", "id": "1213520", "_deprecated": true}, {"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t27\/attachments\/866950\/1213519\/LGC_Lambdabgen05.pdf", "fileName": "LGC_Lambdabgen05.pdf", "_fossil": "localFileMetadata", "id": "1213519", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t27", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "14:30:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "14:50:00"}, "duration": 20, "session": null, "keywords": [], "id": "s1t26", "speakers": [{"_type": "ContributionParticipation", "emailHash": "1bc7d6c989e97408037752ed9358c889", "affiliation": "Lancaster U., ATLAS", "_fossil": "contributionParticipationMetadata", "fullName": "CATMORE, J.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "1bc7d6c989e97408037752ed9358c889", "affiliation": "Lancaster U., ATLAS", "_fossil": "contributionParticipationMetadata", "fullName": "CATMORE, J.", "id": "0"}], "title": "Bs->J\/psi phi including weak amplitudes DeltaB=1 and DeltaB=2", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t26\/attachments\/866951\/1213522\/EvtGen_-_LCG_generators.ppt", "filename": "EvtGen_-_LCG_generators.ppt", "content_type": "application\/vnd.ms-powerpoint", "type": "file", "id": 1213522, "size": 1020928}, {"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t26\/attachments\/866951\/1213521\/EvtGen_-_LCG_generators.pdf", "filename": "EvtGen_-_LCG_generators.pdf", "content_type": "application\/pdf", "type": "file", "id": 1213521, "size": 317550}], "title": "transparencies", "default_folder": false, "id": 866951, "description": ""}], "_type": "Contribution", "description": "", "track": null, "material": [{"_type": "Material", "title": "transparencies", "_fossil": "materialMetadata", "id": "866951", "resources": [{"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t26\/attachments\/866951\/1213522\/EvtGen_-_LCG_generators.ppt", "fileName": "EvtGen_-_LCG_generators.ppt", "_fossil": "localFileMetadata", "id": "1213522", "_deprecated": true}, {"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t26\/attachments\/866951\/1213521\/EvtGen_-_LCG_generators.pdf", "fileName": "EvtGen_-_LCG_generators.pdf", "_fossil": "localFileMetadata", "id": "1213521", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t26", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "10:15:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "10:30:00"}, "duration": 15, "session": null, "keywords": [], "id": "s1t23", "speakers": [{"_type": "ContributionParticipation", "emailHash": "8a47417fb7c22a2f96d1c5ed2de13755", "affiliation": "Durham", "_fossil": "contributionParticipationMetadata", "fullName": "RICHARDSON, P.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "8a47417fb7c22a2f96d1c5ed2de13755", "affiliation": "Durham", "_fossil": "contributionParticipationMetadata", "fullName": "RICHARDSON, P.", "id": "0"}], "title": "Experience on Herwig++ with using databases for the particle properties", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t23\/attachments\/866952\/1213524\/EVTGEN-Workshop.ppt", "filename": "EVTGEN-Workshop.ppt", "content_type": "application\/vnd.ms-powerpoint", "type": "file", "id": 1213524, "size": 140800}, {"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t23\/attachments\/866952\/1213523\/EVTGEN-Workshop.pdf", "filename": "EVTGEN-Workshop.pdf", "content_type": "application\/pdf", "type": "file", "id": 1213523, "size": 274240}], "title": "transparencies", "default_folder": false, "id": 866952, "description": ""}], "_type": "Contribution", "description": "More information available at <a href=\"http:\/\/www.ippp.dur.ac.uk\/~richardn\/particles\">particle database<\/a>.", "track": null, "material": [{"_type": "Material", "title": "transparencies", "_fossil": "materialMetadata", "id": "866952", "resources": [{"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t23\/attachments\/866952\/1213524\/EVTGEN-Workshop.ppt", "fileName": "EVTGEN-Workshop.ppt", "_fossil": "localFileMetadata", "id": "1213524", "_deprecated": true}, {"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t23\/attachments\/866952\/1213523\/EVTGEN-Workshop.pdf", "fileName": "EVTGEN-Workshop.pdf", "_fossil": "localFileMetadata", "id": "1213523", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t23", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "11:30:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "12:00:00"}, "duration": 30, "session": null, "keywords": [], "id": "s1t22", "speakers": [{"_type": "ContributionParticipation", "emailHash": "40e3c4499734552cbef1396b5c23c8e7", "affiliation": "Laboratoire de l'Accelerateur Lineaire (LAL)", "_fossil": "contributionParticipationMetadata", "fullName": "ROBBE, P.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "40e3c4499734552cbef1396b5c23c8e7", "affiliation": "Laboratoire de l'Accelerateur Lineaire (LAL)", "_fossil": "contributionParticipationMetadata", "fullName": "ROBBE, P.", "id": "0"}], "title": "Status of EvtGen in LHCb", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t22\/attachments\/866953\/1213526\/LHCb_EvtGen.ppt", "filename": "LHCb_EvtGen.ppt", "content_type": "application\/vnd.ms-powerpoint", "type": "file", "id": 1213526, "size": 1024512}, {"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t22\/attachments\/866953\/1213525\/LHCb_EvtGen.pdf", "filename": "LHCb_EvtGen.pdf", "content_type": "application\/pdf", "type": "file", "id": 1213525, "size": 302049}], "title": "transparencies", "default_folder": false, "id": 866953, "description": ""}], "_type": "Contribution", "description": "", "track": null, "material": [{"_type": "Material", "title": "transparencies", "_fossil": "materialMetadata", "id": "866953", "resources": [{"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t22\/attachments\/866953\/1213526\/LHCb_EvtGen.ppt", "fileName": "LHCb_EvtGen.ppt", "_fossil": "localFileMetadata", "id": "1213526", "_deprecated": true}, {"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t22\/attachments\/866953\/1213525\/LHCb_EvtGen.pdf", "fileName": "LHCb_EvtGen.pdf", "_fossil": "localFileMetadata", "id": "1213525", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t22", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "16:30:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "17:00:00"}, "duration": 30, "session": null, "keywords": [], "id": "s1t21", "speakers": [{"_type": "ContributionParticipation", "emailHash": "941289dc75950a7b0688f2bfbee46f62", "affiliation": "LLNL", "_fossil": "contributionParticipationMetadata", "fullName": "LANGE, D.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "941289dc75950a7b0688f2bfbee46f62", "affiliation": "LLNL", "_fossil": "contributionParticipationMetadata", "fullName": "LANGE, D.", "id": "0"}], "title": "Status of EvtGen in Babar", "note": {}, "location": "LLNL", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t21\/attachments\/866954\/1213527\/babar.pdf", "filename": "babar.pdf", "content_type": "application\/pdf", "type": "file", "id": 1213527, "size": 34159}], "title": "transparencies", "default_folder": false, "id": 866954, "description": ""}], "_type": "Contribution", "description": "", "track": null, "material": [{"_type": "Material", "title": "transparencies", "_fossil": "materialMetadata", "id": "866954", "resources": [{"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t21\/attachments\/866954\/1213527\/babar.pdf", "fileName": "babar.pdf", "_fossil": "localFileMetadata", "id": "1213527", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t21", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "12:00:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "12:15:00"}, "duration": 15, "session": null, "keywords": [], "id": "s1t20", "speakers": [{"_type": "ContributionParticipation", "emailHash": "2a91ea469e66707eb3bd97707f64721d", "affiliation": "Lancaster U.", "_fossil": "contributionParticipationMetadata", "fullName": "SMIZANSKA, M.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "2a91ea469e66707eb3bd97707f64721d", "affiliation": "Lancaster U.", "_fossil": "contributionParticipationMetadata", "fullName": "SMIZANSKA, M.", "id": "0"}], "title": "Status of EvtGen in ATLAS", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "document", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t20\/attachments\/866955\/1213528\/EvtGenLCG.ppt", "filename": "EvtGenLCG.ppt", "content_type": "application\/vnd.ms-powerpoint", "type": "file", "id": 1213528, "size": 24064}], "title": "document", "default_folder": false, "id": 866955, "description": ""}], "_type": "Contribution", "description": "", "track": null, "material": [{"_type": "Material", "title": "document", "_fossil": "materialMetadata", "id": "866955", "resources": [{"_type": "LocalFile", "name": "document", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t20\/attachments\/866955\/1213528\/EvtGenLCG.ppt", "fileName": "EvtGenLCG.ppt", "_fossil": "localFileMetadata", "id": "1213528", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t20", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "15:30:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "16:00:00"}, "duration": 30, "session": null, "keywords": [], "id": "s1t29", "speakers": [{"_type": "ContributionParticipation", "emailHash": "416ba4d6888fb2c11db3a13a3b9b6f06", "affiliation": "CINVESTAV (Mexico City)", "_fossil": "contributionParticipationMetadata", "fullName": "SANCHEZ, A.", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "416ba4d6888fb2c11db3a13a3b9b6f06", "affiliation": "CINVESTAV (Mexico City)", "_fossil": "contributionParticipationMetadata", "fullName": "SANCHEZ, A.", "id": "0"}], "title": "Status of EvtGen in D0", "note": {}, "location": "Fermilab", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [{"_type": "folder", "attachments": [{"_type": "attachment", "modified_dt": "2005-01-21T08:00:00+00:00", "description": "", "title": "transparencies", "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t29\/attachments\/866956\/1213529\/evtgen_d0.pdf", "filename": "evtgen_d0.pdf", "content_type": "application\/pdf", "type": "file", "id": 1213529, "size": 603338}], "title": "transparencies", "default_folder": false, "id": 866956, "description": ""}], "_type": "Contribution", "description": "", "track": null, "material": [{"_type": "Material", "title": "transparencies", "_fossil": "materialMetadata", "id": "866956", "resources": [{"_type": "LocalFile", "name": "transparencies", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t29\/attachments\/866956\/1213529\/evtgen_d0.pdf", "fileName": "evtgen_d0.pdf", "_fossil": "localFileMetadata", "id": "1213529", "_deprecated": true}], "_deprecated": true}], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t29", "roomFullname": "40-5-A01"}, {"startDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "15:10:00"}, "endDate": {"date": "2005-01-21", "tz": "Europe\/Zurich", "time": "15:30:00"}, "duration": 20, "session": null, "keywords": [], "id": "s1t28", "speakers": [{"_type": "ContributionParticipation", "emailHash": "d41d8cd98f00b204e9800998ecf8427e", "affiliation": "", "_fossil": "contributionParticipationMetadata", "fullName": "TBA", "id": "0"}], "primaryauthors": [{"_type": "ContributionParticipation", "emailHash": "d41d8cd98f00b204e9800998ecf8427e", "affiliation": "", "_fossil": "contributionParticipationMetadata", "fullName": "TBA", "id": "0"}], "title": "Status of EvtGen in CDF", "note": {}, "location": "CERN", "_fossil": "contributionMetadataWithSubContribs", "type": null, "folders": [], "_type": "Contribution", "description": "", "track": null, "material": [], "coauthors": [], "subContributions": [], "room": "40-5-A01", "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t28", "roomFullname": "40-5-A01"}], "id": "418259", "category": "Physics Generators", "title": "EvtGen miniworkshop", "note": {}, "location": "CERN", "_fossil": "conferenceMetadataWithSubContribs", "type": "meeting", "categoryId": "146", "folders": [], "_type": "Conference", "description": "Monthly meeting of the lcg generator project dedicated to EvtGen.\r\nVRVS connection available in Plane room.\r\n", "roomMapURL": "https:\/\/maps.cern.ch\/mapsearch\/mapsearch.htm?n=['40\/5-A01']", "material": [], "visibility": {"id": "", "name": "Everywhere"}, "address": "", "creationDate": {"date": "2004-06-23", "tz": "UTC", "time": "22:00:00"}, "room": "40-5-A01", "chairs": [{"_type": "ConferenceChair", "emailHash": "79cd8d8579235c35d3bebe237a108c7c", "affiliation": "", "_fossil": "conferenceChairMetadata", "fullName": "Bartalini, P", "id": 0}], "url": "https:\/\/indico.cern.ch\/event\/418259\/"}], "ts": 1438530642}
+{
+  "count": 1,
+  "additionalInfo": {
+    
+  },
+  "_type": "HTTPAPIResult",
+  "url": "https:\/\/indico.cern.ch\/export\/event\/a042880.json?apikey=0004c73f-a64e-4742-8cb4-305f1ac9f4c2&detail=sessions&nc=yes&timestamp=1440949747&signature=714306a927a6315beeeb8c0cf1d1b3b6008ecb31",
+  "results": [
+    {
+      "startDate": {
+        "date": "2005-01-21",
+        "tz": "Europe\/Zurich",
+        "time": "09:00:00"
+      },
+      "endDate": {
+        "date": "2005-01-21",
+        "tz": "Europe\/Zurich",
+        "time": "19:00:00"
+      },
+      "creator": {
+        "_type": "Avatar",
+        "emailHash": "370e6d03943518c87109e6e03efc5e1e",
+        "affiliation": "University of Oxford (GB)",
+        "_fossil": "conferenceChairMetadata",
+        "fullName": "BARR, Alan",
+        "id": "19868"
+      },
+      "hasAnyProtection": false,
+      "roomFullname": "40-5-A01",
+      "modificationDate": {
+        "date": "2011-09-13",
+        "tz": "UTC",
+        "time": "21:36:08.415548"
+      },
+      "timezone": "Europe\/Zurich",
+      "contributions": [
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "14:00:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "14:30:00"
+          },
+          "duration": 30,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t19",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "79cd8d8579235c35d3bebe237a108c7c",
+              "affiliation": "University of Florida",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "BARTALINI, P.",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "79cd8d8579235c35d3bebe237a108c7c",
+              "affiliation": "University of Florida",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "BARTALINI, P.",
+              "id": "0"
+            }
+          ],
+          "title": "The LCG Generator Project",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t19\/attachments\/866945\/1213513\/Bartalini2.ppt",
+                  "filename": "Bartalini2.ppt",
+                  "content_type": "application\/vnd.ms-powerpoint",
+                  "type": "file",
+                  "id": 1213513,
+                  "size": 386048
+                }
+              ],
+              "title": "transparencies",
+              "default_folder": false,
+              "id": 866945,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            {
+              "_type": "Material",
+              "title": "transparencies",
+              "_fossil": "materialMetadata",
+              "id": "866945",
+              "resources": [
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t19\/attachments\/866945\/1213513\/Bartalini2.ppt",
+                  "fileName": "Bartalini2.ppt",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213513",
+                  "_deprecated": true
+                }
+              ],
+              "_deprecated": true
+            }
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-5-A01",
+          "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t19",
+          "roomFullname": "40-5-A01"
+        },
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "17:00:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "19:30:00"
+          },
+          "duration": 150,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t31",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "d41d8cd98f00b204e9800998ecf8427e",
+              "affiliation": "",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "ALL",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "d41d8cd98f00b204e9800998ecf8427e",
+              "affiliation": "",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "ALL",
+              "id": "0"
+            }
+          ],
+          "title": "Discussion",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "more information",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t31\/attachments\/866946\/1213514\/EvtGen_miniworkshop_Discussion_Items.pdf",
+                  "filename": "EvtGen_miniworkshop_Discussion_Items.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1213514,
+                  "size": 29490
+                }
+              ],
+              "title": "more information",
+              "default_folder": false,
+              "id": 866946,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            {
+              "_type": "Material",
+              "title": "more information",
+              "_fossil": "materialMetadata",
+              "id": "866946",
+              "resources": [
+                {
+                  "_type": "LocalFile",
+                  "name": "more information",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t31\/attachments\/866946\/1213514\/EvtGen_miniworkshop_Discussion_Items.pdf",
+                  "fileName": "EvtGen_miniworkshop_Discussion_Items.pdf",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213514",
+                  "_deprecated": true
+                }
+              ],
+              "_deprecated": true
+            }
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-5-A01",
+          "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t31",
+          "roomFullname": "40-5-A01"
+        },
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "10:30:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "10:45:00"
+          },
+          "duration": 15,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t16",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "9ed3cf035c79d1472db9b7a0e28b3a88",
+              "affiliation": "Cornell",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "RYD, A.",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "9ed3cf035c79d1472db9b7a0e28b3a88",
+              "affiliation": "Cornell",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "RYD, A.",
+              "id": "0"
+            }
+          ],
+          "title": "Status of EvtGen in Cleo",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-5-A01",
+          "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t16",
+          "roomFullname": "40-5-A01"
+        },
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "11:00:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "11:30:00"
+          },
+          "duration": 30,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t17",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "f36950038d66e1455f4a3da30fd6a4b0",
+              "affiliation": "KEK-IPNS",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "AKIMASA, I.",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "f36950038d66e1455f4a3da30fd6a4b0",
+              "affiliation": "KEK-IPNS",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "AKIMASA, I.",
+              "id": "0"
+            }
+          ],
+          "title": "Status of EvtGen in Belle",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t17\/attachments\/866947\/1213515\/ishikawa.ppt",
+                  "filename": "ishikawa.ppt",
+                  "content_type": "application\/vnd.ms-powerpoint",
+                  "type": "file",
+                  "id": 1213515,
+                  "size": 1064448
+                }
+              ],
+              "title": "transparencies",
+              "default_folder": false,
+              "id": 866947,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            {
+              "_type": "Material",
+              "title": "transparencies",
+              "_fossil": "materialMetadata",
+              "id": "866947",
+              "resources": [
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t17\/attachments\/866947\/1213515\/ishikawa.ppt",
+                  "fileName": "ishikawa.ppt",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213515",
+                  "_deprecated": true
+                }
+              ],
+              "_deprecated": true
+            }
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-5-A01",
+          "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t17",
+          "roomFullname": "40-5-A01"
+        },
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "09:15:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "10:15:00"
+          },
+          "duration": 60,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t14",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "9ed3cf035c79d1472db9b7a0e28b3a88",
+              "affiliation": "Cornell",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "RYD, A.",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "9ed3cf035c79d1472db9b7a0e28b3a88",
+              "affiliation": "Cornell",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "RYD, A.",
+              "id": "0"
+            }
+          ],
+          "title": "Brief EvtGen Tutorial",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t14\/attachments\/866948\/1213516\/evtgen_overview.ps",
+                  "filename": "evtgen_overview.ps",
+                  "content_type": "application\/postscript",
+                  "type": "file",
+                  "id": 1213516,
+                  "size": 12923377
+                }
+              ],
+              "title": "transparencies",
+              "default_folder": false,
+              "id": 866948,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            {
+              "_type": "Material",
+              "title": "transparencies",
+              "_fossil": "materialMetadata",
+              "id": "866948",
+              "resources": [
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t14\/attachments\/866948\/1213516\/evtgen_overview.ps",
+                  "fileName": "evtgen_overview.ps",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213516",
+                  "_deprecated": true
+                }
+              ],
+              "_deprecated": true
+            }
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-5-A01",
+          "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t14",
+          "roomFullname": "40-5-A01"
+        },
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "09:00:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "09:15:00"
+          },
+          "duration": 15,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t15",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "79cd8d8579235c35d3bebe237a108c7c",
+              "affiliation": "University of Florida",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "BARTALINI, P.",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "79cd8d8579235c35d3bebe237a108c7c",
+              "affiliation": "University of Florida",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "BARTALINI, P.",
+              "id": "0"
+            }
+          ],
+          "title": "Introduction to the EvtGen Mini Workshop",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t15\/attachments\/866949\/1213518\/Bartalini1.ppt",
+                  "filename": "Bartalini1.ppt",
+                  "content_type": "application\/vnd.ms-powerpoint",
+                  "type": "file",
+                  "id": 1213518,
+                  "size": 89088
+                },
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t15\/attachments\/866949\/1213517\/Bartalini1.pdf",
+                  "filename": "Bartalini1.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1213517,
+                  "size": 113695
+                }
+              ],
+              "title": "transparencies",
+              "default_folder": false,
+              "id": 866949,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            {
+              "_type": "Material",
+              "title": "transparencies",
+              "_fossil": "materialMetadata",
+              "id": "866949",
+              "resources": [
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t15\/attachments\/866949\/1213518\/Bartalini1.ppt",
+                  "fileName": "Bartalini1.ppt",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213518",
+                  "_deprecated": true
+                },
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t15\/attachments\/866949\/1213517\/Bartalini1.pdf",
+                  "fileName": "Bartalini1.pdf",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213517",
+                  "_deprecated": true
+                }
+              ],
+              "_deprecated": true
+            }
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-5-A01",
+          "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t15",
+          "roomFullname": "40-5-A01"
+        },
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "14:50:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "15:10:00"
+          },
+          "duration": 20,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t27",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "1bc7d6c989e97408037752ed9358c889",
+              "affiliation": "Michigan, ATLAS",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "BIGLIETTI, M.",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "1bc7d6c989e97408037752ed9358c889",
+              "affiliation": "Michigan, ATLAS",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "BIGLIETTI, M.",
+              "id": "0"
+            }
+          ],
+          "title": "Lambda_b polarization, decay: implementation in EvtGen and tests.",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t27\/attachments\/866950\/1213520\/LGC_Lambdabgen05.ppt",
+                  "filename": "LGC_Lambdabgen05.ppt",
+                  "content_type": "application\/vnd.ms-powerpoint",
+                  "type": "file",
+                  "id": 1213520,
+                  "size": 1433088
+                },
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t27\/attachments\/866950\/1213519\/LGC_Lambdabgen05.pdf",
+                  "filename": "LGC_Lambdabgen05.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1213519,
+                  "size": 288044
+                }
+              ],
+              "title": "transparencies",
+              "default_folder": false,
+              "id": 866950,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            {
+              "_type": "Material",
+              "title": "transparencies",
+              "_fossil": "materialMetadata",
+              "id": "866950",
+              "resources": [
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t27\/attachments\/866950\/1213520\/LGC_Lambdabgen05.ppt",
+                  "fileName": "LGC_Lambdabgen05.ppt",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213520",
+                  "_deprecated": true
+                },
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t27\/attachments\/866950\/1213519\/LGC_Lambdabgen05.pdf",
+                  "fileName": "LGC_Lambdabgen05.pdf",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213519",
+                  "_deprecated": true
+                }
+              ],
+              "_deprecated": true
+            }
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-5-A01",
+          "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t27",
+          "roomFullname": "40-5-A01"
+        },
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "14:30:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "14:50:00"
+          },
+          "duration": 20,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t26",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "1bc7d6c989e97408037752ed9358c889",
+              "affiliation": "Lancaster U., ATLAS",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "CATMORE, J.",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "1bc7d6c989e97408037752ed9358c889",
+              "affiliation": "Lancaster U., ATLAS",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "CATMORE, J.",
+              "id": "0"
+            }
+          ],
+          "title": "Bs->J\/psi phi including weak amplitudes DeltaB=1 and DeltaB=2",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t26\/attachments\/866951\/1213522\/EvtGen_-_LCG_generators.ppt",
+                  "filename": "EvtGen_-_LCG_generators.ppt",
+                  "content_type": "application\/vnd.ms-powerpoint",
+                  "type": "file",
+                  "id": 1213522,
+                  "size": 1020928
+                },
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t26\/attachments\/866951\/1213521\/EvtGen_-_LCG_generators.pdf",
+                  "filename": "EvtGen_-_LCG_generators.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1213521,
+                  "size": 317550
+                }
+              ],
+              "title": "transparencies",
+              "default_folder": false,
+              "id": 866951,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            {
+              "_type": "Material",
+              "title": "transparencies",
+              "_fossil": "materialMetadata",
+              "id": "866951",
+              "resources": [
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t26\/attachments\/866951\/1213522\/EvtGen_-_LCG_generators.ppt",
+                  "fileName": "EvtGen_-_LCG_generators.ppt",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213522",
+                  "_deprecated": true
+                },
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t26\/attachments\/866951\/1213521\/EvtGen_-_LCG_generators.pdf",
+                  "fileName": "EvtGen_-_LCG_generators.pdf",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213521",
+                  "_deprecated": true
+                }
+              ],
+              "_deprecated": true
+            }
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-5-A01",
+          "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t26",
+          "roomFullname": "40-5-A01"
+        },
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "10:15:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "10:30:00"
+          },
+          "duration": 15,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t23",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "8a47417fb7c22a2f96d1c5ed2de13755",
+              "affiliation": "Durham",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "RICHARDSON, P.",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "8a47417fb7c22a2f96d1c5ed2de13755",
+              "affiliation": "Durham",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "RICHARDSON, P.",
+              "id": "0"
+            }
+          ],
+          "title": "Experience on Herwig++ with using databases for the particle properties",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t23\/attachments\/866952\/1213524\/EVTGEN-Workshop.ppt",
+                  "filename": "EVTGEN-Workshop.ppt",
+                  "content_type": "application\/vnd.ms-powerpoint",
+                  "type": "file",
+                  "id": 1213524,
+                  "size": 140800
+                },
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t23\/attachments\/866952\/1213523\/EVTGEN-Workshop.pdf",
+                  "filename": "EVTGEN-Workshop.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1213523,
+                  "size": 274240
+                }
+              ],
+              "title": "transparencies",
+              "default_folder": false,
+              "id": 866952,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "More information available at <a href=\"http:\/\/www.ippp.dur.ac.uk\/~richardn\/particles\">particle database<\/a>.",
+          "track": null,
+          "material": [
+            {
+              "_type": "Material",
+              "title": "transparencies",
+              "_fossil": "materialMetadata",
+              "id": "866952",
+              "resources": [
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t23\/attachments\/866952\/1213524\/EVTGEN-Workshop.ppt",
+                  "fileName": "EVTGEN-Workshop.ppt",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213524",
+                  "_deprecated": true
+                },
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t23\/attachments\/866952\/1213523\/EVTGEN-Workshop.pdf",
+                  "fileName": "EVTGEN-Workshop.pdf",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213523",
+                  "_deprecated": true
+                }
+              ],
+              "_deprecated": true
+            }
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-5-A01",
+          "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t23",
+          "roomFullname": "40-5-A01"
+        },
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "11:30:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "12:00:00"
+          },
+          "duration": 30,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t22",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "40e3c4499734552cbef1396b5c23c8e7",
+              "affiliation": "Laboratoire de l'Accelerateur Lineaire (LAL)",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "ROBBE, P.",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "40e3c4499734552cbef1396b5c23c8e7",
+              "affiliation": "Laboratoire de l'Accelerateur Lineaire (LAL)",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "ROBBE, P.",
+              "id": "0"
+            }
+          ],
+          "title": "Status of EvtGen in LHCb",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t22\/attachments\/866953\/1213526\/LHCb_EvtGen.ppt",
+                  "filename": "LHCb_EvtGen.ppt",
+                  "content_type": "application\/vnd.ms-powerpoint",
+                  "type": "file",
+                  "id": 1213526,
+                  "size": 1024512
+                },
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t22\/attachments\/866953\/1213525\/LHCb_EvtGen.pdf",
+                  "filename": "LHCb_EvtGen.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1213525,
+                  "size": 302049
+                }
+              ],
+              "title": "transparencies",
+              "default_folder": false,
+              "id": 866953,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            {
+              "_type": "Material",
+              "title": "transparencies",
+              "_fossil": "materialMetadata",
+              "id": "866953",
+              "resources": [
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t22\/attachments\/866953\/1213526\/LHCb_EvtGen.ppt",
+                  "fileName": "LHCb_EvtGen.ppt",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213526",
+                  "_deprecated": true
+                },
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t22\/attachments\/866953\/1213525\/LHCb_EvtGen.pdf",
+                  "fileName": "LHCb_EvtGen.pdf",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213525",
+                  "_deprecated": true
+                }
+              ],
+              "_deprecated": true
+            }
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-5-A01",
+          "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t22",
+          "roomFullname": "40-5-A01"
+        },
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "16:30:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "17:00:00"
+          },
+          "duration": 30,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t21",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "941289dc75950a7b0688f2bfbee46f62",
+              "affiliation": "LLNL",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "LANGE, D.",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "941289dc75950a7b0688f2bfbee46f62",
+              "affiliation": "LLNL",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "LANGE, D.",
+              "id": "0"
+            }
+          ],
+          "title": "Status of EvtGen in Babar",
+          "note": {
+            
+          },
+          "location": "LLNL",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2005-01-21T08:00:00+00:00",
+                  "description": "",
+                  "title": "transparencies",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t21\/attachments\/866954\/1213527\/babar.pdf",
+                  "filename": "babar.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1213527,
+                  "size": 34159
+                }
+              ],
+              "title": "transparencies",
+              "default_folder": false,
+              "id": 866954,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            {
+              "_type": "Material",
+              "title": "transparencies",
+              "_fossil": "materialMetadata",
+              "id": "866954",
+              "resources": [
+                {
+                  "_type": "LocalFile",
+                  "name": "transparencies",
+                  "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t21\/attachments\/866954\/1213527\/babar.pdf",
+                  "fileName": "babar.pdf",
+                  "_fossil": "localFileMetadata",
+                  "id": "1213527",
+                  "_deprecated": true
+                }
+              ],
+              "_deprecated": true
+            }
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-5-A01",
+          "url": "https:\/\/indico.cern.ch\/event\/418259\/contribution\/s1t21",
+          "roomFullname": "40-5-A01"
+        },
+        {
+          "startDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "12:00:00"
+          },
+          "endDate": {
+            "date": "2005-01-21",
+            "tz": "Europe\/Zurich",
+            "time": "12:15:00"
+          },
+          "duration": 15,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "s1t20",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "2a91ea469e66707eb3bd97707f64721d",
+              "affiliation": "Lancaster U.",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "SMIZANSKA, M.",
+              "id": "0"
+            }
+          ],
+          "primaryauthors": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "2a91ea469e66707eb3bd97707f64721d",
+              "affiliation": "Lancaster U.",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "SMIZANSKA, M.",
+              "id": "0"
+            }
+          ],
+          "title": "Status of EvtGen in ATLAS",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modif

@@ -97,7 +97,7 @@ namespace IndicoInterface.NET
             path.AppendFormat("/export/event/{0}.json", info.ConferenceID);
             var requestParams = new Dictionary<string, string>();
             requestParams["nc"] = "yes";
-            requestParams["detail"] = "sub contributions";
+            requestParams["detail"] = "sessions";
 
             var stem = ApiKeyHandler.IndicoEncode(path.ToString(), requestParams, apiKey, secretKey, useTimeStamp: useTimeStamp);
 
@@ -199,7 +199,7 @@ namespace IndicoInterface.NET
 
             // Everything is done by contributions in this version of the data.
             // So grab everything by name. The blank session will be the top level session.
-            var sessions = ExtractContributionsBySession(data.contributions);
+            var sessions = ExtractContributionsBySession(data.sessions);
 
             foreach (var s in sessions.Where(ms => ms.Title == ""))
             {
@@ -222,15 +222,29 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
-        private IList<Session> ExtractContributionsBySession(IList<JSON.Contribution> list)
+        private IList<Session> ExtractContributionsBySession(IList<JSON.Session> list)
         {
-            var contribBySession = from s in list
-                                   group s by NormalizedSessionName(s.session);
+            return list
+                .Select(ConvertToSession)
+                .ToList();
+        }
 
-            var allSessions = contribBySession
-                .Select(contribs => CreateSessionFromContribs(contribs.Key, contribs));
+        /// <summary>
+        /// Given a JSON session, convert it to a real one.
+        /// </summary>
+        /// <param name="jSession"></param>
+        /// <returns></returns>
+        private Session ConvertToSession(JSON.Session jSession)
+        {
+            // Fill in with the default stuff.
+            var s = CreateSessionFromContribs(jSession.title, jSession.contributions);
 
-            return allSessions.ToList();
+            s.EndDate = AgendaStringToDate(jSession.endDate);
+            s.StartDate = AgendaStringToDate(jSession.startDate);
+            s.ID = jSession.id;
+            s.SessionMaterial = new Talk[0];
+
+            return s;
         }
 
         /// <summary>
@@ -316,7 +330,7 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        private string ConvertToSpeaker(JSON.Speaker s)
+        private string ConvertToSpeaker(JSON.Person s)
         {
             return s.fullName;
         }

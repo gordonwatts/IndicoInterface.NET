@@ -4,7 +4,7 @@
     
   },
   "_type": "HTTPAPIResult",
-  "url": "https:\/\/indico.cern.ch\/export\/event\/434972.json?apikey=0004c73f-a64e-4742-8cb4-305f1ac9f4c2&detail=subcontributions&nc=yes&timestamp=1438295146&signature=d85d812dd22e6d77a4d2df5068c505b668df67bf",
+  "url": "https:\/\/indico.cern.ch\/export\/event\/434972.json?apikey=0004c73f-a64e-4742-8cb4-305f1ac9f4c2&detail=sessions&nc=yes&timestamp=1440949454&signature=a2fc12f857f3e9aefc69982e5b9870f52616bdfa",
   "results": [
     {
       "startDate": {
@@ -379,7 +379,7 @@
         
       },
       "location": "CERN",
-      "_fossil": "conferenceMetadataWithSubContribs",
+      "_fossil": "conferenceMetadataWithSessions",
       "type": "meeting",
       "categoryId": "2660",
       "folders": [
@@ -408,6 +408,9 @@
       "_type": "Conference",
       "description": "Weekly discussions of HLT software issues.\n\nRoom Booking: https:\/\/indico.cern.ch\/rooms\/booking\/CERN\/200820\n\nPIN: 123",
       "roomMapURL": "https:\/\/maps.cern.ch\/mapsearch\/mapsearch.htm?n=['40\/R-D10']",
+      "sessions": [
+        
+      ],
       "material": [
         
       ],
@@ -451,6 +454,5 @@
       "url": "https:\/\/indico.cern.ch\/event\/434972\/"
     }
   ],
-  "ts": 1438295175
+  "ts": 1440949452
 }
-
