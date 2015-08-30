@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace IndicoInterface.NET.Test
@@ -225,7 +226,9 @@ namespace IndicoInterface.NET.Test
                 {
                     var all = await txtrdr.ReadToEndAsync();
                     Console.Write(all);
-                    Assert.IsTrue(all.Contains("7th SYMPOSIUM ON LARGE TPCs FOR LOW-ENERGY RARE EVENT DETECTION"));
+                    var regex = new Regex("DESCRIPTION");
+                    var matches = regex.Matches(all);
+                    Assert.IsTrue(matches.Count > 10);
                 }
             }
         }
