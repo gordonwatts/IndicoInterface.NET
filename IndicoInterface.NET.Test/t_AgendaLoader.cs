@@ -636,6 +636,21 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual(3, talk2.subcontributions.Length, "Incorrect number of sub-contributions!");
             Assert.AreEqual("9:30 - Introduction - A. Yamamoto", talk2.subcontributions[0].title, "Improper first title!");
         }
+        [TestMethod]
+        [DeploymentItem("cern-442174-sub-contributions.json")]
+        public async Task TestSubTalksJSON()
+        {
+            AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/event/442174");
+            var al = new AgendaLoader(new FileReader("cern-442174-sub-contributions.json"));
+            var agenda = await al.GetNormalizedConferenceData(ai);
+
+            var t1 = agenda.Sessions[0].Talks[0];
+            Assert.IsNotNull(t1);
+            Assert.IsNotNull(t1.SubTalks);
+            Assert.AreEqual(2, t1.SubTalks.Length);
+
+            Assert.AreEqual(1, t1.SubTalks.Where(t => t.Title == "Sub 1").Count(), "Looking for sub talk sub 1");
+        }
 
         [TestMethod]
         [DeploymentItem("ilc.xml")]

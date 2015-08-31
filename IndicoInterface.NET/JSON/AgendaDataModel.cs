@@ -80,6 +80,20 @@ namespace IndicoInterface.NET.JSON
         public bool _deprecated { get; set; }
     }
 
+    public class SubContribution
+    {
+        public IList<Folder> folders { get; set; }
+        public IList<Person> speakers { get; set; }
+        public string title { get; set; }
+        public IList<object> material { get; set; }
+        public string _type { get; set; }
+        public Note note { get; set; }
+        public string _fossil { get; set; }
+        public object allowed { get; set; }
+        public int duration { get; set; }
+        public string id { get; set; }
+    }
+
     public class Contribution
     {
         public JDate startDate { get; set; }
@@ -100,7 +114,7 @@ namespace IndicoInterface.NET.JSON
         public object track { get; set; }
         public IList<Material> material { get; set; }
         public IList<object> coauthors { get; set; }
-        public IList<object> subContributions { get; set; }
+        public IList<SubContribution> subContributions { get; set; }
         public object room { get; set; }
         public string url { get; set; }
         public string roomFullname { get; set; }

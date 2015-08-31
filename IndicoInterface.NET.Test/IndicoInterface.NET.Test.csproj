@@ -160,6 +160,9 @@
     <Content Include="cern-44160-agenda-with-material.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="cern-442174-sub-contributions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="indico3285answers.key">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

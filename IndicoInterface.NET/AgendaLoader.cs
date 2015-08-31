@@ -327,25 +327,13 @@ namespace IndicoInterface.NET
             var end = AgendaStringToDate(t.endDate);
             var speakers = t.speakers.Select(s => ConvertToSpeaker(s)).ToArray();
 
-            return BuildTalkFromFolders(folders, title, id, start, end, speakers);
-        }
-
-        /// <summary>
-        /// Builds a talk from a list of folders and the other basic inputs
-        /// </summary>
-        /// <param name="folders"></param>
-        /// <param name="title"></param>
-        /// <param name="id"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
-        /// <param name="speakers"></param>
-        /// <returns></returns>
-        private Talk BuildTalkFromFolders(IList<JSON.Folder> folders, string title, string id, DateTime start, DateTime end, string[] speakers)
-        {
             var allMaterial = folders
                 .SelectMany(f => ConvertToTalkMaterial(f)).ToArray();
             var bestMaterial = FindBestMaterial(allMaterial);
 
+            var subTalks = t.subContributions == null ? new Talk[0] : t.subContributions.Select(st => CreateTalk(st)).ToArray();
+
+            // And build the talk.
             var rt = new Talk()
             {
                 Title = title,
@@ -357,9 +345,34 @@ namespace IndicoInterface.NET
                 FilenameExtension = bestMaterial != null ? bestMaterial.FilenameExtension : "",
                 SlideURL = bestMaterial != null ? bestMaterial.URL : "",
                 Speakers = speakers,
+                SubTalks = subTalks,
                 TalkType = TypeOfTalk.Talk
             };
             return rt;
+        }
+
+        /// <summary>
+        /// Create a talk from a sub-contribution
+        /// </summary>
+        /// <param name="st"></param>
+        /// <returns></returns>
+        private Talk CreateTalk(JSON.SubContribution st)
+        {
+            var allMaterial = st.folders.SelectMany(f => ConvertToTalkMaterial(f)).ToArray();
+            var bm = FindBestMaterial(allMaterial);
+
+            var t = new Talk()
+            {
+                Title = st.title,
+                ID = st.id,
+                TalkType = TypeOfTalk.Talk,
+                Speakers = st.speakers.Select(s => ConvertToSpeaker(s)).ToArray(),
+                AllMaterial = allMaterial,
+                DisplayFilename = bm != null ? bm.DisplayFilename : "",
+                FilenameExtension = bm != null ? bm.FilenameExtension : "",
+                SlideURL = bm != null ? bm.URL : ""
+            };
+            return t;
         }
 
         /// <summary>
@@ -617,12 +630,6 @@ namespace IndicoInterface.NET
                 TalkType = TypeOfTalk.ExtraMaterial
             };
             return rt;
-
-            
-            return BuildTalkFromFolders(new JSON.Folder[] { arg },
-                arg.title, arg.id.ToString(),
-                new DateTime(), new DateTime(),
-                new string[0]);
         }
 
         /// <summary>
