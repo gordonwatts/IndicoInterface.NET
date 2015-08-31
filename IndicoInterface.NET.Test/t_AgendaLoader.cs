@@ -212,10 +212,10 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual(new DateTime(2005, 01, 21, 19, 00, 0), data.EndDate, "End date is not right");
 
             Assert.AreEqual(1, data.Sessions.Length, "Should have only a single session");
-            Assert.AreEqual("0", data.Sessions[0].ID, "Default session ID is not set correctly");
+            Assert.AreEqual("-1", data.Sessions[0].ID, "Default session ID is not set correctly");
 
             var ses = data.Sessions[0];
-            Assert.AreEqual(data.Title, ses.Title, "Session title should be the same as meeting title");
+            Assert.AreEqual("<ad-hoc session>", ses.Title, "Session title should be the same as meeting title");
             Assert.AreEqual(data.StartDate, ses.StartDate, "Session start date should match meeting start date");
             Assert.AreEqual(new DateTime(2005, 01, 21, 19, 30, 0), ses.EndDate, "Session end date should match meeting end date");
 
@@ -235,13 +235,6 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
-        public async Task GetMultiSessionMeetingJSON()
-        {
-            // A meeting with many sessions, just talks
-            Assert.Inconclusive();
-        }
-
-        [TestMethod]
         public async Task GetSingleSessionMeetingNamedJSON()
         {
             // A meeting with a single session, that was created as a single session
@@ -256,11 +249,15 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("cern-374641-split-sessions.json")]
         public async Task GetMeetingWithSplitNonSessionBySessonJSON()
         {
-            // A meeting that has talks, then session, then talks
-            // I think one of our weeklies did this to us.
-            Assert.Inconclusive();
+            // In real life seems to be talks and not-talks that are in and out of sessions
+            AgendaInfo a = new AgendaInfo("http://indico.cern.ch/event/375453");
+            var al = new AgendaLoader(new FileReader("cern-374641-split-sessions.json"));
+            var data = await al.GetNormalizedConferenceData(a);
+
+            Assert.AreEqual(4, data.Sessions.Length);
         }
 
         [TestMethod]

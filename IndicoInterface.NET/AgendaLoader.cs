@@ -200,9 +200,10 @@ namespace IndicoInterface.NET
             // Sessions can either be at the top level, not associated,
             // or they can be in sessions. We have to pick up talks from both
             // sources.
-            IEnumerable<Session> sessions = ExtractContributionsBySession(data.sessions);
+            var definedSessions = ExtractContributionsBySession(data.sessions);
+            var undefinedSessions = SortNonSessionTalksIntoSessions(definedSessions, data.contributions.Select(t => CreateTalk(t)));
             var sessionsNotAssociated = ExtractContributionsBySession(data.contributions);
-            sessions = sessions.Concat(sessionsNotAssociated);
+            var sessions = definedSessions.Concat(undefinedSessions);
 
             foreach (var s in sessions.Where(ms => ms.Title == ""))
             {
@@ -292,7 +293,7 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="talks">List of talks, expected to have at least on talk</param>
         /// <returns></returns>
-        private DateTime FindEarliestTime(IEnumerable<Talk> talks)
+        private static DateTime FindEarliestTime(IEnumerable<Talk> talks)
         {
             return talks
                 .Select(t => t.StartDate)
@@ -304,7 +305,7 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="talks">List of talks, expected to have at least one talk</param>
         /// <returns></returns>
-        private DateTime FindLastTime(Talk[] talks)
+        private static DateTime FindLastTime(Talk[] talks)
         {
             return talks
                 .Select(t => t.EndDate)
@@ -691,68 +692,87 @@ namespace IndicoInterface.NET
                 return null;
 
             var talks = (from t in contributions select ExtractTalkInfo(t)).ToArray();
-            Session[] result = null;
 
+            return SortNonSessionTalksIntoSessions(sessions, talks)
+                .ToArray();
+        }
+
+        /// <summary>
+        /// Given a list of sessions that were specificically organized, and a list of talks that are
+        /// not associated with sessions, generate a series of dummy sessions that contain the talks. The
+        /// trick is to split the talks around the sessions (so we may generate multiple sessions).
+        /// </summary>
+        /// <param name="definedSessions">List of defined sessions in the meeting</param>
+        /// <param name="unassociatedTalks">The talks not associated to any session</param>
+        /// <returns>List of sessions containing the unassociated talks</returns>
+        private static IEnumerable<Session> SortNonSessionTalksIntoSessions(IEnumerable<Session> definedSessions, IEnumerable<Talk> unassociatedTalks)
+        {
             // The easy case is there are no sessions, so this becomes just one session.
-            if (sessions == null || sessions.Length == 0)
+            if (definedSessions == null || definedSessions.Count() == 0)
             {
                 var s1 = new Session()
                 {
                     ID = "-1",
                     Title = "<ad-hoc session>",
-                    Talks = (from t in contributions select ExtractTalkInfo(t)).ToArray()
+                    Talks = unassociatedTalks.OrderBy(t => t.StartDate).ToArray()
                 };
-                result = new Session[] { s1 };
+                s1.StartDate = FindEarliestTime(s1.Talks);
+                s1.EndDate = FindLastTime(s1.Talks);
+                return new Session[] { s1 };
             }
-            else
+
+            // We have to split the contributions up around each session. The algorithm is as follows:
+            // 1. Find the time before a session that each talk occurs
+            // 2. Find the smallest amount of time, and associate that talk with that session.
+            // 3. Each group should be made into a new session.
+            // 4. All other talks (which presumably occur after the last session) are made into their own session.
+
+            var deltaTime = from c in unassociatedTalks
+                            select new
+                            {
+                                contrib = c,
+                                closestSession = definedSessions.Where(s => s.StartDate > c.StartDate).OrderBy(s => s.StartDate - c.StartDate).FirstOrDefault()
+                            };
+
+            var sessionGroups = deltaTime.Where(c => c.closestSession != null).GroupBy(x => x.closestSession);
+            var contribSessions = from sg in sessionGroups
+                                  select new Session()
+                                  {
+                                      ID = "-1",
+                                      Title = "<ad-hoc session>",
+                                      Talks = sg
+                                      .Select(c => c.contrib)
+                                      .OrderBy(t => t.StartDate)
+                                      .ToArray()
+                                  };
+
+            // And the sessions that are left over.
+            var lastSessionTalks = deltaTime.Where(c => c.closestSession == null).Select(c => c.contrib);
+            var lastSession = new Session()
             {
-                // We have to split the contributions up around each session. The algorithm is as follows:
-                // 1. Find the time before a session that each talk occurs
-                // 2. Find the smallest amount of time, and associate that talk with that session.
-                // 3. Each group should be made into a new session.
-                // 4. All other talks (which presumably occur after the last session) are made into their own session.
+                ID = "-1",
+                Title = "<ad-hoc session>",
+                Talks = lastSessionTalks
+                        .OrderBy(t => t.StartDate)
+                        .ToArray()
+            };
 
-                var deltaTime = from c in talks
-                                select new
-                                {
-                                    contrib = c,
-                                    closestSession = sessions.Where(s => s.StartDate > c.StartDate).OrderBy(s => s.StartDate - c.StartDate).FirstOrDefault()
-                                };
-
-                var sessionGroups = deltaTime.Where(c => c.closestSession != null).GroupBy(x => x.closestSession);
-                var contribSessions = from sg in sessionGroups
-                                      select new Session()
-                                      {
-                                          ID = "-1",
-                                          Title = "<ad-hoc session>",
-                                          Talks = sg.Select(c => c.contrib).ToArray()
-                                      };
-
-                // And the sessions that are left over.
-                var lastSessionTalks = deltaTime.Where(c => c.closestSession == null).Select(c => c.contrib);
-                var lastSession = new Session()
-                {
-                    ID = "-1",
-                    Title = "<ad-hoc session>",
-                    Talks = lastSessionTalks.ToArray()
-                };
-
-                if (lastSession.Talks.Length > 0)
-                {
-                    result = contribSessions.Concat(new Session[] { lastSession }).ToArray();
-                }
-                else
-                {
-                    result = contribSessions.ToArray();
-                }
-            }
-
-            // Get the start and end dates right for each session
-            foreach (var s in result)
+            // Put it all together
+            var result = contribSessions;
+            if (lastSession.Talks.Length > 0)
             {
-                s.StartDate = s.Talks.Select(t => t.StartDate).Min();
-                s.EndDate = s.Talks.Select(t => t.EndDate).Max();
+                result = result
+                    .Concat(new Session[] { lastSession });
             }
+
+            // Normalize start and end times
+            result = result
+                .Select(t =>
+                {
+                    t.StartDate = FindEarliestTime(t.Talks);
+                    t.EndDate = FindLastTime(t.Talks);
+                    return t;
+                });
 
             return result;
         }
