@@ -256,7 +256,7 @@ namespace IndicoInterface.NET
             s.EndDate = AgendaStringToDate(jSession.endDate);
             s.StartDate = AgendaStringToDate(jSession.startDate);
             s.ID = jSession.id;
-            s.SessionMaterial = new Talk[0];
+            s.SessionMaterial = ParseConferenceExtraMaterialJSON(jSession.session.folders);
 
             return s;
         }
@@ -356,7 +356,8 @@ namespace IndicoInterface.NET
                 DisplayFilename = bestMaterial != null ? bestMaterial.DisplayFilename : "",
                 FilenameExtension = bestMaterial != null ? bestMaterial.FilenameExtension : "",
                 SlideURL = bestMaterial != null ? bestMaterial.URL : "",
-                Speakers = speakers
+                Speakers = speakers,
+                TalkType = TypeOfTalk.Talk
             };
             return rt;
         }
@@ -570,56 +571,12 @@ namespace IndicoInterface.NET
         /// <returns></returns>
         private SimpleAgendaDataModel.Talk[] ParseConferenceExtraMaterialJSON(IList<JSON.Folder> material)
         {
+            if (material == null)
+                return new Talk[0];
+
             return material
-                .Select(CreateTalk)
+                .Select(CreateExtraMaterialTalk)
                 .ToArray();
-            return null;
-#if false
-            ///
-            /// Simple cases
-            /// 
-
-            if (material == null || material.Length == 0)
-            {
-                return new SimpleAgendaDataModel.Talk[0];
-            }
-
-            ///
-            /// Build talks from each of the guys. Since this is extra material, we need to package everything up
-            /// into sub-talks. Nothing exists at the upper level - hence the nested structure of the below LINQ
-            /// query!
-            /// 
-
-            var sessionMaterialTalks = from m in material
-                                       where m != null
-                                       let talk = new IndicoInterface.NET.SimpleAgendaDataModel.Talk()
-                                       {
-                                           Title = m.title,
-                                           SlideURL = null,
-                                           AllMaterial = new TalkMaterial[0],
-                                           StartDate = DateTime.Now,
-                                           EndDate = DateTime.Now,
-                                           ID = m.ID,
-                                           TalkType = SimpleAgendaDataModel.TypeOfTalk.ExtraMaterial,
-                                           SubTalks = (from tFiles in FindAllUniqueMaterial(m)
-                                                       where tFiles != null
-                                                       select new IndicoInterface.NET.SimpleAgendaDataModel.Talk()
-                                                       {
-                                                           Title = m.title,
-                                                           SlideURL = tFiles.url,
-                                                           DisplayFilename = Path.GetFileNameWithoutExtension(tFiles.name),
-                                                           FilenameExtension = Path.GetExtension(tFiles.name),
-                                                           StartDate = DateTime.Now,
-                                                           EndDate = DateTime.Now,
-                                                           ID = m.ID,
-                                                           TalkType = SimpleAgendaDataModel.TypeOfTalk.ExtraMaterial
-                                                       }).ToArray()
-                                       }
-                                       where talk.SubTalks != null && talk.SubTalks.Length != 0
-                                       select talk;
-
-            return sessionMaterialTalks.ToArray();
-#endif
         }
 
         /// <summary>
@@ -627,7 +584,7 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="arg"></param>
         /// <returns></returns>
-        private Talk CreateTalk(JSON.Folder arg)
+        private Talk CreateExtraMaterialTalk(JSON.Folder arg)
         {
             var allMaterial = ConvertToTalkMaterial(arg);
 
@@ -647,7 +604,8 @@ namespace IndicoInterface.NET
                         ID = "0",
                         TalkType = TypeOfTalk.ExtraMaterial
                     })
-                    .ToArray()
+                    .ToArray(),
+                TalkType = TypeOfTalk.ExtraMaterial
             };
             return rt;
 

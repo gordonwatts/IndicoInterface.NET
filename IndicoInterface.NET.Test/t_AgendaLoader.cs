@@ -265,7 +265,7 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual(3, agenda.MeetingTalks.Length, "Incorrect # of top level meeting talks!");
 
             var talk1 = (from t in agenda.MeetingTalks where t.ID == "941254" select t).FirstOrDefault();
-            Assert.IsNotNull(talk1, "Missing talk ID 1334833 (sched on one page)");
+            Assert.IsNotNull(talk1, "Missing talk ID 1334833 (scheduled on one page)");
             Assert.IsNull(talk1.SlideURL, "Talks at meeting level should be null!");
             Assert.IsNotNull(talk1.SubTalks, "Expected some sub talks!");
             Assert.AreEqual(1, talk1.SubTalks.Length, "incorrect # of talks for this level");
@@ -285,15 +285,22 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
-        public async Task MeetingWithExtraMaterialJSON()
-        {
-            Assert.Inconclusive();
-        }
-
-        [TestMethod]
+        [DeploymentItem("cern-44160-agenda-with-material.json")]
         public async Task MeetingWithExtraSessionMaterialJSON()
         {
-            Assert.Inconclusive();
+            AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
+            var al = new AgendaLoader(new FileReader("cern-44160-agenda-with-material.json"));
+            var agenda = await al.GetNormalizedConferenceData(ai);
+
+            var sesWMat = (from s in agenda.Sessions
+                           where s.SessionMaterial != null && s.SessionMaterial.Length > 0
+                           select s).FirstOrDefault();
+
+            Assert.IsNotNull(sesWMat, "Should have found at least one session with some material connected to it!");
+            Assert.AreEqual("13-0", sesWMat.ID, "Expected the session ID to be something else!");
+            Assert.AreEqual(1, sesWMat.SessionMaterial.Length, "Expected 1 thing associated with the first session");
+            Assert.AreEqual("slides_Michael_Schubnell", sesWMat.SessionMaterial[0].Title, "Title was incorrect");
+            Assert.AreEqual(TypeOfTalk.ExtraMaterial, sesWMat.SessionMaterial[0].TalkType, "The talk type isn't correct!");
         }
 
         [TestMethod]

@@ -186,6 +186,7 @@ namespace IndicoInterface.NET.JSON
         public Note note { get; set; }
         public object roomFullname { get; set; }
         public string location { get; set; }
+        public IList<Folder> folders { get; set; }
         public bool inheritLoc { get; set; }
         public string _fossil { get; set; }
         public bool inheritRoom { get; set; }
