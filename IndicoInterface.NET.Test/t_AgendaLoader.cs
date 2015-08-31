@@ -242,13 +242,6 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
-        public async Task GetSessionID()
-        {
-            Assert.Inconclusive();
-            // What happens to a session ID?
-        }
-
-        [TestMethod]
         [DeploymentItem("cern-374641-split-sessions.json")]
         public async Task GetMeetingWithSplitNonSessionBySessonJSON()
         {
@@ -261,10 +254,34 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("cern-44160-agenda-with-material.json")]
         public async Task GetMeetingTalksJSON()
         {
-            // A meeting that has material in the meeting header
-            Assert.Inconclusive();
+            AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
+            var al = new AgendaLoader(new FileReader("cern-44160-agenda-with-material.json"));
+            var agenda = await al.GetNormalizedConferenceData(ai);
+
+            Assert.IsNotNull(agenda.MeetingTalks, "Expected non-null list of talks for this meeting at top level!");
+            Assert.AreEqual(3, agenda.MeetingTalks.Length, "Incorrect # of top level meeting talks!");
+
+            var talk1 = (from t in agenda.MeetingTalks where t.ID == "2" select t).FirstOrDefault();
+            Assert.IsNotNull(talk1, "Missing talk ID 2");
+            Assert.IsNull(talk1.SlideURL, "Talks at meeting level should be null!");
+            Assert.IsNotNull(talk1.SubTalks, "Expected some sub talks!");
+            Assert.AreEqual(1, talk1.SubTalks.Length, "incorrect # of talks for this level");
+            Assert.AreEqual(TypeOfTalk.ExtraMaterial, talk1.SubTalks[0].TalkType, "Incorrect talk type!");
+
+            var talk2 = (from t in agenda.MeetingTalks where t.ID == "slides" select t).FirstOrDefault();
+            Assert.IsNotNull(talk2, "Missing talk ID slides");
+            Assert.IsNull(talk2.SlideURL, "Talks at meeting level should be null!");
+            Assert.IsNotNull(talk2.SubTalks, "Expected some sub talks!");
+            Assert.AreEqual(12, talk2.SubTalks.Length, "incorrect # of talks for this level");
+
+            var talk3 = (from t in agenda.MeetingTalks where t.ID == "3" select t).FirstOrDefault();
+            Assert.IsNotNull(talk3, "Missing talk ID 3");
+            Assert.IsNull(talk3.SlideURL, "Talks at meeting level should be null!");
+            Assert.IsNotNull(talk3.SubTalks, "Expected some sub talks!");
+            Assert.AreEqual(10, talk3.SubTalks.Length, "incorrect # of talks for this level");
         }
 
         [TestMethod]

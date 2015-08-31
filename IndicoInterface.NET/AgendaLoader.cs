@@ -280,8 +280,8 @@ namespace IndicoInterface.NET
                 Title = sessionName,
                 Talks = talks,
                 ID = "0",
-                StartDate = FindEarliestTime(talks),
-                EndDate = FindLastTime(talks),
+                StartDate = talks.Length != 0 ? FindEarliestTime(talks) : new DateTime(),
+                EndDate = talks.Length != 0 ? FindLastTime(talks) : new DateTime(),
                 SessionMaterial = new Talk[0]
             };
 
