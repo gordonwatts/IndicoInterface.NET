@@ -264,20 +264,20 @@ namespace IndicoInterface.NET.Test
             Assert.IsNotNull(agenda.MeetingTalks, "Expected non-null list of talks for this meeting at top level!");
             Assert.AreEqual(3, agenda.MeetingTalks.Length, "Incorrect # of top level meeting talks!");
 
-            var talk1 = (from t in agenda.MeetingTalks where t.ID == "2" select t).FirstOrDefault();
-            Assert.IsNotNull(talk1, "Missing talk ID 2");
+            var talk1 = (from t in agenda.MeetingTalks where t.ID == "941254" select t).FirstOrDefault();
+            Assert.IsNotNull(talk1, "Missing talk ID 1334833 (sched on one page)");
             Assert.IsNull(talk1.SlideURL, "Talks at meeting level should be null!");
             Assert.IsNotNull(talk1.SubTalks, "Expected some sub talks!");
             Assert.AreEqual(1, talk1.SubTalks.Length, "incorrect # of talks for this level");
             Assert.AreEqual(TypeOfTalk.ExtraMaterial, talk1.SubTalks[0].TalkType, "Incorrect talk type!");
 
-            var talk2 = (from t in agenda.MeetingTalks where t.ID == "slides" select t).FirstOrDefault();
+            var talk2 = (from t in agenda.MeetingTalks where t.ID == "941255" select t).FirstOrDefault();
             Assert.IsNotNull(talk2, "Missing talk ID slides");
             Assert.IsNull(talk2.SlideURL, "Talks at meeting level should be null!");
             Assert.IsNotNull(talk2.SubTalks, "Expected some sub talks!");
             Assert.AreEqual(12, talk2.SubTalks.Length, "incorrect # of talks for this level");
 
-            var talk3 = (from t in agenda.MeetingTalks where t.ID == "3" select t).FirstOrDefault();
+            var talk3 = (from t in agenda.MeetingTalks where t.ID == "941253" select t).FirstOrDefault();
             Assert.IsNotNull(talk3, "Missing talk ID 3");
             Assert.IsNull(talk3.SlideURL, "Talks at meeting level should be null!");
             Assert.IsNotNull(talk3.SubTalks, "Expected some sub talks!");

@@ -216,7 +216,7 @@ namespace IndicoInterface.NET
                 .ToArray();
 
             // Extra material in the meeting
-            m.MeetingTalks = ParseConferenceExtraMaterialJSON(data.material);
+            m.MeetingTalks = ParseConferenceExtraMaterialJSON(data.folders);
 
             return m;
         }
@@ -320,21 +320,43 @@ namespace IndicoInterface.NET
         private Talk CreateTalk(JSON.Contribution t)
         {
             // Grab the attached slides.
-            var allMaterial = t.folders
+            var folders = t.folders;
+            var title = t.title;
+            var id = t.id;
+            var start = AgendaStringToDate(t.startDate);
+            var end = AgendaStringToDate(t.endDate);
+            var speakers = t.speakers.Select(s => ConvertToSpeaker(s)).ToArray();
+
+            return BuildTalkFromFolders(folders, title, id, start, end, speakers);
+        }
+
+        /// <summary>
+        /// Builds a talk from a list of folders and the other basic inputs
+        /// </summary>
+        /// <param name="folders"></param>
+        /// <param name="title"></param>
+        /// <param name="id"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="speakers"></param>
+        /// <returns></returns>
+        private Talk BuildTalkFromFolders(IList<JSON.Folder> folders, string title, string id, DateTime start, DateTime end, string[] speakers)
+        {
+            var allMaterial = folders
                 .SelectMany(f => ConvertToTalkMaterial(f)).ToArray();
             var bestMaterial = FindBestMaterial(allMaterial);
 
             var rt = new Talk()
             {
-                Title = t.title,
-                ID = t.id,
-                StartDate = AgendaStringToDate(t.startDate),
-                EndDate = AgendaStringToDate(t.endDate),
+                Title = title,
+                ID = id,
+                StartDate = start,
+                EndDate = end,
                 AllMaterial = allMaterial,
                 DisplayFilename = bestMaterial != null ? bestMaterial.DisplayFilename : "",
                 FilenameExtension = bestMaterial != null ? bestMaterial.FilenameExtension : "",
                 SlideURL = bestMaterial != null ? bestMaterial.URL : "",
-                Speakers = t.speakers.Select(s => ConvertToSpeaker(s)).ToArray()
+                Speakers = speakers
             };
             return rt;
         }
@@ -546,8 +568,11 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="material"></param>
         /// <returns></returns>
-        private SimpleAgendaDataModel.Talk[] ParseConferenceExtraMaterialJSON(IList<JSON.Material> material)
+        private SimpleAgendaDataModel.Talk[] ParseConferenceExtraMaterialJSON(IList<JSON.Folder> material)
         {
+            return material
+                .Select(CreateTalk)
+                .ToArray();
             return null;
 #if false
             ///
@@ -595,6 +620,42 @@ namespace IndicoInterface.NET
 
             return sessionMaterialTalks.ToArray();
 #endif
+        }
+
+        /// <summary>
+        /// If we don't get a real contribution and just material, here is what we can do...
+        /// </summary>
+        /// <param name="arg"></param>
+        /// <returns></returns>
+        private Talk CreateTalk(JSON.Folder arg)
+        {
+            var allMaterial = ConvertToTalkMaterial(arg);
+
+            var rt = new Talk()
+            {
+                Title = arg.title,
+                ID = arg.id.ToString(),
+                StartDate = new DateTime(),
+                EndDate = new DateTime(),
+                SubTalks = allMaterial
+                    .Select(tm => new Talk()
+                    {
+                        SlideURL = tm.URL,
+                        AllMaterial = new TalkMaterial[] { tm },
+                        DisplayFilename = tm.DisplayFilename,
+                        FilenameExtension = tm.FilenameExtension,
+                        ID = "0",
+                        TalkType = TypeOfTalk.ExtraMaterial
+                    })
+                    .ToArray()
+            };
+            return rt;
+
+            
+            return BuildTalkFromFolders(new JSON.Folder[] { arg },
+                arg.title, arg.id.ToString(),
+                new DateTime(), new DateTime(),
+                new string[0]);
         }
 
         /// <summary>
