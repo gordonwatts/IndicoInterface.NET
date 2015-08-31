@@ -373,6 +373,11 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
+        /// Generic list of material types we should search for in order to get the "best" thing to present.
+        /// </summary>
+        private static string[] gGenericMaterialList = new string[] { "slides", "transparencies", "poster", "0", null };
+
+        /// <summary>
         /// Given a list of all the material associated with a talk, pull out the
         /// "most" interesting.
         /// </summary>
@@ -383,14 +388,18 @@ namespace IndicoInterface.NET
             var orderedMaterial = from tm in allMaterial
                                   let mtlow = ExtractMaterialType(tm)
                                   let ord = Array.FindIndex(gGenericMaterialList, s => s == mtlow)
-                                  where ord >= 0
-                                  group tm by ord;
+                                  let normOrd = ord < 0 ? gGenericMaterialList.Length : ord
+                                  group tm by normOrd;
             var sorted = orderedMaterial.OrderBy(k => k.Key).FirstOrDefault();
             if (sorted == null)
             {
                 return null;
             }
-            return sorted.First();
+
+            // Next, order by file type
+            var byFileType = from tm in sorted
+                             group tm by CalcTypeIndex(tm.FilenameExtension);
+            return byFileType.OrderByDescending(k => k.Key).First().First();
         }
 
         /// <summary>
@@ -653,6 +662,10 @@ namespace IndicoInterface.NET
         /// <returns></returns>
         private int CalcTypeIndex(string fileType)
         {
+            if (fileType.StartsWith("."))
+            {
+                fileType = fileType.Substring(1);
+            }
             for (int i = 0; i < fileTypeOrdered.Length; i++)
             {
                 if (fileTypeOrdered[i] == fileType)
@@ -717,7 +730,7 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
-        /// Given a list of sessions that were specificically organized, and a list of talks that are
+        /// Given a list of sessions that were specifically organized, and a list of talks that are
         /// not associated with sessions, generate a series of dummy sessions that contain the talks. The
         /// trick is to split the talks around the sessions (so we may generate multiple sessions).
         /// </summary>
@@ -830,16 +843,11 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
-        /// Generic list of material types we should search for in order to get the "best" thing to present.
-        /// </summary>
-        private static string[] gGenericMaterialList = new string[] { "slides", "transparencies", "poster", "0", null };
-
-        /// <summary>
         /// Given a contribution, return a talk.
         /// </summary>
         /// <param name="contrib"></param>
         /// <returns></returns>
-        private IndicoInterface.NET.SimpleAgendaDataModel.Talk ExtractTalkInfo(IndicoInterface.NET.IndicoDataModel.contribution contrib)
+        private Talk ExtractTalkInfo(IndicoInterface.NET.IndicoDataModel.contribution contrib)
         {
             var result = new Talk();
             result.ID = contrib.ID;
@@ -866,39 +874,17 @@ namespace IndicoInterface.NET
                 result.Speakers = new string[0];
             }
 
-            foreach (var materialType in gGenericMaterialList)
+            // Get all material and the best material to show
+            result.AllMaterial = ConvertToTalkMaterial(contrib.material).ToArray();
+            var bm = FindBestMaterial(result.AllMaterial);
+            if (bm != null)
             {
-                var mainFile = FindMaterial(contrib.material, materialType);
-                if (mainFile != null)
-                {
-                    result.SlideURL = mainFile.url;
-                    result.DisplayFilename = Path.GetFileNameWithoutExtension(SantizeURL(mainFile.name));
-                    result.FilenameExtension = Path.GetExtension(SantizeURL(mainFile.name));
-                }
-                if (result.SlideURL != null)
-                {
-                    break;
-                }
+                result.SlideURL = bm.URL;
+                result.DisplayFilename = bm.DisplayFilename;
+                result.FilenameExtension = bm.FilenameExtension;
             }
 
-            if (contrib.material != null)
-            {
-                result.AllMaterial = (from m in contrib.material
-                                      where m.files != null && m.files.file != null
-                                      from f in m.files.file
-                                      select new TalkMaterial()
-                                      {
-                                          URL = f.url,
-                                          FilenameExtension = Path.GetExtension(SantizeURL(f.name)),
-                                          DisplayFilename = Path.GetFileNameWithoutExtension(SantizeURL(f.name)),
-                                          MaterialType = m.title
-                                      }).ToArray();
-            }
-            else
-            {
-                result.AllMaterial = new TalkMaterial[0];
-            }
-
+            // Next, sub contributions, if there are any!
             if (contrib.subcontributions != null)
             {
                 var subtalks = from c in contrib.subcontributions
@@ -911,6 +897,31 @@ namespace IndicoInterface.NET
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Given the list of material's from the XML parse, return it as actual material
+        /// </summary>
+        /// <param name="allMaterial"></param>
+        /// <returns></returns>
+        private static IEnumerable<TalkMaterial> ConvertToTalkMaterial(IndicoDataModel.material[] allMaterial)
+        {
+            if (allMaterial == null)
+            {
+                return new TalkMaterial[0];
+            }
+
+            // Do the conversion
+            return (from m in allMaterial
+                    where m.files != null && m.files.file != null
+                    from f in m.files.file
+                    select new TalkMaterial()
+                    {
+                        URL = f.url,
+                        FilenameExtension = Path.GetExtension(SantizeURL(f.name)),
+                        DisplayFilename = Path.GetFileNameWithoutExtension(SantizeURL(f.name)),
+                        MaterialType = m.title
+                    });
         }
 
         /// <summary>

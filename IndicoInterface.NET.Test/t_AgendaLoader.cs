@@ -588,12 +588,12 @@ namespace IndicoInterface.NET.Test
             Session s = data.Sessions[0];
             Talk t = s.Talks[2];
             Assert.IsTrue(t.Title == "Top Quark Mass and Cross Section Results from the Tevatron", "Title of talk 3 isn't right");
-            Assert.IsTrue(t.SlideURL == "http://indico.fnal.gov/getFile.py/access?contribId=2&sessionId=0&resId=0&materialId=slides&confId=1829", "URL for PDF is not right");
+            Assert.AreEqual("http://indico.fnal.gov/getFile.py/access?contribId=2&sessionId=0&resId=0&materialId=slides&confId=1829", t.SlideURL, "URL for PDF is not right");
 
             s = data.Sessions[1];
             t = s.Talks[0];
             Assert.IsTrue(t.Title == "W/Z Properties at the Tevatron", "title of session 2 talk not right");
-            Assert.IsTrue(t.SlideURL == "http://indico.fnal.gov/getFile.py/access?contribId=6&sessionId=1&resId=2&materialId=slides&confId=1829", "Slide URL of ppt is not right");
+            Assert.AreEqual("http://indico.fnal.gov/getFile.py/access?contribId=6&sessionId=1&resId=2&materialId=slides&confId=1829", t.SlideURL, "Slide URL of ppt is not right");
         }
 
         [TestMethod]
