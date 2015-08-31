@@ -235,13 +235,6 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
-        public async Task GetSingleSessionMeetingNamedJSON()
-        {
-            // A meeting with a single session, that was created as a single session
-            Assert.Inconclusive();
-        }
-
-        [TestMethod]
         [DeploymentItem("cern-374641-split-sessions.json")]
         public async Task GetMeetingWithSplitNonSessionBySessonJSON()
         {
@@ -348,14 +341,15 @@ namespace IndicoInterface.NET.Test
 
         [TestMethod]
         [DeploymentItem("cern-434972.json")]
-        public async Task GetNormalSimpleMeetingEvtGenJSON()
+        public async Task GetNormalSimpleMeetingTriggerCoreSoftwareJSON()
         {
             var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=434972");
             var al = new AgendaLoader(new FileReader("cern-434972.json"));
             var data = await al.GetNormalizedConferenceData(ai);
             Assert.AreEqual("Trigger Core Software", data.Title, "Title wasn't found!");
-            Assert.Inconclusive();
-            // Test start time and end time
+            Assert.AreEqual(1, data.Sessions.Length);
+            Assert.AreEqual(4, data.Sessions[0].Talks.Length);
+            Assert.AreEqual(25, data.EndDate.Minute);
         }
 
         [TestMethod]
