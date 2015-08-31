@@ -45,7 +45,7 @@
     <Compile Include="AgendaInfo.cs" />
     <Compile Include="AgendaLoader.cs" />
     <Compile Include="AgendaInfoExtended.cs" />
-    <Compile Include="AgendaServerDataModel.cs" />
+    <Compile Include="IndicoDataModel\AgendaXMLDataModel.cs" />
     <Compile Include="ApiKeyHandler.cs" />
     <Compile Include="DateTimeUtils.cs" />
     <Compile Include="iCalUtils.cs" />
