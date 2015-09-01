@@ -113,6 +113,7 @@ namespace IndicoInterface.NET.Test
             }
             public Task<StreamReader> GetDataFromURL(Uri uri)
             {
+                Console.WriteLine("Asked to read {0}.", uri.OriginalString);
                 if (!_fnameLookup.ContainsKey(uri.OriginalString))
                 {
                     throw new ArgumentException(string.Format("Unknown URI requested {0} in test.", uri.OriginalString));
@@ -935,6 +936,36 @@ namespace IndicoInterface.NET.Test
 
             Assert.AreEqual(1, WhiteListInfo.GetUseEventWhitelist().Length);
             Assert.AreEqual("indico.cern.ch", WhiteListInfo.GetUseEventWhitelist()[0]);
+        }
+
+        [TestMethod]
+        [DeploymentItem("cern-340656-bogus-xml.xml")]
+        [DeploymentItem("cern-340656.json")]
+        public async Task FailoverWithBadXML()
+        {
+            // When we ask a modern indico server for XML that serves json, it will
+            // send back incomplete XML. We need to take that as a clue to swich over.
+
+            WhiteListInfo.ClearWhiteLists(); // Make sure CERN isn't on there!
+            var fileloaders = new Dictionary<string, string> {
+                {"http://indico.cern.ch/conferenceOtherViews.py?confId=340656&detailLevel=contribution&fr=no&showDate=all&showSession=all&view=xml", "cern-340656-bogus-xml.xml"},
+                {"https://indico.cern.ch/export/event/340656.json?detail=sessions&nc=yes", "cern-340656.json"}
+            };
+            var rdr = new MultiFileReader(fileloaders);
+
+            var ai = new AgendaInfo("https://indico.cern.ch/event/340656");
+            var al = new AgendaLoader(rdr);
+            var data = await al.GetNormalizedConferenceData(ai);
+
+            // The bad XML has no talks.
+            var cnt = data
+                .Sessions
+                .SelectMany(s => s.Talks)
+                .Select(t => t.SlideURL)
+                .Where(u => u != null)
+                .Count();
+
+            Assert.AreNotEqual(0, cnt, "Some talks should have a URL");
         }
 
         [TestMethod]

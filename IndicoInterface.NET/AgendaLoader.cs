@@ -1,4 +1,5 @@
-﻿using IndicoInterface.NET.SimpleAgendaDataModel;
+﻿using IndicoInterface.NET.IndicoDataModel;
+using IndicoInterface.NET.SimpleAgendaDataModel;
 using Newtonsoft.Json;
 using NodaTime;
 using System;
@@ -124,7 +125,7 @@ namespace IndicoInterface.NET
             {
                 using (var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info)))
                 {
-                    return _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
+                    return (_loader.Value.Deserialize(data) as iconf).CheckNotDepreciated();
                 }
             }
             catch (InvalidOperationException)
@@ -138,7 +139,7 @@ namespace IndicoInterface.NET
             {
                 var r = _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
                 WhiteListInfo.AddSiteThatUsesEventFormat(info.AgendaSite);
-                return r;
+                return r.CheckNotDepreciated();
             }
         }
 
@@ -168,16 +169,31 @@ namespace IndicoInterface.NET
         /// <remarks>
         /// Attempts to be smart about what format to grab the data in - JSON or XML.
         /// </remarks>
-        public Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceData(AgendaInfo meeting)
+        public async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceData(AgendaInfo meeting)
         {
-            if (WhiteListInfo.UseJSONAgendaLoaderRequests(meeting))
+            bool xml = false;
+            if (!WhiteListInfo.UseJSONAgendaLoaderRequests(meeting))
             {
-                return GetNormalizedConferenceDataFromJSON(meeting);
+                try
+                {
+                    return await GetNormalizedConferenceDataFromXML(meeting);
+                }
+                catch (AgendaFormatDepreciatedException e)
+                {
+                    xml = true;
+                    // Try JSON in this case.
+                }
             }
-            else
+
+            var r = await GetNormalizedConferenceDataFromJSON(meeting);
+
+            // If we aren't white listed, and we got here ok, then we should be white listed!
+            if (xml)
             {
-                return GetNormalizedConferenceDataFromXML(meeting);
+                WhiteListInfo.AddSiteThatUsesJSONAgendaQueries(meeting.AgendaSite);
             }
+
+            return r;
         }
 
         /// <summary>

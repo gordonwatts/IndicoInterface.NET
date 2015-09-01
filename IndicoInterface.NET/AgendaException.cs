@@ -20,4 +20,14 @@ namespace IndicoInterface.NET
         {
         }
     }
+
+    /// <summary>
+    /// When the format we request is depreciated
+    /// </summary>
+    public class AgendaFormatDepreciatedException : Exception
+    { 
+        public AgendaFormatDepreciatedException(string message = "")
+            : base (message)
+        { }
+    }
 }

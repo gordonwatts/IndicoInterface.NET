@@ -30,6 +30,8 @@ namespace IndicoInterface.NET
 
             [XmlElementAttribute("material", Form = XmlSchemaForm.Unqualified)]
             public material[] material; // The material associated with the meeting overall!
+
+            public string _deprecated; // If this data format has been depreciated
         }
 
         public class session
