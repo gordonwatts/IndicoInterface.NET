@@ -18,12 +18,16 @@ namespace IndicoAgendaFetcher
         {
             // Extract arguments
             int v;
-            var sop = args
+            bool json = true;
+            var baseargs = args
+                .Where(a => !ParseArguments(a, ref json));
+
+            var sop = baseargs
                 .Where(a => int.TryParse(a, out v))
                 .Select(a => int.Parse(a))
                 .Select(a => new AgendaInfo(a));
 
-            var snop = args
+            var snop = baseargs
                 .Where(a => !int.TryParse(a, out v))
                 .Select(a => new AgendaInfo(a));
 
@@ -37,7 +41,7 @@ namespace IndicoAgendaFetcher
             var loader = new AgendaLoader(wg);
             foreach (var a in agendas)
             {
-                var url = loader.GetAgendaFullJSONURL(a, info.Item1, info.Item2, true);
+                var url = json ? loader.GetAgendaFullJSONURL(a, info.Item1, info.Item2, true) : loader.GetAgendaFullXMLURL(a, true, info.Item1, info.Item2, true);
                 using (var rdr = wg.GetDataFromURL(url).Result)
                 {
                     var txt = rdr.ReadToEnd();
@@ -45,6 +49,27 @@ namespace IndicoAgendaFetcher
                 }
             }
 
+        }
+
+        /// <summary>
+        /// parse the arguments
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        private static bool ParseArguments(string a, ref bool json)
+        {
+            if (a == "-xml")
+            {
+                json = false;
+                return true;
+            }
+            if (a == "-json")
+            {
+                json = true;
+                return true;
+            }
+            return false;
         }
 
         class WebGetter : IUrlFetcher
