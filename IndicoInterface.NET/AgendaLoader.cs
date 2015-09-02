@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -153,9 +154,14 @@ namespace IndicoInterface.NET
             using (var data = await _fetcher.GetDataFromURL(GetAgendaFullJSONURL(info)))
             {
                 var r = JsonConvert.DeserializeObject<JSON.IndicoGetMeetingInfoReturn>(await data.ReadToEndAsync());
+                if (r.results.Count == 0)
+                {
+                    // Indico, for security reasons, has not returned the item. So flame out.
+                    throw new WebException(string.Format("Unable to load meeting {0} - access forbidden", info.ConferenceUrl));
+                }
                 if (r.results.Count != 1)
                 {
-                    throw new InvalidOperationException("Don't know how to deal with an odd number of items back");
+                    throw new InvalidOperationException("Don't know how to deal with more than one meetings back from a single meeting indico request!");
                 }
                 return r.results[0];
             }

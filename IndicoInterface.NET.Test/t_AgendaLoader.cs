@@ -985,5 +985,16 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual("2/3/2015 4:00:00 PM", a1.StartTime.ToUtc().ToString());
             Assert.AreEqual("2/3/2015 5:00:00 PM", a1.EndTime.ToUtc().ToString());
         }
+
+        [TestMethod]
+        [DeploymentItem("cern-nopermission-response.json")]
+        [ExpectedException(typeof(System.Net.WebException))]
+        public async Task LoadMeetingWithNoAccess()
+        {
+            // The JSON return for a meeting we aren't allowed to access is a "null".
+            var ai = new AgendaInfo("https://indico.cern.ch/conferenceDisplay.py?confId=55584");
+            var al = new AgendaLoader(new FileReader("cern-nopermission-response.json"));
+            var data = await al.GetNormalizedConferenceData(ai);
+        }
     }
 }
