@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/gordonwatts/IndicoInterface.NET/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Parse XML from sites using the Indico agenda server software written by CERN (see http://indico.cern.ch as well as other sites)</description>
-    <releaseNotes>Will now return all material associated with a talk in its normalized data.</releaseNotes>
+    <releaseNotes>Now can deal with new CERN indico JSON returns (where XML no longer works). Fail over should be automatic; maintains a whitelist of sites as well.</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>Agenda Meeting CERN Indico</tags>
   </metadata>
