@@ -1,9 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
-using System.Net;
-using System.Threading.Tasks;
 using System.Linq;
+using System.Net;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace IndicoInterface.NET.Test
 {
@@ -60,6 +61,9 @@ namespace IndicoInterface.NET.Test
         /// CERN keeps updating, and they are usually the first thing to cause trouble...
         /// </summary>
         /// <returns></returns>
+        /// <remarks>
+        /// This test is to indico, and so requires the new format of request (json rather than xml).
+        /// </remarks>
         [TestMethod]
         public async Task CheckForMaterialOnTalks()
         {
@@ -222,7 +226,9 @@ namespace IndicoInterface.NET.Test
                 {
                     var all = await txtrdr.ReadToEndAsync();
                     Console.Write(all);
-                    Assert.IsTrue(all.Contains("7th SYMPOSIUM ON LARGE TPCs FOR LOW-ENERGY RARE EVENT DETECTION"));
+                    var regex = new Regex("DESCRIPTION");
+                    var matches = regex.Matches(all);
+                    Assert.IsTrue(matches.Count > 10);
                 }
             }
         }

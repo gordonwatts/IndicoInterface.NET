@@ -1,8 +1,12 @@
-﻿using IndicoInterface.NET.SimpleAgendaDataModel;
+﻿using IndicoInterface.NET.IndicoDataModel;
+using IndicoInterface.NET.SimpleAgendaDataModel;
+using Newtonsoft.Json;
+using NodaTime;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -27,8 +31,8 @@ namespace IndicoInterface.NET
         /// Return the URL that will get the full XML.
         /// </summary>
         /// <param name="info">Agenda the URL is desired for</param>
-        /// <param name="useEventFormat">If true it will use the new event format url, if false, it will not unless site is on whitelist.</param>
-        /// <param name="apiKey">Api key to use to access the event</param>
+        /// <param name="useEventFormat">If true it will use the new event format URL, if false, it will not unless site is on white list.</param>
+        /// <param name="apiKey">API key to use to access the event</param>
         /// <param name="secretKey">The secret key to also use to access event. Will be time encoded if this is present.</param>
         /// <returns>A URI that should return the XML from the agenda server</returns>
         public Uri GetAgendaFullXMLURL(AgendaInfo info, bool useEventFormat = false, string apiKey = null, string secretKey = null, bool useTimestamp = true)
@@ -53,18 +57,53 @@ namespace IndicoInterface.NET
 
             var stem = ApiKeyHandler.IndicoEncode(path.ToString(), requestParams, apiKey, secretKey, useTimeStamp: useTimestamp);
 
+            var bld = BuildUriFromPath(info, useNewFormat, stem);
+
+            return new Uri(bld);
+        }
+
+        /// <summary>
+        /// Build the final URI from the path
+        /// </summary>
+        /// <param name="info">The agenda we are building against</param>
+        /// <param name="useHttps">What http protocal should be used?</param>
+        /// <param name="stem">The stem that goes after the absolute base</param>
+        /// <returns></returns>
+        private static string BuildUriFromPath(AgendaInfo info, bool useHttps, string stem)
+        {
             // Build the first part of the URL request now
             StringBuilder bld = new StringBuilder();
 
-            bld.AppendFormat("http{1}://{0}", info.AgendaSite, useNewFormat ? "s" : "");
+            bld.AppendFormat("http{1}://{0}", info.AgendaSite, useHttps ? "s" : "");
 
             if (!string.IsNullOrWhiteSpace(info.AgendaSubDirectory))
             {
                 bld.AppendFormat("/{0}", info.AgendaSubDirectory);
             }
             bld.Append(stem);
+            return bld.ToString();
+        }
 
-            return new Uri(bld.ToString());
+        /// <summary>
+        /// Return the URL for a REST query.
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns>Uri pointing to the resource</returns>
+        /// <remarks>
+        /// Only "modern" versions of indico can handle this, and in this code base, AgendaLoader is
+        /// the one that tries to sort out what version of indico it is dealing with.
+        /// </remarks>
+        public Uri GetAgendaFullJSONURL(AgendaInfo info, string apiKey = null, string secretKey = null, bool useTimeStamp = true)
+        {
+            var path = new StringBuilder();
+            path.AppendFormat("/export/event/{0}.json", info.ConferenceID);
+            var requestParams = new Dictionary<string, string>();
+            requestParams["nc"] = "yes";
+            requestParams["detail"] = "sessions";
+
+            var stem = ApiKeyHandler.IndicoEncode(path.ToString(), requestParams, apiKey, secretKey, useTimeStamp: useTimeStamp);
+
+            return new Uri(BuildUriFromPath(info, true, stem));
         }
 
         /// <summary>
@@ -81,13 +120,13 @@ namespace IndicoInterface.NET
         /// If bad XML is returned, it could be because only the new format URL's are being used. In which case
         /// we will re-try with a new format URL. If that is successful, then we will mark the site as white listed.
         /// </remarks>
-        public async Task<IndicoDataModel.iconf> GetFullConferenceData(AgendaInfo info)
+        public async Task<IndicoDataModel.iconf> GetFullConferenceDataXML(AgendaInfo info)
         {
             try
             {
                 using (var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info)))
                 {
-                    return _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
+                    return (_loader.Value.Deserialize(data) as iconf).CheckNotDepreciated();
                 }
             }
             catch (InvalidOperationException)
@@ -101,21 +140,364 @@ namespace IndicoInterface.NET
             {
                 var r = _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
                 WhiteListInfo.AddSiteThatUsesEventFormat(info.AgendaSite);
-                return r;
+                return r.CheckNotDepreciated();
+            }
+        }
+
+        /// <summary>
+        /// Return the full conference JSON deserialized into a data model that matches the raw JSON.
+        /// </summary>
+        /// <param name="info">The agenda we would like to get the data for</param>
+        /// <returns>The parsed XML data. Throws an exception if the data is not returned</returns>
+        public async Task<JSON.Result> GetFullConferenceDataJSON(AgendaInfo info)
+        {
+            using (var data = await _fetcher.GetDataFromURL(GetAgendaFullJSONURL(info)))
+            {
+                var r = JsonConvert.DeserializeObject<JSON.IndicoGetMeetingInfoReturn>(await data.ReadToEndAsync());
+                if (r.results.Count == 0)
+                {
+                    // Indico, for security reasons, has not returned the item. So flame out.
+                    throw new WebException(string.Format("Unable to load meeting {0} - access forbidden", info.ConferenceUrl));
+                }
+                if (r.results.Count != 1)
+                {
+                    throw new InvalidOperationException("Don't know how to deal with more than one meetings back from a single meeting indico request!");
+                }
+                return r.results[0];
             }
         }
 
         /// <summary>
         /// Get the conference data in a normalized format
         /// </summary>
+        /// <param name="meeting"></param>
         /// <returns></returns>
+        /// <remarks>
+        /// Attempts to be smart about what format to grab the data in - JSON or XML.
+        /// </remarks>
         public async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceData(AgendaInfo meeting)
+        {
+            bool xml = false;
+            if (!WhiteListInfo.UseJSONAgendaLoaderRequests(meeting))
+            {
+                try
+                {
+                    return await GetNormalizedConferenceDataFromXML(meeting);
+                }
+                catch (AgendaFormatDepreciatedException e)
+                {
+                    xml = true;
+                    // Try JSON in this case.
+                }
+            }
+
+            var r = await GetNormalizedConferenceDataFromJSON(meeting);
+
+            // If we aren't white listed, and we got here ok, then we should be white listed!
+            if (xml)
+            {
+                WhiteListInfo.AddSiteThatUsesJSONAgendaQueries(meeting.AgendaSite);
+            }
+
+            return r;
+        }
+
+        /// <summary>
+        /// Get the conference data in a normalized format assuming an xml source.
+        /// </summary>
+        /// <returns></returns>
+        private async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceDataFromJSON(AgendaInfo meeting)
+        {
+            // Get the data from the agenda and load it into our internal data model.
+            var data = await GetFullConferenceDataJSON(meeting);
+
+            // Do the basic meeting header
+            var m = new IndicoInterface.NET.SimpleAgendaDataModel.Meeting();
+            m.ID = data.id;
+            m.Title = data.title.Trim();
+            m.Site = meeting.AgendaSite;
+            m.StartDate = AgendaStringToDate(data.startDate);
+            m.EndDate = AgendaStringToDate(data.endDate);
+
+            // Sessions can either be at the top level, not associated,
+            // or they can be in sessions. We have to pick up talks from both
+            // sources.
+            var definedSessions = ExtractContributionsBySession(data.sessions);
+            var undefinedSessions = SortNonSessionTalksIntoSessions(definedSessions, data.contributions.Select(t => CreateTalk(t)));
+            var sessionsNotAssociated = ExtractContributionsBySession(data.contributions);
+            var sessions = definedSessions.Concat(undefinedSessions);
+
+            foreach (var s in sessions.Where(ms => ms.Title == ""))
+            {
+                s.Title = m.Title;
+            }
+            
+            // Put them into our meeting
+            m.Sessions = sessions
+                .OrderBy(s => s.StartDate)
+                .ToArray();
+
+            // Extra material in the meeting
+            m.MeetingTalks = ParseConferenceExtraMaterialJSON(data.folders);
+
+            return m;
+        }
+
+        private IList<Session> ExtractContributionsBySession(IList<JSON.Contribution> list)
+        {
+            var contribBySession = from s in list
+                                   group s by NormalizedSessionName(s.session);
+
+            return contribBySession
+                .Select(talks => CreateSessionFromContribs("", talks))
+                .ToList();
+        }
+
+        /// <summary>
+        /// Extract session data by contribution
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        private IList<Session> ExtractContributionsBySession(IList<JSON.Session> list)
+        {
+            return list
+                .Select(ConvertToSession)
+                .ToList();
+        }
+
+        /// <summary>
+        /// Given a JSON session, convert it to a real one.
+        /// </summary>
+        /// <param name="jSession"></param>
+        /// <returns></returns>
+        private Session ConvertToSession(JSON.Session jSession)
+        {
+            // Fill in with the default stuff.
+            var s = CreateSessionFromContribs(jSession.title, jSession.contributions);
+
+            s.EndDate = AgendaStringToDate(jSession.endDate);
+            s.StartDate = AgendaStringToDate(jSession.startDate);
+            s.ID = jSession.id;
+            s.SessionMaterial = ParseConferenceExtraMaterialJSON(jSession.session.folders);
+
+            return s;
+        }
+
+        /// <summary>
+        /// Given a list of contributions, create a session object
+        /// </summary>
+        /// <param name="sessionName"></param>
+        /// <param name="contribs"></param>
+        /// <returns></returns>
+        private Session CreateSessionFromContribs(string sessionName, IEnumerable<JSON.Contribution> contribs)
+        {
+            var talks = contribs
+                .Select(t => CreateTalk(t))
+                .Where(t => t != null)
+                .OrderBy(t => t.StartDate)
+                .ToArray();
+
+            var r = new Session()
+            {
+                Title = sessionName,
+                Talks = talks,
+                ID = "0",
+                StartDate = talks.Length != 0 ? FindEarliestTime(talks) : new DateTime(),
+                EndDate = talks.Length != 0 ? FindLastTime(talks) : new DateTime(),
+                SessionMaterial = new Talk[0]
+            };
+
+            return r;
+        }
+
+        /// <summary>
+        /// Return the first start time.
+        /// </summary>
+        /// <param name="talks">List of talks, expected to have at least on talk</param>
+        /// <returns></returns>
+        private static DateTime FindEarliestTime(IEnumerable<Talk> talks)
+        {
+            return talks
+                .Select(t => t.StartDate)
+                .Min();
+        }
+
+        /// <summary>
+        /// Return the last end time.
+        /// </summary>
+        /// <param name="talks">List of talks, expected to have at least one talk</param>
+        /// <returns></returns>
+        private static DateTime FindLastTime(Talk[] talks)
+        {
+            return talks
+                .Select(t => t.EndDate)
+                .Max();
+        }
+
+        /// <summary>
+        /// Creates a talk from a contribution.
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        private Talk CreateTalk(JSON.Contribution t)
+        {
+            // Grab the attached slides.
+            var folders = t.folders;
+            var title = t.title;
+            var id = t.id;
+            var start = AgendaStringToDate(t.startDate);
+            var end = AgendaStringToDate(t.endDate);
+            var speakers = t.speakers.Select(s => ConvertToSpeaker(s)).ToArray();
+
+            var allMaterial = folders
+                .SelectMany(f => ConvertToTalkMaterial(f)).ToArray();
+            var bestMaterial = FindBestMaterial(allMaterial);
+
+            var subTalks = t.subContributions == null ? new Talk[0] : t.subContributions.Select(st => CreateTalk(st)).ToArray();
+
+            // And build the talk.
+            var rt = new Talk()
+            {
+                Title = title,
+                ID = id,
+                StartDate = start,
+                EndDate = end,
+                AllMaterial = allMaterial,
+                DisplayFilename = bestMaterial != null ? bestMaterial.DisplayFilename : "",
+                FilenameExtension = bestMaterial != null ? bestMaterial.FilenameExtension : "",
+                SlideURL = bestMaterial != null ? bestMaterial.URL : "",
+                Speakers = speakers,
+                SubTalks = subTalks,
+                TalkType = TypeOfTalk.Talk
+            };
+            return rt;
+        }
+
+        /// <summary>
+        /// Create a talk from a sub-contribution
+        /// </summary>
+        /// <param name="st"></param>
+        /// <returns></returns>
+        private Talk CreateTalk(JSON.SubContribution st)
+        {
+            var allMaterial = st.folders.SelectMany(f => ConvertToTalkMaterial(f)).ToArray();
+            var bm = FindBestMaterial(allMaterial);
+
+            var t = new Talk()
+            {
+                Title = st.title,
+                ID = st.id,
+                TalkType = TypeOfTalk.Talk,
+                Speakers = st.speakers.Select(s => ConvertToSpeaker(s)).ToArray(),
+                AllMaterial = allMaterial,
+                DisplayFilename = bm != null ? bm.DisplayFilename : "",
+                FilenameExtension = bm != null ? bm.FilenameExtension : "",
+                SlideURL = bm != null ? bm.URL : ""
+            };
+            return t;
+        }
+
+        /// <summary>
+        /// Extract a speaker from a speaker.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        private string ConvertToSpeaker(JSON.Person s)
+        {
+            return s.fullName;
+        }
+
+        /// <summary>
+        /// Generic list of material types we should search for in order to get the "best" thing to present.
+        /// </summary>
+        private static string[] gGenericMaterialList = new string[] { "slides", "transparencies", "poster", "0", null };
+
+        /// <summary>
+        /// Given a list of all the material associated with a talk, pull out the
+        /// "most" interesting.
+        /// </summary>
+        /// <param name="allMaterial"></param>
+        /// <returns></returns>
+        private TalkMaterial FindBestMaterial(TalkMaterial[] allMaterial)
+        {
+            var orderedMaterial = from tm in allMaterial
+                                  let mtlow = ExtractMaterialType(tm)
+                                  let ord = Array.FindIndex(gGenericMaterialList, s => s == mtlow)
+                                  let normOrd = ord < 0 ? gGenericMaterialList.Length : ord
+                                  group tm by normOrd;
+            var sorted = orderedMaterial.OrderBy(k => k.Key).FirstOrDefault();
+            if (sorted == null)
+            {
+                return null;
+            }
+
+            // Next, order by file type
+            var byFileType = from tm in sorted
+                             group tm by CalcTypeIndex(tm.FilenameExtension);
+            return byFileType.OrderByDescending(k => k.Key).First().First();
+        }
+
+        /// <summary>
+        /// Protected material type return
+        /// </summary>
+        /// <param name="tm"></param>
+        /// <returns></returns>
+        private static string ExtractMaterialType(TalkMaterial tm)
+        {
+            return tm.MaterialType != null ? tm.MaterialType.ToLower() : "slides";
+        }
+
+        /// <summary>
+        /// Convert a talk's folder list to TalkMaterial.
+        /// </summary>
+        /// <param name="f"></param>
+        /// <returns></returns>
+        private IEnumerable<TalkMaterial> ConvertToTalkMaterial(JSON.Folder f)
+        {
+            return f.attachments
+                .Select(a => ConvertToTalkMaterial(a, f.title));
+        }
+
+        /// <summary>
+        /// Convert an attachment to a talk material
+        /// </summary>
+        /// <param name="a"></param>
+        /// <returns></returns>
+        private TalkMaterial ConvertToTalkMaterial(JSON.Attachment a, string mtype)
+        {
+            return new TalkMaterial()
+            {
+                DisplayFilename = a.title,
+                URL = a.download_url,
+                FilenameExtension = Path.GetExtension(a.download_url),
+                MaterialType = mtype
+            };
+        }
+
+        /// <summary>
+        /// Normalize session names for consumption by everyone else.
+        /// </summary>
+        /// <param name="sname"></param>
+        /// <returns></returns>
+        /// <remarks>A null is converted to an empty string</remarks>
+        private string NormalizedSessionName(string sname)
+        {
+            if (sname != null)
+                return sname;
+            return "";
+        }
+
+        /// <summary>
+        /// Get the conference data in a normalized format assuming an xml source.
+        /// </summary>
+        /// <returns></returns>
+        private async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceDataFromXML(AgendaInfo meeting)
         {
             ///
             /// Grab all the details
             ///
 
-            var data = await GetFullConferenceData(meeting);
+            var data = await GetFullConferenceDataXML(meeting);
 
             ///
             /// Create the stuff we will be sending back.
@@ -226,6 +608,53 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
+        /// Given the material attached with this session, turn it into talks for later processing. These are
+        /// funny talks (no time, etc.).
+        /// </summary>
+        /// <param name="material"></param>
+        /// <returns></returns>
+        private SimpleAgendaDataModel.Talk[] ParseConferenceExtraMaterialJSON(IList<JSON.Folder> material)
+        {
+            if (material == null)
+                return new Talk[0];
+
+            return material
+                .Select(CreateExtraMaterialTalk)
+                .ToArray();
+        }
+
+        /// <summary>
+        /// If we don't get a real contribution and just material, here is what we can do...
+        /// </summary>
+        /// <param name="arg"></param>
+        /// <returns></returns>
+        private Talk CreateExtraMaterialTalk(JSON.Folder arg)
+        {
+            var allMaterial = ConvertToTalkMaterial(arg);
+
+            var rt = new Talk()
+            {
+                Title = arg.title,
+                ID = arg.id.ToString(),
+                StartDate = new DateTime(),
+                EndDate = new DateTime(),
+                SubTalks = allMaterial
+                    .Select(tm => new Talk()
+                    {
+                        SlideURL = tm.URL,
+                        AllMaterial = new TalkMaterial[] { tm },
+                        DisplayFilename = tm.DisplayFilename,
+                        FilenameExtension = tm.FilenameExtension,
+                        ID = "0",
+                        TalkType = TypeOfTalk.ExtraMaterial
+                    })
+                    .ToArray(),
+                TalkType = TypeOfTalk.ExtraMaterial
+            };
+            return rt;
+        }
+
+        /// <summary>
         /// We have a list of files - see if we can figure out what should come back.
         /// </summary>
         /// <param name="m"></param>
@@ -262,6 +691,10 @@ namespace IndicoInterface.NET
         /// <returns></returns>
         private int CalcTypeIndex(string fileType)
         {
+            if (fileType.StartsWith("."))
+            {
+                fileType = fileType.Substring(1);
+            }
             for (int i = 0; i < fileTypeOrdered.Length; i++)
             {
                 if (fileTypeOrdered[i] == fileType)
@@ -320,68 +753,87 @@ namespace IndicoInterface.NET
                 return null;
 
             var talks = (from t in contributions select ExtractTalkInfo(t)).ToArray();
-            Session[] result = null;
 
+            return SortNonSessionTalksIntoSessions(sessions, talks)
+                .ToArray();
+        }
+
+        /// <summary>
+        /// Given a list of sessions that were specifically organized, and a list of talks that are
+        /// not associated with sessions, generate a series of dummy sessions that contain the talks. The
+        /// trick is to split the talks around the sessions (so we may generate multiple sessions).
+        /// </summary>
+        /// <param name="definedSessions">List of defined sessions in the meeting</param>
+        /// <param name="unassociatedTalks">The talks not associated to any session</param>
+        /// <returns>List of sessions containing the unassociated talks</returns>
+        private static IEnumerable<Session> SortNonSessionTalksIntoSessions(IEnumerable<Session> definedSessions, IEnumerable<Talk> unassociatedTalks)
+        {
             // The easy case is there are no sessions, so this becomes just one session.
-            if (sessions == null || sessions.Length == 0)
+            if (definedSessions == null || definedSessions.Count() == 0)
             {
                 var s1 = new Session()
                 {
                     ID = "-1",
                     Title = "<ad-hoc session>",
-                    Talks = (from t in contributions select ExtractTalkInfo(t)).ToArray()
+                    Talks = unassociatedTalks.OrderBy(t => t.StartDate).ToArray()
                 };
-                result = new Session[] { s1 };
+                s1.StartDate = FindEarliestTime(s1.Talks);
+                s1.EndDate = FindLastTime(s1.Talks);
+                return new Session[] { s1 };
             }
-            else
+
+            // We have to split the contributions up around each session. The algorithm is as follows:
+            // 1. Find the time before a session that each talk occurs
+            // 2. Find the smallest amount of time, and associate that talk with that session.
+            // 3. Each group should be made into a new session.
+            // 4. All other talks (which presumably occur after the last session) are made into their own session.
+
+            var deltaTime = from c in unassociatedTalks
+                            select new
+                            {
+                                contrib = c,
+                                closestSession = definedSessions.Where(s => s.StartDate > c.StartDate).OrderBy(s => s.StartDate - c.StartDate).FirstOrDefault()
+                            };
+
+            var sessionGroups = deltaTime.Where(c => c.closestSession != null).GroupBy(x => x.closestSession);
+            var contribSessions = from sg in sessionGroups
+                                  select new Session()
+                                  {
+                                      ID = "-1",
+                                      Title = "<ad-hoc session>",
+                                      Talks = sg
+                                      .Select(c => c.contrib)
+                                      .OrderBy(t => t.StartDate)
+                                      .ToArray()
+                                  };
+
+            // And the sessions that are left over.
+            var lastSessionTalks = deltaTime.Where(c => c.closestSession == null).Select(c => c.contrib);
+            var lastSession = new Session()
             {
-                // We have to split the contributions up around each session. The algorithm is as follows:
-                // 1. Find the time before a session that each talk occurs
-                // 2. Find the smallest amount of time, and associate that talk with that session.
-                // 3. Each group should be made into a new session.
-                // 4. All other talks (which presumably occur after the last session) are made into their own session.
+                ID = "-1",
+                Title = "<ad-hoc session>",
+                Talks = lastSessionTalks
+                        .OrderBy(t => t.StartDate)
+                        .ToArray()
+            };
 
-                var deltaTime = from c in talks
-                                select new
-                                {
-                                    contrib = c,
-                                    closestSession = sessions.Where(s => s.StartDate > c.StartDate).OrderBy(s => s.StartDate - c.StartDate).FirstOrDefault()
-                                };
-
-                var sessionGroups = deltaTime.Where(c => c.closestSession != null).GroupBy(x => x.closestSession);
-                var contribSessions = from sg in sessionGroups
-                                      select new Session()
-                                      {
-                                          ID = "-1",
-                                          Title = "<ad-hoc session>",
-                                          Talks = sg.Select(c => c.contrib).ToArray()
-                                      };
-
-                // And the sessions that are left over.
-                var lastSessionTalks = deltaTime.Where(c => c.closestSession == null).Select(c => c.contrib);
-                var lastSession = new Session()
-                {
-                    ID = "-1",
-                    Title = "<ad-hoc session>",
-                    Talks = lastSessionTalks.ToArray()
-                };
-
-                if (lastSession.Talks.Length > 0)
-                {
-                    result = contribSessions.Concat(new Session[] { lastSession }).ToArray();
-                }
-                else
-                {
-                    result = contribSessions.ToArray();
-                }
-            }
-
-            // Get the start and end dates right for each session
-            foreach (var s in result)
+            // Put it all together
+            var result = contribSessions;
+            if (lastSession.Talks.Length > 0)
             {
-                s.StartDate = s.Talks.Select(t => t.StartDate).Min();
-                s.EndDate = s.Talks.Select(t => t.EndDate).Max();
+                result = result
+                    .Concat(new Session[] { lastSession });
             }
+
+            // Normalize start and end times
+            result = result
+                .Select(t =>
+                {
+                    t.StartDate = FindEarliestTime(t.Talks);
+                    t.EndDate = FindLastTime(t.Talks);
+                    return t;
+                });
 
             return result;
         }
@@ -397,11 +849,34 @@ namespace IndicoInterface.NET
         }
 
         /// <summary>
+        /// Convert a JSON agenda format from the server into a real date.
+        /// </summary>
+        /// <param name="jDate"></param>
+        /// <returns></returns>
+        private DateTime AgendaStringToDate(JSON.JDate jDate)
+        {
+            // If a meeting has a null date or time, we should
+            // pass back something that is so obviously bogus...
+            if (jDate == null)
+            {
+                return new DateTime();
+            }
+
+            // Next, extract the time, taking into account the time zone info.
+            var dt = DateTime.Parse(jDate.date) + TimeSpan.Parse(jDate.time);
+            var lt = new LocalDateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute);
+            var tz = DateTimeZoneProviders.Tzdb[jDate.tz];
+            var x = tz.AtStrictly(lt);
+
+            return x.ToDateTimeUnspecified();
+        }
+
+        /// <summary>
         /// Given a contribution, return a talk.
         /// </summary>
         /// <param name="contrib"></param>
         /// <returns></returns>
-        private IndicoInterface.NET.SimpleAgendaDataModel.Talk ExtractTalkInfo(IndicoInterface.NET.IndicoDataModel.contribution contrib)
+        private Talk ExtractTalkInfo(IndicoInterface.NET.IndicoDataModel.contribution contrib)
         {
             var result = new Talk();
             result.ID = contrib.ID;
@@ -428,39 +903,17 @@ namespace IndicoInterface.NET
                 result.Speakers = new string[0];
             }
 
-            foreach (var materialType in new string[] { "slides", "transparencies", "poster", "0", null })
+            // Get all material and the best material to show
+            result.AllMaterial = ConvertToTalkMaterial(contrib.material).ToArray();
+            var bm = FindBestMaterial(result.AllMaterial);
+            if (bm != null)
             {
-                var mainFile = FindMaterial(contrib.material, materialType);
-                if (mainFile != null)
-                {
-                    result.SlideURL = mainFile.url;
-                    result.DisplayFilename = Path.GetFileNameWithoutExtension(SantizeURL(mainFile.name));
-                    result.FilenameExtension = Path.GetExtension(SantizeURL(mainFile.name));
-                }
-                if (result.SlideURL != null)
-                {
-                    break;
-                }
+                result.SlideURL = bm.URL;
+                result.DisplayFilename = bm.DisplayFilename;
+                result.FilenameExtension = bm.FilenameExtension;
             }
 
-            if (contrib.material != null)
-            {
-                result.AllMaterial = (from m in contrib.material
-                                      where m.files != null && m.files.file != null
-                                      from f in m.files.file
-                                      select new TalkMaterial()
-                                      {
-                                          URL = f.url,
-                                          FilenameExtension = Path.GetExtension(SantizeURL(f.name)),
-                                          DisplayFilename = Path.GetFileNameWithoutExtension(SantizeURL(f.name)),
-                                          MaterialType = m.title
-                                      }).ToArray();
-            }
-            else
-            {
-                result.AllMaterial = new TalkMaterial[0];
-            }
-
+            // Next, sub contributions, if there are any!
             if (contrib.subcontributions != null)
             {
                 var subtalks = from c in contrib.subcontributions
@@ -473,6 +926,31 @@ namespace IndicoInterface.NET
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Given the list of material's from the XML parse, return it as actual material
+        /// </summary>
+        /// <param name="allMaterial"></param>
+        /// <returns></returns>
+        private static IEnumerable<TalkMaterial> ConvertToTalkMaterial(IndicoDataModel.material[] allMaterial)
+        {
+            if (allMaterial == null)
+            {
+                return new TalkMaterial[0];
+            }
+
+            // Do the conversion
+            return (from m in allMaterial
+                    where m.files != null && m.files.file != null
+                    from f in m.files.file
+                    select new TalkMaterial()
+                    {
+                        URL = f.url,
+                        FilenameExtension = Path.GetExtension(SantizeURL(f.name)),
+                        DisplayFilename = Path.GetFileNameWithoutExtension(SantizeURL(f.name)),
+                        MaterialType = m.title
+                    });
         }
 
         /// <summary>

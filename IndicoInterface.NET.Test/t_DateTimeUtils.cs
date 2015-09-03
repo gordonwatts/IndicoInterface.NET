@@ -55,6 +55,7 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual(dt, dtf);
         }
 
+#if false
         [TestMethod]
         public void CompareWithLinuxDateCommand()
         {
@@ -69,6 +70,7 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual(DateTimeKind.Local, dtf.Kind);
             Assert.AreEqual(dt, dtf);
         }
+#endif
 
         [TestMethod]
         public void CompareWithLinuxDateCommandWithDST()
@@ -80,20 +82,12 @@ namespace IndicoInterface.NET.Test
             var dt = new DateTime(2015, 4, 1, 13, 0, 0, DateTimeKind.Utc);
             var seconds = 1427893200 - 60 * 60; // Account for DST
 
-            // Convert from unix time, and add in the timezone delta to compare above to UTC.
+            // Convert from Unix time, and add in the time zone delta to compare above to UTC.
             var dtf = seconds.FromUnixTime();
             Assert.AreEqual(DateTimeKind.Local, dtf.Kind);
             dtf -= TimeZoneInfo.Local.BaseUtcOffset;
 
             Assert.AreEqual(dt, dtf);
-        }
-
-        [TestMethod]
-        public void ConvertDateWithDaylightSavings()
-        {
-            var dt = new DateTime(2015, 4, 1, 13, 0, 0, DateTimeKind.Local);
-            var seconds = dt.AsSecondsFromUnixEpoch();
-            Assert.AreEqual(1427886000, seconds);
         }
     }
 }

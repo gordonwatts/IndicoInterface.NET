@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndicoInterface.NET", "IndicoInterface.NET\IndicoInterface.NET.csproj", "{38DBFF65-D623-48B2-8DEE-B9BB07177051}"
 EndProject
@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE.TXT = LICENSE.TXT
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{B8AE7BC2-D972-4CD2-877A-6C467AF6E72C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndicoAgendaFetcher", "IndicoAgendaFetcher\IndicoAgendaFetcher.csproj", "{6325DCDC-34A8-4E10-B144-DF0714F9DB40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,8 +49,21 @@ Global
 		{19D166FD-C09E-44A9-BC3F-5480CECFD316}.Release|ARM.ActiveCfg = Release|Any CPU
 		{19D166FD-C09E-44A9-BC3F-5480CECFD316}.Release|x64.ActiveCfg = Release|Any CPU
 		{19D166FD-C09E-44A9-BC3F-5480CECFD316}.Release|x86.ActiveCfg = Release|Any CPU
+		{6325DCDC-34A8-4E10-B144-DF0714F9DB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6325DCDC-34A8-4E10-B144-DF0714F9DB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6325DCDC-34A8-4E10-B144-DF0714F9DB40}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{6325DCDC-34A8-4E10-B144-DF0714F9DB40}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6325DCDC-34A8-4E10-B144-DF0714F9DB40}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6325DCDC-34A8-4E10-B144-DF0714F9DB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6325DCDC-34A8-4E10-B144-DF0714F9DB40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6325DCDC-34A8-4E10-B144-DF0714F9DB40}.Release|ARM.ActiveCfg = Release|Any CPU
+		{6325DCDC-34A8-4E10-B144-DF0714F9DB40}.Release|x64.ActiveCfg = Release|Any CPU
+		{6325DCDC-34A8-4E10-B144-DF0714F9DB40}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6325DCDC-34A8-4E10-B144-DF0714F9DB40} = {B8AE7BC2-D972-4CD2-877A-6C467AF6E72C}
 	EndGlobalSection
 EndGlobal

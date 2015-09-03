@@ -51,11 +51,31 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        public void RESTJSONUriForPublicMeeting()
+        {
+            var ai = new AgendaInfo("https://indico.cern.ch/event/434972/");
+            var al = new AgendaLoader(null);
+            var uri = al.GetAgendaFullJSONURL(ai);
+            Assert.AreEqual("https://indico.cern.ch/export/event/434972.json?detail=sessions&nc=yes", uri.OriginalString);
+        }
+
+        [TestMethod]
+        public void RESTJSONUriForPrivateMeeting()
+        {
+            var ai = new AgendaInfo("https://indico.cern.ch/event/434972/");
+            var al = new AgendaLoader(null);
+            var uri = al.GetAgendaFullJSONURL(ai, apiKey: "00000000-0000-0000-0000-000000000000", secretKey: "00000000-0000-0000-0000-000000000000", useTimeStamp: false);
+            Console.WriteLine(uri.OriginalString);
+            Assert.AreEqual("https://indico.cern.ch/export/event/434972.json?apikey=00000000-0000-0000-0000-000000000000&detail=sessions&nc=yes&signature=3283f66163165705b3ee7d095cec180c3f9519ed", uri.OriginalString);
+        }
+
+        [TestMethod]
         [DeploymentItem("ichep2010.xml")]
         public async Task TestMeetingTitle()
         {
             AgendaInfo a = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=73513");
             var al = new AgendaLoader(new FileReader("ichep2010.xml"));
+            WhiteListInfo.ClearWhiteLists();
             Assert.AreEqual("ICHEP 2010", (await al.GetNormalizedConferenceData(a)).Title, "Title is incorrect");
         }
 
@@ -82,7 +102,7 @@ namespace IndicoInterface.NET.Test
         }
 
         /// <summary>
-        /// Multifile feedback.
+        /// Multi-file feedback.
         /// </summary>
         class MultiFileReader : IUrlFetcher
         {
@@ -93,6 +113,7 @@ namespace IndicoInterface.NET.Test
             }
             public Task<StreamReader> GetDataFromURL(Uri uri)
             {
+                Console.WriteLine("Asked to read {0}.", uri.OriginalString);
                 if (!_fnameLookup.ContainsKey(uri.OriginalString))
                 {
                     throw new ArgumentException(string.Format("Unknown URI requested {0} in test.", uri.OriginalString));
@@ -118,6 +139,7 @@ namespace IndicoInterface.NET.Test
             AgendaInfo info = new AgendaInfo(url);
             var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
 
+            WhiteListInfo.ClearWhiteLists();
             var meeting = await al.GetNormalizedConferenceData(info);
 
             Assert.IsNotNull(meeting.Sessions, "Should be some sessions!");
@@ -135,17 +157,18 @@ namespace IndicoInterface.NET.Test
         [DeploymentItem("EvtGen-miniworkshop.xml")]
         public async Task GetNormalSimpleMeeting()
         {
-            string url = "http://indico.cern.ch/conferenceDisplay.py?confId=a042880";
+            string url = "http://indico.cern.ch/event/a042880";
             AgendaInfo info = new AgendaInfo(url);
             var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
 
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(info);
 
             Assert.IsTrue(data.ID == "a042880", "Conference ID is incorrect.");
             Assert.IsTrue(data.Site == "indico.cern.ch", "Conference site is incorrect");
             Assert.AreEqual("EvtGen miniworkshop", data.Title, "Title is not right");
             Assert.IsTrue(data.StartDate == new DateTime(2005, 01, 21, 9, 0, 0), "Start date is not right");
-            Assert.IsTrue(data.EndDate == new DateTime(2005, 01, 21, 19, 0, 0), "End date is not right");
+            Assert.IsTrue(data.EndDate == new DateTime(2005, 01, 21, 19, 00, 0), "End date is not right");
 
             Assert.IsTrue(data.Sessions.Length == 1, "Should have only a single session");
             Assert.IsTrue(data.Sessions[0].ID == "0", "Default session ID is not set correctly");
@@ -153,7 +176,7 @@ namespace IndicoInterface.NET.Test
             var ses = data.Sessions[0];
             Assert.IsTrue(ses.Title == data.Title, "Session title should be the same as meeting title");
             Assert.IsTrue(ses.StartDate == data.StartDate, "Session start date should match meeting start date");
-            Assert.IsTrue(ses.EndDate == data.EndDate, "Session end date should match meeting end date");
+            Assert.AreEqual(new DateTime(2005, 01, 21, 19, 00, 0), ses.EndDate, "Session end date should match meeting end date");
 
             Assert.IsTrue(ses.Talks.Length == 14, "Incorrect number of talks in session!");
 
@@ -171,6 +194,166 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("cern-a042880.json")]
+        public async Task GetNormalSimpleMeetingJSON()
+        {
+            string url = "http://indico.cern.ch/conferenceDisplay.py?confId=a042880";
+            AgendaInfo info = new AgendaInfo(url);
+            var al = new AgendaLoader(new FileReader("cern-a042880.json"));
+
+            var data = await al.GetNormalizedConferenceData(info);
+
+            // The Event ID has been replaced with a regular number in the JSON conversion.
+            // Very interesting! :-)
+            Assert.AreEqual("418259", data.ID, "Conference ID is incorrect.");
+
+            Assert.AreEqual("indico.cern.ch", data.Site, "Conference site is incorrect");
+            Assert.AreEqual("EvtGen miniworkshop", data.Title, "Title is not right");
+            Assert.AreEqual(new DateTime(2005, 01, 21, 9, 0, 0), data.StartDate, "Start date is not right");
+            Assert.AreEqual(new DateTime(2005, 01, 21, 19, 00, 0), data.EndDate, "End date is not right");
+
+            Assert.AreEqual(1, data.Sessions.Length, "Should have only a single session");
+            Assert.AreEqual("-1", data.Sessions[0].ID, "Default session ID is not set correctly");
+
+            var ses = data.Sessions[0];
+            Assert.AreEqual("<ad-hoc session>", ses.Title, "Session title should be the same as meeting title");
+            Assert.AreEqual(data.StartDate, ses.StartDate, "Session start date should match meeting start date");
+            Assert.AreEqual(new DateTime(2005, 01, 21, 19, 30, 0), ses.EndDate, "Session end date should match meeting end date");
+
+            Assert.IsTrue(ses.Talks.Length == 14, "Incorrect number of talks in session!");
+
+            var talk1 = ses.Talks[0];
+            Assert.AreEqual("s1t15", talk1.ID, "ID of talk is not correct");
+            Assert.AreEqual(TypeOfTalk.Talk, talk1.TalkType, "Talk type isn't right");
+            Assert.IsTrue(talk1.Title == "Introduction to the EvtGen Mini Workshop", "Talk title is not right");
+            Assert.IsTrue(talk1.StartDate == new DateTime(2005, 01, 21, 9, 0, 0), "Start time of talk is not correct");
+            Assert.IsTrue(talk1.EndDate == new DateTime(2005, 01, 21, 9, 15, 0), "End time of talk is not right");
+            Assert.IsNotNull(talk1.SlideURL, "The URL for the slides should not be null!");
+            Assert.IsTrue(talk1.SlideURL.StartsWith("https://indico.cern.ch"), string.Format("Slide URL is not correct {0}", talk1.SlideURL));
+            Assert.IsNotNull(talk1.Speakers, "Speaker list should not be null!");
+            Assert.AreEqual(1, talk1.Speakers.Length, "Should be only one speaker");
+            Assert.AreEqual("BARTALINI, P.", talk1.Speakers[0], "Speakers name is not correct");
+        }
+
+        [TestMethod]
+        [DeploymentItem("cern-374641-split-sessions.json")]
+        public async Task GetMeetingWithSplitNonSessionBySessonJSON()
+        {
+            // In real life seems to be talks and not-talks that are in and out of sessions
+            AgendaInfo a = new AgendaInfo("http://indico.cern.ch/event/375453");
+            var al = new AgendaLoader(new FileReader("cern-374641-split-sessions.json"));
+            var data = await al.GetNormalizedConferenceData(a);
+
+            Assert.AreEqual(4, data.Sessions.Length);
+        }
+
+        [TestMethod]
+        [DeploymentItem("cern-44160-agenda-with-material.json")]
+        public async Task GetMeetingTalksJSON()
+        {
+            AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
+            var al = new AgendaLoader(new FileReader("cern-44160-agenda-with-material.json"));
+            var agenda = await al.GetNormalizedConferenceData(ai);
+
+            Assert.IsNotNull(agenda.MeetingTalks, "Expected non-null list of talks for this meeting at top level!");
+            Assert.AreEqual(3, agenda.MeetingTalks.Length, "Incorrect # of top level meeting talks!");
+
+            var talk1 = (from t in agenda.MeetingTalks where t.ID == "941254" select t).FirstOrDefault();
+            Assert.IsNotNull(talk1, "Missing talk ID 1334833 (scheduled on one page)");
+            Assert.IsNull(talk1.SlideURL, "Talks at meeting level should be null!");
+            Assert.IsNotNull(talk1.SubTalks, "Expected some sub talks!");
+            Assert.AreEqual(1, talk1.SubTalks.Length, "incorrect # of talks for this level");
+            Assert.AreEqual(TypeOfTalk.ExtraMaterial, talk1.SubTalks[0].TalkType, "Incorrect talk type!");
+
+            var talk2 = (from t in agenda.MeetingTalks where t.ID == "941255" select t).FirstOrDefault();
+            Assert.IsNotNull(talk2, "Missing talk ID slides");
+            Assert.IsNull(talk2.SlideURL, "Talks at meeting level should be null!");
+            Assert.IsNotNull(talk2.SubTalks, "Expected some sub talks!");
+            Assert.AreEqual(12, talk2.SubTalks.Length, "incorrect # of talks for this level");
+
+            var talk3 = (from t in agenda.MeetingTalks where t.ID == "941253" select t).FirstOrDefault();
+            Assert.IsNotNull(talk3, "Missing talk ID 3");
+            Assert.IsNull(talk3.SlideURL, "Talks at meeting level should be null!");
+            Assert.IsNotNull(talk3.SubTalks, "Expected some sub talks!");
+            Assert.AreEqual(10, talk3.SubTalks.Length, "incorrect # of talks for this level");
+        }
+
+        [TestMethod]
+        [DeploymentItem("cern-44160-agenda-with-material.json")]
+        public async Task MeetingWithExtraSessionMaterialJSON()
+        {
+            AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
+            var al = new AgendaLoader(new FileReader("cern-44160-agenda-with-material.json"));
+            var agenda = await al.GetNormalizedConferenceData(ai);
+
+            var sesWMat = (from s in agenda.Sessions
+                           where s.SessionMaterial != null && s.SessionMaterial.Length > 0
+                           select s).FirstOrDefault();
+
+            Assert.IsNotNull(sesWMat, "Should have found at least one session with some material connected to it!");
+            Assert.AreEqual("13-0", sesWMat.ID, "Expected the session ID to be something else!");
+            Assert.AreEqual(1, sesWMat.SessionMaterial.Length, "Expected 1 thing associated with the first session");
+            Assert.AreEqual("slides_Michael_Schubnell", sesWMat.SessionMaterial[0].Title, "Title was incorrect");
+            Assert.AreEqual(TypeOfTalk.ExtraMaterial, sesWMat.SessionMaterial[0].TalkType, "The talk type isn't correct!");
+        }
+
+        [TestMethod]
+        [DeploymentItem("cern-73513.json")]
+        public async Task GetNormalComplexMeetingJSON()
+        {
+            var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=73513");
+            var al = new AgendaLoader(new FileReader("cern-73513.json"));
+            var data = await al.GetNormalizedConferenceData(ai);
+
+            Assert.AreEqual("ICHEP 2010", data.Title, "Title wasn't found!");
+            var bsm = (from s in data.Sessions
+                       where s.Title.Contains("Beyond the Standard Model")
+                       select s).ToArray();
+            Assert.IsNotNull(bsm, "Expected to find the session!");
+            Assert.AreEqual(8, bsm.Length, "Unexpected number of sessions");
+
+            var allSessionMaterial = (from s in bsm
+                                      from m in s.SessionMaterial
+                                      select m).ToArray();
+
+            Assert.AreEqual(0, allSessionMaterial.Length, "Expected no section material");
+
+            var allSessionTalks = from s in bsm
+                                  from t in s.Talks
+                                  select t;
+
+            var allTalks = from t in allSessionTalks
+                           where t.SlideURL != null && t.SlideURL != ""
+                           select t;
+            foreach (var item in allTalks)
+            {
+                Console.WriteLine("Talk URL is " + item.SlideURL + " for ID=" + item.ID + " - " + item.Title);
+            }
+            Assert.AreEqual(37, allTalks.Count(), "Expected 37 talks!");
+
+            var allExtraMaterial = from t in allSessionTalks
+                                   where t.SubTalks != null
+                                   from m in t.SubTalks
+                                   where m != null
+                                   where m.SlideURL != null && m.SlideURL != ""
+                                   select m;
+            Assert.IsFalse(allExtraMaterial.Any(), "Expected no extra material");
+        }
+
+        [TestMethod]
+        [DeploymentItem("cern-434972.json")]
+        public async Task GetNormalSimpleMeetingTriggerCoreSoftwareJSON()
+        {
+            var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=434972");
+            var al = new AgendaLoader(new FileReader("cern-434972.json"));
+            var data = await al.GetNormalizedConferenceData(ai);
+            Assert.AreEqual("Trigger Core Software", data.Title, "Title wasn't found!");
+            Assert.AreEqual(1, data.Sessions.Length);
+            Assert.AreEqual(4, data.Sessions[0].Talks.Length);
+            Assert.AreEqual(25, data.EndDate.Minute);
+        }
+
+        [TestMethod]
         [DeploymentItem("EvtGen-miniworkshop.xml")]
         public async Task MultiMaterialOnNormalizedAgenda()
         {
@@ -178,6 +361,7 @@ namespace IndicoInterface.NET.Test
             AgendaInfo info = new AgendaInfo(url);
             var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
 
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(info);
 
             var talk = data.Sessions.SelectMany(s => s.Talks).Where(t => t.ID == "s1t15").FirstOrDefault();
@@ -192,13 +376,13 @@ namespace IndicoInterface.NET.Test
 
         [TestMethod]
         [DeploymentItem("EvtGen-miniworkshop.xml")]
-        public async Task GetFullSimpleMeeting()
+        public async Task GetFullSimpleMeetingXML()
         {
             string url = "http://indico.cern.ch/conferenceDisplay.py?confId=a042880";
             AgendaInfo info = new AgendaInfo(url);
             var al = new AgendaLoader(new FileReader("EvtGen-miniworkshop.xml"));
 
-            var data = await al.GetFullConferenceData(info);
+            var data = await al.GetFullConferenceDataXML(info);
 
             /// Just some simple tests to help pin things down.
 
@@ -214,6 +398,27 @@ namespace IndicoInterface.NET.Test
             Assert.IsTrue(talk1.material[0].files.file != null, "The file of files is null");
             Assert.IsTrue(talk1.material[0].files.file.Length > 0, "Expected at least one file!");
             Assert.IsTrue(talk1.material[0].files.file[0].url.StartsWith("http://indico.cern.ch"), "The pdf link does not start correctly");
+        }
+
+        [TestMethod]
+        [DeploymentItem("cern-434972.json")]
+        public async Task GetFullSimpleMeetingJSON()
+        {
+            var info = new AgendaInfo("https://indico.cern.ch/event/434972/");
+            var al = new AgendaLoader(new FileReader("cern-434972.json"));
+
+            var data = await al.GetFullConferenceDataJSON(info);
+            Assert.IsNotNull(data);
+            Assert.AreEqual("Trigger Core Software", data.title);
+            Assert.AreEqual(4, data.contributions.Count);
+            var c1 = data.contributions[0];
+            Assert.AreEqual("Monitoring for L1Topo", c1.title);
+            Assert.AreEqual(1, c1.folders.Count);
+            var f1 = c1.folders[0];
+            Assert.AreEqual(1, f1.attachments.Count);
+            var a1 = f1.attachments[0];
+            Assert.AreEqual("L1TopoHistogramming.pdf", a1.title);
+            Assert.IsTrue(a1.download_url.StartsWith("https://indico.cern.ch"));
         }
 
         [TestMethod]
@@ -325,6 +530,7 @@ namespace IndicoInterface.NET.Test
             // In real life seems to be talks and not-talks that are in and out of sessions
             AgendaInfo a = new AgendaInfo("http://indico.cern.ch/event/375453");
             var al = new AgendaLoader(new FileReader("375453-inandout-sessions.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(a);
 
             var title = data.Title;
@@ -348,6 +554,7 @@ namespace IndicoInterface.NET.Test
             // In real life seems to be talks and not-talks that are in and out of sessions
             AgendaInfo a = new AgendaInfo("http://indico.cern.ch/event/375453");
             var al = new AgendaLoader(new FileReader("374641-split-sessions.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(a);
 
             Assert.AreEqual(4, data.Sessions.Length);
@@ -360,7 +567,7 @@ namespace IndicoInterface.NET.Test
             // In real life seems to be talks and not-talks that are in and out of sessions
             AgendaInfo a = new AgendaInfo("http://indico.cern.ch/event/375453");
             var al = new AgendaLoader(new FileReader("375453-inandout-sessions.xml"));
-            var data = await al.GetFullConferenceData(a);
+            var data = await al.GetFullConferenceDataXML(a);
 
             // Make sure there is a raw contribution associated with this guy
             Assert.AreEqual(1, data.contribution.Length);
@@ -382,12 +589,12 @@ namespace IndicoInterface.NET.Test
             Session s = data.Sessions[0];
             Talk t = s.Talks[2];
             Assert.IsTrue(t.Title == "Top Quark Mass and Cross Section Results from the Tevatron", "Title of talk 3 isn't right");
-            Assert.IsTrue(t.SlideURL == "http://indico.fnal.gov/getFile.py/access?contribId=2&sessionId=0&resId=0&materialId=slides&confId=1829", "URL for PDF is not right");
+            Assert.AreEqual("http://indico.fnal.gov/getFile.py/access?contribId=2&sessionId=0&resId=0&materialId=slides&confId=1829", t.SlideURL, "URL for PDF is not right");
 
             s = data.Sessions[1];
             t = s.Talks[0];
             Assert.IsTrue(t.Title == "W/Z Properties at the Tevatron", "title of session 2 talk not right");
-            Assert.IsTrue(t.SlideURL == "http://indico.fnal.gov/getFile.py/access?contribId=6&sessionId=1&resId=2&materialId=slides&confId=1829", "Slide URL of ppt is not right");
+            Assert.AreEqual("http://indico.fnal.gov/getFile.py/access?contribId=6&sessionId=1&resId=2&materialId=slides&confId=1829", t.SlideURL, "Slide URL of ppt is not right");
         }
 
         [TestMethod]
@@ -404,6 +611,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceOtherViews.py?view=standard&confId=83609");
             var al = new AgendaLoader(new FileReader("MinBias.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var agenda = await al.GetNormalizedConferenceData(ai);
 
             Assert.AreEqual(6, agenda.Sessions.Length, "Wrong number of sessions");
@@ -419,7 +627,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://ilcagenda.linearcollider.org/conferenceOtherViews.py?view=standard&confId=3154");
             var al = new AgendaLoader(new FileReader("ilc.xml"));
-            var agenda = await al.GetFullConferenceData(ai);
+            var agenda = await al.GetFullConferenceDataXML(ai);
 
             var ses = (from s in agenda.session where s.title.StartsWith("AAP Review: Exec/SCRF") select s).FirstOrDefault();
             Assert.IsNotNull(ses, "Could not find the right session!");
@@ -427,7 +635,22 @@ namespace IndicoInterface.NET.Test
 
             var talk2 = ses.contribution[1];
             Assert.AreEqual(3, talk2.subcontributions.Length, "Incorrect number of sub-contributions!");
-            Assert.AreEqual("9:30 - Introduction - A. Yamamoto", talk2.subcontributions[0].title, "Inproper first title!");
+            Assert.AreEqual("9:30 - Introduction - A. Yamamoto", talk2.subcontributions[0].title, "Improper first title!");
+        }
+        [TestMethod]
+        [DeploymentItem("cern-442174-sub-contributions.json")]
+        public async Task TestSubTalksJSON()
+        {
+            AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/event/442174");
+            var al = new AgendaLoader(new FileReader("cern-442174-sub-contributions.json"));
+            var agenda = await al.GetNormalizedConferenceData(ai);
+
+            var t1 = agenda.Sessions[0].Talks[0];
+            Assert.IsNotNull(t1);
+            Assert.IsNotNull(t1.SubTalks);
+            Assert.AreEqual(2, t1.SubTalks.Length);
+
+            Assert.AreEqual(1, t1.SubTalks.Where(t => t.Title == "Sub 1").Count(), "Looking for sub talk sub 1");
         }
 
         [TestMethod]
@@ -446,11 +669,11 @@ namespace IndicoInterface.NET.Test
             Assert.IsNotNull(talk2.SlideURL, "Slides were not found for the second talk!");
             Trace.WriteLine("Talk 2 title is " + talk2.Title);
 
-            Assert.IsNotNull(talk2.SubTalks, "Expected some subtalks here...");
-            Assert.AreEqual(3, talk2.SubTalks.Length, "Inproper number of sub talks!");
+            Assert.IsNotNull(talk2.SubTalks, "Expected some sub-talks here...");
+            Assert.AreEqual(3, talk2.SubTalks.Length, "Improper number of sub talks!");
             Talk subT0 = talk2.SubTalks[0];
             Assert.AreEqual("9:30 - Introduction - A. Yamamoto", subT0.Title, "Incorrect title for first sub-talk");
-            Assert.IsNotNull(subT0.SlideURL, "slide url should not be zero for the first sub-talk!");
+            Assert.IsNotNull(subT0.SlideURL, "slide URL should not be zero for the first sub-talk!");
         }
 
         [TestMethod]
@@ -459,7 +682,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
             var al = new AgendaLoader(new FileReader("DarkMatterDirect.xml"));
-            var agenda = await al.GetFullConferenceData(ai);
+            var agenda = await al.GetFullConferenceDataXML(ai);
 
             var sesWMat = (from s in agenda.session
                            where s != null && s.material != null && s.material.Length > 0
@@ -477,6 +700,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
             var al = new AgendaLoader(new FileReader("DarkMatterDirect.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var agenda = await al.GetNormalizedConferenceData(ai);
 
             var sesWMat = (from s in agenda.Sessions
@@ -496,7 +720,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
             var al = new AgendaLoader(new FileReader("DarkMatterDirect.xml"));
-            var agenda = await al.GetFullConferenceData(ai);
+            var agenda = await al.GetFullConferenceDataXML(ai);
 
             Assert.IsNotNull(agenda.material, "Expected non-null material associated with the session!");
             Assert.AreEqual(3, agenda.material.Length, "Incorrect number of files associated with the agenda");
@@ -512,6 +736,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceDisplay.py?confId=44160");
             var al = new AgendaLoader(new FileReader("DarkMatterDirect.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var agenda = await al.GetNormalizedConferenceData(ai);
 
             Assert.IsNotNull(agenda.MeetingTalks, "Expected non-null list of talks for this meeting at top level!");
@@ -543,7 +768,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceOtherViews.py?view=standard&confId=86819#2010041");
             var al = new AgendaLoader(new FileReader("lhcxsections.xml"));
-            var agenda = await al.GetFullConferenceData(ai);
+            var agenda = await al.GetFullConferenceDataXML(ai);
 
             ///
             /// Get the first session with some talks we can't seem to parse
@@ -572,6 +797,7 @@ namespace IndicoInterface.NET.Test
         {
             AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/conferenceOtherViews.py?view=standard&confId=86819#2010041");
             var al = new AgendaLoader(new FileReader("lhcxsections.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var agenda = await al.GetNormalizedConferenceData(ai);
 
             var ses1 = (from s in agenda.Sessions
@@ -594,6 +820,7 @@ namespace IndicoInterface.NET.Test
         {
             var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=73513");
             var al = new AgendaLoader(new FileReader("earlyICHEPAgenda.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(ai);
             Assert.AreEqual("ICHEP 2010", data.Title, "Title wasn't found!");
         }
@@ -604,6 +831,7 @@ namespace IndicoInterface.NET.Test
         {
             var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=73513");
             var al = new AgendaLoader(new FileReader("earlyICHEPAgenda.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(ai);
             var bsm = (from s in data.Sessions
                        where s.Title.Contains("Beyond the Standard Model")
@@ -626,7 +854,7 @@ namespace IndicoInterface.NET.Test
                            select t;
             foreach (var item in allTalks)
             {
-                Console.WriteLine("Talk url is " + item.SlideURL + " for ID=" + item.ID + " - " + item.Title);
+                Console.WriteLine("Talk URL is " + item.SlideURL + " for ID=" + item.ID + " - " + item.Title);
             }
             Assert.AreEqual(5, allTalks.Count(), "Expected two talks!");
 
@@ -646,6 +874,7 @@ namespace IndicoInterface.NET.Test
             // An exception was seen in the field
             var ai = new AgendaInfo("http://indico.cern.ch/conferenceTimeTable.py?confId=74604#20100622");
             var al = new AgendaLoader(new FileReader("boost2010.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(ai);
         }
 
@@ -653,18 +882,19 @@ namespace IndicoInterface.NET.Test
         [DeploymentItem("data2009.xml")]
         public async Task TestAgendaWithBadLink()
         {
-            // THis url has a bad link in it
+            // THis URL has a bad link in it
             var ai = new AgendaInfo("https://indico.cern.ch/conferenceDisplay.py?confId=55584");
             var al = new AgendaLoader(new FileReader("data2009.xml"));
+            WhiteListInfo.ClearWhiteLists();
             var data = await al.GetNormalizedConferenceData(ai);
 
-            /// Make sure the url is sanitized...
+            /// Make sure the URL is sanitized...
 
             var talks = from s in data.Sessions
                         from t in s.Talks
                         where t.Title.Contains("Fermi")
                         select t;
-            Assert.AreEqual(1, talks.Count(), "# of fermi talks not right");
+            Assert.AreEqual(1, talks.Count(), "# of Fermi talks not right");
             Assert.IsNull(talks.First().SubTalks, "# of sub talks");
 
             var allSlideUrls = from s in data.Sessions
@@ -672,7 +902,7 @@ namespace IndicoInterface.NET.Test
                                where t.SlideURL != null
                                select t.SlideURL;
 
-            Assert.IsFalse(allSlideUrls.Any(u => u.Contains("\n")), "A slide url contains a carrage return character!");
+            Assert.IsFalse(allSlideUrls.Any(u => u.Contains("\n")), "A slide URL contains a carriage return character!");
 
             var allSTURLs = from s in data.Sessions
                             from t in s.Talks
@@ -680,7 +910,7 @@ namespace IndicoInterface.NET.Test
                             from st in t.SubTalks
                             where st.SlideURL != null
                             select st.SlideURL;
-            Assert.IsFalse(allSTURLs.Any(u => u.Contains("\n")), "A sub talk url contains a carrage return character!");
+            Assert.IsFalse(allSTURLs.Any(u => u.Contains("\n")), "A sub talk URLssssssssss contains a carriage return character!");
         }
 
         [TestMethod]
@@ -689,7 +919,7 @@ namespace IndicoInterface.NET.Test
         public async Task FallBackToNewEventURL()
         {
             // Try a non-white listed site, when that fails with bad HTML, see if we can get it with the
-            // new one. If successful the site shoudl be added to the list of white listed sites.
+            // new one. If successful the site should be added to the list of white listed sites.
 
             WhiteListInfo.ClearWhiteLists(); // Make sure CERN isn't on there!
             var fileloaders = new Dictionary<string, string> {
@@ -709,6 +939,36 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("cern-340656-bogus-xml.xml")]
+        [DeploymentItem("cern-340656.json")]
+        public async Task FailoverWithBadXML()
+        {
+            // When we ask a modern indico server for XML that serves json, it will
+            // send back incomplete XML. We need to take that as a clue to swich over.
+
+            WhiteListInfo.ClearWhiteLists(); // Make sure CERN isn't on there!
+            var fileloaders = new Dictionary<string, string> {
+                {"http://indico.cern.ch/conferenceOtherViews.py?confId=340656&detailLevel=contribution&fr=no&showDate=all&showSession=all&view=xml", "cern-340656-bogus-xml.xml"},
+                {"https://indico.cern.ch/export/event/340656.json?detail=sessions&nc=yes", "cern-340656.json"}
+            };
+            var rdr = new MultiFileReader(fileloaders);
+
+            var ai = new AgendaInfo("https://indico.cern.ch/event/340656");
+            var al = new AgendaLoader(rdr);
+            var data = await al.GetNormalizedConferenceData(ai);
+
+            // The bad XML has no talks.
+            var cnt = data
+                .Sessions
+                .SelectMany(s => s.Talks)
+                .Select(t => t.SlideURL)
+                .Where(u => u != null)
+                .Count();
+
+            Assert.AreNotEqual(0, cnt, "Some talks should have a URL");
+        }
+
+        [TestMethod]
         [DeploymentItem("1l12.ics")]
         public async Task LoadCategory()
         {
@@ -724,6 +984,17 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual("LHCP2015 Steering Group Meeting", a1.Title);
             Assert.AreEqual("2/3/2015 4:00:00 PM", a1.StartTime.ToUtc().ToString());
             Assert.AreEqual("2/3/2015 5:00:00 PM", a1.EndTime.ToUtc().ToString());
+        }
+
+        [TestMethod]
+        [DeploymentItem("cern-nopermission-response.json")]
+        [ExpectedException(typeof(System.Net.WebException))]
+        public async Task LoadMeetingWithNoAccess()
+        {
+            // The JSON return for a meeting we aren't allowed to access is a "null".
+            var ai = new AgendaInfo("https://indico.cern.ch/conferenceDisplay.py?confId=55584");
+            var al = new AgendaLoader(new FileReader("cern-nopermission-response.json"));
+            var data = await al.GetNormalizedConferenceData(ai);
         }
     }
 }

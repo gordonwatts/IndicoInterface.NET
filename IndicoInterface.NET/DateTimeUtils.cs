@@ -27,11 +27,3 @@ namespace IndicoInterface.NET
         }
     }
 }
-#if false
-var dt = DateTime.UtcNow;
-Console.WriteLine(dt.ToLocalTime());
-
-var tz = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
-var utcOffset = new DateTimeOffset(dt, TimeSpan.Zero);
-Console.WriteLine(utcOffset.ToOffset(tz.GetUtcOffset(utcOffset)));
-#endif

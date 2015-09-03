@@ -45,11 +45,13 @@
     <Compile Include="AgendaInfo.cs" />
     <Compile Include="AgendaLoader.cs" />
     <Compile Include="AgendaInfoExtended.cs" />
-    <Compile Include="AgendaServerDataModel.cs" />
+    <Compile Include="IndicoDataModel\AgendaXMLDataModel.cs" />
     <Compile Include="ApiKeyHandler.cs" />
     <Compile Include="DateTimeUtils.cs" />
     <Compile Include="iCalUtils.cs" />
+    <Compile Include="IndicoDataModel\Utils.cs" />
     <Compile Include="IUrlFetcher.cs" />
+    <Compile Include="JSON\AgendaDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleAgendaDataModel.cs" />
     <Compile Include="WhiteListInfo.cs" />
@@ -61,8 +63,17 @@
     <Reference Include="CGenT.Sprache">
       <HintPath>..\packages\CGenT.Sprache.1.0\lib\portable-net40+sl50+win+wpa81+wp80\CGenT.Sprache.dll</HintPath>
     </Reference>
-    <Reference Include="iCal.PCL">
-      <HintPath>..\packages\iCal.PCL.1.0.2\lib\portable-net40+win+wpa81\iCal.PCL.dll</HintPath>
+    <Reference Include="iCal.PCL, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\iCal.PCL.1.0.4\lib\portable-net40+win+wpa81\iCal.PCL.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NodaTime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NodaTime.1.3.1\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+XamariniOS1\NodaTime.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

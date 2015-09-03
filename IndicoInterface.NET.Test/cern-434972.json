@@ -1,0 +1,458 @@
+{
+  "count": 1,
+  "additionalInfo": {
+    
+  },
+  "_type": "HTTPAPIResult",
+  "url": "https:\/\/indico.cern.ch\/export\/event\/434972.json?apikey=0004c73f-a64e-4742-8cb4-305f1ac9f4c2&detail=sessions&nc=yes&timestamp=1440949454&signature=a2fc12f857f3e9aefc69982e5b9870f52616bdfa",
+  "results": [
+    {
+      "startDate": {
+        "date": "2015-07-24",
+        "tz": "Europe\/Zurich",
+        "time": "15:00:00"
+      },
+      "endDate": {
+        "date": "2015-07-24",
+        "tz": "Europe\/Zurich",
+        "time": "17:25:00"
+      },
+      "creator": {
+        "_type": "Avatar",
+        "emailHash": "c0a239ad7ae3e3a3cffd42b6bbcf1bee",
+        "affiliation": "University of Wisconsin (US)",
+        "_fossil": "conferenceChairMetadata",
+        "fullName": "WIEDENMANN, Werner",
+        "id": "19507"
+      },
+      "hasAnyProtection": true,
+      "roomFullname": "40-R-D10",
+      "modificationDate": {
+        "date": "2015-07-24",
+        "tz": "UTC",
+        "time": "13:27:52.504082"
+      },
+      "timezone": "Europe\/Zurich",
+      "contributions": [
+        {
+          "startDate": {
+            "date": "2015-07-24",
+            "tz": "Europe\/Zurich",
+            "time": "15:00:00"
+          },
+          "endDate": {
+            "date": "2015-07-24",
+            "tz": "Europe\/Zurich",
+            "time": "15:20:00"
+          },
+          "duration": 20,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "1",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "e130bb466203c62ae5b648d81e7d2de6",
+              "affiliation": "IFAE Barcelona (ES)",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "RIU, Imma",
+              "id": "1"
+            }
+          ],
+          "primaryauthors": [
+            
+          ],
+          "title": "Monitoring for L1Topo",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2015-07-23T11:00:55.583815+00:00",
+                  "description": "",
+                  "title": "L1TopoHistogramming.pdf",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/434972\/contribution\/1\/attachments\/1130931\/1616393\/L1TopoHistogramming.pdf",
+                  "filename": "L1TopoHistogramming.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1616393,
+                  "size": 208972
+                }
+              ],
+              "title": null,
+              "default_folder": true,
+              "id": 1130931,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-R-D10",
+          "url": "https:\/\/indico.cern.ch\/event\/434972\/contribution\/1",
+          "roomFullname": "40-R-D10"
+        },
+        {
+          "startDate": {
+            "date": "2015-07-24",
+            "tz": "Europe\/Zurich",
+            "time": "16:00:00"
+          },
+          "endDate": {
+            "date": "2015-07-24",
+            "tz": "Europe\/Zurich",
+            "time": "16:05:00"
+          },
+          "duration": 5,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "0",
+          "speakers": [
+            
+          ],
+          "primaryauthors": [
+            
+          ],
+          "title": "AOB",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-R-D10",
+          "url": "https:\/\/indico.cern.ch\/event\/434972\/contribution\/0",
+          "roomFullname": "40-R-D10"
+        },
+        {
+          "startDate": {
+            "date": "2015-07-24",
+            "tz": "Europe\/Zurich",
+            "time": "15:40:00"
+          },
+          "endDate": {
+            "date": "2015-07-24",
+            "tz": "Europe\/Zurich",
+            "time": "16:00:00"
+          },
+          "duration": 20,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "2",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "fd0f8bf65da577a884b4bb1260da8d60",
+              "affiliation": "New York University (US)",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "HEINRICH, Lukas Alexander",
+              "id": "2"
+            },
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "53faef883b37fb4dc03d02269b5a4401",
+              "affiliation": "University of Washington (US)",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "WATTS, Gordon",
+              "id": "3"
+            },
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "dd4739f59772277d2e97848a72bcb716",
+              "affiliation": "Federico Santa Maria Technical University (CL)",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "WHITE, Ryan Mackenzie",
+              "id": "4"
+            }
+          ],
+          "primaryauthors": [
+            
+          ],
+          "title": "Trigger Analysis Tools",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2015-07-24T13:15:57.759426+00:00",
+                  "description": "",
+                  "title": "trig_core_software_2015_07_24.pdf",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/434972\/contribution\/2\/attachments\/1131821\/1617970\/trig_core_software_2015_07_24.pdf",
+                  "filename": "trig_core_software_2015_07_24.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1617970,
+                  "size": 154209
+                },
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2015-07-24T13:33:36.542102+00:00",
+                  "description": "",
+                  "title": "TrigEgammaMatchingTool_CSMtg.pdf",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/434972\/contribution\/2\/attachments\/1131821\/1617997\/TrigEgammaMatchingTool_CSMtg.pdf",
+                  "filename": "TrigEgammaMatchingTool_CSMtg.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1617997,
+                  "size": 408304
+                }
+              ],
+              "title": null,
+              "default_folder": true,
+              "id": 1131821,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "Discussion on new trigger matching tool\nNightly tests for analysis tools",
+          "track": null,
+          "material": [
+            
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-R-D10",
+          "url": "https:\/\/indico.cern.ch\/event\/434972\/contribution\/2",
+          "roomFullname": "40-R-D10"
+        },
+        {
+          "startDate": {
+            "date": "2015-07-24",
+            "tz": "Europe\/Zurich",
+            "time": "15:20:00"
+          },
+          "endDate": {
+            "date": "2015-07-24",
+            "tz": "Europe\/Zurich",
+            "time": "15:40:00"
+          },
+          "duration": 20,
+          "session": null,
+          "keywords": [
+            
+          ],
+          "id": "5",
+          "speakers": [
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "4b900a67f027a660ebf127654171890e",
+              "affiliation": "University of Pittsburgh (US)",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "LIU, Hongkai",
+              "id": "0"
+            },
+            {
+              "_type": "ContributionParticipation",
+              "emailHash": "f9886574d63b00b9d0b0b21bbf6c0493",
+              "affiliation": "University of Pittsburgh (US)",
+              "_fossil": "contributionParticipationMetadata",
+              "fullName": "MYERS, Ava Anne",
+              "id": "1"
+            }
+          ],
+          "primaryauthors": [
+            
+          ],
+          "title": "Trigger Rate Prediction",
+          "note": {
+            
+          },
+          "location": "CERN",
+          "_fossil": "contributionMetadataWithSubContribs",
+          "type": null,
+          "folders": [
+            {
+              "_type": "folder",
+              "attachments": [
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2015-07-24T12:16:46.555914+00:00",
+                  "description": "",
+                  "title": "AAM_Refitter_Trig_Core_Software.pdf",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/434972\/contribution\/5\/attachments\/1131770\/1617867\/AAM_Refitter_Trig_Core_Software.pdf",
+                  "filename": "AAM_Refitter_Trig_Core_Software.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1617867,
+                  "size": 419863
+                },
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2015-07-24T12:16:23.133107+00:00",
+                  "description": "",
+                  "title": "AAM_Refitter_Trig_Core_Software.pptx",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/434972\/contribution\/5\/attachments\/1131770\/1617865\/AAM_Refitter_Trig_Core_Software.pptx",
+                  "filename": "AAM_Refitter_Trig_Core_Software.pptx",
+                  "content_type": "application\/vnd.openxmlformats-officedocument.presentationml.presentation",
+                  "type": "file",
+                  "id": 1617865,
+                  "size": 1057140
+                },
+                {
+                  "_type": "attachment",
+                  "modified_dt": "2015-07-24T12:51:05.717247+00:00",
+                  "description": "",
+                  "title": "HongkaiLiu201507xx_TrigCoreSW.pdf",
+                  "download_url": "https:\/\/indico.cern.ch\/event\/434972\/contribution\/5\/attachments\/1131770\/1617919\/HongkaiLiu201507xx_TrigCoreSW.pdf",
+                  "filename": "HongkaiLiu201507xx_TrigCoreSW.pdf",
+                  "content_type": "application\/pdf",
+                  "type": "file",
+                  "id": 1617919,
+                  "size": 913330
+                }
+              ],
+              "title": null,
+              "default_folder": true,
+              "id": 1131770,
+              "description": ""
+            }
+          ],
+          "_type": "Contribution",
+          "description": "",
+          "track": null,
+          "material": [
+            
+          ],
+          "coauthors": [
+            
+          ],
+          "subContributions": [
+            
+          ],
+          "room": "40-R-D10",
+          "url": "https:\/\/indico.cern.ch\/event\/434972\/contribution\/5",
+          "roomFullname": "40-R-D10"
+        }
+      ],
+      "id": "434972",
+      "category": "General Trigger Core Software",
+      "title": "Trigger Core Software",
+      "note": {
+        
+      },
+      "location": "CERN",
+      "_fossil": "conferenceMetadataWithSessions",
+      "type": "meeting",
+      "categoryId": "2660",
+      "folders": [
+        {
+          "_type": "folder",
+          "attachments": [
+            {
+              "_type": "attachment",
+              "modified_dt": "2015-07-27T13:53:16.021579+00:00",
+              "description": "",
+              "title": "Minutes",
+              "download_url": "https:\/\/indico.cern.ch\/event\/434972\/attachments\/1132512\/1619189\/core-sw-20150724.txt",
+              "filename": "core-sw-20150724.txt",
+              "content_type": "text\/plain",
+              "type": "file",
+              "id": 1619189,
+              "size": 2939
+            }
+          ],
+          "title": null,
+          "default_folder": true,
+          "id": 1132512,
+          "description": ""
+        }
+      ],
+      "_type": "Conference",
+      "description": "Weekly discussions of HLT software issues.\n\nRoom Booking: https:\/\/indico.cern.ch\/rooms\/booking\/CERN\/200820\n\nPIN: 123",
+      "roomMapURL": "https:\/\/maps.cern.ch\/mapsearch\/mapsearch.htm?n=['40\/R-D10']",
+      "sessions": [
+        
+      ],
+      "material": [
+        
+      ],
+      "visibility": {
+        "id": "",
+        "name": "Everywhere"
+      },
+      "address": "",
+      "creationDate": {
+        "date": "2015-07-22",
+        "tz": "UTC",
+        "time": "08:32:30.531324"
+      },
+      "room": "40-R-D10",
+      "chairs": [
+        {
+          "_type": "ConferenceChair",
+          "emailHash": "1665102814567dd7e1b4fd132d6baf2c",
+          "affiliation": "MSU",
+          "_fossil": "conferenceChairMetadata",
+          "fullName": "Stelzer, Joerg",
+          "id": 0
+        },
+        {
+          "_type": "ConferenceChair",
+          "emailHash": "c0a239ad7ae3e3a3cffd42b6bbcf1bee",
+          "affiliation": "High Energy Physics-Department of Physics-University of Wiscons",
+          "_fossil": "conferenceChairMetadata",
+          "fullName": "Wiedenmann, Werner",
+          "id": 1
+        },
+        {
+          "_type": "ConferenceChair",
+          "emailHash": "fd0f8bf65da577a884b4bb1260da8d60",
+          "affiliation": "New York University (US)",
+          "_fossil": "conferenceChairMetadata",
+          "fullName": "Heinrich, Lukas Alexander",
+          "id": 2
+        }
+      ],
+      "url": "https:\/\/indico.cern.ch\/event\/434972\/"
+    }
+  ],
+  "ts": 1440949452
+}

@@ -24,7 +24,7 @@ downloaded.
 
 1. Extract from github, open, and build. Make sure all tests pass.
 2. For new agenda format parsing, make sure that you add a new XML data file to the test rather than just fetching
-   accross the web (the latter takes too long during testing).
+   across the web (the latter takes too long during testing).
 3. Create nuget package from the IndicoInterface.NET directory with the command
    "nuget pack .\IndicoInterface.NET.csproj -Prop Configuration=Release"
 
@@ -32,6 +32,8 @@ Version History
 ===============
 These are versions released to nuget
 
+* 1.5.0 Added support for JSON meetings extraction, which is all that CERN's indico will now deal with. Should
+        be backwards compatible.
 * 1.2.0   Added support for new indico style event URLs. This is a more restful interface to the agenda server.
         Old URL's should still work. There is a WhiteList, and anything on it will have its URL done in the new
 		style. As of this version only indico.cern.ch is on it. If it tries the old URL and it fails, but the new
