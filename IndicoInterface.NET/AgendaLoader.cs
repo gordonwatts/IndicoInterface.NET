@@ -115,16 +115,19 @@ namespace IndicoInterface.NET
         /// Get the full conference XML desterilized info a data model that matches the raw XML.
         /// </summary>
         /// <param name="info">The agenda we should get the data for</param>
+        /// <param name="apiKey">The API key to encode the URI with. Also must specify secret key! If null, not used</param>
+        /// <param name="secretKey">The secret key to keep with the API key</param>
+        /// <param name="useTimeStamp">Add a UTC timestamp onto URI</param>
         /// <returns>The parsed XML data. Throws an exception if it can't find what it needs</returns>
         /// <remarks>
         /// If bad XML is returned, it could be because only the new format URL's are being used. In which case
         /// we will re-try with a new format URL. If that is successful, then we will mark the site as white listed.
         /// </remarks>
-        public async Task<IndicoDataModel.iconf> GetFullConferenceDataXML(AgendaInfo info)
+        public async Task<IndicoDataModel.iconf> GetFullConferenceDataXML(AgendaInfo info, string apiKey = null, string secretKey = null, bool useTimeStamp = true)
         {
             try
             {
-                using (var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info)))
+                using (var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info, apiKey: apiKey, secretKey: secretKey, useTimestamp: useTimeStamp)))
                 {
                     return (_loader.Value.Deserialize(data) as iconf).CheckNotDepreciated();
                 }
@@ -136,7 +139,7 @@ namespace IndicoInterface.NET
                     throw; // We already tried the new format!
             }
 
-            using (var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info, useEventFormat: true)))
+            using (var data = await _fetcher.GetDataFromURL(GetAgendaFullXMLURL(info, useEventFormat: true, apiKey: apiKey, secretKey: secretKey, useTimestamp: useTimeStamp)))
             {
                 var r = _loader.Value.Deserialize(data) as IndicoDataModel.iconf;
                 WhiteListInfo.AddSiteThatUsesEventFormat(info.AgendaSite);
@@ -149,9 +152,9 @@ namespace IndicoInterface.NET
         /// </summary>
         /// <param name="info">The agenda we would like to get the data for</param>
         /// <returns>The parsed XML data. Throws an exception if the data is not returned</returns>
-        public async Task<JSON.Result> GetFullConferenceDataJSON(AgendaInfo info)
+        public async Task<JSON.Result> GetFullConferenceDataJSON(AgendaInfo info, string apiKey = null, string secretKey = null, bool useTimestamp = true)
         {
-            using (var data = await _fetcher.GetDataFromURL(GetAgendaFullJSONURL(info)))
+            using (var data = await _fetcher.GetDataFromURL(GetAgendaFullJSONURL(info, apiKey: apiKey, secretKey: secretKey, useTimeStamp: useTimestamp)))
             {
                 var r = JsonConvert.DeserializeObject<JSON.IndicoGetMeetingInfoReturn>(await data.ReadToEndAsync());
                 if (r.results.Count == 0)
@@ -175,14 +178,14 @@ namespace IndicoInterface.NET
         /// <remarks>
         /// Attempts to be smart about what format to grab the data in - JSON or XML.
         /// </remarks>
-        public async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceData(AgendaInfo meeting)
+        public async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceData(AgendaInfo meeting, string apiKey = null, string secretKey = null, bool useTimestamp = true)
         {
             bool xml = false;
             if (!WhiteListInfo.UseJSONAgendaLoaderRequests(meeting))
             {
                 try
                 {
-                    return await GetNormalizedConferenceDataFromXML(meeting);
+                    return await GetNormalizedConferenceDataFromXML(meeting, apiKey, secretKey, useTimestamp);
                 }
                 catch (AgendaFormatDepreciatedException e)
                 {
@@ -191,7 +194,7 @@ namespace IndicoInterface.NET
                 }
             }
 
-            var r = await GetNormalizedConferenceDataFromJSON(meeting);
+            var r = await GetNormalizedConferenceDataFromJSON(meeting, apiKey, secretKey, useTimestamp);
 
             // If we aren't white listed, and we got here ok, then we should be white listed!
             if (xml)
@@ -206,10 +209,10 @@ namespace IndicoInterface.NET
         /// Get the conference data in a normalized format assuming an xml source.
         /// </summary>
         /// <returns></returns>
-        private async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceDataFromJSON(AgendaInfo meeting)
+        private async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceDataFromJSON(AgendaInfo meeting, string apiKey, string secretKey, bool useTimestamp)
         {
             // Get the data from the agenda and load it into our internal data model.
-            var data = await GetFullConferenceDataJSON(meeting);
+            var data = await GetFullConferenceDataJSON(meeting, apiKey, secretKey, useTimestamp);
 
             // Do the basic meeting header
             var m = new IndicoInterface.NET.SimpleAgendaDataModel.Meeting();
@@ -243,6 +246,11 @@ namespace IndicoInterface.NET
             return m;
         }
 
+        /// <summary>
+        /// Given a list of JSON sessions, extract a list of sessions.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         private IList<Session> ExtractContributionsBySession(IList<JSON.Contribution> list)
         {
             var contribBySession = from s in list
@@ -491,13 +499,13 @@ namespace IndicoInterface.NET
         /// Get the conference data in a normalized format assuming an xml source.
         /// </summary>
         /// <returns></returns>
-        private async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceDataFromXML(AgendaInfo meeting)
+        private async Task<SimpleAgendaDataModel.Meeting> GetNormalizedConferenceDataFromXML(AgendaInfo meeting, string apiKey, string secretKey, bool useTimeStamp)
         {
             ///
             /// Grab all the details
             ///
 
-            var data = await GetFullConferenceDataXML(meeting);
+            var data = await GetFullConferenceDataXML(meeting, apiKey, secretKey, useTimeStamp);
 
             ///
             /// Create the stuff we will be sending back.
