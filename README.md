@@ -32,6 +32,7 @@ Version History
 ===============
 These are versions released to nuget
 
+* 1.5.1 Make sure APIKey/etc. are usable when requesting access to meetings!
 * 1.5.0 Added support for JSON meetings extraction, which is all that CERN's indico will now deal with. Should
         be backwards compatible.
 * 1.2.0   Added support for new indico style event URLs. This is a more restful interface to the agenda server.

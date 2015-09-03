@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.5.0</version>
+    <version>1.5.1</version>
     <title>Indico Agenda Parser</title>
     <authors>Gordon Watts</authors>
     <owners>Gordon Watts</owners>
