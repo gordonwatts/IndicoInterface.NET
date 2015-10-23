@@ -79,6 +79,15 @@ namespace IndicoInterface.NET.Test
             Assert.AreEqual("ICHEP 2010", (await al.GetNormalizedConferenceData(a)).Title, "Title is incorrect");
         }
 
+        [TestMethod]
+        [DeploymentItem("cern-457274-empty.json")]
+        public async Task TestEmptyJSONAgenda()
+        {
+            AgendaInfo a = new AgendaInfo("https://indico.cern.ch/event/457274/");
+            var al = new AgendaLoader(new FileReader("cern-457274-empty.json"));
+            Assert.AreEqual("Empty Meeting", (await al.GetNormalizedConferenceData(a)).Title, "Title is incorrect");
+        }
+
         /// <summary>
         /// Single file feedback.
         /// </summary>

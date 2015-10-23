@@ -166,6 +166,9 @@
     <Content Include="cern-442174-sub-contributions.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="cern-457274-empty.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="indico3285answers.key">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

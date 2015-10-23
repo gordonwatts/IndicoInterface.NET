@@ -225,10 +225,12 @@ namespace IndicoInterface.NET
             // Sessions can either be at the top level, not associated,
             // or they can be in sessions. We have to pick up talks from both
             // sources.
-            var definedSessions = ExtractContributionsBySession(data.sessions);
-            var undefinedSessions = SortNonSessionTalksIntoSessions(definedSessions, data.contributions.Select(t => CreateTalk(t)));
-            var sessionsNotAssociated = ExtractContributionsBySession(data.contributions);
-            var sessions = definedSessions.Concat(undefinedSessions);
+            var sessions = ExtractContributionsBySession(data.sessions);
+            if (data.contributions.Count > 0)
+            {
+                var undefinedSessions = SortNonSessionTalksIntoSessions(sessions, data.contributions.Select(t => CreateTalk(t)));
+                sessions = sessions.Concat(undefinedSessions).ToList();
+            }
 
             foreach (var s in sessions.Where(ms => ms.Title == ""))
             {
