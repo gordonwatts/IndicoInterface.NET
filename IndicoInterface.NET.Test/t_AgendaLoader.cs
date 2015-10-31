@@ -663,6 +663,22 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("cern-447173-subtalks.json")]
+        public async Task TestSubContributionsJSON()
+        {
+            AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/event/447173");
+            var al = new AgendaLoader(new FileReader("cern-447173-subtalks.json"));
+            var agenda = await al.GetNormalizedConferenceData(ai);
+
+            var t1 = agenda.Sessions[0].Talks[0];
+            Assert.IsNotNull(t1);
+            Assert.IsNotNull(t1.SubTalks);
+            Assert.AreEqual(2, t1.SubTalks.Length);
+
+            Assert.AreEqual(1, t1.SubTalks.Where(t => t.Title == "Sub 1").Count(), "Looking for sub talk sub 1");
+        }
+
+        [TestMethod]
         [DeploymentItem("ilc.xml")]
         public async Task TestSubTalks()
         {
