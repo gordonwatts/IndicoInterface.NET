@@ -679,6 +679,18 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("cern-342881.json")]
+        public async Task TestNullDurationItem()
+        {
+            // Seen in the wild - a null value for what is normally an integer.
+            // Causes a crash.
+            AgendaInfo ai = new AgendaInfo("http://indico.cern.ch/event/342881");
+            var al = new AgendaLoader(new FileReader("cern-342881.json"));
+            var agenda = await al.GetNormalizedConferenceData(ai);
+
+        }
+
+        [TestMethod]
         [DeploymentItem("ilc.xml")]
         public async Task TestSubTalks()
         {
