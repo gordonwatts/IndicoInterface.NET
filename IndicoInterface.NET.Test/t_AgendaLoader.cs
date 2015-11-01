@@ -670,12 +670,12 @@ namespace IndicoInterface.NET.Test
             var al = new AgendaLoader(new FileReader("cern-447173-subtalks.json"));
             var agenda = await al.GetNormalizedConferenceData(ai);
 
-            var t1 = agenda.Sessions[0].Talks[0];
+            var t1 = agenda.Sessions[0].Talks[1];
             Assert.IsNotNull(t1);
             Assert.IsNotNull(t1.SubTalks);
-            Assert.AreEqual(2, t1.SubTalks.Length);
+            Assert.AreEqual(6, t1.SubTalks.Length);
 
-            Assert.AreEqual(1, t1.SubTalks.Where(t => t.Title == "Sub 1").Count(), "Looking for sub talk sub 1");
+            Assert.AreEqual(1, t1.SubTalks.Where(t => t.Title == "Flavour tagging").Count(), "Looking for sub talk sub 6");
         }
 
         [TestMethod]
