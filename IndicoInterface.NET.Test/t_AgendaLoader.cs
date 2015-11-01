@@ -1019,8 +1019,10 @@ namespace IndicoInterface.NET.Test
             var a1 = agendas.First();
             Assert.AreEqual("371544", a1.ConferenceID);
             Assert.AreEqual("LHCP2015 Steering Group Meeting", a1.Title);
-            Assert.AreEqual("2/3/2015 4:00:00 PM", a1.StartTime.ToUtc().ToString());
-            Assert.AreEqual("2/3/2015 5:00:00 PM", a1.EndTime.ToUtc().ToString());
+            var dt1 = new DateTime(2015, 2, 3, 16, 0, 0);
+            Assert.AreEqual(dt1.ToString(), a1.StartTime.ToUtc().ToString());
+            var dt2 = new DateTime(2015, 2, 3, 17, 0, 0);
+            Assert.AreEqual(dt2.ToString(), a1.EndTime.ToUtc().ToString());
         }
 
         [TestMethod]
