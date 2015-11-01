@@ -187,7 +187,7 @@ namespace IndicoInterface.NET
                 {
                     return await GetNormalizedConferenceDataFromXML(meeting, apiKey, secretKey, useTimestamp);
                 }
-                catch (AgendaFormatDepreciatedException e)
+                catch (AgendaFormatDepreciatedException)
                 {
                     xml = true;
                     // Try JSON in this case.
