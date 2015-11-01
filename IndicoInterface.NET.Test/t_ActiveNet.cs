@@ -15,7 +15,7 @@ namespace IndicoInterface.NET.Test
     public class t_ActiveNet
     {
         [TestMethod]
-        public void TestXMLGet()
+        public void OnlineXMLGet()
         {
             var url = "http://indico.cern.ch/conferenceDisplay.py?confId=a042880";
             var a = new AgendaInfo(url);
@@ -46,7 +46,7 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
-        public async Task GetFullMeetingInfoWhiteList()
+        public async Task OnlineGetFullMeetingInfoWhiteList()
         {
             var a = new AgendaInfo("https://indico.cern.ch/event/340656/");
             var al = new AgendaLoader(new WebGetter());
@@ -65,7 +65,7 @@ namespace IndicoInterface.NET.Test
         /// This test is to indico, and so requires the new format of request (json rather than xml).
         /// </remarks>
         [TestMethod]
-        public async Task CheckForMaterialOnTalks()
+        public async Task OnlineCheckForMaterialOnTalks()
         {
             var a = new AgendaInfo("https://indico.cern.ch/event/340656/");
             var al = new AgendaLoader(new WebGetter());
@@ -80,7 +80,7 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
-        public async Task GetFullMeetingInfoNonWhiteList()
+        public async Task OnlineGetFullMeetingInfoNonWhiteList()
         {
             var a = new AgendaInfo("https://indico.fnal.gov/conferenceDisplay.py?confId=9318");
             var al = new AgendaLoader(new WebGetter());
@@ -91,7 +91,7 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
-        public async Task GetWhitelistSiteURL()
+        public async Task OnlineGetWhitelistSiteURL()
         {
             var a = new AgendaInfo("https://indico.cern.ch/event/340656/");
             var uri = a.ConferenceUrl;
@@ -109,7 +109,7 @@ namespace IndicoInterface.NET.Test
 
         [TestMethod]
         [DeploymentItem("indicoapi.key")]
-        public async Task GetCategoryWithSecret()
+        public async Task OnlineGetCategoryWithSecret()
         {
             var a = new AgendaCategory("https://indico.cern.ch/category/2636/");
             var info = utils.GetApiAndSecret("indicoapi.key");
@@ -130,7 +130,7 @@ namespace IndicoInterface.NET.Test
 
         [TestMethod]
         [DeploymentItem("indicoapi.key")]
-        public async Task GetCategoryWithSecretNoTimestamp()
+        public async Task OnlineGetCategoryWithSecretNoTimestamp()
         {
             var a = new AgendaCategory("https://indico.cern.ch/category/3286/");
             var info = utils.GetApiAndSecret("indicoapi.key");
@@ -151,7 +151,7 @@ namespace IndicoInterface.NET.Test
 
         [TestMethod]
         [DeploymentItem("indicofermiapikey.key")]
-        public async Task GetCategoryWithNoScret()
+        public async Task OnlineGetCategoryWithNoScret()
         {
             var a = new AgendaCategory("https://indico.fnal.gov/categoryDisplay.py?categId=334");
             var info = utils.GetApiAndSecret("indicofermiapikey.key");
@@ -214,7 +214,7 @@ namespace IndicoInterface.NET.Test
         }
 #endif
         [TestMethod]
-        public async Task GetIndicoCategoryWhiteList()
+        public async Task OnlineGetIndicoCategoryWhiteList()
         {
             var a = new AgendaCategory("https://indico.cern.ch/export/categ/1l12.ics?from=-120d");
             var uri = a.GetCagetoryUri(240);
@@ -234,7 +234,7 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
-        public async Task GetNonWhitelistSiteURL()
+        public async Task OnlineGetNonWhitelistSiteURL()
         {
             var a = new AgendaInfo("https://indico.fnal.gov/conferenceDisplay.py?confId=9318");
             var uri = a.ConferenceUrl;
