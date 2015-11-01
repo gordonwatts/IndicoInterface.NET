@@ -90,7 +90,7 @@ namespace IndicoInterface.NET.JSON
         public Note note { get; set; }
         public string _fossil { get; set; }
         public object allowed { get; set; }
-        public int duration { get; set; }
+        //public int duration { get; set; }
         public string id { get; set; }
     }
 
