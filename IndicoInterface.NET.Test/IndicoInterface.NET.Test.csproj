@@ -169,6 +169,9 @@
     <Content Include="cern-342881.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="cern-438204.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="cern-447173-subtalks.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

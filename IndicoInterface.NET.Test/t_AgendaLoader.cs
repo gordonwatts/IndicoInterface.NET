@@ -245,6 +245,22 @@ namespace IndicoInterface.NET.Test
         }
 
         [TestMethod]
+        [DeploymentItem("cern-438204.json")]
+        public async Task AdHocSessionShouldNotBeEmpty()
+        {
+            // Seen in the wild - sometimes the ad-hoc session comes back empty.
+            string url = "https://indico.cern.ch/event/438204";
+            AgendaInfo info = new AgendaInfo(url);
+            var al = new AgendaLoader(new FileReader("cern-438204.json"));
+
+            // Find the ad-hoc session, and make sure they all have talks.
+            var data = await al.GetNormalizedConferenceData(info);
+
+            var haveTalks = data.Sessions.Where(s => s.Title.Contains("ad-hoc")).All(s => s.Talks.Length > 0);
+            Assert.IsTrue(haveTalks, "Some ad-hoc sessions don't have talks");
+        }
+
+        [TestMethod]
         [DeploymentItem("cern-374641-split-sessions.json")]
         public async Task GetMeetingWithSplitNonSessionBySessonJSON()
         {
