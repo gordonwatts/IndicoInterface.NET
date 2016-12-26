@@ -38,6 +38,7 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
     <None Include="IndicoInterface.NET.nuspec" />
     <None Include="packages.config" />
+    <None Include="PushPackage.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgendaCategory.cs" />
