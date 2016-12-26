@@ -26,7 +26,7 @@ namespace IndicoInterface.NET.Test
             {
                 var r = new StreamReader(res.GetResponseStream());
                 var data = r.ReadToEnd();
-                Assert.IsTrue(data.IndexOf("<?xml") >= 0, "The return URL does not have XML in it!");
+                Assert.IsTrue(data.IndexOf("iconf") >= 0, "The return URL does not have XML in it!");
                 res.Close();
             }
         }
