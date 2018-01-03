@@ -231,3 +231,4 @@ $RECYCLE.BIN/
 *.lnk
 nuget.exe
 *.key
+/.vs
